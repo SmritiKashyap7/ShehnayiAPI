@@ -1272,14 +1272,14 @@
             console.log(data);
             var description = (data.foundlLandingPage.header.description);
             var apidesc = document.querySelector('#apidescription').innerHTML = description;
-            var bannerImg = (data.foundlLandingPage.header.banner);
-            var apibannerimg = document.querySelector('#apibannerimg').setAttribute("src", "../" + bannerImg);
+            var bannerImg = `https://server.shehnayi.in/${data.foundlLandingPage.header.banner}`;
+            var apibannerimg = document.querySelector('#apibannerimg').setAttribute("src", bannerImg);
             let clutter = ''
             data.foundRituals.forEach(element => {
                 // console.log(element);
                 clutter += `<div class="elements">
                 <div class="top">
-                    <img src="${element.image}" alt="">
+                    <img src="https://server.shehnayi.in/${element.image}" alt="">
                 </div>
                 <div class="bottom">
                     <h3 class="slide2-heading">${element.subtitle}</h3>
