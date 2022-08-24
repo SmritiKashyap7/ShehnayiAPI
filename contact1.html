@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
+
+    <!-- Title icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./title_icons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./title_icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./title_icons/favicon-16x16.png">
+    
+    <!-- CSS link -->
+    <link rel="stylesheet" href="./css/contact.css" />
+    <link rel="stylesheet" href="./css/navbar2.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/my_matches2.css">
+
+    <!-- Font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Boxicons cdn -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Remixicons cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div id="mobileview">
+        <i class="ri-close-line">
+        </i>
+        <div id="nav-elements">
+            <a href="dashboard.html">HOME</a>
+            <a href="#">MATCHES</a> 
+            <a href="./activity.html">ACTIVITY</a> 
+            <a href="membership-plan.html">MEMBERSHIP</a> 
+            <a href="./user_page.html">PROFILE</a>
+            <a href="#" id="notif" title="Notifications"><i class='bx bxs-bell'></i></a>
+            <a href="#" id="search" title="Search"><i class='bx bx-search'></i></a>
+            <a href="./settings.html" title="Settings"><i class='bx bxs-cog' ></i></a>
+        </div>
+    </div>
+
+    <div class="navbar">
+        <a id="menu"><i class='bx bx-menu'></i></a>
+        <div class="logo">
+            <a href="dashboard.html"><img src="./Images/shehnayioriginallogo.svg" alt="Shehnayi" title="Shehnayi"></a>
+        </div>
+        <div class="nav-links" id="nav-links">
+            <ul class="nav-list">
+                <li class="text-item"><a href="dashboard.html">Home</a></li>
+                <li class="text-item matches-item" id="matches">
+                    <a href="#" class="matches-txt">Matches<i id="open-dropdown" class="ri-arrow-down-s-fill"></i></a>
+                    <ul id="matches-dropdown">
+                        <li class="nots"><a class="matches-dropdown-item" href="./all_matches.html">All matches</a></li>
+                        <li class="nots all-profile"><a class="matches-dropdown-item" href="./all_profiles.html">All profiles</a></li>
+                    </ul>
+                </li>
+                <li class="text-item"><a href="./activity.html">Activity</a></li>
+                <li class="text-item"><a href="./membership1.html">Membership</a></li>
+                <li class="text-item"><a href="user_page.html" >Profile</a></li>
+                <li class="icons-item" id="notife"><i class='bx bxs-bell'></i></li>
+                <li class="icons-item" id="searche"><i class='bx bx-search'></i></li>
+                <li class="icons-item" id="settinge"><i class='bx bxs-cog' ></i></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Notification popup -->
+    <div id="not-popup">
+        <div class="nots">
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="nots">
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="nots">
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="nots">
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="nots">
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="nots">
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="nots">
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="nots">
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+    </div>
+
+    <!-- Search popup -->
+    <div id="nav-srch">
+        <div class="form-div">
+            <div id="heading">
+                <h2>Quick Search</h2>
+            </div>
+            <hr class="search-heading-line">
+            <form action="" id="search-form">
+                <h4>Age:</h4>
+                <div class="input-flex"> 
+                    <select class="search-age">
+                        <option selected disabled>Select</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                    </select>
+                    <p>to</p>
+                    <select class="search-age">
+                        <option selected disabled>Select</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                    </select>
+                </div>
+                <h4>Height:</h4>
+                <input type="text" name="height" placeholder="Height">
+                <h4>Country:</h4>
+                <select class="search-country">
+                    <option selected disabled>Select</option>
+                    <option value="India">India</option>
+                    <option value="Pakistan">Pakistan</option>
+                    <option value="Bangladesh">Bangladesh</option>
+                    <option value="Sri Lanka">Sri Lanka</option>
+                    <option value="Afghanistan">Afghanistan</option>
+                    <option value="UAE">UAE</option>
+                </select>
+                <h4>State:</h4>
+                <select class="search-state">
+                    <option selected disabled>Select</option>
+                    <option value="">Madhya Pradesh</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Punjab">Punjab</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                    <option value="Chandigarh">Chandigarh</option>
+                </select>
+                <h4>City:</h4>
+                <input type="text" name="city" placeholder="City">
+                <h4>Education:</h4>
+                <input type="text" name="education" placeholder="Education">
+                <h4>Occupation:</h4>
+                <input type="text" name="occupation" placeholder="Occupation">
+                <div class="btn-flex">
+                    <button>
+                        <i class="ri-search-line"></i>
+                        Search
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Settings popup -->
+    <div class="setting-popup">
+        <div class="setting-items">
+            <a href="./account_settings.html">Settings & privacy</p>
+        </div>
+        <div class="setting-items logout-text">
+            <a href="#">Logout</a>
+        </div>
+    </div>
+
+
+    <!-- SECTION 1 -->
+    <section class="sec2">
+        <div class="sec2-groom-div">
+            <img src="img/groom-img.svg" alt="" />
+        </div>
+        <div class="container">
+            <h1 class="heading">CONTACT US</h1>
+            <div class="inner-container">
+                <div id="left-pt">
+                    <div class="grid">
+                        <img src="img/navigation.svg" alt="" />
+                        <p>
+                        4-5 Gufa Mandir Rd,<br />
+                        Nayapura, Lalghati, Bhopal, <br />
+                        Madhya Pradesh, 462030
+                        </p>
+                        <img src="img/communication.svg" alt="" />
+                        <p>07314855565</p>
+                        <img src="img/mail.svg" alt="" />
+                        <p>Contact@shehnayi.com</p>
+                    </div>
+                    <div class="btn-div">
+                        <button type="submit" class="sec2-btn1">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            </svg>
+                            <p>&ensp; Chat with us</p>
+                        </button>
+                        <h3 class="social-handles-head">Follow Us</h3>
+                        <div class="social-handles">
+                            <a href="#">
+                                <img src="img/facebook-logo.svg" alt="" />
+                            </a>
+                            <a href="#">
+                                <img src="img/twitter-logo.svg" alt="" />
+                            </a>
+                            <a href="#">
+                                <img src="img/insta-logo.svg" alt="" />
+                            </a>
+                            <a href="#">
+                                <img src="img/linkedin-logo.svg" alt="" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div id="ryt-pt">
+                    <div class="ryt-container">  
+                        <form id="contact" action="" method="post">
+                          <fieldset>
+                            <input placeholder="Your name" type="text" tabindex="1" required autofocus>
+                          </fieldset>
+                          <fieldset>
+                            <input placeholder="Your Email Address" type="email" tabindex="2" required>
+                          </fieldset>
+                          <fieldset>
+                            <input placeholder="Your Phone Number (optional)" type="tel" tabindex="3" required>
+                          </fieldset>
+                          <fieldset>
+                            <textarea placeholder="Type your message here...." tabindex="5" required></textarea>
+                          </fieldset>
+                          <fieldset>
+                            <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+                          </fieldset>
+                        </form>
+                      </div>
+                </div>
+            </div>   
+        </div>
+        </div>
+        <div class="sec2-bride-div">
+            <img src="img/bride-img.svg" alt="" />
+        </div>
+    </section>
+
+    <footer class="foot">
+        <div class="footer-end">
+            <h4><a href="#" class="terms-condtns">Terms and Conditions</a></h4>
+            <h4><a href="#" class="privacy-policy">Privacy Policy</a></h4>
+            <h4><a href="#" class="contact-us">Contact Us</a></h4>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script src="./js/my_matches.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us</title>
+
+    <!-- Title icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./title_icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./title_icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./title_icons/favicon-16x16.png">
+
+    <!-- CSS link -->
+    <link rel="stylesheet" href="./css/about.css"/>
+    <link rel="stylesheet" href="./css/navbar1.css"/>
+    <link rel="stylesheet" href="./css/footer.css">
+
+    <!-- Remixicons cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Boxicons cdn -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div id="mobileview">
+        <i class="ri-close-line">
+        </i>
+        <div id="nav-elements">
+            <a href="index.html">HOME</a>
+            <a href="about.html">ABOUT US</a> 
+            <a href="membership-plan.html">MEMBERSHIP</a> 
+            <a id="mobile-register" href="#">REGISTER</a>
+            <a href="contact.html">CONTACT US</a>
+        </div>
+    </div>
+
+    <div class="navbar">
+        <a id="menu"><i class='bx bx-menu'></i></a>
+        <div class="logo">
+            <a href="index.html"><img src="./Images/shehnayioriginallogo.svg" alt="Shehnayi" title="Shehnayi"></a>
+        </div>
+        <div class="nav-links">
+            <ul>
+                <li class="home"><a href="index.html">Home</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="membership-plan.html">Membership</a></li>
+                <li><p id="reg" class="register-popup">Register</p></li>
+                <li><a href="contact.html">Contact us</a></li>
+                    
+                <div class="profile">
+                    <div class="profile-icon">
+                        <a id="user" href="#"><img src="./Icons/profile-icon.svg" alt=""></a>
+                    </div>
+                </div> 
+            </ul>
+        </div>
+    </div>
+
+    <!-- Pop Up-1 Register -->
+    <div class="pop-up">
+        <div class="form-div" id="form-1">
+            <i id="close-popup" class="ri-close-line"></i>
+            <h4>Let's set up your Account, while we find Matches for you!</h4>
+            <form id="account-form" action="">
+                <h6>Profile for</h6>
+                <select class="profile" name="profil-for">
+                    <option selected disabled>Select</option>
+                    <option value="myself">Myself</option>
+                    <option value="son">Son</option>
+                    <option value="daughter">Daughter</option>
+                    <option value="mother">Mother</option>
+                    <option value="father">Father</option>
+                </select>
+                <h6>Name</h6>
+                <div id="flex-div">
+                    <input class="name" type="text" placeholder="First Name">
+                    <input class="name" type="text" placeholder="Last Name">
+                </div>
+                <h6>Religion</h6>
+                <select class="profile" name="religion">
+                    <option selected disabled>Select</option>
+                    <option value="Sindhi">Sindhi</option>
+                    <option value="Hindu">Hindu</option>
+                    <option value="Muslim">Muslim</option>
+                </select>
+                <h6>Community</h6>
+                <select class="profile" name="community">
+                    <option selected disabled>Select</option>
+                    <option value="Sindhi">Sindhi</option>
+                    <option value="Hindhu">Hindu</option>
+                </select>
+                <div id="btn">
+                    <button id="submit-btn">Next</button>
+                </div>
+                <h5>Already a Member?<a id="login" href="#">Login</a></h5>
+            </form>
+        </div>
+        <div class="form-div" id="form-2" >
+            <i id="close-popup" class="ri-close-line"></i>
+            <h4>Great! Now some basic <br> details about you</h4>
+            <form id="account-form" action="">
+                <h6>Email ID</h6>
+                <input class="name" id="email" type="email" placeholder="Email Address">
+                <h6>Phone No.</h6>
+                <input class="name" type="number" placeholder="Phone">
+                <h6>Date of Birth</h6>
+                <div class="dob-div">
+                    <input class="dob" id="a" type="number" placeholder="Date" min="1" max="31">
+                    <input class="dob" id="a" type="text" placeholder="Month">
+                    <input class="dob" id="a" type="number" placeholder="Year">
+                </div>
+                <h6>Gender</h6>
+                <select class="profile" name="profil-for">
+                    <option selected disabled>Select</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                <h6>Password</h6>
+                <input class="name" type="password" name="password" placeholder="Password" required>
+                <h6>Living in (Currently)</h6>
+                <div id="flex-div">
+                    <select name="city" class="town">
+                        <option selected disabled>City</option>
+                        <option value="Bhopal">Bhopal</option>
+                        <option value="Indore">Indore</option>
+                        <option value="Nagpur">Nagpur</option>
+                        <option value="Jaipur">Jaipur</option>
+                        <option value="Surat">Surat</option>
+                    </select>
+                    <select name="state" class="state">
+                        <option selected disabled>State</option>
+                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Gujarat">Gujarat</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                    </select>
+                    <select name="country" class="country">
+                        <option selected disabled>Country</option>
+                        <option value="India">India</option>
+                        <option value="Pakistan">Pakistan</option>
+                        <option value="Afghanistan">Afghanistan</option>
+                        <option value="Nepal">Nepal</option>
+                    </select>
+                </div>
+                <div id="btn-flex">
+                  <a id="form-2-prev" href="#"><i class="ri-arrow-left-line"></i>Previous</a>
+                  <button id="next-btn">Register</button>
+                </div>
+            </form>
+        </div>
+        <div class="form-div" id="form-3">
+            <i id="close-popup" class="ri-close-line"></i>
+            <h4>Thanks for Registering! <br> Now let's build your profile</h4>
+            <form id="account-form" action="">
+                <h6>Home Town</h6>
+                <div id="flex-div">
+                    <select name="city" class="town">
+                        <option selected disabled>City</option>
+                        <option value="Bhopal">Bhopal</option>
+                        <option value="Indore">Indore</option>
+                        <option value="Nagpur">Nagpur</option>
+                        <option value="Jaipur">Jaipur</option>
+                        <option value="Surat">Surat</option>
+                    </select>
+                    <select name="state" class="state">
+                        <option selected disabled>State</option>
+                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Gujarat">Gujarat</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                    </select>
+                    <select name="country" class="country">
+                        <option selected disabled>Country</option>
+                        <option value="India">India</option>
+                        <option value="Pakistan">Pakistan</option>
+                        <option value="Afghanistan">Afghanistan</option>
+                        <option value="Nepal">Nepal</option>
+                    </select>
+                </div>
+                <h6>Sub Community</h6>
+                <select name="subcommunity" name="subcommunity" class="profile">
+                    <option selected disabled>Select</option>
+                    <option value="Mohana">Mohana</option>
+                </select>
+                <h6>Marital Status</h6>
+                <select class="profile" name="profil-for">
+                    <option selected disabled>Select</option>
+                    <option value="married">Married</option>
+                    <option value="single">Single</option>
+                    <option value="divorced">Divorced</option>
+                    <option value="widow">Widow</option>
+                </select>
+                <h6>Manglik</h6>
+                <select class="profile" name="profil-for">
+                    <option selected disabled>Select</option>
+                    <option value="">Yes</option>
+                    <option value="">No</option>
+                </select>
+                <h6>Height</h6>
+                <select name="height" id="height" class="profile">
+                    <option selected disabled>Select</option>
+                    <!-- value in cm but, option in ft and inches-->
+                    <option value="121">4ft</option>
+                    <option value="123.54">4ft 1inches</option>
+                    <option value="126.08">4ft 2inches</option>
+                    <option value="128.62">4ft 3inches</option>
+                    <option value="131.16">4ft 4inches</option>
+                    <option value="133.70">4ft 5inches</option>
+                    <option value="136.24">4ft 6inches</option>
+                    <option value="138.78">4ft 7inches</option>
+                    <option value="141.32">4ft 8inches</option>
+                    <option value="143.86">4ft 9inches</option>
+                    <option value="146.4">4ft 10inches</option>
+                    <option value="152.4">5ft</option>
+                    <option value="156.94">5ft 1inches</option>
+                    <option value="159.48">5ft 2inches</option>
+                    <option value="162.02">5ft 3inches</option>
+                    <option value="164.56">5ft 4inches</option>
+                    <option value="167.1">5ft 5inches</option>
+                    <option value="169.64">5ft 6inches</option>
+                    <option value="172.18">5ft 7inches</option>
+                    <option value="174.72">5ft 8inches</option>
+                    <option value="177.26">5ft 9inches</option>
+                    <option value="179.8">5ft 10inches</option>
+                    <option value="182.88">6ft</option>
+                    <option value="185.42">6ft 1inches</option>
+                    <option value="187.96">6ft 2inches</option>
+                    <option value="190.5">6ft 3inches</option>
+                    <option value="193.0">6ft 4inches</option>
+                    <option value="195.58">6ft 5inches</option>
+                    <option value="198.12">6ft 6inches</option>
+                    <option value="200.66">6ft 7inches</option>
+                    <option value="203.2">6ft 8inches</option>
+                    <option value="205.74">6ft 9inches</option>
+                    <option value="208.28">6ft 10inches</option>
+                    <option value="213.36">7ft</option>
+                    <option value="215.9">7ft 1inches</option>
+                    <option value=218.44">7ft 2inches</option>
+                    <option value="220.98">7ft 3inches</option>
+                    <option value=223.52">7ft 4inches</option>
+                    <option value="226.06">7ft 5inches</option>
+                </select>
+                <h6>Weight</h6>
+                <select name="" class="profile">
+                    <!-- Weight in kg -->
+                    <option selected disabled>Select</option>
+                    <option value="35">35</option>
+                    <option value="36">36</option>
+                    <option value="37">37</option>
+                    <option value="38">38</option>
+                    <option value="39">39</option>
+                    <option value="40">40</option>
+                    <option value="41">41</option>
+                    <option value="42">42</option>
+                    <option value="43">43</option>
+                    <option value="44">44</option>
+                    <option value="45">45</option>
+                    <option value="46">46</option>
+                    <option value="47">47</option>
+                    <option value="48">48</option>
+                    <option value="49">49</option>
+                    <option value="50">50</option>
+                    <option value="51">51</option>
+                    <option value="52">52</option>
+                    <option value="53">53</option>
+                    <option value="54">54</option>
+                    <option value="55">55</option>
+                    <option value="56">56</option>
+                    <option value="57">57</option>
+                    <option value="58">58</option>
+                    <option value="59">59</option>
+                    <option value="61">61</option>
+                    <option value="62">62</option>
+                    <option value="63">63</option>
+                    <option value="64">64</option>
+                    <option value="65">65</option>
+                    <option value="66">66</option>
+                    <option value="67">67</option>
+                    <option value="68">68</option>
+                    <option value="69">69</option>
+                    <option value="70">70</option>
+                </select>
+                <h6>Skin Tone</h6>
+                <select class="profile" name="profil-for">
+                    <option selected disabled>Select</option>
+                    <option value="light">Light</option>
+                    <option value="fair">Fair</option>
+                    <option value="medium">Medium</option>
+                    <option value="dark">Dark</option>
+                </select>
+                <div id="btn-flex">
+                    <a id="form-3-prev" href="#"><i class="ri-arrow-left-line"></i>Previous</a>
+                    <button id="next-btn-2">Next</button>
+                </div>
+            </form>
+        </div>
+        <div class="form-div" id="form-4">
+            <i id="close-popup" class="ri-close-line"></i>
+            <h4>Please add Education & <br> Career details</h4>
+            <form id="account-form" action="">
+                <h6>Qualification</h6>
+                <select class="profile" name="profil-for">
+                    <option selected disabled>Select</option>
+                    <option value="10">10th</option>
+                    <option value="12">12th</option>
+                    <option value="graduation">Graduation</option>
+                </select>
+                <h6>Currently work at</h6>
+                <select name="workat" class="profile">
+                    <option selected disabled>Select</option>
+                    <option value="private">Private</option>
+                    <option value="government">Government</option>
+                </select>
+                <h6>Company</h6>
+                <select name="" class="profile">
+                    <option selected disabled>Select</option>
+                    <option value="umpteen innovation">Umpteen Innovation</option>
+                </select>
+                <h6>Designation</h6>
+                <select name="designation" class="profile">
+                    <option selected disabled>Select</option>
+                    <option value="businessman">Businessman</option>
+                    <option value="private">Software developer</option>
+                    <option value="government">Android developer</option>
+                </select>
+                <h6>Annual Income</h6>
+                <select name="" class="profile">
+                    <option selected disabled>Select</option>
+                    <option value="less than 10000">Less than 10000</option>
+                    <option value="between 10000 to 50000">Between 10000 to 50000</option>
+                    <option value="between 50000 to 1lakh">Between 50000 to 1lakh</option>
+                    <option value="between 1lakh to 2lakhs">Between 1lakh to 2lakhs</option>
+                    <option value="more than 2lakhs">More than 2lakhs</option>
+                </select>
+                <div id="btn-flex">
+                    <a id="form-4-prev" href="#"><i class="ri-arrow-left-line"></i>Previous</a>
+                    <button id="next-btn-3">Next</button>
+                </div>
+            </form>
+        </div>
+        <div class="form-div" id="form-5">
+            <i id="close-popup" class="ri-close-line"></i>
+            <h4>Food & Lifestyle</h4>
+            <form id="account-form" action="">
+                <h6>Eating Habit</h6>
+                <select class="profile" name="eating-habit">
+                    <option selected disabled>Select</option>
+                    <option value="vegetarian">Vegetarian</option>
+                    <option value="non-vegetarian">Non-vegetarian</option>
+                </select>
+                <h6>Drinking Habit</h6>
+                <select class="profile" name="drinking-habit">
+                    <option selected disabled>Select</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+                <h6>Smoking Habit</h6>
+                <select class="profile" name="smoking-habit">
+                    <option selected disabled>Select</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+                <div id="btn-flex">
+                    <a id="form-5-prev" href="#"><i class="ri-arrow-left-line"></i>Previous</a>
+                    <button id="next-btn-4">Next</button>
+                </div>
+            </form>
+        </div>
+        <div class="form-div" id="form-6">
+            <i id="close-popup" class="ri-close-line"></i>
+            <h4>Some details about the <br> family</h4>
+            <form id="account-form" action="">
+                <h6>Father's Status</h6>
+                <select name="father-status" class="profile">
+                    <option selected disabled>Select</option>
+                    <option value="employed">Employed</option>
+                    <option value="unemployed">Unemployed</option>
+                </select>
+                <h6>Mother's Status</h6>
+                <select name="mother-status" class="profile">
+                    <option selected disabled>Select</option>
+                    <option value="employed">Employed</option>
+                    <option value="housewife">Housewife</option>
+                </select>
+                <h6>No. of Brothers:</h6>
+                <input type="number" class="name" placeholder="Brothers">
+                <div id="flex-div">
+                    <div id="top">
+                        <h6>Married</h6>
+                        <input class="name" type="number" placeholder="Married">
+                    </div>
+                    <div id="bottom">
+                        <h6>Unmarried</h6>
+                        <input class="name" type="number" placeholder="Unmarried">
+                    </div>
+                </div>
+                <h6>No. of Sisters:</h6>
+                <input type="number" class="name" placeholder="Sisters">
+                <div id="flex-div">
+                    <div id="top">
+                        <h6>Married</h6>
+                        <input class="name" type="number" placeholder="Married">
+                    </div>
+                    <div id="bottom">
+                        <h6>Unmarried</h6>
+                        <input class="name" type="number" placeholder="Unmarried">
+                    </div>
+                </div>
+                <div id="btn-flex">
+                    <a id="form-6-prev" href="#"><i class="ri-arrow-left-line"></i>Previous</a>
+                    <button id="next-btn-5">Next</button>
+                </div>
+            </form>
+        </div>
+        <div class="form-div" id="form-7">
+            <i id="close-popup" class="ri-close-line"></i>
+            <h4>Partner's Basic <br> Information</h4>
+            <form id="account-form" action="">
+                <h6>Age</h6>
+                <div id="flex-div">
+                    <input type="number" class="profile" placeholder="age" min="18">
+                    <h6 class="to">to</h6>
+                    <input type="number" class="profile" placeholder="age" min="18">
+                </div>
+                <h6>Marital Status</h6>
+                <select class="profile" name="profil-for">
+                    <option selected disabled>Select</option>
+                    <option value="married">Married</option>
+                    <option value="single">Single</option>
+                    <option value="divorced">Divorced</option>
+                    <option value="widow">Widow</option>
+                </select>
+                <h6>Diet</h6>
+                <div id="flex-div" class="partner-diet">
+                    <div class="eating-diet">
+                    <h6>Eating</h6>
+                    <select class="profile" id="eating-habit" name="eating-habit">
+                        <option selected disabled>Select</option>
+                        <option value="vegetarian">Vegetarian</option>
+                        <option value="non-vegetarian">Non-vegetarian</option>
+                    </select>
+                    </div>
+                    <div class="eating-diet">  
+                    <h6>Drinking</h6>
+                    <select class="profile" id="eating-habit" name="drinking-habit">
+                        <option selected disabled>Select</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                    </div>
+                    <div class="eating-diet">   
+                    <h6>Smoking</h6>
+                    <select class="profile" id="eating-habit" name="smoking-habit">
+                        <option selected disabled>Select</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                    </div>
+                </div>
+                <h6>Height</h6>
+                <div id="flex-div">
+                    <select name="height" id="height" class="profile">
+                        <option selected disabled>Select</option>
+                        <!-- value in cm but, option in ft and inches-->
+                        <option value="121">4ft</option>
+                        <option value="123.54">4ft 1inches</option>
+                        <option value="126.08">4ft 2inches</option>
+                        <option value="128.62">4ft 3inches</option>
+                        <option value="131.16">4ft 4inches</option>
+                        <option value="133.70">4ft 5inches</option>
+                        <option value="136.24">4ft 6inches</option>
+                        <option value="138.78">4ft 7inches</option>
+                        <option value="141.32">4ft 8inches</option>
+                        <option value="143.86">4ft 9inches</option>
+                        <option value="146.4">4ft 10inches</option>
+                        <option value="152.4">5ft</option>
+                        <option value="156.94">5ft 1inches</option>
+                        <option value="159.48">5ft 2inches</option>
+                        <option value="162.02">5ft 3inches</option>
+                        <option value="164.56">5ft 4inches</option>
+                        <option value="167.1">5ft 5inches</option>
+                        <option value="169.64">5ft 6inches</option>
+                        <option value="172.18">5ft 7inches</option>
+                        <option value="174.72">5ft 8inches</option>
+                        <option value="177.26">5ft 9inches</option>
+                        <option value="179.8">5ft 10inches</option>
+                        <option value="182.88">6ft</option>
+                        <option value="185.42">6ft 1inches</option>
+                        <option value="187.96">6ft 2inches</option>
+                        <option value="190.5">6ft 3inches</option>
+                        <option value="193.0">6ft 4inches</option>
+                        <option value="195.58">6ft 5inches</option>
+                        <option value="198.12">6ft 6inches</option>
+                        <option value="200.66">6ft 7inches</option>
+                        <option value="203.2">6ft 8inches</option>
+                        <option value="205.74">6ft 9inches</option>
+                        <option value="208.28">6ft 10inches</option>
+                        <option value="213.36">7ft</option>
+                        <option value="215.9">7ft 1inches</option>
+                        <option value="218.44">7ft 2inches</option>
+                        <option value="220.98">7ft 3inches</option>
+                        <option value="223.52">7ft 4inches</option>
+                        <option value="226.06">7ft 5inches</option>
+                    </select>
+                    <h6 class="to">to</h6>
+                    <select name="height" id="height" class="profile">
+                        <option selected disabled>Select</option>
+                        <!-- value in cm but, option in ft and inches-->
+                        <option value="121">4ft</option>
+                        <option value="123.54">4ft 1inches</option>
+                        <option value="126.08">4ft 2inches</option>
+                        <option value="128.62">4ft 3inches</option>
+                        <option value="131.16">4ft 4inches</option>
+                        <option value="133.70">4ft 5inches</option>
+                        <option value="136.24">4ft 6inches</option>
+                        <option value="138.78">4ft 7inches</option>
+                        <option value="141.32">4ft 8inches</option>
+                        <option value="143.86">4ft 9inches</option>
+                        <option value="146.4">4ft 10inches</option>
+                        <option value="152.4">5ft</option>
+                        <option value="156.94">5ft 1inches</option>
+                        <option value="159.48">5ft 2inches</option>
+                        <option value="162.02">5ft 3inches</option>
+                        <option value="164.56">5ft 4inches</option>
+                        <option value="167.1">5ft 5inches</option>
+                        <option value="169.64">5ft 6inches</option>
+                        <option value="172.18">5ft 7inches</option>
+                        <option value="174.72">5ft 8inches</option>
+                        <option value="177.26">5ft 9inches</option>
+                        <option value="179.8">5ft 10inches</option>
+                        <option value="182.88">6ft</option>
+                        <option value="185.42">6ft 1inches</option>
+                        <option value="187.96">6ft 2inches</option>
+                        <option value="190.5">6ft 3inches</option>
+                        <option value="193.0">6ft 4inches</option>
+                        <option value="195.58">6ft 5inches</option>
+                        <option value="198.12">6ft 6inches</option>
+                        <option value="200.66">6ft 7inches</option>
+                        <option value="203.2">6ft 8inches</option>
+                        <option value="205.74">6ft 9inches</option>
+                        <option value="208.28">6ft 10inches</option>
+                        <option value="213.36">7ft</option>
+                        <option value="215.9">7ft 1inches</option>
+                        <option value="218.44">7ft 2inches</option>
+                        <option value="220.98">7ft 3inches</option>
+                        <option value="223.52">7ft 4inches</option>
+                        <option value="226.06">7ft 5inches</option>
+                    </select>
+                </div>
+                <h6>Community</h6>
+                <select class="profile" name="community">
+                    <option selected disabled>Select</option>
+                    <option value="Sindhi">Sindhi</option>
+                    <option value="Hindhu">Hindu</option>
+                </select>
+                <h6>Manglik</h6>
+                <select class="profile" name="profil-for">
+                    <option selected disabled>Select</option>
+                    <option value="">Yes</option>
+                    <option value="">No</option>
+                </select>
+                <div id="btn-flex">
+                    <a id="form-7-prev" href="#"><i class="ri-arrow-left-line"></i>Previous</a>
+                    <button id="next-btn-6">Next</button>
+                </div>
+            </form>
+        </div>
+        <div class="form-div" id="form-8">
+            <i id="close-popup" class="ri-close-line"></i>
+            <h4>Location Priority</h4>
+            <form id="account-form" action="">
+                <h6>City</h6>
+                <select name="city" class="town1">
+                    <option selected disabled>City</option>
+                    <option value="Bhopal">Bhopal</option>
+                    <option value="Indore">Indore</option>
+                    <option value="Nagpur">Nagpur</option>
+                    <option value="Jaipur">Jaipur</option>
+                    <option value="Surat">Surat</option>
+                </select>
+                <h6>State</h6>
+                <select name="state" class="state1">
+                    <option selected disabled>State</option>
+                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                </select>
+                <h6>Country</h6>
+                <select name="country" class="country1">
+                    <option selected disabled>Country</option>
+                    <option value="India">India</option>
+                    <option value="Pakistan">Pakistan</option>
+                    <option value="Afghanistan">Afghanistan</option>
+                    <option value="Nepal">Nepal</option>
+                </select>
+                <div id="btn-flex">
+                    <a id="form-8-prev" href="#"><i class="ri-arrow-left-line"></i>Previous</a>
+                    <button id="next-btn-7">Next</button>
+                </div>
+            </form>
+        </div>
+        <div class="form-div" id="form-9">
+            <i id="close-popup" class="ri-close-line"></i>
+            <h4>Location Education & Career</h4>
+            <form id="account-form" action="">
+                <h6>Qualification</h6>
+                <select class="profile" name="profil-for">
+                    <option selected disabled>Select</option>
+                    <option value="10">10th</option>
+                    <option value="12">12th</option>
+                    <option value="graduation">Graduation</option>
+                </select>
+                <h6>Currently work at</h6>
+                <select name="workat" class="profile">
+                    <option selected disabled>Select</option>
+                    <option value="private">Private</option>
+                    <option value="government">Government</option>
+                </select>
+                <h6>Annual Income</h6>
+                <select name="" class="profile">
+                    <option selected disabled>Select</option>
+                    <option value="less than 10000">Less than 10000</option>
+                    <option value="between 10000 to 50000">Between 10000 to 50000</option>
+                    <option value="between 50000 to 1lakh">Between 50000 to 1lakh</option>
+                    <option value="between 1lakh to 2lakhs">Between 1lakh to 2lakhs</option>
+                    <option value="more than 2lakhs">More than 2lakhs</option>
+                </select>
+                <div id="btn-flex">
+                    <a id="form-9-prev" href="#"><i class="ri-arrow-left-line"></i>Previous</a>
+                    <button id="next-btn-8">Next</button>
+                </div>
+            </form>
+        </div>
+        <div class="form-div" id="form-10">
+            <i id="close-popup" class="ri-close-line"></i>
+            <h4>About Yourself</h4>
+            <form id="account-form" action="" class="about-form">
+                <h6 class="about-form-heading">Write about yourself</h6>
+                <textarea id="w3review" name="w3review" rows="4" cols="30" placeholder="write something..."></textarea>
+                <input type="file" class="custom-file-input">
+                <div id="btn-flex" class="about-btn">
+                    <a id="form-10-prev" href="#"><i class="ri-arrow-left-line"></i>Previous</a>
+                    <button id="next-btn-9"><a href="./dashboard.html">Submit</a></button>
+                </div>
+            </form>
+        </div>
+        <div class="form-div" id="login-form" >
+            <i id="close-popup" class="ri-close-line"></i>
+            <h4>Login<h4>
+            <form id="login-form-inner" action="">
+                <h6>Email ID</h6>
+                <input class="name" id="email" type="email" placeholder="Email Address" minlength="8" required>
+                <h6>Password</h6>
+                <input class="name" type="password" placeholder="Password" minlenrequired>
+                <h6 class="forgot-password"><a href="#" id="forgot">Forgot Password?</a></h6>
+                <button id="next-btn"><a href="#">Submit</a></button>
+            </form>
+            <h5>New Member?<a id="reg" href="#">Register</a></h5>
+        </div>
+        <div class="form-div" id="forgot-pass-form" >
+            <i id="close-popup" class="ri-close-line"></i>
+            <h4>Reset Password<h4>
+            <form id="reset-form-inner" action="">
+                <h6>Email ID</h6>
+                <input class="name" id="email" type="email" placeholder="Email Address" required>
+                <h6>New Password</h6>
+                <input class="name" type="password" placeholder="Password" required>
+                <h6>Confirm Password</h6>
+                <input class="name" type="password" placeholder="Password" required>
+                <button id="next-btn" type="reset"><a href="#">Reset</a></button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Login-pop-up -->
+    <div class="login-pop-up">
+        <div class="form-div" id="login_form">
+            <i id="close-popup" class="ri-close-line"></i>
+            <h4>Login</h4>
+            <form class="login-form-outer" id="login-form-inner" action="">
+                <h6>Email ID</h6>
+                <input class="name" id="email" type="email" placeholder="Email Address" required>
+                <h6>Password</h6>
+                <input class="name" type="password" placeholder="Password" required>
+                <h6 class="forgot-password-btn"><a href="#" id="forgot">Forgot Password?</a></h6>
+                <button id="next-btn"><a href="#">Submit</a></button>
+            </form>
+            <h5>New Member?<a id="reg" href="#">Register</a></h5>
+        </div>
+    </div>
+
+    <!-- Forgot-password-popup -->
+    <div class="forgot-pop-up">
+        <div class="form-div" id="forgot_password_form">
+            <i id="close-popup" class="ri-close-line"></i>
+            <h4>Reset Password</h4>
+            <form id="reset-form-inner" action="">
+                <h6>Email ID</h6>
+                <input class="name" id="email" type="email" placeholder="Email Address" required>
+                <h6>Password</h6>
+                <input class="name" type="password" placeholder="Password" required>
+                <h6>Confirm Password</h6>
+                <input class="name" type="password" placeholder="Password" required>
+                <button id="next-btn" type="reset"><a href="#">Reset</a></button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <h1 class="page-heading">About Us</h1>
+    
+    <!-- Section-1 -->
+    <div class="sec-1">
+        <div class="sec1-about">
+            <p class="heading-about">Shehnayi is a match-making company exclusively for sindhi community. We are trying to resolve the problem and shorten the long-time taking process of finding someone special for you. Get a perfect match by using modern technology but still following the traditional values and cultures. We are here to serve you in a best possible way.</p>
+            <h2 class="sec1-message">Our message</h2>
+            <p class="message">The Best Marketers enjoy and love what they do. Shehnayi team always wnsures Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum accusantium, tempora harum eveniet vitae enim laudantium animi similique aliquam sequi, eligendi sit corrupti sint quos. Adipisci soluta molestias cumque incidunt!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+        </div>
+        <div class="sec1-img">
+            <img src="./Images/about-us-couple.png" alt="">
+        </div>
+    </div>
+
+    <!-- Section-2 -->
+    <div class="sec-2">
+        <div class="sec-2-bgimg">
+            <img src="./img/about-bg1.jpeg" alt="">
+        </div>
+        <div class="sec-2-team">
+            <div class="sec-2-icons">
+                <div id="pic-1"></div>
+                <div id="pic-2"></div>
+                <div id="pic-3"></div>
+                <div id="pic-4"></div>
+                <div id="pic-5"></div>
+            </div>
+            <div class="sec2-team-about">
+                <h2 class="sec2-team-heading"><a href="./our_team.html">Shehnayi Team</a></h2>
+                <p class="sec2-team-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat maxime excepturi temporibus, molestiae deleniti cumque distinctio perspiciatis ullam! Temporibus dolorum hic rem recusandae magnam voluptatum consequuntur corporis minus aperiam tempora!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section-3 -->
+    <div class="sec-3">
+        <div class="sec-3-investor">
+            <h2 class="sec-3-heading">Our Vision</h2>
+            <p class="sec-3-desc">Shehnayi’s vision is to build a close and healthy relationship with our clients and wants to build trust among our community by understanding our client’s needs for a partner and providing services to meet their needs and work accordingly. Marriage involves two different personalities with different perspectives, emotions, desires, feelings, and needs, so by understanding client’s requirements we want to make the selection process easy for them and serve them in a better way.</p>
+        </div>
+        <div class="sec-3-image">
+            <img src="./Images/about-investors.webp" alt="">
+        </div>
+    </div>
+
+    <!-- Section-4 -->
+    <div class="sec-4">
+        <h2 class="sec-4-heading">Our Mission</h2>
+        <p class="sec-4-desc">Our mission and objectives are to serve our community by providing genuine and verified profile information, to shorten the long-time taking process of searching matches and help them to find their perfect life partner. We are trying to do this with the help of advance technology to make the process easier and more convenient for people to search and select the suitable matches for them.
+        </p>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="logo-img">
+            <img src="./Images/shehnayilogowhite.svg" alt="Shehnayi-logo" title="Shehnayi">
+        </div>
+        <div class="footer-links">
+            <div class="foot-links-div">
+                <h4 class="links-title">Need Help?</h4>
+                <ul class="foot-links">
+                    <li><a href="#">Member Login</a></li>
+                    <li><a href="#">Sign Up</a></li>
+                    <li><a href="#">Partner Search</a></li>
+                    <li><a href="faq.html">How to use</a></li>
+                    <li><a href="membership-plan.html">Premium membership</a></li>
+                    <li><a href="#">Customer Support</a></li>
+                </ul>
+            </div>
+            <div class="foot-links-div">
+                <h4 class="links-title">Company</h4>
+                <ul class="foot-links">
+                    <li><a href="about.html">About US</a></li>
+                    <li><a href="blogs.html">Shaadi Blogs</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Awards</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="foot-links-div">
+                <h4 class="links-title">Privacy & You</h4>
+                <ul class="foot-links">
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Be Safe Online</a></li>
+                    <li><a href="#">Reports Misuse</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="social-links">
+            <h4 class="social-title">
+                Follow Us
+            </h4>
+            <div class="social-icons">
+                <a href="#" class="social-icons-link"><img src="./Icons/footer-fb-icon.svg" alt=""></a>
+                <a href="#" class="social-icons-link"><img src="./Icons/footer-twitter-icon.svg" alt=""></a>
+                <a href="#" class="social-icons-link"><img src="./Icons/footer-insta-icon.svg" alt=""></a>
+                <a href="#" class="social-icons-link"><img src="./Icons/footer-linkedin-icon.svg" alt=""></a>
+            </div>
+        </div>
+        <div class="footer-end">
+            <a href="" class="terms-condtns">Terms and Conditions</h4>
+            <a href="" class="privacy-policy">Privacy Policy</h4>
+            <a href="contact.html" class="contact-us">Contact Us</h4>
+        </div>
+    </div>    
+
+    <!-- Script -->
+    <script src="./js/about.js"></script>
+    
+</body>
+</html>

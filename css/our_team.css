@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Inria+Serif:wght@900&family=Inter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* SECTION -1 */
+.sec5-head {
+    color: #9c0808;
+    font-size: 3vw;
+    font-weight: 700;
+    line-height: 100px;
+    letter-spacing: 0.01em;
+    text-align: center;
+    margin: 2rem 0;
+    font-family: "Poppins", sans-serif;
+}
+.sec5-outter-div {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    margin-bottom: 5rem;
+}
+.sec5-inner-element {
+    display: flex;
+    gap: 5rem;
+    justify-content: center;
+}
+.sec5-text {
+    border-radius: 30px;
+    height: 300px;
+    width: 35%;
+    border: 2px solid #b5b5b5;
+}
+.sec5-text h2 {
+    font-family: "Poppins",sans-serif;
+    font-size: 2vw;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    text-align: center;
+    color: #9c0808;
+    margin-top: 1rem;
+    margin-bottom: 0rem;
+}
+.sec5-text p {
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-size: 1.1vw;
+    letter-spacing: 0.01em;
+    text-align: center;
+    color: #800303;
+    padding: 1rem;
+}
+.sec5-img {
+    height: 100%;
+    width: 100%;
+    border-radius: 30px;
+}
+.sec5-element1-img {
+    border-radius: 30px;
+    background-image: url('./Images/about-team3.jpg');
+    height: 300px;
+    width: 35%;
+    background-size: cover;
+    background-position: top 10% center;
+    background-repeat: no-repeat;
+    filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.4));
+}
+.sec5-element2-img {
+    border-radius: 30px;
+    background-image: url('./Images/about-team1.webp');
+    height: 300px;
+    width: 35%;
+    background-size: cover;
+    background-position: bottom 40% center;;
+    background-repeat: no-repeat;
+    filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.4));
+}
+.sec5-element3-img {
+    border-radius: 30px;
+    background-image: url('./Images/about-team6.jpg');
+    height: 300px;
+    width: 35%;
+    background-size: cover;
+    background-position: bottom 60% center;
+    background-repeat: no-repeat;
+    filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.4));
+}
+.sec5-element4-img {
+    border-radius: 30px;
+    background-image: url('./Images/about-team5.webp');
+    height: 300px;
+    width: 35%;
+    background-size: cover;
+    background-position: bottom 60% center;
+    background-repeat: no-repeat;
+    filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.4));
+}
+.sec6 {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+}

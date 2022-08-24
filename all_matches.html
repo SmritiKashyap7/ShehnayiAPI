@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matches</title>
+
+    <!-- Title icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./title_icons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./title_icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./title_icons/favicon-16x16.png">
+
+    <!-- CSS link -->
+    <link rel="stylesheet" href="./css/navbar2.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/all_matches.css" />
+    <link rel="stylesheet" href="./css/my_matches2.css">
+    <link rel="stylesheet" href="./css/chat.css">
+
+    <!-- Font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Boxicons cdn -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Remixicon cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet"/>
+
+
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div id="mobileview">
+        <i class="ri-close-line">
+        </i>
+        <div id="nav-elements">
+            <a href="dashboard.html">HOME</a>
+            <a href="#">MATCHES</a> 
+            <a href="./activity.html">ACTIVITY</a> 
+            <a href="membership-plan.html">MEMBERSHIP</a> 
+            <a href="./user_page.html">PROFILE</a>
+            <a href="#" id="notif" title="Notifications"><i class='bx bxs-bell'></i></a>
+            <a href="#" id="search" title="Search"><i class='bx bx-search'></i></a>
+            <a href="./settings.html" title="Settings"><i class='bx bxs-cog' ></i></a>
+        </div>
+    </div>
+
+    <div class="navbar">
+        <a id="menu"><i class='bx bx-menu'></i></a>
+        <div class="logo">
+            <a href="dashboard.html"><img src="./Images/shehnayioriginallogo.svg" alt="Shehnayi" title="Shehnayi"></a>
+        </div>
+        <div class="nav-links" id="nav-links">
+            <ul class="nav-list">
+                <li class="text-item"><a href="dashboard.html">Home</a></li>
+                <li class="text-item matches-item" id="matches">
+                    <a href="#" class="matches-txt">Matches<i id="open-dropdown" class="ri-arrow-down-s-fill"></i></a>
+                    <ul id="matches-dropdown">
+                        <li class="nots"><a class="matches-dropdown-item" href="./all_matches.html">All matches</a></li>
+                        <li class="nots all-profile"><a class="matches-dropdown-item" href="./all_profiles.html">All profiles</a></li>
+                    </ul>
+                </li>
+                <li class="text-item"><a href="./activity.html">Activity</a></li>
+                <li class="text-item"><a href="./membership1.html">Membership</a></li>
+                <li class="text-item"><a href="user_page.html" >Profile</a></li>
+                <li class="icons-item" id="notife"><i class='bx bxs-bell'></i></li>
+                <li class="icons-item" id="searche"><i class='bx bx-search'></i></li>
+                <li class="icons-item" id="settinge"><i class='bx bxs-cog' ></i></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Notification popup -->
+    <div id="not-popup">
+        <div class="nots">
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="nots">
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="nots">
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="nots">
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="nots">
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="nots">
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="nots">
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="nots">
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+    </div>
+
+    <!-- Search popup -->
+    <div id="nav-srch">
+        <div class="form-div">
+            <div id="heading">
+                <h2>Quick Search</h2>
+            </div>
+            <hr class="search-heading-line">
+            <form action="" id="search-form">
+                <h4>Age:</h4>
+                <div class="input-flex"> 
+                    <select class="search-age">
+                        <option selected disabled>Select</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                    </select>
+                    <p>to</p>
+                    <select class="search-age">
+                        <option selected disabled>Select</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                    </select>
+                </div>
+                <h4>Height:</h4>
+                <input type="text" name="height" placeholder="Height">
+                <h4>Country:</h4>
+                <select class="search-country">
+                    <option selected disabled>Select</option>
+                    <option value="India">India</option>
+                    <option value="Pakistan">Pakistan</option>
+                    <option value="Bangladesh">Bangladesh</option>
+                    <option value="Sri Lanka">Sri Lanka</option>
+                    <option value="Afghanistan">Afghanistan</option>
+                    <option value="UAE">UAE</option>
+                </select>
+                <h4>State:</h4>
+                <select class="search-state">
+                    <option selected disabled>Select</option>
+                    <option value="">Madhya Pradesh</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Punjab">Punjab</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                    <option value="Chandigarh">Chandigarh</option>
+                </select>
+                <h4>City:</h4>
+                <input type="text" name="city" placeholder="City">
+                <h4>Education:</h4>
+                <input type="text" name="education" placeholder="Education">
+                <h4>Occupation:</h4>
+                <input type="text" name="occupation" placeholder="Occupation">
+                <div class="btn-flex">
+                    <button>
+                        <i class="ri-search-line"></i>
+                        Search
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Settings popup -->
+    <div class="setting-popup">
+        <div class="setting-items">
+            <a href="./account_settings.html">Settings & privacy</p>
+        </div>
+        <div class="setting-items logout-text">
+            <a href="#">Logout</a>
+        </div>
+    </div>
+
+    <!-- Chat-icon -->
+    <div class="chat-div">
+        <i class='bx bx-message-rounded-dots' ></i>
+    </div>
+
+    <!-- Message popup -->
+    <div id="msg-popup">
+        <div id="msg-box">
+        <div id="msg-heading">
+            <div id="lft">
+                <i id="back" class="ri-arrow-left-line"></i>
+                <i class="ri-file-copy-line"></i>
+            </div>
+            <div id="cntr">
+                <h1>Message</h1>
+            </div>
+            <div id="rgt">
+                <i class="ri-settings-5-line"></i>
+                <i class="ri-more-fill"></i>
+                <i id="close" class="ri-close-line"></i>
+            </div>
+        </div>
+        <div id="sec-2">
+            <div id="sec-2-lft">
+                <div id="lft-top">
+                    <div id="left-top">
+                        <i class="ri-search-line"></i>
+                        <input type="text" placeholder="Search">
+                    </div>
+                    <i class="ri-add-box-line"></i>
+                </div>
+                <div id="lft-bottom">
+                    <div class="lft-users">
+                        <div class="user-img">
+                            <img src="https://images.unsplash.com/photo-1615109398623-88346a601842?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="">
+                        </div>
+                        <div class="user-msgs">
+                            <h3 class="rgt-txt">Edaward Devis</h3>
+                            <p>Hey, there</p>
+                        </div>
+                        <div class="time">
+                            <p>8.45 AM</p>
+                            <div class="unseen-msgs">
+                                <h6>3</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line"></div>
+                    <div class="lft-users">
+                        <div class="user-img">
+                            <img src="https://images.unsplash.com/photo-1615109398623-88346a601842?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="">
+                        </div>
+                        <div class="user-msgs">
+                            <h3 class="rgt-txt">Edaward Devis</h3>
+                            <p>Hey, there</p>
+                        </div>
+                        <div class="time">
+                            <p>8.45 AM</p>
+                            <div class="unseen-msgs">
+                                <h6>3</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line"></div>
+                    <div class="lft-users">
+                        <div class="user-img">
+                            <img src="https://images.unsplash.com/photo-1615109398623-88346a601842?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="">
+                        </div>
+                        <div class="user-msgs">
+                            <h3 class="rgt-txt">Edaward Devis</h3>
+                            <p>Hey, there</p>
+                        </div>
+                        <div class="time">
+                            <p>8.45 AM</p>
+                            <div class="unseen-msgs">
+                                <h6>3</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line"></div>
+                    <div class="lft-users">
+                        <div class="user-img">
+                            <img src="https://images.unsplash.com/photo-1615109398623-88346a601842?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="">
+                        </div>
+                        <div class="user-msgs">
+                            <h3 class="rgt-txt">Edaward Devis</h3>
+                            <p>Hey, there</p>
+                        </div>
+                        <div class="time">
+                            <p>8.45 AM</p>
+                            <div class="unseen-msgs">
+                                <h6>3</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line"></div>
+                </div>
+            </div>
+            <div id="sec-2-rgt">
+                <div id="rgt-top">
+                    <h3 class="rgt-txt">To: Edward Devis</h3>
+                    <i class="ri-arrow-right-s-line"></i>
+                </div>
+                <div id="rgt-cntr">
+                    <div class="user1">
+                        <div class="user11">
+                            <p>hey</p>
+                        </div>
+                    </div>
+                    <div class="user2">
+                        <div class="user22">
+                            <p>Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+                    <div class="user1">
+                        <div class="user11">
+                            <p>hey</p>
+                        </div>
+                    </div>
+                    <div class="user2">
+                        <div class="user22">
+                            <p>Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+                    <div class="user1">
+                        <div class="user11">
+                            <p>hey</p>
+                        </div>
+                    </div>
+                    <div class="user2">
+                        <div class="user22">
+                            <p>Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+                    <div class="user1">
+                        <div class="user11">
+                            <p>hey</p>
+                        </div>
+                    </div>
+                    <div class="user2">
+                        <div class="user22">
+                            <p>Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="rgt-bottom">
+                    <div id="input-div">
+                        <i class="ri-add-circle-line"></i>
+                        <input id="type-msg" type="text" placeholder="Type Something...">
+                    </div>
+                    <i class="ri-send-plane-line"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div id="main">
+        <h2 class="main-heading">Your matches</h2>
+        <div id="sec-1">
+            <div class="prev-nxt-btn">
+                <div class="nxt">
+                    <i class="ri-arrow-left-line"></i>
+                    <p>Previous</p>
+                </div>
+                <div class="nxt">
+                    <p>Next</p>
+                    <i class="ri-arrow-right-line"></i>
+                </div>
+            </div>
+            <div class="profs">
+                <div class="img-div">
+                    <a href="./user_page.html"><img src="./Images/about-team3.jpg" alt=""/></a>
+                </div>
+                <div class="txt-div">
+                    <div class="name">
+                        <h1>Rohan</h1>
+                        <div class="drop-down">
+                            <label for="open-dropdown" class="onlinebtn">Online Now <i id="open-dropdown" class="ri-arrow-down-s-fill"></i></label>
+                            <div id="dropss" class="drop-list">
+                                <h5>Remove</h5>
+                                <h5>Block</h5>
+                                <h5>Report</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="details-div">
+                        <div class="lft">
+                            <h3 class="lft-head-txt">22 Yrs, 6'0', Bhopal</h3>
+                            <h3 class="lft-head-txt">Sindhi</h3>
+                            <h3 class="lft-head-txt">Hindi</h3>
+                        </div>
+                        <div class="rgt">
+                            <h3 class="rgt-head-txt">Never Married</h3>
+                            <h3 class="rgt-head-txt">Lives in Bhopal, Madhya Pradesh</h3>
+                            <h3 class="rgt-head-txt">Student</h3>
+                            <h6 class="rgt-head-txt" id="first">Know more...</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="send-interest">
+                    <a href="./user_page.html"><i class="ri-arrow-right-line"></i></a>
+                    <h4>View Profile</h4>
+                </div>
+            </div>
+            <div class="full-dets">
+                <div class="dets-img-div">
+                    <i class="ri-lock-fill"></i>
+                    <i class="ri-lock-fill"></i>
+                    <i class="ri-lock-fill"></i>
+                    <i class="ri-lock-fill"></i>
+                    <i class="ri-lock-fill"></i>
+                    <i class="ri-lock-fill"></i>
+                    <i class="ri-lock-fill"></i>
+                </div>
+
+                <button class="imgunlockbtn">
+                    <a href="#">Upgrade Now</a>
+                </button>
+                <!-- <button>Upgrade Now</button> -->
+
+                <div class="full-dets-container">
+                    <div class="dets-div">
+                        <div class="icon-div">
+                            <i class="ri-share-box-line"></i>
+                            <a href=""><i onclick="window.print()" class="ri-printer-line"></i></a>
+                        </div>
+                        <div class="section-1">
+                            <div class="heads">
+                                <a href="#details"><h3 id="details">Detailed Profile</h3></a>
+                                |
+                                <a href="#prtnr-pref"><h3>Partner Preference</h3></a>
+                            </div>
+                            <div class="logo">
+                                <i class="ri-booklet-line"></i>
+                                <h2>Basic Details</h2>
+                            </div>
+                            <div class="details-div">
+                                <div class="lft">
+                                    <div class="lft-elems">
+                                        <h3 class="lft-tag">Name</h3><h3 class="rgt-txt">Pooja</h3>
+                                    </div>
+                                    <div class="lft-elems">
+                                        <h3 class="lft-tag">DOB</h3><h3 class="rgt-txt">22/10/1999</h3>
+                                    </div>
+                                    <div class="lft-elems">
+                                        <h3 class="lft-tag">Height</h3><h3 class="rgt-txt">5ft 6in</h3>
+                                    </div>
+                                    <div class="lft-elems">
+                                        <h3 class="lft-tag">Marital Status</h3><h3 class="rgt-txt">Unmarried</h3>
+                                    </div>
+                                    <div class="lft-elems">
+                                        <h3 class="lft-tag">Occupation</h3><h3 class="rgt-txt">Software Developer</h3>
+                                    </div>
+                                    <div class="lft-elems">
+                                        <h3 class="lft-tag">Location</h3><h3 class="rgt-txt">Bhopal, Madhya Pradesh</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-1">
+                            <div id="logo-2" class="logo">
+                                <i class="fa-solid fa-om"></i>
+                                <h2>Religious Background</h2>
+                            </div>
+                            <div class="details-div">
+                                <div class="lft">
+                                    <div class="lft-elems">
+                                        <h3 class="lft-tag">Religion</h3><h3 class="rgt-txt">Sindhi</h3>
+                                    </div>
+                                    <div class="lft-elems">
+                                        <h3 class="lft-tag">Sub Caste</h3><h3 class="rgt-txt">Hindu</h3>
+                                    </div>
+                                    <div class="lft-elems">
+                                        <h3 class="lft-tag">Horoscope</h3><h3 class="rgt-txt">Dont't Know</h3>
+                                    </div>
+                                    <div class="lft-elems">
+                                        <h3 class="lft-tag">Gothra</h3><h3 class="rgt-txt">Dont't Know</h3>
+                                    </div>
+                                    <div class="lft-elems">
+                                        <h3 class="lft-tag">Manglik</h3><h3 class="rgt-txt">No</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-1">
+                            <div id="logo-2" class="logo">
+                                <i class="ri-book-2-line"></i>
+                                <h2>Education & Career</h2>
+                            </div>
+                            <div class="details-div">
+                                <div class="lft">
+                                    <div class="lft-elems">
+                                        <h3 class="lft-tag">Qualification</h3><h3 class="rgt-txt">Graduate</h3>
+                                    </div>
+                                    <div class="lft-elems">
+                                        <h3 class="lft-tag">College</h3><h3 class="rgt-txt">XYZ</h3>
+                                    </div>
+                                    <div class="lft-elems">
+                                        <h3 class="lft-tag">Working With</h3><h3 class="rgt-txt">ABC Company</h3>
+                                    </div>
+                                    <div class="lft-elems">
+                                        <h3 class="lft-tag">Working As</h3><h3 class="rgt-txt">Developer</h3>
+                                    </div>
+                                    <div class="lft-elems">
+                                        <h3 class="lft-tag">Annual Income</h3><h3 class="rgt-txt">--</h3>
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-1">
+                            <div id="logo-2" class="logo">
+                                <i class="fa-solid fa-utensils"></i>
+                                <h2>Food & Lifestyle</h2>
+                            </div>
+                            <div class="details-div">
+                                <div class="lft">
+                                    <div class="lft-elems">
+                                        <h3 class="lft-tag">Eating Habbit</h3><h3 class="rgt-txt">Vegetarian</h3>
+                                    </div>
+                                    <div class="lft-elems">
+                                        <h3 class="lft-tag">Drinking Habbit</h3><h3 class="rgt-txt">No</h3>
+                                    </div>
+                                    <div class="lft-elems">
+                                        <h3 class="lft-tag">Smoking Habbit</h3><h3 class="rgt-txt">No</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-1">
+                            <div id="logo-2" class="logo">
+                                <i class="fa-solid fa-people-group"></i>
+                                <h2>Family Details</h2>
+                            </div>
+                            <div class="details-div">
+                                <div class="lft">
+                                    <div class="lft-elems">
+                                        <h3 class="lft-tag">Father's Status</h3><h3 class="rgt-txt">Businessman</h3>
+                                    </div>
+                                    <div class="lft-elems">
+                                        <h3 class="lft-tag">Mother's Status</h3><h3 class="rgt-txt">House Wife</h3>
+                                    </div>
+                                    <div class="lft-elems">
+                                        <h3 class="lft-tag">No. of Brother's</h3><h3 class="rgt-txt">2</h3>
+                                    </div>
+                                    <div class="lft-elems">
+                                        <h3 class="lft-tag">No. of Sister's</h3><h3 class="rgt-txt">1</h3>
+                                    </div>  
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="hr" />
+                        <div class="section-1">
+                            <div class="heads2">
+                            <a href="#details"><h3>Detailed Profile</h3></a>
+                            |
+                            <a href="#prtnr-pref"><h3 id="prtnr-pref">Partner Preference</h3></a>
+                            </div>
+                            <div class="logo">
+                                <i class="ri-booklet-line"></i>
+                                <h2>Partner's Basic Information</h2>
+                            </div>
+                            <div class="details-div">
+                                <div class="lft">
+                                    <div class="lft-elems">
+                                        <h3 class="lft-tag">Age</h3><h3 class="rgt-txt">20 to 30</h3>
+                                    </div>
+                                    <div class="lft-elems">
+                                        <h3 class="lft-tag">Marital Status</h3><h3 class="rgt-txt">Single</h3>
+                                    </div>
+                                    <div class="lft-elems">
+                                        <h3 class="lft-tag">Diet</h3><h3 class="rgt-txt">Vegetarian</h3>
+                                    </div>
+                                    <div class="lft-elems">
+                                        <h3 class="lft-tag">Height</h3><h3 class="rgt-txt">5ft 5in</h3>
+                                    </div>
+                                    <div class="lft-elems">
+                                        <h3 class="lft-tag">Community</h3><h3 class="rgt-txt">Sindhi</h3>
+                                    </div>
+                                    <div class="lft-elems">
+                                        <h3 class="lft-tag">Manglik</h3><h3 class="rgt-txt">No</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-1">
+                            <div id="logo-2" class="logo">
+                                <i class="ri-map-pin-line"></i>
+                                <h2>Location Priority</h2>
+                            </div>
+                            <div class="details-div">
+                                <div class="lft">
+                                    <div class="lft-elems">
+                                        <h3 class="lft-tag">City</h3><h3 class="rgt-txt">Mumbai</h3>
+                                    </div>
+                                    <div class="lft-elems">
+                                        <h3 class="lft-tag">State</h3><h3 class="rgt-txt">Maharashtra</h3>
+                                    </div>
+                                    <div class="lft-elems">
+                                        <h3 class="lft-tag">Country</h3><h3 class="rgt-txt">India</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-1">
+                            <div id="logo-2" class="logo">
+                                <i class="ri-book-2-line"></i>
+                                <h2>Education & Career</h2>
+                            </div>
+                            <div class="details-div">
+                                <div class="lft">
+                                    <div class="lft-elems">
+                                        <h3 class="lft-tag">Qualification</h3><h3 class="rgt-txt">Graduate</h3>
+                                    </div>
+                                    <div class="lft-elems">
+                                        <h3 class="lft-tag">Profession</h3><h3 class="rgt-txt">Developer</h3>
+                                    </div>
+                                    <div class="lft-elems">
+                                        <h3 class="lft-tag">Annual Income</h3><h3 class="rgt-txt">Above 5lakhs</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="logo-img">
+            <img src="./Images/shehnayilogowhite.svg" alt="Shehnayi-logo" title="Shehnayi">
+        </div>
+        <div class="footer-links">
+            <div class="foot-links-div">
+                <h4 class="links-title">Need Help?</h4>
+                <ul class="foot-links">
+                    <li><a href="#">Member Login</a></li>
+                    <li><a href="#">Sign Up</a></li>
+                    <li><a href="#">Partner Search</a></li>
+                    <li><a href="faq1.html">How to use</a></li>
+                    <li><a href="membership1.html">Premium membership</a></li>
+                    <li><a href="#">Customer Support</a></li>
+                </ul>
+            </div>
+            <div class="foot-links-div">
+                <h4 class="links-title">Company</h4>
+                <ul class="foot-links">
+                    <li><a href="about1.html">About US</a></li>
+                    <li><a href="blogs.html">Shaadi Blogs</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Awards</a></li>
+                    <li><a href="contact1.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="foot-links-div">
+                <h4 class="links-title">Privacy & You</h4>
+                <ul class="foot-links">
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Be Safe Online</a></li>
+                    <li><a href="#">Reports Misuse</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="social-links">
+            <h4 class="social-title">
+                Follow Us
+            </h4>
+            <div class="social-icons">
+                <a href="#" class="social-icons-link"><img src="./Icons/footer-fb-icon.svg" alt=""></a>
+                <a href="#" class="social-icons-link"><img src="./Icons/footer-twitter-icon.svg" alt=""></a>
+                <a href="#" class="social-icons-link"><img src="./Icons/footer-insta-icon.svg" alt=""></a>
+                <a href="#" class="social-icons-link"><img src="./Icons/footer-linkedin-icon.svg" alt=""></a>
+            </div>
+        </div>
+        <div class="footer-end">
+            <a href="" class="terms-condtns">Terms and Conditions</h4>
+            <a href="" class="privacy-policy">Privacy Policy</h4>
+            <a href="contact1.html" class="contact-us">Contact Us</h4>
+        </div>
+    </div>
+
+    <script src="./js/my_matches.js"></script>
+    <script src="./js/all_matches.js"></script>
+    <script src="./js/chat.js"></script>
+    <!-- <script src="./about.js"></script> -->
+
+</body>
+</html>

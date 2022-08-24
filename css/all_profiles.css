@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Inria+Serif:wght@900&family=Inter:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+#group110{
+    width: 100%;
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+}
+
+#right-js {
+    font-size: 1vw;
+    min-height: 100%;
+    width: max-content;
+    margin: auto;
+}
+#actsumm{
+    font-size: 1vw;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 3.75em;
+    width: 14.375em;
+    border-radius: 1.5625em;
+    color:white;
+    background-color:#AD0909;
+    margin-top: 2.5em;
+}
+
+#actsumm h4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2625vw;
+}
+
+#flex-js{
+    font-size: 1vw;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    height: 15.625em;
+    width: 73%;
+    margin-top: 1.5em;
+}
+.alone{
+    font-size: 2vw;
+    margin-top: 2.5em;
+    color: #7d0202;
+}
+
+.card-js{
+    display: flex;
+    width: 100%;
+    justify-content:space-between;
+    align-items: center;
+}
+.card-js-js{
+    font-size: 1vw;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    height: 8em;
+    width: 15em;
+    border: 1px solid #838080;
+
+}
+.flex-js-card{
+    text-align: center;
+}
+.flex-js-card h1{
+    font-size: 1.3625vw;
+    color: #E10F0F;
+}
+
+.slick-js{
+    font-size: 1vw;
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:1.25em;
+    margin-bottom: 4em;
+    width: 65em;
+    text-align: center;
+    padding:0.625em;
+    
+}
+.slick-prev:before, .slick-next:before {
+    color: black;
+    font-size: 1.5vw;
+}
+
+.slick-card{
+    font-size: 1vw;
+    height: 31.875em;
+    margin-right: 2.5em;
+    border-bottom-right-radius: 1.5625em;
+    border-bottom-left-radius: 1.5625em;
+    border: 1px solid #838080;
+}
+
+.slick-card-img{
+    height: 65%;
+    width: 100%;
+    overflow: hidden;
+    transition: all linear .2s;
+}
+.slick-card-img:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.slick-card-img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.slick-card-dets h5{
+    color:black;
+    font-weight: 400;
+    margin-top: 0.3125em;
+    font-size: 1vw;
+}
+
+.slick-card-dets h1{
+    color:#d43b3b;
+    font-weight: 400;
+    font-size: 1.5vw;
+}
+
+.slick-card-a button{
+    font-size: 1vw;
+    padding: 0.6em 1em;
+    border-radius: 3.125em;
+    margin-top: 0.325em;
+    color: white;
+    font-weight: 500;
+    background-color: #1E88A2;
+    border: none;
+    cursor: pointer;
+    transition: all ease-in .2s;
+}
+.slick-card-a button:hover {
+    background-color: #58abc0;
+}
