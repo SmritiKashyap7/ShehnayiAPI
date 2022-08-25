@@ -201,10 +201,10 @@
                     </div>
                 </div>
                 <div id="details-js-js">
-                    <h5>1234567890</h5>
-                    <h5>John Doe</h5>    
+                    <h5 id="apidbuserid">1234567890</h5>
+                    <h5 id="apidbusername">John Doe</h5>    
                     <a href="./user_page.html">View/Edit Profile</a>
-                    <a href="#">Verify your ID <span><img id="verify-js" src="./asset/icons8-verified-badge-96.png" alt=""></span> </a>
+                    <!-- <a href="#">Verify your ID <span><img id="verify-js" src="./asset/icons8-verified-badge-96.png" alt=""></span> </a> -->
                 </div>
             </div>
             <!-- <img src="./asset/pngegg (13).svg" alt=""> -->
@@ -214,8 +214,8 @@
                 <div class="card-js">
                     <div class="card-js-js">
                         <div class="flex-js-card">
-                            <a href="#" id="apidbpendinginterest">
-                                <h1>10</h1>
+                            <a href="#" >
+                                <h1 id="apidbpendinginterest">10</h1>
                                 <h1>Pending Interest</h1>
                             </a>
                         </div>
@@ -242,9 +242,9 @@
             <div class="chat-div">
                 <i class='bx bx-message-rounded-dots' ></i>
             </div>
-            <h2 class="alone" >All Preffered Matches</h2>
+            <h2 class="alone" id="apidbmatchesheading" >All Preffered Matches</h2>
             <div class="slick-js" id="apidbmatches">
-                <div class="slick-card">
+                 <!-- <div class="slick-card">
                     <div class="slick-card-img">
                         <a href="./user_page.html"><img id="userImg" src="./asset/block-img.jpg" alt="John"></a>
                     </div>
@@ -369,10 +369,10 @@
                     <a  class="slick-card-a" href="">
                         <button>Send Interest</button>
                     </a>
-                </div>
+                </div>  -->
                 
             </div>
-            <h2 class="alone" >Recommended By Us</h2>
+            <h2 class="alone" id="apidbrecommendedmatchesheading">Recommended By Us</h2>
             <div class="slick-js" id="apidbrecommendedmatches">
                 <!-- <div class="slick-card">
                     <div class="slick-card-img">
@@ -738,7 +738,12 @@
                     document.querySelector("#apidbvisitors").innerHTML = data.foundUser.viewProfilers.length;
                     console.log(data);
                     console.log(data.foundUser.pendingRequests.length);
-                    var clutter1 = ''
+                    console.log(data.matches);
+                    console.log(data.recommendedMatches); 
+                    document.querySelector("#apidbusername").innerHTML = data.foundUser.firstname+" "+data.foundUser.lastname;
+                    document.querySelector("#apidbuserid").innerHTML=data.foundUser._id.substring(4,13);
+                    if(data.matches.length>0){
+                        var clutter1 = ''
                     data.matches.forEach((element,index) => {
                         console.log("element");
                         clutter1 += `<div class="slick-card">
@@ -746,10 +751,10 @@
                         <a href="./user_page.html"><img id="userImg" src="./asset/block-img.jpg" alt="John"></a>
                     </div>
                     <div class="slick-card-dets">
-                        <h1>John</h1>
-                        <h5>Age - xx</h5>
-                        <h5>Sindhi-Sahati</h5>
-                        <h5>Bhopal, Madhya Pradesh</h5>
+                        <h1>${element.firstname}</h1>
+                        <h5>Age -${element.age}</h5>
+                        <h5>${element.cast}-${element.subCaste}</h5>
+                        <h5>${element.city}, ${element.state}</h5>
                     </div>
                     <a  class="slick-card-a" href="">
                         <button id="btn${index}" data-id= ${element._id} >Send Interest</button>
@@ -757,6 +762,11 @@
                 </div>`
                     });
                     document.querySelector("#apidbmatches").innerHTML = clutter1;
+                    }
+                    else{
+                        document.querySelector("#apidbmatchesheading").style.display = "none";
+                    }
+if(data.recommendedMatches.length>0){
                     var clutter2=''
                     data.recommendedMatches.forEach((element, index) => {
                         // console.log("hey");
@@ -765,10 +775,10 @@
                         <a href="./user_page.html"><img id="userImg" src="./asset/block-img.jpg" alt="John"></a>
                     </div>
                     <div class="slick-card-dets">
-                        <h1>John</h1>
-                        <h5>Age - xx</h5>
-                        <h5>Sindhi-Sahati</h5>
-                        <h5>Bhopal, Madhya Pradesh</h5>
+                        <h1>${element.firstname}</h1>
+                        <h5>Age - ${element.age}</h5>
+                        <h5>${element.cast}-${element.subCaste}</h5>
+                        <h5>${element.city},${element.state}</h5>
                     </div>
                     <a  class="slick-card-a" href="">
                         <button id="btn${index}" data-id= ${element._id} >Send Interest</button>
@@ -776,7 +786,21 @@
                 </div>`
 
                 }
-                );     document.querySelector("#apidbrecommendedmatches").innerHTML = clutter2;
+                );     document.querySelector("#apidbrecommendedmatches").innerHTML = clutter2;}
+                else{
+                        // document.querySelector("#apidbrecommendedmatchesheading").style.display = "none";
+                        fetch("https://server.shehnayi.in/api/v2/all-users",{
+                            method: 'GET',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Authorization': 'Bearer ' + localStorage.getItem('loginToken')
+                            }
+                        }).then(response=>{
+                            return response.json();
+                        }).then(data=>{
+                            console.log(data);
+                        })
+                    }
             }).catch(err => {
                     console.log(err);
                 }

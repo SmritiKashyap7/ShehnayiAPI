@@ -97,7 +97,7 @@
                     <option value="Hindhu">Hindu</option>
                 </select>
                 <div id="btn">
-                    <button id="submit-btn">Next</button>
+                    <button id="submit-btn" class="registerbtnone">Next</button>
                 </div>
                 <h5>Already a Member?<a id="login" href="#">Login</a></h5>
             </form>
@@ -555,7 +555,7 @@
                     </select>
                 </div>
                 <h6>Community</h6>
-                <select class="profile apipartnercommuity" name="community">
+                <select class="profile apipartnercommunity" name="community">
                     <option selected disabled>Select</option>
                     <option value="Sindhi">Sindhi</option>
                     <option value="Hindhu">Hindu</option>
@@ -645,7 +645,7 @@
             <form id="account-form" action="" class="about-form">
                 <h6 class="about-form-heading">Write about yourself</h6>
                 <textarea id="w3review" class="adduserabout" name="w3review" rows="4" cols="30" placeholder="write something..."></textarea>
-                <input type="file" class="custom-file-input">
+                <input type="file" class="custom-file-input apiaddpicture">
                 <div id="btn-flex" class="about-btn">
                     <a id="form-10-prev" href="#"><i class="ri-arrow-left-line"></i>Previous</a>
                     <button id="next-btn-9" class="apiregisterbtnend"><a href="./dashboard.html">Submit</a></button>
@@ -719,7 +719,7 @@
         <div class="header-image">
             <img src="./Images/Ethnic-Punjabi-wedding-couple-photography.jpg" alt="" id="apibannerimg">
         </div>
-        <h1 class="heading"><span class="heading-span" id="apidescription">Exclusively for</span><br>Sindhi Community</h1>
+        <h1 class="heading"><span class="heading-span" id="apidescription">Exclusively for<br>Sindhi Community</span></h1>
         <div class="input-form">
             <form action="" method="" class="details-form">
                 <div class="form-block" id="gender-block">
@@ -1297,7 +1297,9 @@
 
  
 var registerbtn=document.querySelector(".registerbtnone");
-registerbtn.addEventListener("submit",function(){
+
+registerbtn.addEventListener("click", function(e){
+e.preventDefault()
 var profilefor=document.querySelector(".apiprofilefor").value;
 var firstname=document.querySelector(".apifirstname").value;
 var lastname=document.querySelector(".apilastname").value;
@@ -1310,7 +1312,7 @@ localStorage.setItem("lastname",lastname);
 localStorage.setItem("religion",religion);
 localStorage.setItem("community",community);
 
-console.log(localStorage.getItem("profilefor"));
+console.log(localStorage);
 
 });
 
@@ -1338,6 +1340,7 @@ console.log(localStorage.getItem("profilefor"));
                 month:document.querySelector(".apibirthmonth").value,
                 year:document.querySelector(".apibirthyear").value
             },
+            gender:document.querySelector(".apiprofilegender").value,
             password:document.querySelector(".apipassword").value,
             city:document.querySelector(".apicity").value,
             state:document.querySelector(".apistate").value,
