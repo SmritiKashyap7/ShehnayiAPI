@@ -22,16 +22,6 @@ for(let i=0; i<knowbtn.length; i++){
 }
 knowmore()
 
-// for(let i=0; i<slideBtn.length; i++){ 
-//     slideBtn[i].addEventListener("click", function(){
-//         if (flag){
-    //             // slideBtn[i].forEach(myFunction);
-
-//         }
-//     });
-// }
-
-
 let slideIndex = 1;
 showSlides(slideIndex);
 
@@ -89,18 +79,3 @@ document.addEventListener('mouseup', function(e) {
     }
 });
 
-
-// Slide btn 
-
-// for(let i=0; i<fullDetail.length; i++){
-//     slideBtn.addEventListener("click", function(){
-    
-//         if(slides[i].style.display = "none") {
-    //             fullDetail[i].style.display = "none";
-    //             knowbtn[i].textContent = 'Know more..';
-    //         }
-    //         else {
-        //             knowbtn[i].textContent = 'Hide details.';
-//         }
-//     }); 
-// }
