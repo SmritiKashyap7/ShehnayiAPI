@@ -188,8 +188,8 @@ body {
 }
 .slick-js {
   font-size: 1vw;
-  /* display: flex;
-    justify-content: space-between;
+  display: flex;
+  /* justify-content: space-between;
     align-items: center; */
   margin-top: 1.25em;
   margin-bottom: 4em;
