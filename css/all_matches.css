@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400&display=swap');
 
 * {
   margin: 0;
@@ -16,15 +17,16 @@ html body {
   width: 100%;
 }
 
-#main .main-heading {
+.main-heading {
   width: 100%;
   text-align: center;
   color: #ad0909;
   font-size: 3vw;
   margin-top: 2rem;
+  font-family: 'Rubik', sans-serif;
 }
 
-#main #sec-1 {
+.detail-sec {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,9 +34,9 @@ html body {
   margin-bottom: 5rem;
 }
 
-#sec-1 .profs {
-  width: 70%;
-  height: 300px;
+.detail-sec .profs {
+  width: 100%;
+  /* height: 300px; */
   margin-top: 4em;
   display: flex;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
@@ -99,7 +101,7 @@ html body {
   justify-content: space-between;
   width: 80%;
   border-bottom: 1px solid #b7b3b3;
-  margin: 0 auto;
+  margin: 1rem auto;
 }
 
 .txt-div .drop-down {
@@ -153,9 +155,11 @@ html body {
   font-size: 20px;
 }
 
+
 .name h1 {
   color: #ad0909;
-  font-size: 40px;
+  font-size: 32px;
+  font-family: 'Rubik', sans-serif;
 }
 
 .name p {
@@ -180,20 +184,23 @@ html body {
   font-size: 16px;
 }
 
-.details-div #first {
+.details-div .know-more-btn {
   font-size: 14px;
   text-decoration: none;
-  color: #8d1616;
+  color: #b00707;
   cursor: pointer;
   margin-top: 1rem;
+  width: max-content;
 }
 
-.details-div #first:hover {
+.details-div .know-more-btn:hover {
   text-decoration: underline;
+  color: #1f64ca;
+  transition: all ease .2s;
 }
 
-#sec-1 .full-dets {
-  width: 70%;
+.detail-sec .full-dets {
+  width: 100%;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
     rgba(0, 0, 0, 0.22) 0px 10px 10px;
   display: flex;
@@ -296,24 +303,6 @@ html body {
   text-decoration: underline;
 }
 
-#sec-1 .prev-nxt-btn {
-  position: absolute;
-  top: 25%;
-  right: 17%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1em;
-  cursor: pointer;
-}
-
-.prev-nxt-btn .nxt {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.2em;
-}
-
 .imgunlockbtn{
   position: absolute;
   /* transform: translate(-50%,-50%); */
@@ -347,7 +336,6 @@ html body {
   overflow: auto;
   gap: 1rem;
   margin: 2rem auto;
-  /* position: relative; */
 }
 .dets-img-div i {
   font-size: 5rem;
@@ -355,7 +343,7 @@ html body {
   background-image: linear-gradient(
       rgba(255, 255, 255, 0.4),
       rgba(255, 255, 255, 0.4)
-    ), url(/images/about-team.jpg);
+    ), url("../images/about-team.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -394,6 +382,7 @@ html body {
 .heads2 #prtnr-pref {
   border-bottom: 3px solid #ad0909;
 }
+
 .section-1 .heads2 h3:last-of-type {
   color: #ad0909;
 }
