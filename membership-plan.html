@@ -888,6 +888,160 @@
     <!-- Script -->
     <script src="./js/about.js"></script>
     <script src="./js/membership-plan.js"></script>
+    <script>
+        // let url = 'https://server.shehnayi.in/api/v2/admin/membership-plans';
+        let url = 'http://localhost:2000/api/v2/admin/membership-plans'
 
+        fetch(url,{
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        }).then(res => res.json()).then(data => {
+            let [firstPlan,secondPlan,thirdPlan] = data;
+            let firstcontainer = document.querySelector('#first-container');
+            let secondcontainer = document.querySelector('#second-container');
+            let thirdcontainer = document.querySelector('#third-container');
+        firstcontainer.innerHTML = 
+         `<img
+            src="img/rect-top-left.svg"
+            alt=""
+            class="left-corner-img corner-img"
+        />
+        <img
+            src="img/rect-bottom-right.svg"
+            alt=""
+            class="right-corner-img corner-img"
+        />
+
+        <h3 class="text-around-price italic">${firstPlan.planName}</h3>
+        <h2 class="price">${firstPlan.planAmount}</h2>
+        <h3 class="text-around-price">Rs ${Math.floor(firstPlan.planAmount/12)} per month</h3>
+
+        <img src="img/rect-center.svg" alt="" class="rect-center-img" />
+
+        <div class="grid">
+            <img src="img/right-mark.svg" alt="" class="right-mark" />
+            <p>Send ${firstPlan.planMessageLeft} Messages</p>
+
+            <img src="img/right-mark.svg" alt="" class="right-mark" />
+            <p>View upto ${firstPlan.planContactsLeft} Contact Numbers</p>
+
+            <img src="img/right-mark.svg" alt="" class="right-mark" />
+            <p>View Upto ${firstPlan.planProfileLeft} Profiles</p>
+
+            <img src="img/right-mark.svg" alt="" class="right-mark" />
+            <p>${firstPlan.planOffers}</p>
+
+            <img src="img/right-mark.svg" alt="" class="right-mark" />
+            <p>Standout from other Profiles</p>
+
+            <img src="img/right-mark.svg" alt="" class="right-mark" />
+            <p>Plan is valid upto ${firstPlan.planDuration}</p>
+
+            <img src="img/right-mark.svg" alt="" class="right-mark" />
+            <p>Let Matches contact you directly</p>
+        </div>
+
+        <button class="join-button">JOIN PLAN</button>
+        <img src="img/rect-bottom-center.svg" alt="" class="rect-bottom-img" />
+        </div> `
+
+        secondcontainer.innerHTML = 
+        `<img
+            src="img/rect-top-left.svg"
+            alt=""
+            class="left-corner-img corner-img"
+        />
+        <img
+            src="img/rect-bottom-right.svg"
+            alt=""
+            class="right-corner-img corner-img"
+        />
+
+        <h3 class="text-around-price italic">${secondPlan.planName}</h3>
+        <h2 class="price">${secondPlan.planAmount}</h2>
+        <h3 class="text-around-price">Rs ${Math.floor(secondPlan.planAmount/12)} per month</h3>
+
+        <img src="img/rect-center.svg" alt="" class="rect-center-img" />
+
+        <div class="grid">
+            <img src="img/right-mark.svg" alt="" class="right-mark" />
+            <p>Send ${secondPlan.planMessageLeft} Messages</p>
+
+            <img src="img/right-mark.svg" alt="" class="right-mark" />
+            <p>View upto ${secondPlan.planContactsLeft} Contact Numbers</p>
+
+            <img src="img/right-mark.svg" alt="" class="right-mark" />
+            <p>View Upto ${secondPlan.planProfileLeft} Profiles</p>
+
+            <img src="img/right-mark.svg" alt="" class="right-mark" />
+            <p>${secondPlan.planOffers}</p>
+
+            <img src="img/right-mark.svg" alt="" class="right-mark" />
+            <p>Standout from other Profiles</p>
+
+            <img src="img/right-mark.svg" alt="" class="right-mark" />
+            <p>Plan is valid upto ${secondPlan.planDuration}</p>
+
+            <img src="img/right-mark.svg" alt="" class="right-mark" />
+            <p>Let Matches contact you directly</p>
+        </div>
+
+        <button class="join-button">JOIN PLAN</button>
+        <img src="img/rect-bottom-center.svg" alt="" class="rect-bottom-img" />
+        </div> `
+
+        thirdcontainer.innerHTML =
+        `<img
+            src="img/rect-top-left.svg"
+            alt=""
+            class="left-corner-img corner-img"
+        />
+        <img
+            src="img/rect-bottom-right.svg"
+            alt=""
+            class="right-corner-img corner-img"
+        />
+
+        <h3 class="text-around-price italic">${thirdPlan.planName}</h3>
+        <h2 class="price">${thirdPlan.planAmount}</h2>
+        <h3 class="text-around-price">Rs ${Math.floor(thirdPlan.planAmount/12)} per month</h3>
+
+        <img src="img/rect-center.svg" alt="" class="rect-center-img" />
+
+        <div class="grid">
+            <img src="img/right-mark.svg" alt="" class="right-mark" />
+            <p>Send ${thirdPlan.planMessageLeft} Messages</p>
+
+            <img src="img/right-mark.svg" alt="" class="right-mark" />
+            <p>View upto ${thirdPlan.planContactsLeft} Contact Numbers</p>
+
+            <img src="img/right-mark.svg" alt="" class="right-mark" />
+            <p>View Upto ${thirdPlan.planProfileLeft} Profiles</p>
+
+            <img src="img/right-mark.svg" alt="" class="right-mark" />
+            <p>${thirdPlan.planOffers}</p>
+
+            <img src="img/right-mark.svg" alt="" class="right-mark" />
+            <p>Standout from other Profiles</p>
+
+            <img src="img/right-mark.svg" alt="" class="right-mark" />
+            <p>Plan is valid upto ${thirdPlan.planDuration}</p>
+
+            <img src="img/right-mark.svg" alt="" class="right-mark" />
+            <p>Let Matches contact you directly</p>
+        </div>
+
+        <button class="join-button">JOIN PLAN</button>
+        <img src="img/rect-bottom-center.svg" alt="" class="rect-bottom-img" />
+        </div> `
+
+        }).catch(err => {
+            console.log(err)
+        }).finally(() => {
+            console.log('membership get api call completed')
+        })
+    </script>
 </body>
 </html>
