@@ -54,20 +54,27 @@ function showSlides(n) {
 }
 
 
-var dropdown_icon = document.querySelector(".drop-down #open-dropdown");
-var dropdown = document.querySelector("#dropss")
+var dropdownbtn = document.querySelectorAll(".drop-down .onlinebtn");
+var dropdown = document.querySelectorAll("#dropss")
 var on = true;
 
-dropdown_icon.addEventListener ("click", function () {
-    if(on){
-        dropdown.style.display = "flex";
-        on = false;
-    }
-    else {
-        dropdown.style.display = "none";
-        on = true;
-    }
-})
+for(let i=0; i<dropdownbtn.length; i++){
+    dropdownbtn[i].addEventListener ("click", function () {
+        if(on){
+            dropdown[i].style.display = "flex";
+            on = false;
+        }
+        else {
+            dropdown[i].style.display = "none";
+            on = true;
+        }
+    });
+    document.addEventListener('mouseup', function(e) {
+        if (!dropdown[i].contains(e.target)) {
+            dropdown[i].style.display = 'none';
+        }
+    });
+}
 
 
 // Click outside the div matchespopup displays none
