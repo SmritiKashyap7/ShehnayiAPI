@@ -152,3 +152,112 @@ html,body{
 .slick-card-a button:hover {
     background-color: #58abc0;
 }
+
+@media (min-width: 320px) and (max-width:550px) {
+    .slick-dots {
+        bottom: -20px;
+    }
+
+    .slick-card-dets h1 {
+        font-size: 2.5vw;
+    }
+
+    .slick-card {
+        height: auto;
+        padding-bottom: 2em;
+    }
+
+    .slick-card-dets h5 {
+        font-size: 2vw;
+    }
+
+    .slick-card-a button {
+        font-size: 2vw;
+        padding: 0.3em 1em;
+    }
+
+    .alone {
+        font-size: 3vw;
+    }
+
+    #msg-popup #msg-box {
+        width: 340px;
+    }
+
+    #msg-box #sec-2 {
+        flex-direction: column;
+    }
+
+    #sec-2 #sec-2-lft {
+        width: 100%;
+    }
+
+    #sec-2 #sec-2-rgt {
+        width: 100%;
+    }
+}
+
+@media (min-width: 551px) and (max-width: 768px) {
+    .slick-dots {
+        bottom: -20px;
+    }
+
+    .slick-card-dets h1 {
+        font-size: 2.5vw;
+    }
+
+    .slick-card {
+        height: auto;
+        padding-bottom: 2em;
+    }
+
+    .slick-card-dets h5 {
+        font-size: 1.5vw;
+    }
+
+    .slick-card-a button {
+        font-size: 2vw;
+        padding: 0.3em 1em;
+    }
+
+    .alone {
+        font-size: 3vw;
+    }
+
+    #msg-popup #msg-box {
+        width: 600px;
+    }
+
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .slick-dots {
+        bottom: -20px;
+    }
+
+    .slick-card-dets h1 {
+        font-size: 3vw;
+    }
+
+    .slick-card {
+        height: auto;
+        padding-bottom: 2em;
+    }
+
+    .slick-card-dets h5 {
+        font-size: 1.5vw;
+    }
+
+    .slick-card-a button {
+        font-size: 1.7vw;
+        padding: 0.3em 1em;
+    }
+
+    .alone {
+        font-size: 3vw;
+    }
+
+    #msg-popup #msg-box {
+        width: 600px;
+    }
+}

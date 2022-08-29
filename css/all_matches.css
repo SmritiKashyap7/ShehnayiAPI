@@ -79,9 +79,9 @@ html body {
   border-radius: 50%;
 }
 
-.send-interest i {
-  width: 60px;
-  height: 60px;
+.send-interest .interest-btn {
+  width: 70px;
+  height: 70px;
   background-color: #ad0909;
   color: #fff;
   display: flex;
@@ -90,6 +90,17 @@ html body {
   border-radius: 50%;
   font-size: 40px;
 }
+
+.interest-btn>i {
+  width: max-content;
+  text-align: center;
+  transition: 0.2s ease-in;
+}
+
+.interest-btn>i:hover {
+  transform: translateX(15%);
+}
+
 
 .send-interest h4 {
   margin-top: 1em;
