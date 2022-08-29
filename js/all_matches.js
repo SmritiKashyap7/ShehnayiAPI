@@ -1,26 +1,24 @@
 var knowbtn = document.querySelectorAll(".know-more-btn");
 var fullDetail = document.querySelectorAll (".full-dets");
 var slideBtn = document.querySelectorAll(".slide-btn") 
-// var btnon = true;
 
-function knowmore (value){
-   let flag = value
+
+let flag = true;
 for(let i=0; i<knowbtn.length; i++){
-        knowbtn[i].addEventListener ("click", function () {
-            if (flag) {
-                fullDetail[i].style.display = "initial";
-                knowbtn[i].textContent = 'Hide details..';
-                flag = false;
-            }
-            else {
-                fullDetail[i].style.display = "none";
-                knowbtn[i].textContent = 'Know more..';
-                flag = true;
-            }
-        });
-    }
+    knowbtn[i].addEventListener ("click", function () {
+        if (flag) {
+            fullDetail[i].style.display = "initial";
+            knowbtn[i].textContent = 'Hide details..';
+            flag = false;
+        }
+        else {
+            fullDetail[i].style.display = "none";
+            knowbtn[i].textContent = 'Know more..';
+            flag = true;
+        }
+    });
 }
-knowmore()
+
 
 let slideIndex = 1;
 showSlides(slideIndex);
@@ -79,3 +77,18 @@ document.addEventListener('mouseup', function(e) {
     }
 });
 
+
+// Slide btn 
+
+// for(let i=0; i<fullDetail.length; i++){
+//     slideBtn.addEventListener("click", function(){
+    
+//         if(slides[i].style.display = "none") {
+    //             fullDetail[i].style.display = "none";
+    //             knowbtn[i].textContent = 'Know more..';
+    //         }
+    //         else {
+        //             knowbtn[i].textContent = 'Hide details.';
+//         }
+//     }); 
+// }
