@@ -172,7 +172,7 @@
                 <h4>Occupation:</h4>
                 <input type="text" name="occupation" placeholder="Occupation">
                 <div class="btn-flex">
-                    <button>
+                    <button id="apidbquicksearchbtn">
                         <i class="ri-search-line"></i>
                         Search
                     </button>
@@ -187,7 +187,7 @@
             <a href="./account_settings.html">Settings & privacy</p>
         </div>
         <div class="setting-items logout-text">
-            <a href="#">Logout</a>
+            <a href="#" id="apidbuserlogout">Logout</a>
         </div>
     </div>
 
@@ -239,10 +239,8 @@
                     </div>
                 </div>
             </div>
-            <div class="chat-div">
-                <i class='bx bx-message-rounded-dots' ></i>
-            </div>
-            <h2 class="alone" id="apidbmatchesheading" >All Preffered Matches</h2>
+           
+            <h2 class="alone" id="apidbmatchesheading" >All Preferred Matches</h2>
             <div class="slick-js" id="apidbmatches">
                  <!-- <div class="slick-card">
                     <div class="slick-card-img">
@@ -372,7 +370,7 @@
                 </div>  -->
                 
             </div>
-            <h2 class="alone" id="apidbrecommendedmatchesheading">Recommended By Us</h2>
+            <h2 class="alone" id="apidbrecommendedmatchesheading">Explore More ></h2>
             <div class="slick-js" id="apidbrecommendedmatches">
                 <!-- <div class="slick-card">
                     <div class="slick-card-img">
@@ -504,157 +502,7 @@
         </div>
     </div>
 
-    <!-- Message popup -->
-    <div id="msg-popup">
-        <div id="msg-box">
-            <div id="msg-heading">
-                <div id="lft">
-                    <i id="back" class="ri-arrow-left-line"></i>
-                    <i class="ri-file-copy-line"></i>
-                </div>
-                <div id="cntr">
-                    <h1>Message</h1>
-                </div>
-                <div id="rgt">
-                    <i class="ri-settings-5-line"></i>
-                    <i class="ri-more-fill"></i>
-                    <i id="close" class="ri-close-line"></i>
-                </div>
-            </div>
-            <div id="sec-2">
-                <div id="sec-2-lft">
-                    <div id="lft-top">
-                        <div id="left-top">
-                            <i class="ri-search-line"></i>
-                            <input type="text" placeholder="Search">
-                        </div>
-                        <i class="ri-add-box-line"></i>
-                    </div>
-                    <div id="lft-bottom">
-                        <div class="lft-users">
-                            <div class="user-img">
-                                <img src="https://images.unsplash.com/photo-1615109398623-88346a601842?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="">
-                            </div>
-                            <div class="user-msgs">
-                                <h3>Edaward Devis</h3>
-                                <p>Hey, there</p>
-                            </div>
-                            <div class="time">
-                                <p>8.45 AM</p>
-                                <div class="unseen-msgs">
-                                    <h6>3</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="line"></div>
-                        <div class="lft-users">
-                            <div class="user-img">
-                                <img src="https://images.unsplash.com/photo-1615109398623-88346a601842?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="">
-                            </div>
-                            <div class="user-msgs">
-                                <h3>Edaward Devis</h3>
-                                <p>Hey, there</p>
-                            </div>
-                            <div class="time">
-                                <p>8.45 AM</p>
-                                <div class="unseen-msgs">
-                                    <h6>3</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="line"></div>
-                        <div class="lft-users">
-                            <div class="user-img">
-                                <img src="https://images.unsplash.com/photo-1615109398623-88346a601842?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="">
-                            </div>
-                            <div class="user-msgs">
-                                <h3>Edaward Devis</h3>
-                                <p>Hey, there</p>
-                            </div>
-                            <div class="time">
-                                <p>8.45 AM</p>
-                                <div class="unseen-msgs">
-                                    <h6>3</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="line"></div>
-                        <div class="lft-users">
-                            <div class="user-img">
-                                <img src="https://images.unsplash.com/photo-1615109398623-88346a601842?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="">
-                            </div>
-                            <div class="user-msgs">
-                                <h3>Edaward Devis</h3>
-                                <p>Hey, there</p>
-                            </div>
-                            <div class="time">
-                                <p>8.45 AM</p>
-                                <div class="unseen-msgs">
-                                    <h6>3</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="line"></div>
-                    </div>
-                </div>
-                <div id="sec-2-rgt">
-                    <div id="rgt-top">
-                        <h3>To: Edward Devis</h3>
-                        <i class="ri-arrow-right-s-line"></i>
-                    </div>
-                    <div id="rgt-cntr">
-                        <div class="user1">
-                            <div class="user11">
-                                <p>hey</p>
-                            </div>
-                        </div>
-                        <div class="user2">
-                            <div class="user22">
-                                <p>Lorem ipsum dolor sit amet.</p>
-                            </div>
-                        </div>
-                        <div class="user1">
-                            <div class="user11">
-                                <p>hey</p>
-                            </div>
-                        </div>
-                        <div class="user2">
-                            <div class="user22">
-                                <p>Lorem ipsum dolor sit amet.</p>
-                            </div>
-                        </div>
-                        <div class="user1">
-                            <div class="user11">
-                                <p>hey</p>
-                            </div>
-                        </div>
-                        <div class="user2">
-                            <div class="user22">
-                                <p>Lorem ipsum dolor sit amet.</p>
-                            </div>
-                        </div>
-                        <div class="user1">
-                            <div class="user11">
-                                <p>hey</p>
-                            </div>
-                        </div>
-                        <div class="user2">
-                            <div class="user22">
-                                <p>Lorem ipsum dolor sit amet.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="rgt-bottom">
-                        <div id="input-div">
-                            <i class="ri-add-circle-line"></i>
-                            <input id="type-msg" type="text" placeholder="Type Something...">
-                        </div>
-                        <i class="ri-send-plane-line"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+   
 
     <!-- Footer -->
     <div class="footer">
@@ -746,9 +594,9 @@
                     document.querySelector("#apidbuserid").innerHTML=data.foundUser._id.substring(4,13);
                    
    
-                    if(data.matches.length>0){
+                    
                         var clutter1 = ''
-                    data.matches.forEach((element,index) => {
+                    data.recommendedMatches.forEach((element,index) => {
                         console.log("element");
                         clutter1 += `<div class="slick-card">
                     <div class="slick-card-img">
@@ -763,36 +611,11 @@
                         <button type="submit" id="btn${index}" data-id= ${element._id} >Send Interest</button>
                 </div>`
                     });
-                    document.querySelector("#apidbmatches").innerHTML = clutter1;
-                    }
-                    else{
-                        // document.querySelector("#apidbmatchesheading").style.display = "none";
-                        document.querySelector("#apidbmatches").innerHTML =`<h1>No Matches Found</h1>`;
-                    }
-if(data.recommendedMatches.length>0){
-                    var clutter2=''
-                    data.recommendedMatches.forEach((element, index) => {
-                        // console.log("hey");
-                        clutter2 += `<div class="slick-card">
-                    <div class="slick-card-img">
-                        <a href="./user_page.html"><img id="userImg" src="${element.profilePicture}" alt="John"></a>
-                    </div>
-                    <div class="slick-card-dets">
-                        <h1>${element.firstname}</h1>
-                        <h5>Age - ${element.age}</h5>
-                        <h5>${element.cast}-${element.subCaste}</h5>
-                        <h5>${element.city},${element.state}</h5>
-                    </div>
+                    document.querySelector("#apidbrecommendedmatches").innerHTML = clutter1;
                     
-                        <button id="btn${index}" data-id= ${element._id} >Send Interest</button>
                   
-                </div>`
 
-                }
-                );     
-                document.querySelector("#apidbrecommendedmatches").innerHTML = clutter2;
-            }
-                else{
+                    var clutter2 = ''
                         // document.querySelector("#apidbrecommendedmatchesheading").style.display = "none";
                         fetch("http://localhost:2000/api/v2/all-users",{
                             method: 'GET',
@@ -827,7 +650,7 @@ if(data.recommendedMatches.length>0){
                  document.querySelector("#apidbrecommendedmatches").innerHTML = clutter2
                  ;
                         })
-                    }
+                    
             }).catch(err => {
                     console.log(err);
                 }
@@ -873,7 +696,68 @@ if(data.recommendedMatches.length>0){
                         console.log('finally');
                     });
                 }); 
-    </script>
+   
+                document.querySelector("#apidbuserlogout").addEventListener("click", function (dets) {
+                    dets.preventDefault();
+                    fetch("http://localhost:2000/api/v2/user/logout", {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': 'Bearer ' + localStorage.getItem('loginToken')
+                        }
+                    }).then(response => {
+                        return response.json();
+                    }).then(data => {
+                        window.location.href = "./index.html";
+                        console.log(data);
+                      
+                            localStorage.removeItem("loginToken");
+                            localStorage.removeItem("loggedinUserdashboard");
+
+                        
+                    }).catch(err => {
+                        console.log(err);
+                    }).finally(() => {
+                        console.log('finally');
+                    });
+                   
+                });
+
+
+var dbsearchbtn=document.querySelector("#apidbquicksearchbtn");
+dbsearchbtn.addEventListener("click",function(){
+    fetch("http://localhost:2000/api/v2/user/search",{
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + localStorage.getItem('loginToken')
+        },
+        body: JSON.stringify({
+           
+        })
+    }).then(response=>{
+        console.log("this is quicksearchapi")
+        return response.json();
+    }).then(data=>{
+        console.log("this is quick search search results")
+        console.log(data);
+        // var clutter3=''
+        // data.forEach((element, index) => {
+        //     // console.log("hey");
+        //     clutter3 += `<div class="slick-card">
+        // <div class="slick-card-img">
+        //     <a href="./user_page.html"><img id="userImg" src="${element.profilePicture}" alt="John"></a>
+        // </div>
+        // <div class="slick-card-dets">
+        //     <h1>${element.firstname}</h1>
+        //     <h5>Age - ${element.age}</h5>
+        //     <h5>${element.cast}-${element.subCaste}</h5>
+        //     <h5>${element.city},${element.state}</h5>
+        // </div>
+        
+        //     <button id="btn${index}" data-id= ${element._id} >Send Interest</button>`
+})})
+   </script>
 
 </body>
 </html>
