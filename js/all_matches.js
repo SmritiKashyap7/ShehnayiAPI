@@ -2,22 +2,40 @@ var knowbtn = document.querySelectorAll(".know-more-btn");
 var fullDetail = document.querySelectorAll(".full-dets");
 
 function knowmore(value) {
-    let flag = value;
-    for (let i = 0; i < knowbtn.length; i++) {
-        knowbtn[i].addEventListener("click", function () {
-        if (flag) {
-            fullDetail[i].style.display = "initial";
-            knowbtn[i].textContent = "Hide details..";
-            flag = false;
-        } else {
-            fullDetail[i].style.display = "none";
-            knowbtn[i].textContent = "Know more..";
-            flag = true;
-        }
-        });
-    }
+  let flag = value;
+  for (let i = 0; i < knowbtn.length; i++) {
+    knowbtn[i].addEventListener("click", function () {
+      if (flag) {
+        fullDetail[i].style.display = "initial";
+        knowbtn[i].textContent = "Hide details..";
+        flag = false;
+      } else {
+        fullDetail[i].style.display = "none";
+        knowbtn[i].textContent = "Know more..";
+        flag = true;
+      }
+    });
+  }
 }
 knowmore();
+
+var fullDetail = document.querySelectorAll(".full-dets");
+var slideBtn = document.querySelectorAll(".slide-btn");
+
+let flag = true;
+for (let i = 0; i < knowbtn.length; i++) {
+  knowbtn[i].addEventListener("click", function () {
+    if (flag) {
+      fullDetail[i].style.display = "initial";
+      knowbtn[i].textContent = "Hide details..";
+      flag = false;
+    } else {
+      fullDetail[i].style.display = "none";
+      knowbtn[i].textContent = "Know more..";
+      flag = true;
+    }
+  });
+}
 
 // let slideIndex = 1;
 // showSlides(slideIndex);
@@ -51,21 +69,20 @@ knowmore();
 //     slides[slideIndex-1].style.display = "block";
 // }
 
-
-var listElm = document.querySelector('.slideshow-container');
+var listElm = document.querySelector(".slideshow-container");
 
 // Add 20 items.
 var nextItem = 1;
-var loadMore = function() {
+var loadMore = function () {
   for (var i = 0; i < 20; i++) {
-    var item = document.createElement('div');
-    item.innerText = 'Item ' + nextItem++;
+    var item = document.createElement("div");
+    item.innerText = "Item " + nextItem++;
     listElm.appendChild(item);
   }
-}
+};
 
 // Detect when scrolled to bottom.
-listElm.addEventListener('scroll', function() {
+listElm.addEventListener("scroll", function () {
   if (listElm.scrollTop + listElm.clientHeight >= listElm.scrollHeight) {
     loadMore();
   }
@@ -73,18 +90,6 @@ listElm.addEventListener('scroll', function() {
 
 // Initially load some items.
 loadMore();
-
-
-
-
-
-
-
-
-
-
-
-
 
 var dropdown_icon = document.querySelector(".drop-down #open-dropdown");
 var dropdown = document.querySelector("#dropss");
@@ -99,6 +104,27 @@ dropdown_icon.addEventListener("click", function () {
     on = true;
   }
 });
+
+var dropdownbtn = document.querySelectorAll(".drop-down .onlinebtn");
+var dropdown = document.querySelectorAll("#dropss");
+var on = true;
+
+for (let i = 0; i < dropdownbtn.length; i++) {
+  dropdownbtn[i].addEventListener("click", function () {
+    if (on) {
+      dropdown[i].style.display = "flex";
+      on = false;
+    } else {
+      dropdown[i].style.display = "none";
+      on = true;
+    }
+  });
+  document.addEventListener("mouseup", function (e) {
+    if (!dropdown[i].contains(e.target)) {
+      dropdown[i].style.display = "none";
+    }
+  });
+}
 
 // Click outside the div matchespopup displays none
 document.addEventListener("mouseup", function (e) {
@@ -127,4 +153,18 @@ document.addEventListener("mouseup", function (e) {
 //     slides[i].style.display = "none";
 //     slides[i - 1].style.display = "initial";
 //   });
+
+// Slide btn
+
+// for(let i=0; i<fullDetail.length; i++){
+//     slideBtn.addEventListener("click", function(){
+
+//         if(slides[i].style.display = "none") {
+//             fullDetail[i].style.display = "none";
+//             knowbtn[i].textContent = 'Know more..';
+//         }
+//         else {
+//             knowbtn[i].textContent = 'Hide details.';
+//         }
+//     });
 // }

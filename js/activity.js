@@ -1,4 +1,3 @@
-
 $('.slick-div').slick({
   infinite: true,
   slidesToShow: 4,
@@ -7,7 +6,31 @@ $('.slick-div').slick({
   dots:true,
   // autoplay: true,
   adaptiveHeight: true,
-  autoplaySpeed: 3000
+  autoplaySpeed: 3000,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 2,
+        adaptiveHeight: true,
+      },
+    },
+    {
+      breakpoint: 800,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+      },
+    },
+    {
+      breakpoint: 400,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+      },
+    },
+  ],
 });
 
 document.querySelector ("#intrst-drop").addEventListener ("click", function() {
@@ -28,8 +51,6 @@ val.addEventListener ("click", function () {
 });
 
 
-
-
 document.querySelector ("#profile-drop").addEventListener ("click", function() {
 document.querySelector ("#drop-2").style.display = "flex";
 document.querySelector ("#drop-1").style.display = "none";
@@ -46,8 +67,3 @@ val.addEventListener ("click", function () {
   document.querySelector ("#drop-2").style.display = "none";
 })
 })
-
-// window.addEventListener ("click", function () {
-//   document.querySelector ("#drop-1").style.display = "none";
-//   document.querySelector ("#drop-2").style.display = "none";
-// })

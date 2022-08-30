@@ -31,6 +31,16 @@
     <link rel="stylesheet" href="./css/all_matches.css" />
     <link rel="stylesheet" href="./css/my_matches2.css" />
 
+    <link rel="apple-touch-icon" sizes="180x180" href="./title_icons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./title_icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./title_icons/favicon-16x16.png">
+
+    <!-- CSS link -->
+    <link rel="stylesheet" href="./css/navbar2.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/all_matches.css">
+    <link rel="stylesheet" href="./css/my_matches2.css">
+
     <!-- CSS link matches -->
     <link rel="stylesheet" href="./css/matches_slider.css" />
 
@@ -58,61 +68,73 @@
   <body>
     <!-- Navbar -->
     <div id="mobileview">
-      <i class="ri-close-line"> </i>
-      <div id="nav-elements">
-        <a href="dashboard.html">HOME</a>
-        <a href="#">MATCHES</a>
-        <a href="./activity.html">ACTIVITY</a>
-        <a href="membership1.html">MEMBERSHIP</a>
-        <a href="./user_page.html">PROFILE</a>
-        <a href="#" id="notif" title="Notifications"
-          ><i class="bx bxs-bell"></i
-        ></a>
-        <a href="#" id="search" title="Search"><i class="bx bx-search"></i></a>
-        <a href="./account_settings.html" title="Settings"
-          ><i class="bx bxs-cog"></i
-        ></a>
-      </div>
+        <i class="ri-close-line"> </i>
+        <div id="nav-elements">
+            <a href="dashboard.html">HOME</a>
+            <a href="#">MATCHES</a>
+            <a href="./activity.html">ACTIVITY</a>
+            <a href="membership1.html">MEMBERSHIP</a>
+            <a href="./user_page.html">PROFILE</a>
+            <a href="#" id="notif" title="Notifications"
+            ><i class="bx bxs-bell"></i
+            ></a>
+            <a href="#" id="search" title="Search"><i class="bx bx-search"></i></a>
+            <a href="./account_settings.html" title="Settings"><i class="bx bxs-cog"></i></a>
+        </div>
     </div>
 
     <div class="navbar">
-      <a id="menu"><i class="bx bx-menu"></i></a>
-      <div class="logo">
-        <a href="dashboard.html"
-          ><img
+        <a id="menu"><i class="bx bx-menu"></i></a>
+        <div class="logo">
+        <a href="dashboard.html"><img
             src="./Images/shehnayioriginallogo.svg"
             alt="Shehnayi"
             title="Shehnayi"
         /></a>
-      </div>
-      <div class="nav-links" id="nav-links">
-        <ul class="nav-list">
-          <li class="text-item"><a href="dashboard.html">Home</a></li>
-          <li class="text-item matches-item" id="matches">
-            <a href="#" class="matches-txt"
-              >Matches<i id="open-dropdown" class="ri-arrow-down-s-fill"></i
-            ></a>
-            <ul id="matches-dropdown">
-              <li class="nots">
-                <a class="matches-dropdown-item" href="./all_matches.html"
-                  >All matches</a
-                >
-              </li>
-              <li class="nots all-profile">
-                <a class="matches-dropdown-item" href="./all_profiles.html"
-                  >All profiles</a
-                >
-              </li>
+        </div>
+        <div class="nav-links" id="nav-links">
+            <ul class="nav-list">
+                <li class="text-item"><a href="./dashboard.html">Home</a></li>
+                <li class="text-item matches-item" id="matches">
+                    <a href="#" class="matches-txt">Matches<i id="open-dropdown" class="ri-arrow-down-s-fill"></i></a>
+                    <ul id="matches-dropdown">
+                        <li class="nots"><a class="matches-dropdown-item" href="./all_matches.html">All matches</a></li>
+                        <li class="nots all-profile"><a class="matches-dropdown-item" href="./all_profiles.html">All profiles</a></li>
+                    </ul>
+                </li>
+                <li class="text-item"><a href="./activity.html">Activity</a></li>
+                <li class="text-item"><a href="./membership1.html">Membership</a></li>
+                <li class="text-item"><a href="./profile_page.html" >Profile</a></li>
+                <li class="icons-item" id="notife"><i class='bx bxs-bell'></i></li>
+                <li class="icons-item" id="searche"><i class='bx bx-search'></i></li>
+                <li class="icons-item" id="settinge"><i class='bx bxs-cog' ></i></li>
             </ul>
-          </li>
-          <li class="text-item"><a href="./activity.html">Activity</a></li>
-          <li class="text-item"><a href="./membership1.html">Membership</a></li>
-          <li class="text-item"><a href="user_page.html">Profile</a></li>
-          <li class="icons-item" id="notife"><i class="bx bxs-bell"></i></li>
-          <li class="icons-item" id="searche"><i class="bx bx-search"></i></li>
-          <li class="icons-item" id="settinge"><i class="bx bxs-cog"></i></li>
-        </ul>
-      </div>
+        </div>
+    </div>
+
+    <div class="navbar">
+        <a id="menu"><i class='bx bx-menu'></i></a>
+        <div class="logo">
+            <a href="./dashboard.html"><img src="./Images/shehnayioriginallogo.svg" alt="Shehnayi" title="Shehnayi"></a>
+        </div>
+        <div class="nav-links" id="nav-links">
+            <ul class="nav-list">
+                <li class="text-item"><a href="./dashboard.html">Home</a></li>
+                <li class="text-item matches-item" id="matches">
+                    <a href="#" class="matches-txt">Matches<i id="open-dropdown" class="ri-arrow-down-s-fill"></i></a>
+                    <ul id="matches-dropdown">
+                        <li class="nots"><a class="matches-dropdown-item" href="./all_matches.html">All matches</a></li>
+                        <li class="nots all-profile"><a class="matches-dropdown-item" href="./all_profiles.html">All profiles</a></li>
+                    </ul>
+                </li>
+                <li class="text-item"><a href="./activity.html">Activity</a></li>
+                <li class="text-item"><a href="./membership1.html">Membership</a></li>
+                <li class="text-item"><a href="./profile_page.html" >Profile</a></li>
+                <li class="icons-item" id="notife"><i class='bx bxs-bell'></i></li>
+                <li class="icons-item" id="searche"><i class='bx bx-search'></i></li>
+                <li class="icons-item" id="settinge"><i class='bx bxs-cog' ></i></li>
+            </ul>
+        </div>
     </div>
 
     <!-- Notification popup -->
@@ -235,12 +257,12 @@
       </div>
     </div>
 
+
     <h2 class="main-heading">Your matches</h2>
 
     <!-- Slideshow container -->
     <div class="slideshow-container">
-
-        <!-- <div class="mySlides fade">
+        <div class="mySlides fade">
                 <div class="detail-sec">
                     <div class="profs">
                         <div class="img-div">
@@ -255,6 +277,145 @@
                                         <h5>Remove</h5>
                                         <h5>Block</h5>
                                         <h5>Report</h5>
+        <!-- Full-width images with number and caption text -->
+        <!-- <div class="mySlides fade">
+            <div class="detail-sec">
+                <div class="profs">
+                    <div class="img-div">
+                        <a href="./user_page.html"><img src="./Images/about-team5.webp" alt=""/></a>
+                    </div>
+                    <div class="txt-div">
+                        <div class="name">
+                            <h1>Anahita Sharma</h1>
+                            <div class="drop-down">
+                                <label for="open-dropdown" class="onlinebtn">Online Now &nbsp;<i id="open-dropdown" class="fa">&nbsp;&#xf0d7;</i></label>
+                                <div id="dropss" class="drop-list">
+                                    <h5>Remove</h5>
+                                    <h5>Block</h5>
+                                    <h5>Report</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="details-div">
+                            <div class="lft">
+                                <h3 class="lft-head-txt">22 Yrs, 5'8"</h3>
+                                <h3 class="lft-head-txt">Sindhi</h3>
+                                <h3 class="lft-head-txt">Hindi</h3>
+                            </div>
+                            <div class="rgt">
+                                <h3 class="rgt-head-txt">Single</h3>
+                                <h3 class="rgt-head-txt">Lives in Indore, Madhya Pradesh</h3>
+                                <h3 class="rgt-head-txt">Graduate</h3>
+                                <h6 class="rgt-head-txt know-more-btn">Know more...</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="send-interest">
+                        <a href="./user_page.html" class="interest-btn"><i class="ri-arrow-right-line"></i></a>
+                        <h4>View Profile</h4>
+                    </div>
+                </div>
+                <div class="full-dets">
+                    <div class="dets-img-div">
+                        <i class="ri-lock-fill"></i>
+                        <i class="ri-lock-fill"></i>
+                        <i class="ri-lock-fill"></i>
+                        <i class="ri-lock-fill"></i>
+                        <i class="ri-lock-fill"></i>
+                        <i class="ri-lock-fill"></i>
+                        <i class="ri-lock-fill"></i>
+                    </div>
+    
+                    <button class="imgunlockbtn">
+                        <a href="./membership1.html">Upgrade Now</a>
+                    </button>
+    
+                    <div class="full-dets-container">
+                        <div class="dets-div">
+                            <div class="icon-div">
+                                <i class="ri-share-box-line"></i>
+                                <a href=""><i onclick="window.print()" class="ri-printer-line"></i></a>
+                            </div>
+                            <div class="section-1">
+                                <div class="heads">
+                                    <a href="#details"><h3 id="details">Detailed Profile</h3></a>
+                                    |
+                                    <a href="#prtnr-pref"><h3>Partner Preference</h3></a>
+                                </div>
+                                <div class="logo">
+                                    <i class="ri-booklet-line"></i>
+                                    <h2>Basic Details</h2>
+                                </div>
+                                <div class="details-div">
+                                    <div class="lft">
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Name</h3><h3 class="rgt-txt">Anahita Sharma</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">DOB</h3><h3 class="rgt-txt">22/10/1999</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Height</h3><h3 class="rgt-txt">5ft 8in</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Marital Status</h3><h3 class="rgt-txt">Single</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Occupation</h3><h3 class="rgt-txt">Software Developer</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Location</h3><h3 class="rgt-txt">Indore, Madhya Pradesh</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section-1">
+                                <div id="logo-2" class="logo">
+                                    <i class="fa-solid fa-om"></i>
+                                    <h2>Religious Background</h2>
+                                </div>
+                                <div class="details-div">
+                                    <div class="lft">
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Religion</h3><h3 class="rgt-txt">Sindhi</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Sub Caste</h3><h3 class="rgt-txt">Hindu</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Horoscope</h3><h3 class="rgt-txt">Don't Know</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Gothra</h3><h3 class="rgt-txt">Don't Know</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Manglik</h3><h3 class="rgt-txt">No</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section-1">
+                                <div id="logo-2" class="logo">
+                                    <i class="ri-book-2-line"></i>
+                                    <h2>Education & Career</h2>
+                                </div>
+                                <div class="details-div">
+                                    <div class="lft">
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Qualification</h3><h3 class="rgt-txt">Graduate</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">College</h3><h3 class="rgt-txt">XYZ</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Company</h3><h3 class="rgt-txt">ABC Company</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Occupation</h3><h3 class="rgt-txt">Developer</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Annual Income</h3><h3 class="rgt-txt">--</h3>
+                                        </div> 
                                     </div>
                                 </div>
                             </div>
@@ -353,6 +514,441 @@
                                             <div class="lft-elems">
                                                 <h3 class="lft-tag">Manglik</h3><h3 class="rgt-txt">No</h3>
                                             </div>
+                            </div>
+                            <div class="section-1">
+                                <div id="logo-2" class="logo">
+                                    <i class="ri-book-2-line"></i>
+                                    <h2>Education & Career</h2>
+                                </div>
+                                <div class="details-div">
+                                    <div class="lft">
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Qualification</h3><h3 class="rgt-txt">Graduate</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Profession</h3><h3 class="rgt-txt">Developer</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Annual Income</h3><h3 class="rgt-txt">Above 5lakhs</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="detail-sec">
+                <div class="profs">
+                    <div class="img-div">
+                        <a href="./user_page.html"><img src="./Images/about-team6.jpg" alt=""/></a>
+                    </div>
+                    <div class="txt-div">
+                        <div class="name">
+                            <h1>Smriti Jha</h1>
+                            <div class="drop-down">
+                                <label for="open-dropdown" class="onlinebtn">Online Now &nbsp;<i id="open-dropdown" class="fa">&nbsp;&#xf0d7;</i></label>
+                                <div id="dropss" class="drop-list">
+                                    <h5>Remove</h5>
+                                    <h5>Block</h5>
+                                    <h5>Report</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="details-div">
+                            <div class="lft">
+                                <h3 class="lft-head-txt">22 Yrs, 5'6"</h3>
+                                <h3 class="lft-head-txt">Sindhi</h3>
+                                <h3 class="lft-head-txt">Hindi</h3>
+                            </div>
+                            <div class="rgt">
+                                <h3 class="rgt-head-txt">Single</h3>
+                                <h3 class="rgt-head-txt">Lives in Mumbai, Maharshtra</h3>
+                                <h3 class="rgt-head-txt">Student</h3>
+                                <h6 class="rgt-head-txt know-more-btn">Know more...</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="send-interest">
+                        <a href="./user_page.html" class="interest-btn"><i class="ri-arrow-right-line"></i></a>
+                        <h4>View Profile</h4>
+                    </div>
+                </div>
+                <div class="full-dets">
+                    <div class="dets-img-div">
+                        <i class="ri-lock-fill"></i>
+                        <i class="ri-lock-fill"></i>
+                        <i class="ri-lock-fill"></i>
+                        <i class="ri-lock-fill"></i>
+                        <i class="ri-lock-fill"></i>
+                        <i class="ri-lock-fill"></i>
+                        <i class="ri-lock-fill"></i>
+                    </div>
+    
+                    <button class="imgunlockbtn">
+                        <a href="./membership1.html">Upgrade Now</a>
+                    </button>
+    
+                    <div class="full-dets-container">
+                        <div class="dets-div">
+                            <div class="icon-div">
+                                <a href=""><i onclick="window.print()" class="ri-printer-line"></i></a>
+                            </div>
+                            <div class="section-1">
+                                <div class="heads">
+                                    <a href="#details"><h3 id="details">Detailed Profile</h3></a>
+                                    |
+                                    <a href="#prtnr-pref"><h3>Partner Preference</h3></a>
+                                </div>
+                                <div class="logo">
+                                    <i class="ri-booklet-line"></i>
+                                    <h2>Basic Details</h2>
+                                </div>
+                                <div class="details-div">
+                                    <div class="lft">
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Name</h3><h3 class="rgt-txt">Pooja</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">DOB</h3><h3 class="rgt-txt">22/10/1999</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Height</h3><h3 class="rgt-txt">5ft 6in</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Marital Status</h3><h3 class="rgt-txt">Unmarried</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Occupation</h3><h3 class="rgt-txt">Software Developer</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Location</h3><h3 class="rgt-txt">Bhopal, Madhya Pradesh</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section-1">
+                                <div id="logo-2" class="logo">
+                                    <i class="fa-solid fa-om"></i>
+                                    <h2>Religious Background</h2>
+                                </div>
+                                <div class="details-div">
+                                    <div class="lft">
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Religion</h3><h3 class="rgt-txt">Sindhi</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Sub Caste</h3><h3 class="rgt-txt">Hindu</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Horoscope</h3><h3 class="rgt-txt">Dont't Know</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Gothra</h3><h3 class="rgt-txt">Dont't Know</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Manglik</h3><h3 class="rgt-txt">No</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section-1">
+                                <div id="logo-2" class="logo">
+                                    <i class="ri-book-2-line"></i>
+                                    <h2>Education & Career</h2>
+                                </div>
+                                <div class="details-div">
+                                    <div class="lft">
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Qualification</h3><h3 class="rgt-txt">Graduate</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">College</h3><h3 class="rgt-txt">XYZ</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Company</h3><h3 class="rgt-txt">ABC Company</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Occupation</h3><h3 class="rgt-txt">Developer</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Annual Income</h3><h3 class="rgt-txt">--</h3>
+                                        </div> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section-1">
+                                <div id="logo-2" class="logo">
+                                    <i class="fa-solid fa-utensils"></i>
+                                    <h2>Food & Lifestyle</h2>
+                                </div>
+                                <div class="details-div">
+                                    <div class="lft">
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Eating Habbit</h3><h3 class="rgt-txt">Vegetarian</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Drinking Habbit</h3><h3 class="rgt-txt">No</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Smoking Habbit</h3><h3 class="rgt-txt">No</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section-1">
+                                <div id="logo-2" class="logo">
+                                    <i class="fa-solid fa-people-group"></i>
+                                    <h2>Family Details</h2>
+                                </div>
+                                <div class="details-div">
+                                    <div class="lft">
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Father's Status</h3><h3 class="rgt-txt">Businessman</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Mother's Status</h3><h3 class="rgt-txt">House Wife</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">No. of Brother's</h3><h3 class="rgt-txt">2</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">No. of Sister's</h3><h3 class="rgt-txt">1</h3>
+                                        </div>  
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="hr" />
+                            <div class="section-1">
+                                <div class="heads2">
+                                <a href="#details"><h3>Detailed Profile</h3></a>
+                                |
+                                <a href="#prtnr-pref"><h3 id="prtnr-pref">Partner Preference</h3></a>
+                                </div>
+                                <div class="logo">
+                                    <i class="ri-booklet-line"></i>
+                                    <h2>Partner's Basic Information</h2>
+                                </div>
+                                <div class="details-div">
+                                    <div class="lft">
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Age</h3><h3 class="rgt-txt">20 to 30</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Marital Status</h3><h3 class="rgt-txt">Single</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Diet</h3><h3 class="rgt-txt">Vegetarian</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Height</h3><h3 class="rgt-txt">5ft 5in</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Community</h3><h3 class="rgt-txt">Sindhi</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Manglik</h3><h3 class="rgt-txt">No</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section-1">
+                                <div id="logo-2" class="logo">
+                                    <i class="ri-map-pin-line"></i>
+                                    <h2>Location Priority</h2>
+                                </div>
+                                <div class="details-div">
+                                    <div class="lft">
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">City</h3><h3 class="rgt-txt">Mumbai</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">State</h3><h3 class="rgt-txt">Maharashtra</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Country</h3><h3 class="rgt-txt">India</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section-1">
+                                <div id="logo-2" class="logo">
+                                    <i class="ri-book-2-line"></i>
+                                    <h2>Education & Career</h2>
+                                </div>
+                                <div class="details-div">
+                                    <div class="lft">
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Qualification</h3><h3 class="rgt-txt">Graduate</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Profession</h3><h3 class="rgt-txt">Developer</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Annual Income</h3><h3 class="rgt-txt">Above 5lakhs</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="detail-sec">
+                <div class="profs">
+                    <div class="img-div">
+                        <a href="./user_page.html"><img src="./Images/about-team3.jpg" alt=""/></a>
+                    </div>
+                    <div class="txt-div">
+                        <div class="name">
+                            <h1>Ashish Singh</h1>
+                            <div class="drop-down">
+                                <label for="open-dropdown" class="onlinebtn">Online Now &nbsp;<i id="open-dropdown" class="fa">&nbsp;&#xf0d7;</i></label>
+                                <div id="dropss" class="drop-list">
+                                    <h5>Remove</h5>
+                                    <h5>Block</h5>
+                                    <h5>Report</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="details-div">
+                            <div class="lft">
+                                <h3 class="lft-head-txt">23 Yrs, 6'0"</h3>
+                                <h3 class="lft-head-txt">Sindhi</h3>
+                                <h3 class="lft-head-txt">Hindi</h3>
+                            </div>
+                            <div class="rgt">
+                                <h3 class="rgt-head-txt">Single</h3>
+                                <h3 class="rgt-head-txt">Lives in Bhopal, Madhya Pradsh</h3>
+                                <h3 class="rgt-head-txt">Student</h3>
+                                <h6 class="rgt-head-txt know-more-btn">Know more...</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="send-interest">
+                        <a href="./user_page.html" class="interest-btn"><i class="ri-arrow-right-line"></i></a>
+                        <h4>View Profile</h4>
+                    </div>
+                </div>
+                <div class="full-dets">
+                    <div class="dets-img-div">
+                        <i class="ri-lock-fill"></i>
+                        <i class="ri-lock-fill"></i>
+                        <i class="ri-lock-fill"></i>
+                        <i class="ri-lock-fill"></i>
+                        <i class="ri-lock-fill"></i>
+                        <i class="ri-lock-fill"></i>
+                        <i class="ri-lock-fill"></i>
+                    </div>
+    
+                    <button class="imgunlockbtn">
+                        <a href="./membership1.html">Upgrade Now</a>
+                    </button>
+    
+                    <div class="full-dets-container">
+                        <div class="dets-div">
+                            <div class="icon-div">
+                                <i class="ri-share-box-line"></i>
+                                <a href=""><i onclick="window.print()" class="ri-printer-line"></i></a>
+                            </div>
+                            <div class="section-1">
+                                <div class="heads">
+                                    <a href="#details"><h3 id="details">Detailed Profile</h3></a>
+                                    |
+                                    <a href="#prtnr-pref"><h3>Partner Preference</h3></a>
+                                </div>
+                                <div class="logo">
+                                    <i class="ri-booklet-line"></i>
+                                    <h2>Basic Details</h2>
+                                </div>
+                                <div class="details-div">
+                                    <div class="lft">
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Name</h3><h3 class="rgt-txt">Pooja</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">DOB</h3><h3 class="rgt-txt">22/10/1999</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Height</h3><h3 class="rgt-txt">5ft 6in</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Marital Status</h3><h3 class="rgt-txt">Unmarried</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Occupation</h3><h3 class="rgt-txt">Software Developer</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Location</h3><h3 class="rgt-txt">Bhopal, Madhya Pradesh</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section-1">
+                                <div id="logo-2" class="logo">
+                                    <i class="fa-solid fa-om"></i>
+                                    <h2>Religious Background</h2>
+                                </div>
+                                <div class="details-div">
+                                    <div class="lft">
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Religion</h3><h3 class="rgt-txt">Sindhi</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Sub Caste</h3><h3 class="rgt-txt">Hindu</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Horoscope</h3><h3 class="rgt-txt">Dont't Know</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Gothra</h3><h3 class="rgt-txt">Dont't Know</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Manglik</h3><h3 class="rgt-txt">No</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section-1">
+                                <div id="logo-2" class="logo">
+                                    <i class="ri-book-2-line"></i>
+                                    <h2>Education & Career</h2>
+                                </div>
+                                <div class="details-div">
+                                    <div class="lft">
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Qualification</h3><h3 class="rgt-txt">Graduate</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">College</h3><h3 class="rgt-txt">XYZ</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Company</h3><h3 class="rgt-txt">ABC Company</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Occupation</h3><h3 class="rgt-txt">Developer</h3>
+                                        </div>
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Annual Income</h3><h3 class="rgt-txt">--</h3>
+                                        </div> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section-1">
+                                <div id="logo-2" class="logo">
+                                    <i class="fa-solid fa-utensils"></i>
+                                    <h2>Food & Lifestyle</h2>
+                                </div>
+                                <div class="details-div">
+                                    <div class="lft">
+                                        <div class="lft-elems">
+                                            <h3 class="lft-tag">Eating Habbit</h3><h3 class="rgt-txt">Vegetarian</h3>
                                         </div>
                                     </div>
                                 </div>
@@ -755,6 +1351,8 @@
                                     </div>
                                 </div>
                             </div>
+=======
+>>>>>>> 0e52b2aa530b7e0e88ae6a8517a3413cbae626b6
                         </div>
                     </div>
                 </div>
@@ -770,7 +1368,7 @@
                         <div class="name">
                             <h1>Ashish Singh</h1>
                             <div class="drop-down">
-                                <label for="open-dropdown" class="onlinebtn">Online Now <i id="open-dropdown" class="ri-arrow-down-s-fill"></i></label>
+                                <label for="open-dropdown" class="onlinebtn">Online Now &nbsp;<i id="open-dropdown" class="fa">&nbsp;&#xf0d7;</i></label>
                                 <div id="dropss" class="drop-list">
                                     <h5>Remove</h5>
                                     <h5>Block</h5>
@@ -793,7 +1391,7 @@
                         </div>
                     </div>
                     <div class="send-interest">
-                        <a href="./user_page.html"><i class="ri-arrow-right-line"></i></a>
+                        <a href="./user_page.html" class="interest-btn"><i class="ri-arrow-right-line"></i></a>
                         <h4>View Profile</h4>
                     </div>
                 </div>
@@ -809,7 +1407,7 @@
                     </div>
     
                     <button class="imgunlockbtn">
-                        <a href="#">Upgrade Now</a>
+                        <a href="./membership1.html">Upgrade Now</a>
                     </button>
     
                     <div class="full-dets-container">
@@ -817,8 +1415,8 @@
                             <div class="icon-div">
                                 <i class="ri-share-box-line"></i>
                                 <a href=""><i onclick="window.print()" class="ri-printer-line"></i></a>
-                            </div>
-                            <div class="section-1">
+                            </div> -->
+                            <!-- <div class="section-1">
                                 <div class="heads">
                                     <a href="#details"><h3 id="details">Detailed Profile</h3></a>
                                     |
@@ -890,10 +1488,10 @@
                                             <h3 class="lft-tag">College</h3><h3 class="rgt-txt">XYZ</h3>
                                         </div>
                                         <div class="lft-elems">
-                                            <h3 class="lft-tag">Working With</h3><h3 class="rgt-txt">ABC Company</h3>
+                                            <h3 class="lft-tag">Company</h3><h3 class="rgt-txt">ABC Company</h3>
                                         </div>
                                         <div class="lft-elems">
-                                            <h3 class="lft-tag">Working As</h3><h3 class="rgt-txt">Developer</h3>
+                                            <h3 class="lft-tag">Occupation</h3><h3 class="rgt-txt">Developer</h3>
                                         </div>
                                         <div class="lft-elems">
                                             <h3 class="lft-tag">Annual Income</h3><h3 class="rgt-txt">--</h3>
@@ -1325,7 +1923,6 @@
             </div>
             </div>
         </div> -->
-
     </div>
     <!-- End of slider -->
 
@@ -1396,6 +1993,7 @@
 
     <script src="./js/my_matches.js"></script>
     <!-- <script src="./js/all_matches.js"></script> -->
+    <script src="./js/all_matches.js"></script>
     <script src="./js/navbar2.js"></script>
 
     <script>
@@ -1601,6 +2199,5 @@
             console.log(err);
         });
     </script>
-
 </body>
 </html>
