@@ -7,9 +7,9 @@
     font-family: "Poppins", sans-serif;
 }
 
-body::-webkit-scrollbar {
+/* body::-webkit-scrollbar {
     display: none;
-}
+} */
 
 /* Navbar Matches */
 /* Matches button */
@@ -196,6 +196,11 @@ body::-webkit-scrollbar {
     text-decoration: none;
     color: #504f4e;
 }
+
+.setting-items>a:hover {
+    color:#000;
+}
+
 .setting-popup .logout-text {
     border-bottom: none;
 }

@@ -11,6 +11,20 @@
 html body {
   width: 100%;
   height: 100%;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+
+img {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 #main {
@@ -31,13 +45,13 @@ html body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
 }
 
 .detail-sec .profs {
   width: 100%;
   /* height: 300px; */
-  margin-top: 4em;
+  margin-top: 3em;
   display: flex;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
     rgba(0, 0, 0, 0.22) 0px 10px 10px;
@@ -79,9 +93,9 @@ html body {
   border-radius: 50%;
 }
 
-.send-interest i {
-  width: 60px;
-  height: 60px;
+.send-interest .interest-btn {
+  width: 70px;
+  height: 70px;
   background-color: #ad0909;
   color: #fff;
   display: flex;
@@ -90,6 +104,17 @@ html body {
   border-radius: 50%;
   font-size: 40px;
 }
+
+.interest-btn>i {
+  width: max-content;
+  text-align: center;
+  transition: 0.2s ease-in;
+}
+
+.interest-btn>i:hover {
+  transform: translateX(15%);
+}
+
 
 .send-interest h4 {
   margin-top: 1em;
@@ -121,7 +146,7 @@ html body {
   position: absolute;
   width: 120px;
   height: 100px;
-  top: 20%;
+  top: 16%;
   right: 10%;
   background-color: #fff;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
@@ -129,9 +154,10 @@ html body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.7em;
+  /* gap: 0.7em; */
   display: none;
-  border-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 .drop-list h5 {
@@ -140,17 +166,25 @@ html body {
   color: #454545;
   font-weight: 300;
   text-align: center;
+  padding: 0.4rem 0; 
+}
+
+.drop-list>h5:nth-child(3) {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 .drop-list h5:hover {
-  color: #000;
+  color: #fff;
+  background-color: #ababab;
 }
 
-.drop-down .open-dropdown {
+
+.drop-down .onlinebtn {
   cursor: pointer;
 }
 
-.drop-down i {
+.drop-down>i {
   cursor: pointer;
   font-size: 20px;
 }
@@ -402,7 +436,7 @@ html body {
 }
 
 .lft-tag {
-  font-weight: 600;
+  font-weight: 300;
   font-size: 16px;
   width: 70%;
 }
