@@ -1,0 +1,486 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.page-heading {
+  text-align: center;
+  font-size: 3vw;
+  font-family: "Poppins", sans-serif;
+  color:#AD0909;
+  margin: 2rem auto;
+}
+.sec-1 {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  gap: 1rem;
+}
+.sec1-about {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  font-family: "Poppins",  sans-serif;
+  letter-spacing: 0.01em;
+}
+.sec1-about .heading-about {
+  font-size: 1.2vw;
+}
+.sec1-about .sec1-message {
+  font-size: 2vw;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color:#AD0909;
+}
+.sec1-about .message {
+  font-size: 1.1vw;
+  color: #000;
+}
+.sec1-img {
+  width: 30%;
+  height: 30%;
+  object-fit: cover;
+}
+.sec1-img img {
+  width: 100%;
+  height: 100%;
+}
+.sec-2 {
+  width: 100%;
+  height: 60vh;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+.sec-2 .sec-2-bgimg {
+  width: 80%;
+  height: 350px;
+  margin: auto;
+}
+.sec-2-bgimg img {
+  width: 100%;
+  height: 100%;
+  object-position: center;
+}
+.sec-2 .sec-2-team {
+  position: absolute;
+  width: 60%;
+  height: 80%;
+  margin: auto;
+  top: 60%;
+  left: 20%;
+  display: flex;
+  backdrop-filter: blur(5px);
+  background: rgba(166, 166, 166, 0.533);
+  border-radius: 30px;
+}
+.sec-2-icons {
+  width: 50%;
+  display: grid;
+  text-align: center;
+}
+.sec-2-icons #pic-1{
+  position: absolute;
+  top: 5%;
+  left: 25%;
+  width: 20%;
+  height: 50%;
+  border-radius: 100px;
+  background-image: url("./Images/about-team2.jpeg");
+  background-size: cover;
+}
+.sec-2-icons #pic-2{
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  width: 25%;
+  height: 50%;
+  border-radius: 10px;
+  background-image: url("./Images/about-team3.jpg");
+  background-size: cover;
+}
+.sec-2-icons #pic-3{
+  position: absolute;
+  top: 42%;
+  left: 25%;
+  width: 20%;
+  height: 50%;
+  border-radius: 10px;
+  background-image: url("./Images/about-team1.webp");
+  background-size: cover;
+}
+.sec-2-icons #pic-4{
+  position: absolute;
+  top: 40%;
+  left: 2%;
+  width: 20%;
+  height: 45%;
+  background-image: url("./Images/about-team6.jpg");
+  background-size: cover;
+  z-index: 1;
+}
+.sec-2-icons #pic-5{
+  position: absolute;
+  top: 45%;
+  left: 14%;
+  width: 20%;
+  height: 50%;
+  border-radius: 15px;
+  background-image: url("./Images/about-team7.jpg");
+  background-size: cover;
+}
+
+.sec-2-icons i{
+  width: 100%;
+}
+.sec2-team-about {
+  width: 50%;
+  font-family: "Poppins",sans-serif;
+  margin: 2rem auto;
+}
+.sec2-team-heading {
+    width: 100%;
+    text-align: center;
+}
+.sec2-team-heading>a {
+    width: 100%;
+    font-size: 2.5vw;
+    color:#AD0909;
+    text-decoration: none;
+}
+.sec2-team-heading>a:hover {
+  color:#520909;
+}
+.sec2-team-desc {
+  font-size: 1.2vw;
+  text-align: center;
+  color: #000;
+}
+
+.sec-3 {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  margin-top: 15rem;
+}
+.sec-3-investor {
+  width: 70%;
+}
+.sec-3-investor .sec-3-heading {
+  color: #AD0909;
+  font-size: 2vw;
+  font-family: "Poppins", sans-serif;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.01em;
+}
+.sec-3-investor .sec-3-desc {
+  font-size: 1.1vw;
+  color: #000;
+
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.01em;
+}
+.sec-3-image {
+  width: 30%;
+  box-shadow: 5px 5px 5px 0px #cccccc;
+}
+.sec-3-image img {
+  width: 100%;
+  height: 100%;
+}
+
+.sec-4 {
+  width: 60%;
+  margin: 3rem auto;
+}
+.sec-4-heading {
+  text-align: center;
+  color: #AD0909;
+  font-size: 2vw;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 1rem;
+  letter-spacing: 0.01em;
+}
+.sec-4-desc {
+  font-size: 1.1vw;
+  letter-spacing: 0.01em;
+  color: #000;
+  font-family: "Poppins", sans-serif;
+}
+
+
+@media (min-width:320px) and (max-width:550px) {
+    .page-heading {
+        font-size: 2rem;
+        font-weight: 200;
+        margin-bottom: 1rem;
+    }
+    .sec-1 {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .sec1-about {
+        width: 80%;
+        margin: 0 auto;
+    }
+    .sec1-about .heading-about {
+        font-size: 12px;
+    }
+    .sec1-about .sec1-message {
+        font-size: 1.3rem;
+    }
+    .sec1-about .message {
+        font-size: 12px;
+    }
+    .sec1-img {
+        width: 50%;
+        margin: 0 auto;
+    }
+    .sec-2 .sec-2-bgimg {
+        width: 80%;
+        height: 200px;
+    }
+    .sec-2-bgimg img{
+        width: 100%;
+    }
+    .sec-2 .sec-2-team {
+        width: 100%;
+        left: 0;
+        flex-direction: column;
+    }
+    .sec-2-icons {
+        position: relative;
+        height: max-content;
+    }
+    .sec-2-icons #pic-1 {
+        top: 5%;
+        left: 50%;
+        width: 10%;
+        height: 50%;
+    }
+}
+@media (min-width: 420px) and (max-width:550px){
+  .sec2-head-text,.sec3-head-text, .sec4-head-text {
+    padding-top: 0.8rem;
+    gap: 1.7rem;
+  }
+}
+@media (min-width: 551px) and (max-width:768px) {
+  #home img {
+    height: 350px;
+  }
+  #cards-div {
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+  }
+  .sec2-card, .sec3-card, .sec4-card {
+    width: 80%;
+  }
+  .sec2-head-text h1, .sec3-head-text h1, .sec4-head-text h1{
+    font-size: 30px;
+  }
+  .sec2-img1, .sec2-img2  {
+    width: auto;
+    height: fit-content;
+  }
+  .sec2-img1 img, .sec2-img2 img {
+    width: 6rem;
+  }
+  .sec2-head-text {
+    padding-top: 0.7rem;
+    gap: 1.3rem;
+  }
+  .sec2-head-text p {
+    font-size: 11px;
+    line-height: 1.3rem;
+  }
+  .sec3-img-div, .imege {
+    width: auto;
+    height: fit-content;
+  }
+  .sec3-img-div img, .imege img {
+    width: 6rem;
+  }
+  .sec3-head-text  {
+    padding-top: 0.7rem;
+    gap: 1.3rem;
+  }
+  .sec3-head-text p {
+    font-size: 11px;
+    line-height: 1.3rem;
+  }
+  .sec4-img1-div, .sec4-img2-div {
+    width: auto;
+    height: fit-content;
+  }
+  .sec4-img1-div img, .sec4-img2-div img {
+    width: 6rem;
+  }
+  .sec4-head-text  {
+    padding-top: 0.7rem;
+    gap: 1.3rem;
+  }
+  .sec4-head-text p {
+    font-size: 11px;
+    line-height: 1rem;
+  }
+  #sec5 .sec5-head {
+    font-size: 30px;
+    line-height: 1rem;
+  }
+  .sec5-outter-div {
+    gap: 3rem;
+  }
+  .sec5-inner-element {
+    width: 75%;
+    margin: auto;
+    flex-direction:column-reverse;
+    align-items: center;
+    gap: 2rem;
+  }
+  .sec5-element1-img, .sec5-element2-img, .sec5-element3-img {
+    height: 190px;
+    width: 75%;
+  }
+  .sec5-text {
+    height: 200px;
+    width: 75%;
+  }
+  .sec5-text h2 {
+    font-size: 20px;
+    margin-top: 1rem;
+    margin-bottom: 0;
+  }
+  .sec5-text p {
+    font-size: 10px;
+    line-height: 1rem;
+  }
+  #sec5-inner2 {
+    flex-direction: column;
+  }
+  .sec6 {
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+  .sec6-img1 {
+    width: 250px;
+  }
+  .sec6-img2 {
+    width: 250px;
+  }
+  .sec6-img3 {
+    display: none;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  #home img {
+    height: 520px;
+
+  }
+  #cards-div {
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+  }
+  .sec2-card, .sec3-card, .sec4-card {
+    width: 80%;
+  }
+  .sec2-head-text h1, .sec3-head-text h1, .sec4-head-text h1{
+    font-size: 30px;
+  }
+  .sec2-img1, .sec2-img2  {
+    width: auto;
+    height: fit-content;
+  }
+  .sec2-img1 img, .sec2-img2 img {
+    width: 7rem;
+  }
+  .sec2-head-text {
+    padding-top: 2rem;
+    gap: 2rem;
+  }
+  .sec2-head-text p {
+    font-size: 12px;
+    line-height: 1.4rem;
+  }
+  .sec3-img-div, .imege {
+    width: auto;
+    height: fit-content;
+  }
+  .sec3-img-div img, .imege img {
+    width: 7rem;
+  }
+  .sec3-head-text  {
+    padding-top: 2rem;
+    gap: 2rem;
+  }
+  .sec3-head-text p {
+    font-size: 12px;
+    line-height: 1.4rem;
+  }
+  .sec4-img1-div, .sec4-img2-div {
+    width: auto;
+    height: fit-content;
+  }
+  .sec4-img1-div img, .sec4-img2-div img {
+    width: 7rem;
+  }
+  .sec4-head-text  {
+    padding-top: 2rem;
+    gap: 2rem;
+  }
+  .sec4-head-text p {
+    font-size: 12px;
+    line-height: 1.3rem;
+  }
+  #sec5 .sec5-head {
+    font-size: 30px;
+    line-height: 1rem;
+  }
+  .sec5-outter-div {
+    gap: 3rem;
+  }
+  .sec5-inner-element {
+    width: 75%;
+    margin: auto;
+    align-items: center;
+    gap: 2rem;
+  }
+  .sec5-element1-img, .sec5-element2-img, .sec5-element3-img {
+    height: 220px;
+    width: 380px;
+  }
+  .sec5-text {
+    height: 220px;
+    width: 380px;
+  }
+  .sec5-text h2 {
+    font-size: 20px;
+    margin-top: 1rem;
+    margin-bottom: 0;
+  }
+  .sec5-text p {
+    font-size: 10px;
+    line-height: 1rem;
+  }
+  .sec6 {
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+  .sec6-img1 {
+    width: 250px;
+  }
+  .sec6-img2 {
+    width: 250px;
+  }
+  .sec6-img3 {
+    width: 250px;
+  }
+}

@@ -1,0 +1,390 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+    background: #dbdbdb;
+}
+
+/* Navbar */
+#mobileview {
+    width: 100%;
+    height: 100vh;
+    background-color: #AD0909;
+    position: fixed;
+    left: -100%;
+    top: 0;
+    z-index: 99;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 2s;
+}  
+#mobileview i {
+    position: absolute;
+    top: 2%;
+    right: 5%;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+
+#mobileview #nav-elements {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+  
+#nav-elements a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+}
+
+.profile-navbar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 8%;
+    background: #AD0909;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.profile-navbar .navbar {
+    width: 90%;
+}
+.profile-navbar .setting {
+    width: 10%;
+}
+.navbar ul {
+    width: 100%;
+    height: 35px;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.navbar ul>li {
+    list-style: none;
+    width: 95%;
+    text-align: center;
+    border-right: 1px solid white;
+    position: relative;
+}
+.navbar>ul>.search-item {
+    border-right: none;
+}
+li>.nav-item {
+    color: #ffffff;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: .5rem;
+    font-size: 17px;
+}
+.nav-item:after {
+	position: absolute;
+    left: 0;
+    content: '';
+    height: 3px;
+    background: #ffffff;
+    transition: all 0.3s linear;
+    width: 0;
+    bottom: 0;
+}  
+.nav-item:hover:after {
+    width: 100%;
+}
+.setting {
+    width: 5%;
+    height: 100%;
+}
+.setting>i {
+    width: max-content;
+    height: 100%;
+    font-size: 30px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.navbar>ul>.logo-item {
+    width: 100%;
+    border-right: none;
+    height: 100%;
+}
+.navbar>ul>.logo-item>.logo {
+    width: max-content;
+}
+.logo-item>.logo>img{
+    width: 100%;
+    height: 100%;
+}
+
+/* Menu icon */ 
+.menu-icon {
+    /* display: none; */
+    font-size: 25px;
+    font-weight: 500;
+    color: #fff;
+    position: relative;
+}
+.ri-menu-line {
+    position: absolute;
+    top: 8%;
+    left: 0;
+}
+
+/* Setting content */
+.setting-div {
+    display: none;
+    font-size: 15px;
+    font-weight: 0;
+    width: max-content;
+    background: rgb(220, 220, 220);
+    padding: 1rem;
+    position: absolute;
+    border-radius: 5px;
+    top: 8%;
+    right: 8%;
+    text-align: center;
+}
+.setting-div .setting-item {
+    padding: .5rem;
+}
+.setting-item>a {
+    text-decoration: none;
+    color: #000;
+}
+
+#main {
+    width: 100%;
+    min-height: 100vh;
+}
+
+#main #navbar {
+    width: 100%;
+    height: 10vh;
+    background-color: red;
+}
+
+#main #sec-1 {
+    width: 100%;
+    min-height: 90vh;
+    background-image: url(./Scroll\ Group\ 17.png);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+
+#sec-1 #left-sec-1 {
+    width: 28%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10em;
+}
+
+#left-sec-1 #link-div {
+    width: 350px;
+    background-color: #f4cccce4;
+    padding: 0 0.5em;
+    font-size: 1vw;
+}
+
+#link-div .link-tags {
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+#link-div .link-tags:last-child {
+    border-bottom: none;
+}
+
+.link-tags a {
+    color: #E91717;
+    text-decoration: none;
+}
+
+.link-tags p {
+    color: #E91717;
+}
+
+#sec-1 #right-sec-1 {
+    width: 72%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3em;
+}
+
+#right-sec-1 #rr1-sec-1  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2vw;
+    color: #E91717;
+    gap: 0.2em;
+}
+
+#right-sec-1 #img-div {
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+}
+
+#img-div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    object-position: top;
+}
+
+#right-sec-1 #rr2-sec-1 {
+    display: flex;
+    flex-direction: column;
+    /* width: 200px; */
+    gap: 1em;
+    font-size: 1.1vw;
+    color: #E91717;
+}
+
+#rr2-sec-1 .user-details {
+    gap: 3em;
+    display: flex;
+    text-align: left;
+    justify-content: space-between;
+}
+
+.user-details #user-details-rgt {
+    text-align: left;
+    width: 200px;
+}
+
+#rr2-sec-1 button {
+    text-align: center;
+    width: 110px;
+    padding: 0.8em 1.1em;
+    color: #E91717;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 1em;
+}
+
+#main #sec-2 {
+    width: 100%;
+    min-height: 80vh;
+    background-color: #FFD24D;
+    padding: 0 2em;
+    border-top: 1px solid transparent;
+}
+
+#sec-2 .table {
+    width: 100%;
+    background-color: #fff;
+    margin-top: 4em;
+    border-radius: 30px;
+    font-size: 1.1vw;
+}
+
+.table .table-nav {
+    width: 100%;
+    height: 60px;
+    background-color: #E91717;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    display: flex;
+    align-items: center;
+    padding: 0 1em;
+    justify-content: space-around;
+    color: #fff;
+}
+
+.table-nav h5 {
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.table .table-section {
+    width: 100%;
+    height: 200px;
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    position: relative;
+}
+
+.table-section .edit {
+    height: 40px;
+    position: absolute;
+    right: 3%;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3em;
+    cursor: pointer;
+}
+
+.edit p {
+    text-decoration: underline;
+}
+
+.table-section .sec-1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    padding: 0 8em;
+}
+
+.table-section .sec-2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 67%;
+    padding: 0 8em;
+}
+
+.table-section .dets {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.dets h3 {
+    color: rgb(96, 96, 96);
+    font-weight: 300;
+    font-size: 18px;
+}
+
+.dets p {
+    color: #E91717;
+    font-weight: 600;
+    font-size: 16px;
+}

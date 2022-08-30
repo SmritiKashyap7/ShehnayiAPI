@@ -1,0 +1,351 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+}
+
+html body {
+    width: 100%;
+    height: 100%;
+}
+
+/* Navbar */
+#mobileview {
+    width: 100%;
+    height: 100vh;
+    background-color: #AD0909;
+    position: fixed;
+    left: -100%;
+    top: 0;
+    z-index: 99;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 2s;
+}  
+#mobileview i {
+    position: absolute;
+    top: 2%;
+    right: 5%;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+
+#mobileview #nav-elements {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    text-align: center;
+    z-index: 1;
+}
+#nav-elements .m-nav-item {
+    width: 100%;
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+    transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+}
+.m-nav-item:hover {
+    background-color: #650505;
+}
+
+.profile-navbar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 8vh;
+    background: #AD0909;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.profile-navbar .navbar {
+    width: 90%;
+}
+.profile-navbar .setting {
+    width: 10%;
+}
+.navbar ul {
+    width: 100%;
+    height: 35px;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.navbar ul>li {
+    list-style: none;
+    width: 95%;
+    text-align: center;
+    border-right: 1px solid white;
+    position: relative;
+}
+.navbar>ul>.search-item {
+    border-right: none;
+}
+li>.nav-item {
+    color: #ffffff;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: .5rem;
+    font-size: 17px;
+}
+.nav-item:after {
+	position: absolute;
+    left: 0;
+    content: '';
+    height: 3px;
+    background: #ffffff;
+    transition: all 0.3s linear;
+    width: 0;
+    bottom: 0;
+}  
+.nav-item:hover:after {
+    width: 100%;
+}
+.setting {
+    width: 5%;
+    height: 100%;
+}
+.setting>i {
+    width: max-content;
+    height: 100%;
+    font-size: 30px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.navbar>ul>.logo-item {
+    width: 100%;
+    border-right: none;
+    height: 100%;
+}
+.navbar>ul>.logo-item>.logo {
+    width: max-content;
+}
+.logo-item>.logo>img{
+    width: 100%;
+    height: 100%;
+}
+
+/* Menu icon */ 
+.menu-icon {
+    /* display: none; */
+    font-size: 25px;
+    font-weight: 500;
+    color: #fff;
+    position: relative;
+}
+.ri-menu-line {
+    position: absolute;
+    top: 8%;
+    left: 0;
+}
+
+/* Setting content */
+.setting-div {
+    display: none;
+    font-size: 15px;
+    font-weight: 0;
+    width: max-content;
+    background: rgb(220, 220, 220);
+    padding: 1rem;
+    position: absolute;
+    border-radius: 5px;
+    top: 8%;
+    right: 8%;
+    text-align: center;
+}
+.setting-div .setting-item {
+    padding: .5rem;
+}
+.setting-item>a {
+    text-decoration: none;
+    color: #000;
+}
+
+#main {
+    width: 100%;
+    min-height: 100vh;
+}
+
+#main #navbar {
+    width: 100%;
+    height: 10vh;
+    background-color: red;
+}
+
+#main #sec-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#sec-1 .profs {
+    width: 70%;
+    height: 300px;
+    margin-top: 6em;
+    display: flex;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.profs .img-div {
+    width: 30%;
+    height: inherit;
+}
+
+.img-div img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-position: top;
+}
+
+.profs .txt-div {
+    width: 100%;
+}
+
+.txt-div .name {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    border-bottom: 1px solid black;
+    margin: 0 auto;
+}
+
+.name h1 {
+    color: red;
+    font-size: 40px;
+}
+
+.name p {
+    color: rgb(71, 71, 71);
+    font-size: 15px;
+}
+
+.txt-div .details-div {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    height: 300px;
+    margin: 2em auto;
+}
+
+.details-div h3 {
+    font-size: 16px;
+    margin-top: 1em;
+}
+
+.details-div #first {
+    font-size: 14px;
+    text-decoration: none;
+    color: blue ;
+    cursor: pointer;
+}
+
+.details-div #first:hover {
+    text-decoration: underline;
+}
+
+#sec-1 .full-dets {
+    width: 70%;
+    /* height: 900px; */
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    display: none;
+    position: relative;
+}
+
+.full-dets .section-1 {
+    width: 60%;
+    height: 300px;
+    /* background-color: red; */
+    margin: 3em auto;
+}
+
+.section-1 .heads {
+    display: flex;
+    width: 100%;
+    height: 30px;
+    border-bottom: 1px solid black;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.section-1 .logo {
+    width: 250px;
+    height: 60px;
+    margin-top: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 22px;
+}
+
+.full-dets .details-div {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.section-1 #logo-2 {
+    width: 100%;
+    height: 60px;
+    margin-top: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-bottom: 1px solid rgb(91, 91, 91);
+    margin-bottom: 1em;
+}
+
+#logo-2 h2 {
+    margin-left: 1.5em;
+}
+
+.full-dets > i {
+    position: absolute;
+    right: 3%;
+    top: 3%;
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 22px;
+    cursor: pointer;
+}
