@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQs</title>
+
+    <!-- Title icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./title_icons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./title_icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./title_icons/favicon-16x16.png">
+
+    <!-- CSS link -->
+    <link rel="stylesheet" href="./css/faq.css" />
+    <link rel="stylesheet" href="./css/navbar2.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/my_matches2.css">
+    
+    <!-- Boxicons cdn -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Remixicons cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div id="mobileview">
+        <i class="ri-close-line">
+        </i>
+        <div id="nav-elements">
+            <a href="dashboard.html">HOME</a>
+            <a href="#">MATCHES</a> 
+            <a href="./activity.html">ACTIVITY</a> 
+            <a href="membership-plan.html">MEMBERSHIP</a> 
+            <a href="./user_page.html">PROFILE</a>
+            <a href="#" id="notif" title="Notifications"><i class='bx bxs-bell'></i></a>
+            <a href="#" id="search" title="Search"><i class='bx bx-search'></i></a>
+            <a href="./settings.html" title="Settings"><i class='bx bxs-cog' ></i></a>
+        </div>
+    </div>
+
+    <div class="navbar">
+        <a id="menu"><i class='bx bx-menu'></i></a>
+        <div class="logo">
+            <a href="dashboard.html"><img src="./Images/shehnayioriginallogo.svg" alt="Shehnayi" title="Shehnayi"></a>
+        </div>
+        <div class="nav-links" id="nav-links">
+            <ul class="nav-list">
+                <li class="text-item"><a href="dashboard.html">Home</a></li>
+                <li class="text-item matches-item" id="matches">
+                    <a href="#" class="matches-txt">Matches<i id="open-dropdown" class="ri-arrow-down-s-fill"></i></a>
+                    <ul id="matches-dropdown">
+                        <li class="nots"><a class="matches-dropdown-item" href="./all_matches.html">All matches</a></li>
+                        <li class="nots all-profile"><a class="matches-dropdown-item" href="./all_profiles.html">All profiles</a></li>
+                    </ul>
+                </li>
+                <li class="text-item"><a href="./activity.html">Activity</a></li>
+                <li class="text-item"><a href="./membership1.html">Membership</a></li>
+                <li class="text-item"><a href="user_page.html" >Profile</a></li>
+                <li class="icons-item" id="notife"><i class='bx bxs-bell'></i></li>
+                <li class="icons-item" id="searche"><i class='bx bx-search'></i></li>
+                <li class="icons-item" id="settinge"><i class='bx bxs-cog' ></i></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Notification popup -->
+    <div id="not-popup">
+        <div class="nots">
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="nots">
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="nots">
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="nots">
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="nots">
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="nots">
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="nots">
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="nots">
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+    </div>
+
+    <!-- Search popup -->
+    <div id="nav-srch">
+        <div class="form-div">
+            <div id="heading">
+                <h2>Quick Search</h2>
+            </div>
+            <hr class="search-heading-line">
+            <form action="" id="search-form">
+                <h4>Age:</h4>
+                <div class="input-flex"> 
+                    <select class="search-age">
+                        <option selected disabled>Select</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                    </select>
+                    <p>to</p>
+                    <select class="search-age">
+                        <option selected disabled>Select</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                    </select>
+                </div>
+                <h4>Height:</h4>
+                <input type="text" name="height" placeholder="Height">
+                <h4>Country:</h4>
+                <select class="search-country">
+                    <option selected disabled>Select</option>
+                    <option value="India">India</option>
+                    <option value="Pakistan">Pakistan</option>
+                    <option value="Bangladesh">Bangladesh</option>
+                    <option value="Sri Lanka">Sri Lanka</option>
+                    <option value="Afghanistan">Afghanistan</option>
+                    <option value="UAE">UAE</option>
+                </select>
+                <h4>State:</h4>
+                <select class="search-state">
+                    <option selected disabled>Select</option>
+                    <option value="">Madhya Pradesh</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Punjab">Punjab</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                    <option value="Chandigarh">Chandigarh</option>
+                </select>
+                <h4>City:</h4>
+                <input type="text" name="city" placeholder="City">
+                <h4>Education:</h4>
+                <input type="text" name="education" placeholder="Education">
+                <h4>Occupation:</h4>
+                <input type="text" name="occupation" placeholder="Occupation">
+                <div class="btn-flex">
+                    <button>
+                        <i class="ri-search-line"></i>
+                        Search
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Settings popup -->
+    <div class="setting-popup">
+        <div class="setting-items">
+            <a href="./account_settings.html">Settings & privacy</p>
+        </div>
+        <div class="setting-items logout-text">
+            <a href="#">Logout</a>
+        </div>
+    </div>
+
+
+    <div class="sec-9">
+        <div class="sec-9-img">
+            <img id="sec-9-images1" src="./Icons/sec-9-img.svg" alt="">
+            <img src="./Icons/sec-9-img_1.svg" alt="" class="cloud-icon">
+            <i class='bx bx-question-mark'></i>
+        </div>
+        <div class="sec-9-head-part">
+            <p class="sec-9-heading">
+                <span class="sec-9-title">Frequently Asked Questions</span>
+            </p>
+            <div class="sec-9-search-butn">
+                <i class="bx bx-search"></i>
+                <input type="search" placeholder="Search" class="faq-input">
+            </div>
+        </div>
+        <div class="sec-9-ques-section">
+            <div class="sec-9-blocks">
+                <h4 class="ques-block">How to register in Shehnayi.com?</h4>
+                <p class="answer-block">Registration on Shehnayi.com is Free and easy. You just need to follow the instructions and fill your personal details.</p>
+            </div>
+            <div class="sec-9-blocks">
+                <h4 class="ques-block">How to add profile pictures?</h4>
+                <p class="answer-block">When you fill your details under Registration form, moving further you will get a page to upload your profile picture. There you can upload your pictures.</p>
+            </div>
+            <div class="sec-9-blocks">
+                <h4 class="ques-block">Can we change our profile picture after some time duration?</h4>
+                <p class="answer-block">Yes, you can change your profile picture anytime. </p>
+            </div>
+            <div class="sec-9-blocks">
+                <h4 class="ques-block">How to search for matches? </h4>
+                <p class="answer-block">When you login, your profile page (user panel) will open, and you will be able to see matches on the dashboard itself. </p>
+            </div>
+            <div class="sec-9-blocks">
+                <h4 class="ques-block">How can I login? </h4>
+                <p class="answer-block">There is a login button at the top red bar on the main website page.
+                  By clicking on it you just need to enter your Shehnayi Id and password. And you will be at your user panel dashboard. </p>
+            </div>
+            <div class="sec-9-blocks">
+              <h4 class="ques-block">Can we register on someone else’s behalf like son/daughter/sibling /friend/relative?</h4>
+              <p class="answer-block">Yes, of course. You can register anyone. In the registration form you can specify your relationship with the person on whose behalf you are registering a matrimonial account.</p>
+            </div>
+            <div class="sec-9-blocks">
+                <h4 class="ques-block">Are my profile details and photos secure? </h4>
+                <p class="answer-block">Absolutely, your details are safe with us.</p>
+            </div>
+            <div class="sec-9-blocks">
+                <h4 class="ques-block">Are my profile details and photos secure? </h4>
+                <p class="answer-block">Absolutely, your details are safe with us.</p>
+            </div>
+            <div class="sec-9-blocks">
+                <h4 class="ques-block">What is the profile validation?</h4>
+                <p class="answer-block">Once you register with Shehnayi. Your profile will be valid for lifetime.</p>
+            </div>
+            <div class="sec-9-blocks">
+                <h4 class="ques-block">After registration, do I get a membership ID?</h4>
+                <p class="answer-block">Yes, after you register and fill the details in the registration form, you will see your membership Id as SHXXXX.</p>
+            </div>
+            <div class="sec-9-blocks">
+                <h4 class="ques-block">Can we shortlist the profiles?</h4>
+                <p class="answer-block">There is a button named shortlist. If you like anyone you can move
+                that person's profile in the shortlist option by clicking on the button of shortlist.</p>
+            </div>
+            <div class="sec-9-blocks">
+                <h4 class="ques-block">What are the paid plan details?</h4>
+                <p class="answer-block">We have a single basic plan of Rs.500/- only.</p>
+            </div>
+            <div class="sec-9-blocks">
+                <h4 class="ques-block">How can I show my interest to the person if I like someone?</h4>
+                <p class="answer-block">You will see a send/receive interest button at the bottom right side of the profile by clicking that you can send/receive interest.</p>
+            </div>
+            <div class="sec-9-blocks">
+                <h4 class="ques-block">How do I send a message or contact to the person in whom I am interested or other is interested in me?</h4>
+                <p class="answer-block">You can see a chat bot button available at the bottom right side, you can even initiate the chat with the person you like.</p>
+            </div>
+            <div class="sec-9-blocks">
+                <h4 class="ques-block">It's a very lengthy form do I need to fill the entire form?</h4>
+                <p class="answer-block">You should fill the required personal information about yourself, so it will be easy for other person to select you as his/her suited match based on your details.</p>
+            </div>
+            <div class="sec-9-blocks">
+                <h4 class="ques-block">What about face-to-face meetings with the person I am interested?</h4>
+                <p class="answer-block">We have a single basic plan of Rs.500/- only.</p>
+            </div>
+            <div class="sec-9-blocks">
+                <h4 class="ques-block">Can two profiles be registered with the same phone number?</h4>
+                <p class="answer-block">If you like anyone and you are member of our company, you will get
+                the contact details of that person and can go for video calling for face to face meet.</p>
+            </div>
+            <div class="sec-9-blocks">
+                <h4 class="ques-block">Can two profiles be registered with the same phone number?</h4>
+                <p class="answer-block">No, only one profile can be registered by using one phone number.</p>
+            </div>
+            <div class="sec-9-blocks">
+                <h4 class="ques-block">Can I edit my profiles afterwards?</h4>
+                <p class="answer-block">Yes, definitely you can make changes in your profile whenever you want.</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="logo-img">
+            <img src="./Images/shehnayilogowhite.svg" alt="Shehnayi-logo" title="Shehnayi">
+        </div>
+        <div class="footer-links">
+            <div class="foot-links-div">
+                <h4 class="links-title">Need Help?</h4>
+                <ul class="foot-links">
+                    <li><a href="#">Member Login</a></li>
+                    <li><a href="#">Sign Up</a></li>
+                    <li><a href="#">Partner Search</a></li>
+                    <li><a href="faq1.html">How to use</a></li>
+                    <li><a href="membership1.html">Premium membership</a></li>
+                    <li><a href="#">Customer Support</a></li>
+                </ul>
+            </div>
+            <div class="foot-links-div">
+                <h4 class="links-title">Company</h4>
+                <ul class="foot-links">
+                    <li><a href="about1.html">About US</a></li>
+                    <li><a href="blogs.html">Shaadi Blogs</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Awards</a></li>
+                    <li><a href="contact1.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="foot-links-div">
+                <h4 class="links-title">Privacy & You</h4>
+                <ul class="foot-links">
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Be Safe Online</a></li>
+                    <li><a href="#">Reports Misuse</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="social-links">
+            <h4 class="social-title">
+                Follow Us
+            </h4>
+            <div class="social-icons">
+                <a href="#" class="social-icons-link"><img src="./Icons/footer-fb-icon.svg" alt=""></a>
+                <a href="#" class="social-icons-link"><img src="./Icons/footer-twitter-icon.svg" alt=""></a>
+                <a href="#" class="social-icons-link"><img src="./Icons/footer-insta-icon.svg" alt=""></a>
+                <a href="#" class="social-icons-link"><img src="./Icons/footer-linkedin-icon.svg" alt=""></a>
+            </div>
+        </div>
+        <div class="footer-end">
+            <a href="" class="terms-condtns">Terms and Conditions</h4>
+            <a href="" class="privacy-policy">Privacy Policy</h4>
+            <a href="contact1.html" class="contact-us">Contact Us</h4>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="./js/my_matches.js"></script>
+
+  </body>
+</html>
