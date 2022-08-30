@@ -571,176 +571,192 @@
     <script> 
     var flag=0;
         var dashboardApiUrl = 'http://localhost:2000/api/v2/home';
+        fetch(dashboardApiUrl, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + localStorage.getItem('token')
+            }
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data==="Preference not found")
+            console.log("you are exactly where you need to be");
         
-                fetch(dashboardApiUrl,{
-                    method: 'GET',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': 'Bearer ' + localStorage.getItem('loginToken')
-                    }
-                })
-                .then(response => {
-                    return response.json();
-                }).then(data => {
-                    document.querySelector("#apidbpendinginterest").innerHTML = data.foundUser.pendingRequests.length;
-                    document.querySelector("#apidbconnections").innerHTML = data.foundUser.connections.length;
-                    document.querySelector("#apidbvisitors").innerHTML = data.foundUser.viewProfilers.length;
-                    console.log(data);
-                    console.log(data.foundUser.pendingRequests.length);
-                    console.log(data.matches);
-                    console.log(data.recommendedMatches); 
-                    document.querySelector("#apidbusername").innerHTML = data.foundUser.firstname+" "+data.foundUser.lastname;
-                    document.querySelector("#apidbuserprofilepic").setAttribute('src',`${data.foundUser.profilePicture}`);
-                    document.querySelector("#apidbuserid").innerHTML=data.foundUser._id.substring(4,13);
+        }
+        )
+        .catch(err => console.log(err));
+            
+        
+                // fetch(dashboardApiUrl,{
+                //     method: 'GET',
+                //     headers: {
+                //         'Content-Type': 'application/json',
+                //         'Authorization': 'Bearer ' + localStorage.getItem('loginToken')
+                //     }
+                // })
+                // .then(response => {
+                //     return response.json();
+                // }).then(data => {
+                    // document.querySelector("#apidbpendinginterest").innerHTML = data.foundUser.pendingRequests.length;
+                    // document.querySelector("#apidbconnections").innerHTML = data.foundUser.connections.length;
+                    // document.querySelector("#apidbvisitors").innerHTML = data.foundUser.viewProfilers.length;
+                    // console.log(data);
+                    // console.log(data.foundUser.pendingRequests.length);
+                    // console.log(data.matches);
+                    // console.log(data.recommendedMatches); 
+                    // document.querySelector("#apidbusername").innerHTML = data.foundUser.firstname+" "+data.foundUser.lastname;
+                    // document.querySelector("#apidbuserprofilepic").setAttribute('src',`${data.foundUser.profilePicture}`);
+                    // document.querySelector("#apidbuserid").innerHTML=data.foundUser._id.substring(4,13);
                    
-   
+            
                     
-                        var clutter1 = ''
-                    data.recommendedMatches.forEach((element,index) => {
-                        console.log("element");
-                        clutter1 += `<div class="slick-card">
-                    <div class="slick-card-img">
-                        <a href="./user_page.html"><img id="userImg" src="${element.profilePicture}" alt="John"></a>
-                    </div>
-                    <div class="slick-card-dets">
-                        <h1>${element.firstname}</h1>
-                        <h5>Age -${element.age}</h5>
-                        <h5>${element.cast}-${element.subCaste}</h5>
-                        <h5>${element.city}, ${element.state}</h5>
-                    </div>
-                        <button type="submit" id="btn${index}" data-id= ${element._id} >Send Interest</button>
-                </div>`
-                    });
-                    document.querySelector("#apidbrecommendedmatches").innerHTML = clutter1;
+                //         var clutter1 = ''
+                //     data.recommendedMatches.forEach((element,index) => {
+                //         console.log("element");
+                //         clutter1 += `<div class="slick-card">
+                //     <div class="slick-card-img">
+                //         <a href="./user_page.html"><img id="userImg" src="${element.profilePicture}" alt="John"></a>
+                //     </div>
+                //     <div class="slick-card-dets">
+                //         <h1>${element.firstname}</h1>
+                //         <h5>Age -${element.age}</h5>
+                //         <h5>${element.cast}-${element.subCaste}</h5>
+                //         <h5>${element.city}, ${element.state}</h5>
+                //     </div>
+                //         <button type="submit" id="btn${index}" data-id= ${element._id} >Send Interest</button>
+                // </div>`
+                //     });
+                //     document.querySelector("#apidbrecommendedmatches").innerHTML = clutter1;
                     
                   
 
-                    var clutter2 = ''
-                        // document.querySelector("#apidbrecommendedmatchesheading").style.display = "none";
-                        fetch("http://localhost:2000/api/v2/all-users",{
-                            method: 'GET',
-                            headers: {
-                                'Content-Type': 'application/json',
-                                'Authorization': 'Bearer ' + localStorage.getItem('loginToken')
-                            }
-                        }).then(response=>{
-                            return response.json();
-                        }).then(data=>{
-                            console.log(data);
-                            var clutter2=''
-                    data.forEach((element, index) => {
-                        // console.log("hey");
-                        clutter2 += `<div class="slick-card">
-                    <div class="slick-card-img">
-                        <a href="./user_page.html"><img id="userImg" src="${element.profilePicture}" alt="John"></a>
-                    </div>
-                    <div class="slick-card-dets">
-                        <h1>${element.firstname}</h1>
-                        <h5>Age - ${element.age}</h5>
-                        <h5>${element.cast}-${element.subCaste}</h5>
-                        <h5>${element.city},${element.state}</h5>
-                    </div>
+            //         var clutter2 = ''
+            //             // document.querySelector("#apidbrecommendedmatchesheading").style.display = "none";
+            //             fetch("http://localhost:2000/api/v2/all-users",{
+            //                 method: 'GET',
+            //                 headers: {
+            //                     'Content-Type': 'application/json',
+            //                     'Authorization': 'Bearer ' + localStorage.getItem('loginToken')
+            //                 }
+            //             }).then(response=>{
+            //                 return response.json();
+            //             }).then(data=>{
+            //                 console.log(data);
+            //                 var clutter2=''
+            //         data.forEach((element, index) => {
+            //             // console.log("hey");
+            //             clutter2 += `<div class="slick-card">
+            //         <div class="slick-card-img">
+            //             <a href="./user_page.html"><img id="userImg" src="${element.profilePicture}" alt="John"></a>
+            //         </div>
+            //         <div class="slick-card-dets">
+            //             <h1>${element.firstname}</h1>
+            //             <h5>Age - ${element.age}</h5>
+            //             <h5>${element.cast}-${element.subCaste}</h5>
+            //             <h5>${element.city},${element.state}</h5>
+            //         </div>
                     
-                        <button id="btn${index}" data-id= ${element._id} >Send Interest</button>
+            //             <button id="btn${index}" data-id= ${element._id} >Send Interest</button>
                   
-                </div>`
+            //     </div>`
 
-                }
-                );    
-                 document.querySelector("#apidbrecommendedmatches").innerHTML = clutter2
-                 ;
-                        })
+            //     }
+            //     );    
+            //      document.querySelector("#apidbrecommendedmatches").innerHTML = clutter2
+            //      ;
+            //             })
                     
-            }).catch(err => {
-                    console.log(err);
-                }
-                ).finally(() => {
-                    console.log('finally');
-                }
-                );
+            // }).catch(err => {
+            //         console.log(err);
+            //     }
+            //     ).finally(() => {
+            //         console.log('finally');
+            //     }
+            //     );
 
 
 
-                document.querySelector("#apidbrecommendedmatches").addEventListener("click", function (dets) {
-                    dets.preventDefault()
-                    var userId=dets.target.dataset.id;
-                    console.log(dets.target.id);
-                    var btnId=dets.target.id
-                    console.log(dets.target.dataset.id);
-                     var loggedinUser=localStorage.getItem("loggedinUserdashboard");
+                // document.querySelector("#apidbrecommendedmatches").addEventListener("click", function (dets) {
+                //     dets.preventDefault()
+                //     var userId=dets.target.dataset.id;
+                //     console.log(dets.target.id);
+                //     var btnId=dets.target.id
+                //     console.log(dets.target.dataset.id);
+                //      var loggedinUser=localStorage.getItem("loggedinUserdashboard");
                      
-                     console.log(loggedinUser);
-                     console.log(sessionStorage.getItem("loggedinUserdashboard"));
-                    fetch(`http://localhost:2000/api/v2/user/interest/${userId}`, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'Authorization': 'Bearer ' + localStorage.getItem('loginToken')
-                        },
+                //      console.log(loggedinUser);
+                //      console.log(sessionStorage.getItem("loggedinUserdashboard"));
+                //     fetch(`http://localhost:2000/api/v2/user/interest/${userId}`, {
+                //         method: 'POST',
+                //         headers: {
+                //             'Content-Type': 'application/json',
+                //             'Authorization': 'Bearer ' + localStorage.getItem('loginToken')
+                //         },
                      
-                    }).then(response => {
-                        return response.json();
-                    }).then(data => {
-                        console.log(data);
+                //     }).then(response => {
+                //         return response.json();
+                //     }).then(data => {
+                //         console.log(data);
                       
-                        if (data.message == "Interest Sent") {
-                            document.querySelector(`#${btnId}`).style.display="none";
-                        }
-                        else {
-                            // alert("Interest Already Sent");
-                            document.querySelector(`#${btnId}`).style.display="none";
-                        }
-                    }).catch(err => {
-                        console.log(err);
-                    }).finally(() => {
-                        console.log('finally');
-                    });
-                }); 
+                //         if (data.message == "Interest Sent") {
+                //             document.querySelector(`#${btnId}`).style.display="none";
+                //         }
+                //         else {
+                //             // alert("Interest Already Sent");
+                //             document.querySelector(`#${btnId}`).style.display="none";
+                //         }
+                //     }).catch(err => {
+                //         console.log(err);
+                //     }).finally(() => {
+                //         console.log('finally');
+                //     });
+                // }); 
    
-                document.querySelector("#apidbuserlogout").addEventListener("click", function (dets) {
-                    dets.preventDefault();
-                    fetch("http://localhost:2000/api/v2/user/logout", {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'Authorization': 'Bearer ' + localStorage.getItem('loginToken')
-                        }
-                    }).then(response => {
-                        return response.json();
-                    }).then(data => {
-                        window.location.href = "./index.html";
-                        console.log(data);
+                // document.querySelector("#apidbuserlogout").addEventListener("click", function (dets) {
+                //     dets.preventDefault();
+                //     fetch("http://localhost:2000/api/v2/user/logout", {
+                //         method: 'POST',
+                //         headers: {
+                //             'Content-Type': 'application/json',
+                //             'Authorization': 'Bearer ' + localStorage.getItem('loginToken')
+                //         }
+                //     }).then(response => {
+                //         return response.json();
+                //     }).then(data => {
+                //         window.location.href = "./index.html";
+                //         console.log(data);
                       
-                            localStorage.removeItem("loginToken");
-                            localStorage.removeItem("loggedinUserdashboard");
+                //             localStorage.removeItem("loginToken");
+                //             localStorage.removeItem("loggedinUserdashboard");
 
                         
-                    }).catch(err => {
-                        console.log(err);
-                    }).finally(() => {
-                        console.log('finally');
-                    });
+                //     }).catch(err => {
+                //         console.log(err);
+                //     }).finally(() => {
+                //         console.log('finally');
+                //     });
                    
-                });
+                // });
 
 
-var dbsearchbtn=document.querySelector("#apidbquicksearchbtn");
-dbsearchbtn.addEventListener("click",function(){
-    fetch("http://localhost:2000/api/v2/user/search",{
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer ' + localStorage.getItem('loginToken')
-        },
-        body: JSON.stringify({
+// var dbsearchbtn=document.querySelector("#apidbquicksearchbtn");
+// dbsearchbtn.addEventListener("click",function(){
+    // fetch("http://localhost:2000/api/v2/user/search",{
+    //     method: 'POST',
+    //     headers: {
+    //         'Content-Type': 'application/json',
+    //         'Authorization': 'Bearer ' + localStorage.getItem('loginToken')
+    //     },
+    //     body: JSON.stringify({
            
-        })
-    }).then(response=>{
-        console.log("this is quicksearchapi")
-        return response.json();
-    }).then(data=>{
-        console.log("this is quick search search results")
-        console.log(data);
+    //     })
+    // }).then(response=>{
+    //     console.log("this is quicksearchapi")
+    //     return response.json();
+    // }).then(data=>{
+    //     console.log("this is quick search search results")
+    //     console.log(data);
         // var clutter3=''
         // data.forEach((element, index) => {
         //     // console.log("hey");
@@ -756,7 +772,7 @@ dbsearchbtn.addEventListener("click",function(){
         // </div>
         
         //     <button id="btn${index}" data-id= ${element._id} >Send Interest</button>`
-})})
+// })})
    </script>
 
 </body>
