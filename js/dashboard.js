@@ -1,11 +1,10 @@
-var flag = 0;
 var dashboardApiUrl = "http://localhost:2000/api/v2/home";
 
 fetch(dashboardApiUrl, {
   method: "GET",
   headers: {
     "Content-Type": "application/json",
-    Authorization: "Bearer " + localStorage.getItem("token"),
+    Authorization: `Bearer ${localStorage.getItem("token")}`,
   },
 })
   .then((response) => {
@@ -34,27 +33,49 @@ fetch(dashboardApiUrl, {
       var clutter1 = "";
       data.matches.forEach((element, index) => {
         clutter1 += `<div class="slick-card">
-                    <div class="slick-card-img">
-                        <a href="./user_page.html"><img id="userImg" src="/${element.profilePicture}" alt="Profile"></a>
-                    </div>
-                    <div class="slick-card-dets">
-                        <h1>${element.firstname}</h1>
-                        <h5>Age -${element.age}</h5>
-                        <h5>${element.cast}-${element.subCaste}</h5>
-                        <h5>${element.city}, ${element.state}</h5>
-                    </div>
-                    <a class="slick-card-a" >
-                        <button type="submit" id="btn${index}" data-id= ${element._id} >Send Interest</button>
-                    </a>
-                </div>`;
+              <div class="slick-card-img">
+                  <a href="./user_page.html"><img id="userImg" src="/${element.profilePicture}" alt="Profile"></a>
+              </div>
+              <div class="slick-card-dets">
+                  <h1>${element.firstname}</h1>
+                  <h5>Age -${element.age}</h5>
+                  <h5>${element.cast}-${element.subCaste}</h5>
+                  <h5>${element.city}, ${element.state}</h5>
+              </div>
+              <a class="slick-card-a" >
+                  <button type="submit" id="btn${index}" data-id= ${element._id} >Send Interest</button>
+              </a>
+          </div>`;
       });
       document.querySelector("#apidbmatches").innerHTML = clutter1;
     } else {
+      // document.querySelector("#apidbmatchesheading").style.display = "none";
       document.querySelector(
         "#apidbmatches"
       ).innerHTML = `<h1>No Matches Found</h1>`;
-    }   
+    }
+    //   if (data.recommendedMatches.length > 0) {
+    //     var clutter2 = "";
+    //     data.recommendedMatches.forEach((element, index) => {
+    //       clutter2 += `<div class="slick-card">
+    //             <div class="slick-card-img">
+    //                 <a href="./user_page.html"><img id="userImg" src="${element.profilePicture}" alt="John"></a>
+    //             </div>
+    //             <div class="slick-card-dets">
+    //                 <h1>${element.firstname}</h1>
+    //                 <h5>Age - ${element.age}</h5>
+    //                 <h5>${element.cast}-${element.subCaste}</h5>
+    //                 <h5>${element.city},${element.state}</h5>
+    //             </div>
 
+    //                 <button id="btn${index}" data-id= ${element._id} >Send Interest</button>
+
+    //         </div>`;
+    //     });
+    //     document.querySelector("#apidbrecommendedmatches").innerHTML =
+    //       clutter2;
+    //   } else {
+    // document.querySelector("#apidbrecommendedmatchesheading").style.display = "none";
     fetch("http://localhost:2000/api/v2/allUsers", {
       method: "GET",
       headers: {
@@ -65,76 +86,77 @@ fetch(dashboardApiUrl, {
       .then((response) => {
         return response.json();
       })
-      .then((data) => {
+      .then(async (data) => {
         console.log(data);
         var clutter2 = "";
-        data.forEach((element, index) => {
+        await data.forEach((element, index) => {
           clutter2 += `<div class="slick-card">
-                    <div class="slick-card-img">
-                        <a href="./user_page.html"><img id="userImg" src="http://localhost:2000/${element.profilePicture}" alt="Profile"></a>
-                    </div>
-                    <div class="slick-card-dets">
-                        <h1>${element.firstname}</h1>
-                        <h5>Age - ${element.age}</h5>
-                        <h5>${element.cast}-${element.subCaste}</h5>
-                        <h5>${element.city},${element.state}</h5>
-                    </div>
-                    <a  class="slick-card-a">
-                        <button id="btn${index}" data-id= ${element._id} >Send Interest</button>
-                    </a>
-                </div>`;
+              <div class="slick-card-img">
+                  <a href="./user_page.html"><img id="userImg" src="http://localhost:2000/${element.profilePicture}" alt="Profile"></a>
+              </div>
+              <div class="slick-card-dets">
+                  <h1>${element.firstname}</h1>
+                  <h5>Age - ${element.age}</h5>
+                  <h5>${element.cast}-${element.subCaste}</h5>
+                  <h5>${element.city},${element.state}</h5>
+              </div>
+              <a  class="slick-card-a">
+                  <button id="btn${index}" class="btnjs" data-id= ${element._id} >Send Interest</button>
+              </a>
+          </div>`;
         });
         document.querySelector("#apidbrecommendedmatches").innerHTML = clutter2;
       });
   })
   .catch((err) => {
-    return err;
+    console.log(err);
   })
   .finally(() => {
     console.log("finally");
   });
 
-document
-  .querySelector("#apidbrecommendedmatches")
-  .addEventListener("click", function (dets) {
-    dets.preventDefault();
-    var userId = dets.target.dataset.id;
-    console.log(dets.target.id);
-    var btnId = dets.target.id;
-    console.log(dets.target.dataset.id);
-    var loggedinUser = localStorage.getItem("loggedinUserdashboard");
-
-    console.log(loggedinUser);
-    console.log(sessionStorage.getItem("loggedinUserdashboard"));
-    fetch(`http://localhost:2000/api/v2/user/interest/${userId}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + localStorage.getItem("token"),
-      },
-    })
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        console.log(data);
-
-        if (data.message == "Interest Sent") {
-          document.querySelector(`#${btnId}`).style.display = "none";
-        } else {
-          // alert("Interest Already Sent");
-          document.querySelector(`#${btnId}`).style.display = "none";
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-      .finally(() => {
-        console.log("finally");
-      });
-  });
-
+// jeetul
 setTimeout(() => {
+  document.querySelectorAll(".btnjs").forEach((element) => {
+    element.addEventListener("click", function (dets) {
+      dets.preventDefault();
+      var userId = dets.target.dataset.id;
+      console.log(dets.target.id);
+      var btnId = dets.target.id;
+      console.log(dets.target.dataset.id);
+      var loggedinUser = localStorage.getItem("loggedinUserdashboard");
+      console.log(loggedinUser);
+      console.log(sessionStorage.getItem("loggedinUserdashboard"));
+      fetch(`http://localhost:2000/api/v2/user/interest/${userId}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        },
+      })
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          console.log(data);
+          if (data.message == "Interest Sent") {
+            document.querySelector(`#${btnId}`).textContent = "Interest Sent";
+          } else {
+            // alert("Interest Already Sent");
+            document.querySelector(`#${btnId}`).textContent = "Interest Sent";
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+        .finally(() => {
+          console.log("finally");
+        });
+    });
+  });
+}, 1000);
+
+setTimeout(function () {
   $(".slick-js").slick({
     infinite: true,
     slidesToShow: 3,
@@ -167,9 +189,17 @@ setTimeout(() => {
           slidesToScroll: 2,
         },
       },
+      // You can unslick at	any time.
+      // {
+      //     breakpoint: 320,
+      //     settings: {
+      //         slidesToShow: 1,
+      //         slidesToScroll: 1
+      //     }
+      // }
     ],
   });
-}, "1000");
+}, 1000);
 
 // Mobileview navbar
 document.querySelector("#menu").addEventListener("click", function (event) {
