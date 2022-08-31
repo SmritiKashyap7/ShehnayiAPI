@@ -8,9 +8,22 @@
   font-family: "Poppins";
 }
 
-html body {
+html,body {
   width: 100%;
   height: 100%;
+      user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+img {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 #main {
@@ -31,13 +44,13 @@ html body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
 }
 
 .detail-sec .profs {
   width: 100%;
   /* height: 300px; */
-  margin-top: 3em;
+  margin-top: 4em;
   display: flex;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
     rgba(0, 0, 0, 0.22) 0px 10px 10px;
@@ -79,9 +92,9 @@ html body {
   border-radius: 50%;
 }
 
-.send-interest i {
-  width: 60px;
-  height: 60px;
+.send-interest .interest-btn {
+  width: 70px;
+  height: 70px;
   background-color: #ad0909;
   color: #fff;
   display: flex;
@@ -90,6 +103,17 @@ html body {
   border-radius: 50%;
   font-size: 40px;
 }
+
+.interest-btn>i {
+  width: max-content;
+  text-align: center;
+  transition: 0.2s ease-in;
+}
+
+.interest-btn>i:hover {
+  transform: translateX(15%);
+}
+
 
 .send-interest h4 {
   margin-top: 1em;
@@ -121,7 +145,7 @@ html body {
   position: absolute;
   width: 120px;
   height: 100px;
-  top: 20%;
+  top: 16%;
   right: 10%;
   background-color: #fff;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
@@ -129,9 +153,10 @@ html body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.7em;
+  /* gap: 0.7em; */
   display: none;
-  border-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 .drop-list h5 {
@@ -140,17 +165,25 @@ html body {
   color: #454545;
   font-weight: 300;
   text-align: center;
+  padding: 0.4rem 0; 
+}
+
+.drop-list>h5:nth-child(3) {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 .drop-list h5:hover {
-  color: #000;
+  color: #fff;
+  background-color: #ababab;
 }
 
-.drop-down .open-dropdown {
+
+.drop-down .onlinebtn {
   cursor: pointer;
 }
 
-.drop-down i {
+.drop-down>i {
   cursor: pointer;
   font-size: 20px;
 }
@@ -328,26 +361,72 @@ html body {
   align-items: flex-start;
   margin-top: 5em;
 }
+
 .dets-img-div {
-  width: 80%;
-  height: 200px;
+  width: 90%;
   display: flex;
   white-space: nowrap;
-  overflow: auto;
-  gap: 1rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  /* gap: 1rem; */
   margin: 2rem auto;
 }
-.dets-img-div i {
-  font-size: 5rem;
-  padding: 3rem 2rem;
-  background-image: linear-gradient(
-      rgba(255, 255, 255, 0.4),
-      rgba(255, 255, 255, 0.4)
-    ), url("../images/about-team.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+
+.card-img-js {
+  display:inline-block;
+  height: 200px;
+  width: 120px;
+  position: relative;
+  margin: 0 5px;
 }
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #000;
+}
+
+.card-img-js> i {
+  width: 100%;
+  height: 100%;
+  font-size: 6em;
+  text-align: center;
+  background-color: #181818b3;
+  color: #000;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: all ease-in-out 0.3s;
+}
+
+.card-img-js>i:hover {
+  cursor: pointer;
+  color: #1f1f1f;
+  background-color: #1818188c;
+}
+
+.card-img-js>i::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card-img-js img{
+  height: 100%;
+  width: 100%;
+  object-fit:cover;
+  transition: 0.5s ease; 
+}
+
 
 .dets-img-div::-webkit-scrollbar {
   display: none;
@@ -357,9 +436,11 @@ html body {
   margin: 0 8em;
   color: #ad0909;
 }
+
 .dets-div {
   width: 100%;
 }
+
 .hr {
   background-color: #ad0909;
   height: 0.2em;
@@ -402,7 +483,7 @@ html body {
 }
 
 .lft-tag {
-  font-weight: 600;
+  font-weight: 300;
   font-size: 16px;
   width: 70%;
 }
