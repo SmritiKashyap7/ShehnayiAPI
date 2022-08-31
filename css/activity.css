@@ -10,6 +10,19 @@ html,
 body {
   height: 100%;
   width: 100%;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+img {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 #search-form .serch-btn {
@@ -105,7 +118,7 @@ body {
 .slick-div .slick-cards {
   margin-left: 0.7em;
   width: 220px;
-  height: 400px;
+  height: max-content;
   font-size: 1vw;
   border: 1px solid black;
   border-radius: 10px;
@@ -114,7 +127,7 @@ body {
 
 .slick-cards .top {
   width: 100%;
-  height: 220px;
+  height: 200px;
   transition: all linear 0.2s;
 }
 .slick-cards .top:hover {
@@ -133,7 +146,7 @@ body {
   align-items: center;
   justify-content: space-between;
   margin-top: 1.5em;
-  gap: 1rem;
+  gap: 10px;
 }
 
 /* .btn-flex i {
@@ -164,12 +177,12 @@ body {
 }
 
 .slick-cards p {
-  font-size: 0.9vw;
+  font-size: 1vw;
 }
 
 .slick-cards .accpt-btn,
 .slick-cards .declin-btn {
-  padding: 0.5em 1.8em;
+  padding: 0.5em 0.7em;
   font-size: 14px;
   background-color: #1e88a2;
   border: none;
@@ -177,9 +190,11 @@ body {
   color: #fff;
   transition: all ease-in 0.2s;
 }
+
 .accpt-btn:hover {
   background-color: #58abc0;
 }
+
 .slick-cards .declin-btn {
   background-color: #ad0909;
 }
@@ -238,10 +253,6 @@ body {
 }
 
 .drop-list i {
-  cursor: pointer;
-}
-
-.drop-list i {
   position: absolute;
   top: 1%;
   right: 1%;
@@ -254,6 +265,7 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 22px;
+  cursor: pointer;
 }
 
 #main #srch-bar {
@@ -269,10 +281,10 @@ body {
 #srch-bar input[type="search"] {
   outline: none;
 }
-
 #srch-bar i {
   font-size: 20px;
 }
+
 @media (min-width: 320px) and (max-width: 550px) {
   .slick-div .slick-cards {
     height: auto;
@@ -280,8 +292,12 @@ body {
 
   .slick-cards .accpt-btn,
   .slick-cards .declin-btn {
-    padding: 1em 0.5em;
+    padding: 0.5em;
     font-size: 8px;
+  }
+
+  .bottom .btn-flex {
+    gap: 0.5rem;
   }
 
   .slick-cards .top {
@@ -323,7 +339,8 @@ body {
   }
 
   .interests h2 {
-    font-size: 4vw;
+    font-size: 3.7vw;
+    margin-left: 0.5em;
   }
 
   #msg-popup {
@@ -355,16 +372,20 @@ body {
 
   .slick-cards .accpt-btn,
   .slick-cards .declin-btn {
-    padding: 1em 0.5em;
-    font-size: 8px;
+    padding: 0.6em;
+    font-size: 10px;
+  }
+
+  .bottom .btn-flex {
+    gap: 0.5rem;
   }
 
   .slick-cards .top {
-    height: 100px;
+    height: 120px;
   }
 
   .slick-cards p {
-    font-size: 2vw;
+    font-size: 1.5vw;
   }
 
   .slick-cards h3 {
@@ -398,7 +419,8 @@ body {
   }
 
   .interests h2 {
-    font-size: 4vw;
+    font-size: 3.5vw;
+    margin-left: 0.5em;
   }
 
   #msg-popup #msg-box {
@@ -412,16 +434,16 @@ body {
 
   .slick-cards .accpt-btn,
   .slick-cards .declin-btn {
-    padding: 1em 0.5em;
-    font-size: 8px;
+    padding: 0.7em;
+    font-size: 10px;
   }
 
   .slick-cards .top {
-    height: 100px;
+    height: 120px;
   }
 
   .slick-cards p {
-    font-size: 2vw;
+    font-size: 1.5vw;
   }
 
   .slick-cards h3 {
@@ -455,6 +477,7 @@ body {
   }
 
   .interests h2 {
-    font-size: 4vw;
+    font-size: 3vw;
+    margin-left: 0.5em;
   }
 }

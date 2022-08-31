@@ -466,7 +466,7 @@
         <div id="received-rqst" class="interests">
             <h2>Received Interest</h2>
             <div class="slick-div apiactivitypendingrequests">
-                <div class="slick-cards">
+                <!-- <div class="slick-cards">
                     <div class="top">
                         <a href="./user_page.html"><img src="./Images/about-team.jpg" alt=""></a>
                     </div>
@@ -555,14 +555,14 @@
                             <button class="declin-btn">Decline</button>
                         </div>
                     </div>
-                </div>  
+                </div>   -->
             </div>
             <div class="line"></div>
         </div>
         <div id="liked-prof" class="interests">
             <h2>Liked Profile</h2>
-            <div class="slick-div">
-                <div class="slick-cards">
+            <div class="slick-div apiactivityalllikedprofiles">
+                <!-- <div class="slick-cards">
                     <div class="top">
                         <a href="./user_page.html"><img src="./Images/about-team.jpg" alt=""></a>
                     </div>
@@ -651,106 +651,11 @@
                             <button class="declin-btn">Decline</button>
                         </div>
                     </div>
-                </div>  
+                </div>   -->
             </div>
             <div class="line"></div>
         </div>
-        <div id="photo-rqst" class="interests">
-            <h2>Photo Request</h2>
-            <div class="slick-div">
-                <div class="slick-cards">
-                    <div class="top">
-                        <a href="./user_page.html"><img src="./Images/about-team.jpg" alt=""></a>
-                    </div>
-                    <div class="bottom">
-                        <h3>Rohan</h3>
-                        <p>24 Yrs</p>
-                        <p>Sindhi-Sahiti</p>
-                        <p>Bhopal, Madhya Pradesh</p>
-                        <div class="btn-flex">
-                            <button class="accpt-btn">Accept</button>
-                            <button class="declin-btn">Decline</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="slick-cards">
-                    <div class="top">
-                        <a href="./user_page.html"><img src="./Images/about-team.jpg" alt=""></a>
-                    </div>
-                    <div class="bottom">
-                        <h3>Rohan</h3>
-                        <p>24 Yrs</p>
-                        <p>Sindhi-Sahiti</p>
-                        <p>Bhopal, Madhya Pradesh</p>
-                        <div class="btn-flex">
-                            <button class="accpt-btn">Accept</button>
-                            <button class="declin-btn">Decline</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="slick-cards">
-                    <div class="top">
-                        <a href="./user_page.html"><img src="./Images/about-team.jpg" alt=""></a>
-                    </div>
-                    <div class="bottom">
-                        <h3>Rohan</h3>
-                        <p>24 Yrs</p>
-                        <p>Sindhi-Sahiti</p>
-                        <p>Bhopal, Madhya Pradesh</p>
-                        <div class="btn-flex">
-                            <button class="accpt-btn">Accept</button>
-                            <button class="declin-btn">Decline</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="slick-cards">
-                    <div class="top">
-                        <a href="./user_page.html"><img src="./Images/about-team.jpg" alt=""></a>
-                    </div>
-                    <div class="bottom">
-                        <h3>Rohan</h3>
-                        <p>24 Yrs</p>
-                        <p>Sindhi-Sahiti</p>
-                        <p>Bhopal, Madhya Pradesh</p>
-                        <div class="btn-flex">
-                            <button class="accpt-btn">Accept</button>
-                            <button class="declin-btn">Decline</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="slick-cards">
-                    <div class="top">
-                        <a href="./user_page.html"><img src="./Images/about-team.jpg" alt=""></a>
-                    </div>
-                    <div class="bottom">
-                        <h3>Rohan</h3>
-                        <p>24 Yrs</p>
-                        <p>Sindhi-Sahiti</p>
-                        <p>Bhopal, Madhya Pradesh</p>
-                        <div class="btn-flex">
-                            <button class="accpt-btn">Accept</button>
-                            <button class="declin-btn">Decline</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="slick-cards">
-                    <div class="top">
-                        <a href="./user_page.html"><img src="./Images/about-team.jpg" alt=""></a>
-                    </div>
-                    <div class="bottom">
-                        <h3>Rohan</h3>
-                        <p>24 Yrs</p>
-                        <p>Sindhi-Sahiti</p>
-                        <p>Bhopal, Madhya Pradesh</p>
-                        <div class="btn-flex">
-                            <button class="accpt-btn">Accept</button>
-                            <button class="declin-btn">Decline</button>
-                        </div>
-                    </div>
-                </div>  
-            </div>
-            <div class="line"></div>
-        </div>
+    
         <div id="viewed-prof" class="interests">
             <h2>Viewed Profile</h2>
             <div class="slick-div">
@@ -987,7 +892,7 @@
         method:"GET",
         headers:{
             "Content-Type":"application/json",
-            "Authorization":`Bearer ${localStorage.getItem("loginToken")}`
+            "Authorization":`Bearer ${localStorage.getItem("token")}`
         }
     }).then(res=>res.json())    
     .then(data=>{
@@ -1023,16 +928,16 @@ clutter+=` <div class="slick-cards">
         method:"GET",
         headers:{
             "Content-Type":"application/json",
-            "Authorization":`Bearer ${localStorage.getItem("loginToken")}`
+            "Authorization":`Bearer ${localStorage.getItem("token")}`
         }
     }).then(res=>res.json())    
     .then(data=>{
         pendingRequestClutter='';
         console.log("pendingRequest",data)
-        console.log(data.foundUser.pendingRequests)
-        if(data.foundUser.pendingRequests.length>0){
-            data.foundUser.pendingRequests.forEach(function(elem){
-                pendingRequestclutter+=` <div class="slick-cards">
+        console.log(data.pendingRequests)
+        if(data.pendingRequests.length>0){
+            data.pendingRequests.forEach(function(elem){
+                pendingRequestClutter+=` <div class="slick-cards">
                     <div class="top">
                         <a href="./user_page.html"><img src="${elem.profilePicture}" alt=""></a>
                     </div>
@@ -1054,7 +959,45 @@ clutter+=` <div class="slick-cards">
         console.log(err)
     }
     )
-       
+      
+      
+var allLikedProfilesApi="http://localhost:2000/api/v2/user/likedprofiles"
+fetch(allLikedProfilesApi,{
+    method:"GET",
+    headers:{
+        "Content-Type":"application/json",
+        "Authorization":`Bearer ${localStorage.getItem("token")}`
+    }
+}).then(res=>res.json())    
+.then(data=>{
+    allLikedProfilesClutter='';
+    console.log("allLikedProfiles",data)
+    console.log(data.likedProfiles)
+    if(data.likedProfiles.length>0){
+        data.likedProfiles.forEach(function(elem){
+            allLikedProfilesClutter+=` <div class="slick-cards">
+                <div class="top">
+                    <a href="./user_page.html"><img src="${elem.profilePicture}" alt=""></a>
+                </div>
+                <div class="bottom">
+                    <h3>${elem.firstname}</h3>
+                    <p>${elem.age} Yrs</p>
+                    <p>${elem.caste}-${elem.subCaste}</p>
+                    <p>${elem.city}, ${elem.state}</p>
+                    <div class="btn-flex">
+                        <button class="accpt-btn">Accept</button>
+                        <button class="decline-btn">Decline</button>
+                    </div>
+                </div>
+            </div>`
+        })
+    }
+    document.querySelector(".apiactivityalllikedprofiles").innerHTML=allLikedProfilesClutter;
+}).catch(err=>{
+    console.log(err)
+}
+)
+
 </script>
 </body>
 </html>
