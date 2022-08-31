@@ -1,5 +1,4 @@
 var dashboardApiUrl = "http://localhost:2000/api/v2/home";
-
 fetch(dashboardApiUrl, {
   method: "GET",
   headers: {
@@ -114,7 +113,6 @@ fetch(dashboardApiUrl, {
   .finally(() => {
     console.log("finally");
   });
-
 // jeetul
 setTimeout(() => {
   document.querySelectorAll(".btnjs").forEach((element) => {
