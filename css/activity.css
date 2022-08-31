@@ -1,189 +1,148 @@
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@500&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Cookie&family=Inria+Serif:wght@900&family=Inter:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Inria+Serif:wght@900&family=Inter:wght@400;700&display=swap');
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-html,
-body {
-  height: 100%;
-  width: 100%;
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-drag: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-}
-
-img {
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-drag: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-}
-html,
-body {
-  height: 100%;
-  width: 100%;
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-drag: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
+html,body{
+    height: 100%;
+    width: 100%;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    font-family: "Poppins", sans-serif;
 }
 
 img {
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-drag: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
 #search-form .serch-btn {
-  width: 100%;
-  padding: 0.4em 0.5em;
-  border-radius: 3px;
-  cursor: pointer;
-  background-color: #ad0909;
-  color: #fff;
-  border: none;
-  margin-bottom: 0.5em;
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    width: 100%;
+    padding: 0.4em 0.5em;
+    border-radius: 3px;
+    cursor: pointer;
+    background-color: #ad0909;
+    color: #fff;
+    border: none;
+    margin-bottom: 0.5em;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .serch-btn .ri-search-line {
-  background: none;
+    background: none;
 }
 
 #main {
-  width: 100%;
+    width: 100%;
 }
 
 #main #navbar {
-  width: 100%;
-  height: 10vh;
-  background-color: red;
+    width: 100%;
+    height: 10vh;
+    background-color: red;
 }
 
 #main #option-div {
-  width: 100%;
-  height: 10vh;
-  box-shadow: rgb(255 255 255 / 10%) 0px 1px 1px 0px inset,
-    rgb(50 50 93 / 25%) 0px 50px 100px -20px,
-    rgb(0 0 0 / 30%) 0px 30px 60px -30px;
-  padding: 1em 10em;
-  font-size: 1vw;
-  display: flex;
-  justify-content: space-around;
-  position: relative;
+    width: 100%;
+    height: 10vh;
+    box-shadow: rgb(255 255 255 / 10%) 0px 1px 1px 0px inset, rgb(50 50 93 / 25%) 0px 50px 100px -20px, rgb(0 0 0 / 30%) 0px 30px 60px -30px;
+    padding: 1em 10em;
+    font-size: 1vw;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
 }
 
 #option-div .elems {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
 
 .elems h2 {
-  color: #871f42;
-  font-weight: 600;
-  font-size: 1.6vw;
-  padding-right: 0.3rem;
+    color: #871F42;
+    font-weight: 600;
+    font-size: 1.6vw;
+    padding-right: 0.3rem;
 }
 
 .elems h2:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .elems i {
-  color: #871f42;
-  font-size: 1.6vw;
-  font-weight: 600;
+    color: #871F42;
+    font-size: 1.6vw;
+    font-weight: 600;
 }
 
 #main .interests {
-  width: 80%;
-  margin: 5em auto;
-  font-size: 1vw;
+    width: 80%;
+    margin: 5em auto;
+    font-size: 1vw;
 }
 
 .interests h2 {
-  color: #1f4287;
-  text-decoration: underline;
-  font-weight: 500;
-  font-size: 2vw;
-  margin-left: 1em;
+    color: #1F4287;
+    text-decoration: underline;
+    font-weight: 500;
+    font-size: 2vw;
+    margin-left: 1em;
 }
 
 .interests .slick-div {
-  position: relative;
-  width: 100%;
-  /* height: 20vh;
+    position: relative;
+    width: 100%;
+    /* height: 20vh;
     background-color: red; */
-  display: flex;
-  justify-content: space-between;
-  margin-top: 1.5em;
-  gap: 1em;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5em;
+    gap: 1em;
 }
 
 .slick-div .slick-cards {
-  margin-left: 0.7em;
-  width: 220px;
-  height: max-content;
-  font-size: 1vw;
-  border: 1px solid black;
-  border-radius: 10px;
-  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px; */
+    margin-left: 0.6em;
+    width: 220px;
+    height: max-content;
+    font-size: 1vw;
+    border: 1px solid #bbbbbb;
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
 }
 
 .slick-cards .top {
-  width: 100%;
-  height: 200px;
-  transition: all linear 0.2s;
-  margin-left: 0.7em;
-  width: 220px;
-  height: max-content;
-  font-size: 1vw;
-  border: 1px solid black;
-  border-radius: 10px;
-  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px; */
+    width: 100%;
+    height: 200px;
+    transition: all linear .2s;
 }
-
-.slick-cards .top {
-  width: 100%;
-  height: 200px;
-  transition: all linear 0.2s;
-}
-.slick-cards .top:hover {
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+.slick-cards:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
 .slick-cards .bottom {
-  padding: 0 1em;
+    padding: 0.5em 1em;
 }
 
 .bottom .btn-flex {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 1.5em;
-  gap: 10px;
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 1.5em;
-  gap: 10px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.5em;
+    gap: 10px;
 }
 
 /* .btn-flex i {
@@ -199,410 +158,337 @@ img {
 } */
 
 .top img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .slick-cards h3 {
-  text-align: center;
-  color: #e10f0f;
-  font-size: 1.5vw;
+    text-align: center;
+    color: #E10F0F;
+    font-size: 1.5vw;
 }
 
 .slick-cards p {
-  font-size: 1vw;
+    font-size: 1vw;
 }
 
-.slick-cards .accpt-btn,
-.slick-cards .declin-btn {
-  padding: 0.5em 0.7em;
-  font-size: 14px;
-  background-color: #1e88a2;
-  border: none;
-  border-radius: 50px;
-  color: #fff;
-  transition: all ease-in 0.2s;
-  font-size: 1vw;
-}
-
-.slick-cards .accpt-btn,
-.slick-cards .declin-btn {
-  padding: 0.5em 0.7em;
-  font-size: 14px;
-  background-color: #1e88a2;
-  border: none;
-  border-radius: 50px;
-  color: #fff;
-  transition: all ease-in 0.2s;
+.slick-cards .accpt-btn, .slick-cards .declin-btn {
+    width: 100%;
+    padding: 0.5em 0.7em;
+    font-size: 14px;
+    background-color: #1E88A2;
+    border: none;
+    border-radius: 50px;
+    color: #fff;
+    transition: all ease-in .2s;
 }
 
 .accpt-btn:hover {
-  background-color: #58abc0;
+    background-color: #58abc0;
+    cursor: pointer;
 }
 
 .slick-cards .declin-btn {
-  background-color: #ad0909;
+    background-color: #ad0909;
 }
+
 .declin-btn:hover {
-  background-color: #ca3b3b;
+    background-color: #ca3b3b;
 }
 
 .interests .line {
-  width: 100%;
-  height: 0.2vh;
-  background-color: black;
-  margin-top: 4em;
+    width: 100%;
+    height: 0.2vh;
+    background-color: black;
+    margin-top: 4em;
 }
 
 .slick-next:before {
-  color: #5e5e5e;
-  cursor: pointer;
-  font-size: 30px;
+    color: #5e5e5e;
+    cursor: pointer;
+    font-size: 30px;
 }
 
 .slick-prev:before {
-  color: #5e5e5e;
-  cursor: pointer;
-  font-size: 30px;
+    color: #5e5e5e;
+    cursor: pointer;
+    font-size: 30px;
 }
 
 #option-div .drop-list {
-  position: absolute;
-  width: 180px;
-  height: 200px;
-  top: 13%;
-  left: 24%;
-  background-color: #dadada;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.7em;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  z-index: 999;
-  display: none;
+    position: absolute;
+    width: 180px;
+    height: 200px;
+    top: 13%;
+    left: 24%;
+    background-color: #dadada;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7em;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    z-index: 999;
+    display: none;
 }
 
 #option-div #drop-2 {
-  left: 67%;
+    left: 67%;
 }
 
 .drop-list h5 {
-  cursor: pointer;
-  font-size: 1vw;
+    cursor: pointer;
+    font-size: 1vw;
 }
 
 .drop-list a {
-  text-decoration: none;
-  color: #ef3f6e;
+    text-decoration: none;
+    color: #ef3f6e;
 }
 
 .drop-list i {
-  position: absolute;
-  top: 1%;
-  right: 1%;
-  background-color: #fff;
-  color: black;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 22px;
-  cursor: pointer;
-  position: absolute;
-  top: 1%;
-  right: 1%;
-  background-color: #fff;
-  color: black;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 22px;
-  cursor: pointer;
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    background-color: #fff;
+    color: black;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    cursor: pointer;
 }
 
 #main #srch-bar {
-  position: absolute;
-  padding: 0.8em 1em;
-  top: 20%;
-  right: 2%;
-  display: flex;
-  align-items: center;
-  gap: 0.5em;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    position: absolute;
+    padding: 0.8em 1em;
+    top: 20%;
+    right: 2%;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 #srch-bar input[type="search"] {
-  outline: none;
+    outline: none;
 }
 #srch-bar i {
-  font-size: 20px;
+    font-size: 20px;
 }
 
-@media (min-width: 320px) and (max-width: 550px) {
-  .slick-div .slick-cards {
-    height: auto;
-  }
+@media (min-width: 320px) and (max-width:550px) {
 
-  .slick-cards .accpt-btn,
-  .slick-cards .declin-btn {
-    padding: 0.5em;
-    font-size: 8px;
-  }
-
-  .bottom .btn-flex {
-    gap: 0.5rem;
-  }
-
-  .slick-cards .top {
-    height: 100px;
-  }
-
-  @media (min-width: 320px) and (max-width: 550px) {
-    .slick-div .slick-cards {
-      height: auto;
+    .slick-prev:before, .slick-next:before {
+        font-size: 15px;
     }
 
-    .slick-cards .accpt-btn,
-    .slick-cards .declin-btn {
-      padding: 0.5em;
-      font-size: 8px;
+    .slick-div .slick-cards {
+        height: auto;
+    }
+
+    .slick-cards .accpt-btn, .slick-cards .declin-btn {
+        padding: 0.5em ;
+        font-size: 8px;
     }
 
     .bottom .btn-flex {
-      gap: 0.5rem;
+        gap: .5rem;
     }
 
     .slick-cards .top {
-      height: 100px;
+        height: 100px;
     }
 
     .slick-cards p {
-      font-size: 2vw;
+        font-size: 2vw;
     }
 
     .slick-cards h3 {
-      font-size: 2.5vw;
+        font-size: 2.5vw;
     }
 
     #option-div .elems h2 {
-      font-size: 3vw;
+        font-size: 3vw;
     }
 
     #option-div .elems i {
-      font-size: 3vw;
+        font-size: 3vw;
     }
 
     #option-div .drop-list {
-      width: 150px;
-      left: 15%;
-      height: 150px;
-    }
-
-    .interests h2 {
-      font-size: 3.7vw;
-      margin-left: 0.5em;
+        width: 150px;
+        left: 15%;
+        height: 150px;
     }
 
     #option-div #drop-2 {
-      left: 55%;
+        left: 55%;
     }
 
     .drop-list h5 {
-      font-size: 12px;
+        font-size: 12px;
     }
 
     .slick-dots {
-      bottom: -30px;
+        bottom: -30px;
     }
 
     .interests h2 {
-      font-size: 3.7vw;
-      margin-left: 0.5em;
+        font-size: 3.7vw;
+        margin-left: 0.5em;
     }
 
     #msg-popup {
-      right: -150%;
+        right: -150%;
     }
 
     #msg-popup #msg-box {
-      width: 400px;
-      height: auto;
-      position: initial;
+        width: 400px;
+        height: auto;
+        position: initial;
     }
 
     #msg-box #sec-2 {
-      flex-direction: column;
+        flex-direction: column;
     }
 
     #sec-2 #sec-2-lft {
-      width: 100%;
+        width: 100%;
     }
 
     #sec-2 #sec-2-rgt {
-      width: 100%;
+        width: 100%;
     }
-  }
-  @media (min-width: 551px) and (max-width: 768px) {
-    .slick-cards .accpt-btn,
-    .slick-cards .declin-btn {
-      padding: 0.6em;
-      font-size: 10px;
+}
+@media (min-width: 551px) and (max-width: 768px) {
+
+    .slick-prev:before, .slick-next:before {
+        font-size: 20px;
     }
 
-    .bottom .btn-flex {
-      gap: 0.5rem;
-    }
-
-    .slick-cards .top {
-      height: 120px;
-    }
-
-    .slick-cards p {
-      font-size: 1.5vw;
-    }
     .slick-div .slick-cards {
-      height: auto;
+        height: auto;
     }
 
-    .slick-cards .accpt-btn,
-    .slick-cards .declin-btn {
-      padding: 0.6em;
-      font-size: 10px;
+    .slick-cards .accpt-btn, .slick-cards .declin-btn {
+        padding: 0.6em;
+        font-size: 10px;
     }
 
     .bottom .btn-flex {
-      gap: 0.5rem;
+        gap: .5rem;
     }
 
     .slick-cards .top {
-      height: 120px;
+        height: 120px;
     }
 
     .slick-cards p {
-      font-size: 1.5vw;
+        font-size: 1.5vw;
     }
 
     .slick-cards h3 {
-      font-size: 2.5vw;
+        font-size: 2.5vw;
     }
 
     #option-div .elems h2 {
-      font-size: 3vw;
+        font-size: 3vw;
     }
 
     #option-div .elems i {
-      font-size: 3vw;
+        font-size: 3vw;
     }
 
     #option-div .drop-list {
-      width: 150px;
-      left: 15%;
-      height: 150px;
+        width: 150px;
+        left: 15%;
+        height: 150px;
     }
 
     #option-div #drop-2 {
-      left: 55%;
+        left: 55%;
     }
 
-    .interests h2 {
-      font-size: 3.5vw;
-      margin-left: 0.5em;
-    }
     .drop-list h5 {
-      font-size: 13px;
+        font-size: 13px;
     }
 
     .slick-dots {
-      bottom: -30px;
+        bottom: -30px;
     }
 
     .interests h2 {
-      font-size: 3.5vw;
-      margin-left: 0.5em;
+        font-size: 3.5vw;
+        margin-left: 0.5em;
     }
 
     #msg-popup #msg-box {
-      width: 650px;
+        width: 650px;
+    } 
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .slick-prev:before, .slick-next:before {
+        font-size: 20px;
     }
-  }
-  @media (min-width: 769px) and (max-width: 1024px) {
+
     .slick-div .slick-cards {
-      height: auto;
+        height: auto;
     }
 
-    .slick-cards .accpt-btn,
-    .slick-cards .declin-btn {
-      padding: 0.7em;
-      font-size: 10px;
-    }
-
-    .slick-cards .top {
-      height: 120px;
-    }
-
-    .slick-cards p {
-      font-size: 1.5vw;
-    }
-    .slick-cards .accpt-btn,
-    .slick-cards .declin-btn {
-      padding: 0.7em;
-      font-size: 10px;
+    .slick-cards .accpt-btn, .slick-cards .declin-btn {
+        padding: 0.7em ;
+        font-size: 10px;
     }
 
     .slick-cards .top {
-      height: 120px;
+        height: 120px;
     }
 
     .slick-cards p {
-      font-size: 1.5vw;
+        font-size: 1.5vw;
     }
 
     .slick-cards h3 {
-      font-size: 2.5vw;
+        font-size: 2.5vw;
     }
 
     #option-div .elems h2 {
-      font-size: 3vw;
+        font-size: 3vw;
     }
 
     #option-div .elems i {
-      font-size: 3vw;
+        font-size: 3vw;
     }
 
     #option-div .drop-list {
-      width: 150px;
-      left: 15%;
-      height: 150px;
+        width: 150px;
+        left: 15%;
+        height: 150px;
     }
 
     #option-div #drop-2 {
-      left: 55%;
+        left: 55%;
     }
 
     .drop-list h5 {
-      font-size: 13px;
+        font-size: 13px;
     }
 
     .slick-dots {
-      bottom: -30px;
+        bottom: -30px;
     }
 
     .interests h2 {
-      font-size: 3vw;
-      margin-left: 0.5em;
+        font-size: 3vw;
+        margin-left: 0.5em;
     }
-    .interests h2 {
-      font-size: 3vw;
-      margin-left: 0.5em;
-    }
-  }
 }
+
