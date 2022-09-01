@@ -51,7 +51,8 @@ fetch(dashboardApiUrl, {
       // document.querySelector("#apidbmatchesheading").style.display = "none";
       document.querySelector(
         "#apidbmatches"
-      ).innerHTML = `<h1>No Matches Found</h1>`;
+      ).style.display = "none";
+      document.querySelector("#nomatchesfound").style.display = "block";
     }
     //   if (data.recommendedMatches.length > 0) {
     //     var clutter2 = "";
