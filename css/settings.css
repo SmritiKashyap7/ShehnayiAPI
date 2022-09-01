@@ -115,6 +115,29 @@ input[type=number] {
     margin-bottom: .5rem;
 }
 
+.forms .name-div {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 1rem;
+    width: 90%;
+} 
+
+.name-div .user-last-name, .name-div .user-first-name {
+    margin-left: 0;
+}
+
+.forms .dob-div {
+    display: flex;
+    justify-content: left;
+    gap: 1rem;
+    width: 90%;
+}
+
+.dob-div .day, .dob-div .month, .dob-div .year {
+    margin-left: 0;
+}
+
 .forms input {
     padding: 0.8em 1em;
     width: 90%;

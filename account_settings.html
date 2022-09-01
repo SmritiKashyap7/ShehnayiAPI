@@ -28,10 +28,8 @@
     <!-- CSS link -->
     <link rel="stylesheet" href="./css/navbar2.css" />
     <link rel="stylesheet" href="./css/footer.css" />
-    <link rel="stylesheet" href="./css/dashboard.css" />
     <link rel="stylesheet" href="./css/my_matches2.css" />
     <link rel="stylesheet" href="./css/settings.css" />
-    <link rel="stylesheet" href="./css/chat.css" />
 
     <!-- Boxicons cdn -->
     <link
@@ -226,12 +224,12 @@
     </div>
 
     <!-- Chat-icon -->
-    <div class="chat-div">
-      <i class="bx bx-message-rounded-dots"></i>
-    </div>
+    <!-- <div class="chat-div">
+        <i class="bx bx-message-rounded-dots"></i>
+    </div> -->
 
     <!-- Message popup -->
-    <div id="msg-popup">
+    <!-- <div id="msg-popup">
       <div id="msg-box">
         <div id="msg-heading">
           <div id="lft">
@@ -396,7 +394,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div id="extra-popup">
       <form action="" class="forms" id="form-1">
@@ -404,8 +402,10 @@
         <div id="heading">
           <h4>Name:</h4>
         </div>
-        <input type="text" class="user-first-name" placeholder="First Name" />
-        <input type="text" class="user-last-name" placeholder="Last Name" />
+        <div class="name-div">
+          <input type="text" class="user-first-name" placeholder="First Name" />
+          <input type="text" class="user-last-name" placeholder="Last Name" />
+        </div>
         <div id="heading">
           <h4>Phone:</h4>
         </div>
@@ -413,9 +413,29 @@
         <div id="heading">
           <h4>Date of Birth</h4>
         </div>
-        <input type="text" name="dob" class="day" id="dob" />
-        <input type="text" name="dob" class="month" id="dob" />
-        <input type="text" name="dob" class="year" id="dob" />
+        <div class="dob-div">
+          <input
+            type="text"
+            name="dob"
+            class="day"
+            id="dob"
+            placeholder="date"
+          />
+          <input
+            type="text"
+            name="dob"
+            class="month"
+            id="dob"
+            placeholder="month"
+          />
+          <input
+            type="text"
+            name="dob"
+            class="year"
+            id="dob"
+            placeholder="year"
+          />
+        </div>
         <div class="change-pass-div">
           <p id="pass-chng">Change password</p>
         </div>
@@ -528,9 +548,7 @@
     <!-- Script -->
     <script src="./js/settings.js"></script>
     <script src="./js/my_matches.js"></script>
-    <script src="./js/dashboard.js"></script>
-    <script src="./js/chat.js"></script>
-    <script src="./js/about.js"></script>
+    <script src="./js/navbar2.js"></script>
     <script src="./js/account_settings.js"></script>
   </body>
 </html>
