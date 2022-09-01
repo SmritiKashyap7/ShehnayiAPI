@@ -11,27 +11,28 @@ fetch(dashboardApiUrl, {
   })
   .then((data) => {
     console.log(data);
-    document.querySelector("#apidbpendinginterest").innerHTML =
-      data.foundUser.pendingRequests.length;
-    document.querySelector("#apidbconnections").innerHTML =
-      data.foundUser.connections.length;
-    document.querySelector("#apidbvisitors").innerHTML =
-      data.foundUser.viewProfilers.length;
-    document.querySelector("#apidbusername").innerHTML =
-      data.foundUser.firstname + " " + data.foundUser.lastname;
-    document
-      .querySelector("#apidbuserprofilepic")
-      .setAttribute(
-        "src",
-        `http://localhost:2000/${data.foundUser.profilePicture}`
-      );
-    document.querySelector("#apidbuserid").innerHTML =
-      data.foundUser._id.substring(4, 13);
+    if (localStorage.getItem("token")) {
+      document.querySelector("#apidbpendinginterest").innerHTML =
+        data.foundUser.pendingRequests.length;
+      document.querySelector("#apidbconnections").innerHTML =
+        data.foundUser.connections.length;
+      document.querySelector("#apidbvisitors").innerHTML =
+        data.foundUser.viewProfilers.length;
+      document.querySelector("#apidbusername").innerHTML =
+        data.foundUser.firstname + " " + data.foundUser.lastname;
+      document
+        .querySelector("#apidbuserprofilepic")
+        .setAttribute(
+          "src",
+          `http://localhost:2000/${data.foundUser.profilePicture}`
+        );
+      document.querySelector("#apidbuserid").innerHTML =
+        data.foundUser._id.substring(4, 13);
 
-    if (data.matches.length > 0) {
-      var clutter1 = "";
-      data.matches.forEach((element, index) => {
-        clutter1 += `<div class="slick-card">
+      if (data.matches.length > 0) {
+        var clutter1 = "";
+        data.matches.forEach((element, index) => {
+          clutter1 += `<div class="slick-card">
               <div class="slick-card-img">
                   <a href="./user_page.html"><img id="userImg" src="/${element.profilePicture}" alt="Profile"></a>
               </div>
@@ -45,51 +46,51 @@ fetch(dashboardApiUrl, {
                   <button type="submit" id="btn${index}" data-id= ${element._id} >Send Interest</button>
               </a>
           </div>`;
-      });
-      document.querySelector("#apidbmatches").innerHTML = clutter1;
-    } else {
-      // document.querySelector("#apidbmatchesheading").style.display = "none";
-      document.querySelector(
-        "#apidbmatches"
-      ).innerHTML = `<h1>No Matches Found</h1>`;
-    }
-    //   if (data.recommendedMatches.length > 0) {
-    //     var clutter2 = "";
-    //     data.recommendedMatches.forEach((element, index) => {
-    //       clutter2 += `<div class="slick-card">
-    //             <div class="slick-card-img">
-    //                 <a href="./user_page.html"><img id="userImg" src="${element.profilePicture}" alt="John"></a>
-    //             </div>
-    //             <div class="slick-card-dets">
-    //                 <h1>${element.firstname}</h1>
-    //                 <h5>Age - ${element.age}</h5>
-    //                 <h5>${element.cast}-${element.subCaste}</h5>
-    //                 <h5>${element.city},${element.state}</h5>
-    //             </div>
+        });
+        document.querySelector("#apidbmatches").innerHTML = clutter1;
+      } else {
+        // document.querySelector("#apidbmatchesheading").style.display = "none";
+        document.querySelector(
+          "#apidbmatches"
+        ).innerHTML = `<h1>No Matches Found</h1>`;
+      }
+      //   if (data.recommendedMatches.length > 0) {
+      //     var clutter2 = "";
+      //     data.recommendedMatches.forEach((element, index) => {
+      //       clutter2 += `<div class="slick-card">
+      //             <div class="slick-card-img">
+      //                 <a href="./user_page.html"><img id="userImg" src="${element.profilePicture}" alt="John"></a>
+      //             </div>
+      //             <div class="slick-card-dets">
+      //                 <h1>${element.firstname}</h1>
+      //                 <h5>Age - ${element.age}</h5>
+      //                 <h5>${element.cast}-${element.subCaste}</h5>
+      //                 <h5>${element.city},${element.state}</h5>
+      //             </div>
 
-    //                 <button id="btn${index}" data-id= ${element._id} >Send Interest</button>
+      //                 <button id="btn${index}" data-id= ${element._id} >Send Interest</button>
 
-    //         </div>`;
-    //     });
-    //     document.querySelector("#apidbrecommendedmatches").innerHTML =
-    //       clutter2;
-    //   } else {
-    // document.querySelector("#apidbrecommendedmatchesheading").style.display = "none";
-    fetch("http://localhost:2000/api/v2/allUsers", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + localStorage.getItem("token"),
-      },
-    })
-      .then((response) => {
-        return response.json();
+      //         </div>`;
+      //     });
+      //     document.querySelector("#apidbrecommendedmatches").innerHTML =
+      //       clutter2;
+      //   } else {
+      // document.querySelector("#apidbrecommendedmatchesheading").style.display = "none";
+      fetch("http://localhost:2000/api/v2/allUsers", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        },
       })
-      .then(async (data) => {
-        console.log(data);
-        var clutter2 = "";
-        await data.forEach((element, index) => {
-          clutter2 += `<div class="slick-card">
+        .then((response) => {
+          return response.json();
+        })
+        .then(async (data) => {
+          console.log(data);
+          var clutter2 = "";
+          await data.forEach((element, index) => {
+            clutter2 += `<div class="slick-card">
               <div class="slick-card-img">
                   <a href="./user_page.html"><img id="userImg" src="http://localhost:2000/${element.profilePicture}" alt="Profile"></a>
               </div>
@@ -103,9 +104,13 @@ fetch(dashboardApiUrl, {
                   <button id="btn${index}" class="btnjs" data-id= ${element._id} >Send Interest</button>
               </a>
           </div>`;
+          });
+          document.querySelector("#apidbrecommendedmatches").innerHTML =
+            clutter2;
         });
-        document.querySelector("#apidbrecommendedmatches").innerHTML = clutter2;
-      });
+    } else {
+      window.location.href = "./index.html";
+    }
   })
   .catch((err) => {
     console.log(err);
