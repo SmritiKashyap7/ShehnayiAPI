@@ -46,28 +46,28 @@ fetch(dashboardApiUrl, {
                   <button type="submit" id="btn${index}" data-id= ${element._id} >Send Interest</button>
               </a>
           </div>`;
-        });
-        document.querySelector("#apidbmatches").innerHTML = clutter1;
-      } else {
-        // document.querySelector("#apidbmatchesheading").style.display = "none";
-        document.querySelector(
-          "#apidbmatches"
-        ).innerHTML = `<h1>No Matches Found</h1>`;
-      }
-      //   if (data.recommendedMatches.length > 0) {
-      //     var clutter2 = "";
-      //     data.recommendedMatches.forEach((element, index) => {
-      //       clutter2 += `<div class="slick-card">
-      //             <div class="slick-card-img">
-      //                 <a href="./user_page.html"><img id="userImg" src="${element.profilePicture}" alt="John"></a>
-      //             </div>
-      //             <div class="slick-card-dets">
-      //                 <h1>${element.firstname}</h1>
-      //                 <h5>Age - ${element.age}</h5>
-      //                 <h5>${element.cast}-${element.subCaste}</h5>
-      //                 <h5>${element.city},${element.state}</h5>
-      //             </div>
-
+      });
+      document.querySelector("#apidbmatches").innerHTML = clutter1;
+    } else {
+      // document.querySelector("#apidbmatchesheading").style.display = "none";
+      document.querySelector(
+        "#apidbmatches"
+      ).style.display = "none";
+      document.querySelector("#nomatchesfound").style.display = "block";
+    }
+    //   if (data.recommendedMatches.length > 0) {
+    //     var clutter2 = "";
+    //     data.recommendedMatches.forEach((element, index) => {
+    //       clutter2 += `<div class="slick-card">
+    //             <div class="slick-card-img">
+    //                 <a href="./user_page.html"><img id="userImg" src="${element.profilePicture}" alt="John"></a>
+    //             </div>
+    //             <div class="slick-card-dets">
+    //                 <h1>${element.firstname}</h1>
+    //                 <h5>Age - ${element.age}</h5>
+    //                 <h5>${element.cast}-${element.subCaste}</h5>
+    //                 <h5>${element.city},${element.state}</h5>
+    //             </div>
       //                 <button id="btn${index}" data-id= ${element._id} >Send Interest</button>
 
       //         </div>`;
