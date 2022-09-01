@@ -19,8 +19,8 @@
     <!-- CSS link -->
     <link rel="stylesheet" href="./css/navbar2.css">
     <link rel="stylesheet" href="./css/footer.css">
-    <link rel="stylesheet" href="./css/activity.css">
     <link rel="stylesheet" href="./css/my_matches2.css">
+    <link rel="stylesheet" href="./css/activity.css">
 
     <!-- Boxicons cdn -->
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
@@ -658,8 +658,8 @@
     
         <div id="viewed-prof" class="interests">
             <h2>Viewed Profile</h2>
-            <div class="slick-div">
-                <div class="slick-cards">
+            <div class="slick-div apiactivityallviewedProfiles">
+                <!-- <div class="slick-cards">
                     <div class="top">
                         <a href="./user_page.html"><img src="./Images/about-team.jpg" alt=""></a>
                     </div>
@@ -728,14 +728,14 @@
                             <button class="accpt-btn">View Profile</button>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="line"></div>
         </div>
         <div id="msg-rqst" class="interests">
-            <h2>Blocked User</h2>
-            <div class="slick-div">
-                <div class="slick-cards">
+            <h2>Blocked Users</h2>
+            <div class="slick-div apiactivityblockedUsers">
+                <!-- <div class="slick-cards">
                     <div class="top">
                         <a href="./user_page.html"><img src="./Images/about-team.jpg" alt=""></a>
                     </div>
@@ -818,7 +818,7 @@
                             <button class="accpt-btn">Unblock User</button>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="line"></div>
         </div>
@@ -1012,11 +1012,68 @@ fetch(viewProfiles, {
 })
   .then((response) => response.json())
   .then((data) => {
-    console.log("viewProfiles", data);
+    console.log("viewProfiles", data.viewedProfiles);
+    viewedProfilesClutter = "";
+    if (data.viewedProfiles.length > 0) {
+      data.viewedProfiles.forEach(function (elem) {
+        viewedProfilesClutter += `<div class="slick-cards">
+                    <div class="top">
+                        <a href="./user_page.html"><img src="${elem.profilePicture}" alt=""></a>
+                    </div>
+                    <div class="bottom">
+                        <h3>${elem.firstname}</h3>
+                        <p>${elem.age} Yrs</p>
+                        <p>${elem.caste}-${elem.subCaste}</p>
+                        <p>${elem.city}, ${elem.state}</p>
+                        <div class="btn-flex">
+                            <button class="accpt-btn">View Profile</button>
+                        </div>
+                    </div>
+                </div>`;
+      });
+
+      document.querySelector(".apiactivityallviewedProfiles").innerHTML =
+        viewedProfilesClutter;
+   
+    }
   })
   .catch((err) => {
     console.log(err);
   });
+
+
+const blockedUsersApi="http://localhost:2000/api/v2/getAllBlockedUsers";
+fetch(blockedUsersApi,{
+    method:"GET",
+    headers:{
+        "Content-Type":"application/json",
+        Authorization:`Bearer ${localStorage.getItem("token")}`
+    }
+})
+.then((response)=>response.json()) 
+.then((data)=>{
+    console.log("blockedUsers",data);
+    blockedUsersClutter="";
+    if(data.blockedUsers.length>0){
+        data.blockedUsers.forEach(function(elem){
+            blockedUsersClutter+=`  <div class="slick-cards">
+                    <div class="top">
+                        <a href="./user_page.html"><img src="${elem.profilePicture}" alt=""></a>
+                    </div>
+                    <div class="bottom">
+                        <h3>${elem.firstname}</h3>
+                        <p>${elem.age} Yrs</p>
+                        <p>${elem.caste}-${elem.subCaste}</p>
+                        <p>${elem.city}, ${elem.state}</p>
+                        <div class="btn-flex">
+                            <button class="accpt-btn">Unblock User</button>
+                        </div>
+                    </div>
+                </div>`;
+        });
+    }
+    document.querySelector(".apiactivityblockedUsers").innerHTML=blockedUsersClutter;
+})
 
 setTimeout(() => {
   $(".slick-div").slick({
@@ -1053,7 +1110,7 @@ setTimeout(() => {
       },
     ],
   });
-}, 1000);
+}, 2000);
 </script>
 </body>
 </html>

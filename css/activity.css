@@ -283,6 +283,11 @@ img {
     font-size: 20px;
 }
 
+.btn-flex>button{
+    border-radius: 50px;
+}
+
+
 @media (min-width: 320px) and (max-width:550px) {
 
     .slick-prev:before, .slick-next:before {
