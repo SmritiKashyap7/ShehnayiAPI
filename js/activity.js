@@ -15,7 +15,7 @@ fetch(sentInterestApi, {
       data.foundUser.interests.forEach(function (elem) {
         clutter += ` <div class="slick-cards">
                     <div class="top">
-                        <a href="./user_page.html"><img src="${elem.profilePicture}" alt=""></a>
+                        <a href="./user_page.html"><img src="http://localhost:2000/${elem.profilePicture}" alt=""></a>
                     </div>
                     <div class="bottom">
                         <h3>${elem.firstname}</h3>
@@ -52,7 +52,7 @@ fetch(pendingRequestApi, {
       data.pendingRequests.forEach(function (elem) {
         pendingRequestClutter += ` <div class="slick-cards">
                     <div class="top">
-                        <a href="./user_page.html"><img src="${elem.profilePicture}" alt=""></a>
+                        <a href="./user_page.html"><img src="http://localhost:2000/${elem.profilePicture}" alt=""></a>
                     </div>
                     <div class="bottom">
                         <h3>${elem.firstname}</h3>
@@ -91,7 +91,7 @@ fetch(allLikedProfilesApi, {
       data.likedProfiles.forEach(function (elem) {
         allLikedProfilesClutter += ` <div class="slick-cards">
                 <div class="top">
-                    <a href="./user_page.html"><img src="${elem.profilePicture}" alt=""></a>
+                    <a href="./user_page.html"><img src="http://localhost:2000/${elem.profilePicture}" alt=""></a>
                 </div>
                 <div class="bottom">
                     <h3>${elem.firstname}</h3>
