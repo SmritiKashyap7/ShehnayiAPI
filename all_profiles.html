@@ -20,7 +20,6 @@
     <link rel="stylesheet" href="./css/footer.css">
     <link rel="stylesheet" href="./css/my_matches2.css">
     <link rel="stylesheet" href="./css/all_profiles.css">
-    <link rel="stylesheet" href="./css/chat.css">
 
     <!-- Boxicons cdn -->
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
@@ -36,25 +35,25 @@
         <i class="ri-close-line">
         </i>
         <div id="nav-elements">
-            <a href="dashboard.html">HOME</a>
+            <a href="./dashboard.html">HOME</a>
             <a href="#">MATCHES</a> 
             <a href="./activity.html">ACTIVITY</a> 
-            <a href="membership-plan.html">MEMBERSHIP</a> 
+            <a href="./membership1.html">MEMBERSHIP</a> 
             <a href="./user_page.html">PROFILE</a>
             <a href="#" id="notif" title="Notifications"><i class='bx bxs-bell'></i></a>
             <a href="#" id="search" title="Search"><i class='bx bx-search'></i></a>
-            <a href="./settings.html" title="Settings"><i class='bx bxs-cog' ></i></a>
+            <a href="./account_settings.html" title="Settings"><i class='bx bxs-cog' ></i></a>
         </div>
     </div>
-  
+
     <div class="navbar">
         <a id="menu"><i class='bx bx-menu'></i></a>
         <div class="logo">
-            <a href="dashboard.html"><img src="./Images/shehnayioriginallogo.svg" alt="Shehnayi" title="Shehnayi"></a>
+            <a href="./dashboard.html"><img src="./Images/shehnayioriginallogo.svg" alt="Shehnayi" title="Shehnayi"></a>
         </div>
         <div class="nav-links" id="nav-links">
             <ul class="nav-list">
-                <li class="text-item"><a href="dashboard.html">Home</a></li>
+                <li class="text-item"><a href="./dashboard.html">Home</a></li>
                 <li class="text-item matches-item" id="matches">
                     <a href="#" class="matches-txt">Matches<i id="open-dropdown" class="ri-arrow-down-s-fill"></i></a>
                     <ul id="matches-dropdown">
@@ -64,7 +63,7 @@
                 </li>
                 <li class="text-item"><a href="./activity.html">Activity</a></li>
                 <li class="text-item"><a href="./membership1.html">Membership</a></li>
-                <li class="text-item"><a href="user_page.html" >Profile</a></li>
+                <li class="text-item"><a href="./profile_page.html" >Profile</a></li>
                 <li class="icons-item" id="notife"><i class='bx bxs-bell'></i></li>
                 <li class="icons-item" id="searche"><i class='bx bx-search'></i></li>
                 <li class="icons-item" id="settinge"><i class='bx bxs-cog' ></i></li>
@@ -173,7 +172,7 @@
                 <h4>Occupation:</h4>
                 <input type="text" name="occupation" placeholder="Occupation">
                 <div class="btn-flex">
-                    <button>
+                    <button class="srch-butn">
                         <i class="ri-search-line"></i>
                         Search
                     </button>
@@ -192,168 +191,12 @@
         </div>
     </div>
 
-    <!-- Chat-icon -->
-    <!-- <div class="chat-div">
-        <i class='bx bx-message-rounded-dots' ></i>
-    </div> -->
-
-    <!-- Message popup -->
-    <!-- <div id="msg-popup">
-        <div id="msg-box">
-            <div id="msg-heading">
-                <div id="lft">
-                    <i id="back" class="ri-arrow-left-line"></i>
-                    <i class="ri-file-copy-line"></i>
-                </div>
-                <div id="cntr">
-                    <h1>Message</h1>
-                </div>
-                <div id="rgt">
-                    <i class="ri-settings-5-line"></i>
-                    <i class="ri-more-fill"></i>
-                    <i id="close" class="ri-close-line"></i>
-                </div>
-            </div>
-            <div id="sec-2">
-                <div id="sec-2-lft">
-                    <div id="lft-top">
-                        <div id="left-top">
-                            <i class="ri-search-line"></i>
-                            <input type="text" placeholder="Search">
-                        </div>
-                        <i class="ri-add-box-line"></i>
-                    </div>
-                    <div id="lft-bottom">
-                        <div class="lft-users">
-                            <div class="user-img">
-                                <img src="https://images.unsplash.com/photo-1615109398623-88346a601842?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="">
-                            </div>
-                            <div class="user-msgs">
-                                <h3>Edaward Devis</h3>
-                                <p>Hey, there</p>
-                            </div>
-                            <div class="time">
-                                <p>8.45 AM</p>
-                                <div class="unseen-msgs">
-                                    <h6>3</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="line"></div>
-                        <div class="lft-users">
-                            <div class="user-img">
-                                <img src="https://images.unsplash.com/photo-1615109398623-88346a601842?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="">
-                            </div>
-                            <div class="user-msgs">
-                                <h3>Edaward Devis</h3>
-                                <p>Hey, there</p>
-                            </div>
-                            <div class="time">
-                                <p>8.45 AM</p>
-                                <div class="unseen-msgs">
-                                    <h6>3</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="line"></div>
-                        <div class="lft-users">
-                            <div class="user-img">
-                                <img src="https://images.unsplash.com/photo-1615109398623-88346a601842?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="">
-                            </div>
-                            <div class="user-msgs">
-                                <h3>Edaward Devis</h3>
-                                <p>Hey, there</p>
-                            </div>
-                            <div class="time">
-                                <p>8.45 AM</p>
-                                <div class="unseen-msgs">
-                                    <h6>3</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="line"></div>
-                        <div class="lft-users">
-                            <div class="user-img">
-                                <img src="https://images.unsplash.com/photo-1615109398623-88346a601842?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="">
-                            </div>
-                            <div class="user-msgs">
-                                <h3>Edaward Devis</h3>
-                                <p>Hey, there</p>
-                            </div>
-                            <div class="time">
-                                <p>8.45 AM</p>
-                                <div class="unseen-msgs">
-                                    <h6>3</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="line"></div>
-                    </div>
-                </div>
-                <div id="sec-2-rgt">
-                    <div id="rgt-top">
-                        <h3>To: Edward Devis</h3>
-                        <i class="ri-arrow-right-s-line"></i>
-                    </div>
-                    <div id="rgt-cntr">
-                        <div class="user1">
-                            <div class="user11">
-                                <p>hey</p>
-                            </div>
-                        </div>
-                        <div class="user2">
-                            <div class="user22">
-                                <p>Lorem ipsum dolor sit amet.</p>
-                            </div>
-                        </div>
-                        <div class="user1">
-                            <div class="user11">
-                                <p>hey</p>
-                            </div>
-                        </div>
-                        <div class="user2">
-                            <div class="user22">
-                                <p>Lorem ipsum dolor sit amet.</p>
-                            </div>
-                        </div>
-                        <div class="user1">
-                            <div class="user11">
-                                <p>hey</p>
-                            </div>
-                        </div>
-                        <div class="user2">
-                            <div class="user22">
-                                <p>Lorem ipsum dolor sit amet.</p>
-                            </div>
-                        </div>
-                        <div class="user1">
-                            <div class="user11">
-                                <p>hey</p>
-                            </div>
-                        </div>
-                        <div class="user2">
-                            <div class="user22">
-                                <p>Lorem ipsum dolor sit amet.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="rgt-bottom">
-                        <div id="input-div">
-                            <i class="ri-add-circle-line"></i>
-                            <input id="type-msg" type="text" placeholder="Type Something...">
-                        </div>
-                        <i class="ri-send-plane-line"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
 
     <div id="group110">      
         <div id="right-js">  
             <h2 class="alone">New Recommendations</h2>
-            <div class="slick-js">
-                <div class="slick-card">
+            <div class="slick-js new-rec-sec">
+                <!-- <div class="slick-card">
                     <div class="slick-card-img">
                         <a href="./user_page.html"><img src="./asset/block-img.jpg" alt=""></a>
                     </div>
@@ -478,12 +321,11 @@
                     <a  class="slick-card-a" href="">
                         <button>Send Interest</button>
                     </a>
-                </div>
-                
+                </div> -->
             </div>
             <h2 class="alone">All Preffered Profiles</h2>
-            <div class="slick-js">
-                <div class="slick-card">
+            <div class="slick-js preffered-matches">
+                <!-- <div class="slick-card preffered-matches">
                     <div class="slick-card-img">
                         <a href="./user_page.html"><img src="./asset/block-img.jpg" alt=""></a>
                     </div>
@@ -608,12 +450,11 @@
                     <a  class="slick-card-a" href="">
                         <button>Send Interest</button>
                     </a>
-                </div>
-                
+                </div> -->   
             </div>     
             <h2 class="alone">Recommended By Us</h2>
-            <div class="slick-js">
-                <div class="slick-card">
+            <div class="slick-js rec-by-us">
+                <!-- <div class="slick-card">
                     <div class="slick-card-img">
                         <a href="./user_page.html"><img src="./asset/block-img.jpg" alt=""></a>
                     </div>
@@ -738,11 +579,24 @@
                     <a  class="slick-card-a" href="">
                         <button>Send Interest</button>
                     </a>
-                </div>
-                
+                </div> -->
             </div>     
             <h2 class="alone">Explore</h2>
-            <div class="slick-js">
+            <div class="slick-js explore-users">
+                <!-- <div class="slick-card">
+                    <div class="slick-card-img">
+                        <a href="./user_page.html"><img src="./asset/block-img.jpg" alt=""></a>
+                    </div>
+                    <div class="slick-card-dets">
+                        <h1>Name</h1>
+                        <h5>Age - xx</h5>
+                        <h5>Sindhi-Sahati</h5>
+                        <h5>Bhopal, Madhya Pradesh</h5>
+                    </div>
+                    <a  class="slick-card-a" href="">
+                        <button>Send Interest</button>
+                    </a>
+                </div>
                 <div class="slick-card">
                     <div class="slick-card-img">
                         <a href="./user_page.html"><img src="./asset/block-img.jpg" alt=""></a>
@@ -750,6 +604,20 @@
                     <div class="slick-card-dets">
                         <h1>Name</h1>
                         <h5>Age - xx</h5>
+                        <h5>Sindhi-Sahati</h5>
+                        <h5>Bhopal, Madhya Pradesh</h5>
+                    </div>
+                    <a  class="slick-card-a" href="">
+                        <button>Send Interest</button>
+                    </a>
+                </div>
+                <div class="slick-card">
+                    <div class="slick-card-img">
+                        <a href="./user_page.html"><img src="./asset/block-img.jpg" alt=""></a>
+                    </div>
+                    <div class="slick-card-dets">
+                        <h1>Name</h1> -->
+                        <!-- <h5>Age - xx</h5>
                         <h5>Sindhi-Sahati</h5>
                         <h5>Bhopal, Madhya Pradesh</h5>
                     </div>
@@ -840,35 +708,7 @@
                     <a  class="slick-card-a" href="">
                         <button>Send Interest</button>
                     </a>
-                </div>
-                <div class="slick-card">
-                    <div class="slick-card-img">
-                        <a href="./user_page.html"><img src="./asset/block-img.jpg" alt=""></a>
-                    </div>
-                    <div class="slick-card-dets">
-                        <h1>Name</h1>
-                        <h5>Age - xx</h5>
-                        <h5>Sindhi-Sahati</h5>
-                        <h5>Bhopal, Madhya Pradesh</h5>
-                    </div>
-                    <a  class="slick-card-a" href="">
-                        <button>Send Interest</button>
-                    </a>
-                </div>
-                <div class="slick-card">
-                    <div class="slick-card-img">
-                        <a href="./user_page.html"><img src="./asset/block-img.jpg" alt=""></a>
-                    </div>
-                    <div class="slick-card-dets">
-                        <h1>Name</h1>
-                        <h5>Age - xx</h5>
-                        <h5>Sindhi-Sahati</h5>
-                        <h5>Bhopal, Madhya Pradesh</h5>
-                    </div>
-                    <a  class="slick-card-a" href="">
-                        <button>Send Interest</button>
-                    </a>
-                </div>
+                </div> -->
                 
             </div>     
         </div>
@@ -923,20 +763,130 @@
             </div>
         </div>
         <div class="footer-end">
-            <a href="" class="terms-condtns">Terms and Conditions</h4>
-            <a href="" class="privacy-policy">Privacy Policy</h4>
-            <a href="contact1.html" class="contact-us">Contact Us</h4>
+            <a href="" class="terms-condtns">Terms and Conditions</a>
+            <a href="" class="privacy-policy">Privacy Policy</a>
+            <a href="./contact1.html" class="contact-us">Contact Us</a>
         </div>
     </div>
+
+    <script>
+        // const newRecSec = document.querySelector(".new-rec-sec");
+        fetch("http://localhost:2000/api/v2/home", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${localStorage.getItem("token")}`
+            }
+        }).then((res) => {
+            return res.json();
+        }).then((data) => {
+            console.log(data)
+            const checkToken = localStorage.getItem("token");
+            if(checkToken) {
+            var clutter = "";
+            data.newRecommendation.forEach((element, index) => {
+                clutter += `<div class="slick-card">
+                    <div class="slick-card-img">
+                        <a href="./user_page.html"><img src="http://localhost:2000/${element.profilePicture}" alt="Profile"></a>
+                    </div>
+                    <div class="slick-card-dets">
+                        <h1>${element.firstname} ${element.lastname}</h1>
+                        <h5>Age - ${element.age} yrs.</h5>
+                        <h5>${element.caste} - ${element.subCaste}</h5>
+                        <h5>${element.city}, ${element.state}</h5>
+                    </div>
+                    <a  class="slick-card-a" href="">
+                        <button type = "submit" id= "btn${index}" data-id= ${element._id}>Send Interest</button>
+                    </a>
+                </div>`
+            });
+            
+            if(clutter.length == 0) {
+                document.querySelector(".new-rec-sec").innerHTML = `<h1>No Data Found</h1>`;
+            }else {
+                document.querySelector(".new-rec-sec").innerHTML = clutter;
+            }
+
+            var clutter2 = "";
+            data.matches.forEach((element, index) => {
+                clutter2 += `<div class="slick-card">
+                    <div class="slick-card-img">
+                        <a href="./user_page.html"><img src="http://localhost:2000/${element.profilePicture}" alt="Profile"></a>
+                    </div>
+                    <div class="slick-card-dets">
+                        <h1>${element.firstname} ${element.lastname}</h1>
+                        <h5>Age - ${element.age} yrs.</h5>
+                        <h5>${element.caste} - ${element.subCaste}</h5>
+                        <h5>${element.city}, ${element.state}</h5>
+                    </div>
+                    <a  class="slick-card-a" href="">
+                        <button type = "submit" id= "btn${index}" data-id= ${element._id}>Send Interest</button>
+                    </a>
+                </div>`
+            })
+            
+            if(clutter2.length == 0) {
+                document.querySelector(".preffered-matches").innerHTML = `<h1>No Matches Found</h1>`;
+            }else {
+                document.querySelector(".preffered-matches").innerHTML = clutter2;
+            }
+
+            var clutter3 = "";
+            data.explore.forEach((element, index) => {
+                clutter3 += `<div class="slick-card">
+                    <div class="slick-card-img">
+                        <a href="./user_page.html"><img src="http://localhost:2000/${element.profilePicture}" alt="Profile"></a>
+                    </div>
+                    <div class="slick-card-dets">
+                        <h1>${element.firstname} ${element.lastname}</h1>
+                        <h5>Age - ${element.age} yrs.</h5>
+                        <h5>${element.caste} - ${element.subCaste}</h5>
+                        <h5>${element.city}, ${element.state}</h5>
+                    </div>
+                    <a  class="slick-card-a" href="">
+                        <button type = "submit" id= "btn${index}" data-id= ${element._id}>Send Interest</button>
+                    </a>
+                </div>`
+            })
+            document.querySelector(".explore-users").innerHTML = clutter3;
+
+            var clutter4 = "";
+            data.foundUser.recommendedMatches.forEach((element, index) => {
+                clutter4 += `<div class="slick-card">
+                    <div class="slick-card-img">
+                        <a href="./user_page.html"><img src="http://localhost:2000/${element.profilePicture}" alt="Profile"></a>
+                    </div>
+                    <div class="slick-card-dets">
+                        <h1>${element.firstname} ${element.lastname}</h1>
+                        <h5>Age - ${element.age} yrs.</h5>
+                        <h5>${element.caste} - ${element.subCaste}</h5>
+                        <h5>${element.city}, ${element.state}</h5>
+                    </div>
+                    <a  class="slick-card-a" href="">
+                        <button type = "submit" id= "btn${index}" data-id= ${element._id}>Send Interest</button>
+                    </a>
+                </div>`
+            })
+            
+            if(clutter4.length == 0) {
+                document.querySelector(".rec-by-us").innerHTML = `<h1>No Matches Found</h1>`;
+            } else {
+                document.querySelector(".rec-by-us").innerHTML = clutter4;
+            }
+        }
+        }).catch((err) => {
+            console.log(err);
+        })
+
+        
+    </script>
 
     <!-- Script -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.js"></script>
     
+    <script src="./js/all_profiles.js"></script>
     <script src="./js/my_matches.js"></script>
-    <script src="./js/dashboard.js"></script>
-    <script src="./js/chat.js"></script>
-    <!-- <script src="./about.js"></script> -->
 
 </body>
 </html>
