@@ -1,14 +1,59 @@
-var dashboardApiUrl = "http://localhost:2000/api/v2/home";
-fetch(dashboardApiUrl, {
-  method: "GET",
-  headers: {
-    "Content-Type": "application/json",
-    Authorization: `Bearer ${localStorage.getItem("token")}`,
-  },
-})
-  .then((response) => {
-    return response.json();
+function timeout() {
+  setTimeout(function () {
+    $(".slick-js").slick({
+      infinite: true,
+      slidesToShow: 3,
+      slidesToScroll: 3,
+      autoplay: true,
+      autoplaySpeed: 3000,
+      arrows: true,
+      dots: true,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            infinite: true,
+            dots: true,
+          },
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+          },
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+          },
+        },
+        // You can unslick at	any time.
+        // {
+        //     breakpoint: 320,
+        //     settings: {
+        //         slidesToShow: 1,
+        //         slidesToScroll: 1
+        //     }
+        // }
+      ],
+    });
+  }, 1000);
+}
+function api1() {
+  var dashboardApiUrl = "http://localhost:2000/api/v2/home";
+  fetch(dashboardApiUrl, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
   })
+
   .then((data) => {
     console.log(data);
     if (localStorage.getItem("token")) {
@@ -46,28 +91,26 @@ fetch(dashboardApiUrl, {
                   <button type="submit" id="btn${index}" data-id= ${element._id} >Send Interest</button>
               </a>
           </div>`;
-      });
-      document.querySelector("#apidbmatches").innerHTML = clutter1;
-    } else {
-      // document.querySelector("#apidbmatchesheading").style.display = "none";
-      document.querySelector(
-        "#apidbmatches"
-      ).style.display = "none";
-      document.querySelector("#nomatchesfound").style.display = "block";
-    }
-    //   if (data.recommendedMatches.length > 0) {
-    //     var clutter2 = "";
-    //     data.recommendedMatches.forEach((element, index) => {
-    //       clutter2 += `<div class="slick-card">
-    //             <div class="slick-card-img">
-    //                 <a href="./user_page.html"><img id="userImg" src="${element.profilePicture}" alt="John"></a>
-    //             </div>
-    //             <div class="slick-card-dets">
-    //                 <h1>${element.firstname}</h1>
-    //                 <h5>Age - ${element.age}</h5>
-    //                 <h5>${element.cast}-${element.subCaste}</h5>
-    //                 <h5>${element.city},${element.state}</h5>
-    //             </div>
+        });
+        document.querySelector("#apidbmatches").innerHTML = clutter1;
+      } else {
+        // document.querySelector("#apidbmatchesheading").style.display = "none";
+        document.querySelector("#apidbmatches").style.display = "none";
+        document.querySelector("#nomatchesfound").style.display = "block";
+      }
+      //   if (data.recommendedMatches.length > 0) {
+      //     var clutter2 = "";
+      //     data.recommendedMatches.forEach((element, index) => {
+      //       clutter2 += `<div class="slick-card">
+      //             <div class="slick-card-img">
+      //                 <a href="./user_page.html"><img id="userImg" src="${element.profilePicture}" alt="John"></a>
+      //             </div>
+      //             <div class="slick-card-dets">
+      //                 <h1>${element.firstname}</h1>
+      //                 <h5>Age - ${element.age}</h5>
+      //                 <h5>${element.cast}-${element.subCaste}</h5>
+      //                 <h5>${element.city},${element.state}</h5>
+      //             </div>
       //                 <button id="btn${index}" data-id= ${element._id} >Send Interest</button>
 
       //         </div>`;
@@ -107,17 +150,122 @@ fetch(dashboardApiUrl, {
           });
           document.querySelector("#apidbrecommendedmatches").innerHTML =
             clutter2;
+        })
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      // console.log(data);
+      if (localStorage.getItem("token")) {
+        document.querySelector("#apidbpendinginterest").innerHTML =
+          data.foundUser.pendingRequests.length;
+        document.querySelector("#apidbconnections").innerHTML =
+          data.foundUser.connections.length;
+        document.querySelector("#apidbvisitors").innerHTML =
+          data.foundUser.viewProfilers.length;
+        document.querySelector("#apidbusername").innerHTML =
+          data.foundUser.firstname + " " + data.foundUser.lastname;
+        document
+          .querySelector("#apidbuserprofilepic")
+          .setAttribute(
+            "src",
+            `http://localhost:2000/${data.foundUser.profilePicture}`
+          );
+        document.querySelector("#apidbuserid").innerHTML =
+          data.foundUser._id.substring(4, 13);
+  
+        if (data.matches.length > 0) {
+          var clutter1 = "";
+          data.matches.forEach((element, index) => {
+            clutter1 += `<div class="slick-card">
+                <div class="slick-card-img">
+                    <a href="./user_page.html"><img id="userImg" src="/${element.profilePicture}" alt="Profile"></a>
+                </div>
+                <div class="slick-card-dets">
+                    <h1>${element.firstname}</h1>
+                    <h5>Age -${element.age}</h5>
+                    <h5>${element.cast}-${element.subCaste}</h5>
+                    <h5>${element.city}, ${element.state}</h5>
+                </div>
+                <a class="slick-card-a" >
+                    <button type="submit" id="btn${index}" data-id= ${element._id} >Send Interest</button>
+                </a>
+            </div>`;
+
         });
-    } else {
-      window.location.href = "./index.html";
-    }
-  })
-  .catch((err) => {
-    console.log(err);
-  })
-  .finally(() => {
-    console.log("finally");
-  });
+        document.querySelector("#apidbmatches").innerHTML = clutter1;
+      } else {
+        // document.querySelector("#apidbmatchesheading").style.display = "none";
+        document.querySelector(
+          "#apidbmatches"
+        ).style.display = "none";
+        document.querySelector("#nomatchesfound").style.display = "block";
+      }
+      //   if (data.recommendedMatches.length > 0) {
+      //     var clutter2 = "";
+      //     data.recommendedMatches.forEach((element, index) => {
+      //       clutter2 += `<div class="slick-card">
+      //             <div class="slick-card-img">
+      //                 <a href="./user_page.html"><img id="userImg" src="${element.profilePicture}" alt="John"></a>
+      //             </div>
+      //             <div class="slick-card-dets">
+      //                 <h1>${element.firstname}</h1>
+      //                 <h5>Age - ${element.age}</h5>
+      //                 <h5>${element.cast}-${element.subCaste}</h5>
+      //                 <h5>${element.city},${element.state}</h5>
+      //             </div>
+        //                 <button id="btn${index}" data-id= ${element._id} >Send Interest</button>
+  
+        //         </div>`;
+        //     });
+        //     document.querySelector("#apidbrecommendedmatches").innerHTML =
+        //       clutter2;
+        //   } else {
+        // document.querySelector("#apidbrecommendedmatchesheading").style.display = "none";
+        fetch("http://localhost:2000/api/v2/allUsers", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + localStorage.getItem("token"),
+          },
+        })
+          .then((response) => {
+            return response.json();
+          })
+          .then(async (data) => {
+            console.log(data);
+            var clutter2 = "";
+            await data.forEach((element, index) => {
+              clutter2 += `<div class="slick-card">
+                <div class="slick-card-img">
+                    <a href="./user_page.html"><img id="userImg" src="http://localhost:2000/${element.profilePicture}" alt="Profile"></a>
+                </div>
+                <div class="slick-card-dets">
+                    <h1>${element.firstname}</h1>
+                    <h5>Age - ${element.age}</h5>
+                    <h5>${element.cast}-${element.subCaste}</h5>
+                    <h5>${element.city},${element.state}</h5>
+                </div>
+                <a  class="slick-card-a">
+                    <button id="btn${index}" class="btnjs" data-id= ${element._id} >Send Interest</button>
+                </a>
+            </div>`;
+            });
+            document.querySelector("#apidbrecommendedmatches").innerHTML =
+              clutter2;
+          });
+      } else {
+        window.location.href = "./index.html";
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+    .finally(() => {
+      console.log("finally");
+    });  
+}
+api1();
 // jeetul
 setTimeout(() => {
   document.querySelectorAll(".btnjs").forEach((element) => {
@@ -155,9 +303,12 @@ setTimeout(() => {
         .finally(() => {
           console.log("finally");
         });
+        
+
     });
   });
 }, 1000);
+
 
 setTimeout(function () {
   $(".slick-js").slick({
@@ -202,7 +353,10 @@ setTimeout(function () {
       // }
     ],
   });
-}, 1000);
+}, 2000);
+
+timeout();
+
 
 // Mobileview navbar
 document.querySelector("#menu").addEventListener("click", function (event) {
@@ -242,4 +396,4 @@ document.querySelector("#mobileview i").addEventListener("click", function () {
 //             document.querySelector ("#back").style.display = "initial";
 //         })
 //     })
-// }
+
