@@ -7,7 +7,7 @@
   box-sizing: border-box;
 }
 
-html, body {
+/* html, body {
   width: 100%;
   height: 100%;
   user-select: none;
@@ -63,7 +63,7 @@ html, body {
 
 
 
-.img-div img {
+/*.img-div img {
   object-fit: cover;
   width: 100%;
   height: 100%;
@@ -113,7 +113,22 @@ html, body {
   width: 80%;
   border-bottom: 1px solid #b7b3b3;
   margin: 0 auto;
+} */
+
+.img-div i{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 30px;
+  color:white;
+  padding: 8px;
+  background-color:#54545495;
+  cursor: pointer;
 }
+
+.img-div i:hover #myImg {
+    opacity: 1;
+} 
 
 .name .edit-btn {
   width: max-content;
@@ -144,12 +159,12 @@ html, body {
   font-size: 40px;
 }
 
-.name p {
+/* .name p {
   color: rgb(71, 71, 71);
   font-size: 15px;
-}
+} */
 
-.txt-div .details-div {
+/* .txt-div .details-div {
   display: flex;
   justify-content: space-between;
   width: 80%;
@@ -243,7 +258,6 @@ html, body {
 .full-dets .section-1 ,.full-dets .section-2{
   width: 85%;
   margin: 0 auto;
-  /* margin-bottom: 2em; */
   display: grid;
   grid-template-columns: auto auto;
 }
@@ -385,7 +399,6 @@ html, body {
   color: #4949fff0;
 }
 
-/* Additional css */
 .full-dets-container {
   display: flex;
   align-items: flex-start;
@@ -401,7 +414,6 @@ html, body {
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
-  /* background-color: blue; */
 }
 
 .dets-imgs-js::-webkit-scrollbar {
@@ -414,7 +426,7 @@ html, body {
   width: 23%;
   position: relative;
   margin: 0 5px;
-}
+} */
 
 .overlay {
   position: absolute;
@@ -468,7 +480,6 @@ html, body {
 }
 
 
-
 .hr {
   background-color: #ad0909;
   height: 0.2em;
@@ -476,7 +487,7 @@ html, body {
 }
 
 /* Section-3 */
-.partner-details {
+/* .partner-details {
   width: 85%;
   margin: 0 auto;
 }
@@ -555,11 +566,11 @@ html, body {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-} 
+}  */
 
 
 /* Style the Image Used to Trigger the Modal */
-#myImg {
+/* #myImg {
   border-radius: 5px;
   cursor: pointer;
   transition: 0.3s;
@@ -567,7 +578,7 @@ html, body {
 
 #myImg:hover {
   opacity: 0.9;
-}
+} */
 
 /* The Modal (background) */
 .modal {
@@ -846,6 +857,34 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+.partner-details .logo-2 {
+  width: 100%;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 1rem 0;
+  padding: 1rem;
+}
 
+.logo-2>i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background-color: #ad0909;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 22px;
+}
 
+.logo-2 #partner {
+  width: 50px;
+  height: 50px;
+  background-color: #ad0909;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 22px;
+}
 
