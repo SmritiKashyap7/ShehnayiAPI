@@ -12,7 +12,7 @@ fetch(sentInterestApi, {
     console.log("sentInterest", data);
     console.log(data.foundUser.interests);
     if (data.foundUser.interests.length > 0) {
-      data.foundUser.interests.forEach(function (elem) {
+      data.foundUser.interests.forEach(function (elem, index) {
         clutter += ` <div class="slick-cards">
                     <div class="top">
                         <a href="./user_page.html"><img src="${elem.profilePicture}" alt=""></a>
@@ -23,13 +23,13 @@ fetch(sentInterestApi, {
                         <p>${elem.caste}-${elem.subCaste}</p>
                         <p>${elem.city}, ${elem.state}</p>
                         <div class="btn-flex">
-                            <button class="accpt-btn dbacceptbtn">Withdraw Interest</button>
+                            <button class="accpt-btn dbacceptbtn" id="btn${index}" data-id= ${elem._id}>Withdraw Interest</button>
                         </div>
                     </div>
                 </div>`;
       });
     }
-    console.log(clutter);
+    // console.log(clutter);
     document.querySelector(".apiactivitysentinterest").innerHTML = clutter;
   })
   .catch((err) => {
@@ -41,13 +41,10 @@ setTimeout(() => {
     element.addEventListener("click", function (dets) {
       dets.preventDefault();
       var userId = dets.target.dataset.id;
-      console.log(dets.target.id);
+      console.log("userid", userId);
       var btnId = dets.target.id;
-      console.log(dets.target.dataset.id);
-      var loggedinUser = localStorage.getItem("loggedinUserdashboard");
-      console.log(loggedinUser);
-
-      fetch(`http://localhost:2000/api/v2/user/withdrawInterest${userId}`, {
+      console.log("btnid", btnId);
+      fetch(`http://localhost:2000/api/v2/user/withdrawInterest/${userId}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -58,7 +55,7 @@ setTimeout(() => {
           return response.json();
         })
         .then((data) => {
-          console.log(data);
+          console.log("withdraw your req", data);
         })
         .catch((err) => {
           console.log(err);
@@ -84,7 +81,7 @@ fetch(pendingRequestApi, {
     console.log("pendingRequest", data);
     console.log(data.pendingRequests);
     if (data.pendingRequests.length > 0) {
-      data.pendingRequests.forEach(function (elem) {
+      data.pendingRequests.forEach(function (elem, index) {
         pendingRequestClutter += ` <div class="slick-cards">
                     <div class="top">
                         <a href="./user_page.html"><img src="${elem.profilePicture}" alt=""></a>
@@ -95,8 +92,8 @@ fetch(pendingRequestApi, {
                         <p>${elem.caste}-${elem.subCaste}</p>
                         <p>${elem.city}, ${elem.state}</p>
                         <div class="btn-flex">
-                            <button class="accpt-btn">Accept</button>
-                            <button class="decline-btn">Decline</button>
+                            <button class="accpt-btn apiapendingreqacceptbtn" id="apiapendingreqacceptbtn${index}" data-id= ${elem._id}>Accept</button>
+                            <button class="decline-btn apiapendingreqdeclinetbtn" id="apiapendingreqdeclinetbtn${index}" data-id= ${elem._id}>Decline</button>
                         </div>
                     </div>
                 </div>`;
@@ -108,6 +105,37 @@ fetch(pendingRequestApi, {
   .catch((err) => {
     console.log(err);
   });
+
+setTimeout(() => {
+  document.querySelectorAll(".apiapendingreqacceptbtn").forEach((element) => {
+    element.addEventListener("click", function (dets) {
+      dets.preventDefault();
+      var userId = dets.target.dataset.id;
+      console.log("userid", userId);
+      var btnId = dets.target.id;
+      console.log("btnid", btnId);
+      fetch(`http://localhost:2000/api/v2/connections/${userId}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        },
+      })
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          console.log("accpet req", data);
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+        .finally(() => {
+          console.log("finally");
+        });
+    });
+  });
+}, 1000);
 
 var allLikedProfilesApi = "http://localhost:2000/api/v2/user/likedprofiles";
 fetch(allLikedProfilesApi, {
