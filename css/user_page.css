@@ -224,7 +224,7 @@ html body {
 .lft .lft-elems {
   display: flex;
   width: 100%;
-  padding: 0.8rem;
+  padding: 0.6rem;
 }
 
 .lft-elems .left-tag, .lft-elems .left-txt {
@@ -253,7 +253,7 @@ html body {
   background-color: #ad0909;
 }
 
-.full-dets .section-1 ,.full-dets .section-2{
+.full-dets .section-1 ,.full-dets .section-2, .section-3{
   width: 90%;
   margin: 0 auto;
   margin-bottom: 2em;
@@ -347,7 +347,7 @@ html body {
   font-weight: 400;
 }
 
-.section-2 .logo {
+.section-2 .logo, .section-3 .logo {
     width: 100%;
     height: 60px;
     margin-top: 2em;
@@ -407,7 +407,6 @@ html body {
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
-  /* background-color: blue; */
 }
 
 .dets-imgs-js::-webkit-scrollbar {
@@ -516,7 +515,7 @@ html body {
 .sections>.left-section {
   /* border: 2px solid #000; */
   background-color: #f1f1f1;
-  height: 275vh;
+  /* height: 275vh; */
   width: 30%;
   display: flex;
   flex-direction: column;
@@ -536,3 +535,44 @@ html body {
   float: right;
 }
 
+.partner-details .logo-2 {
+  width: 100%;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 1rem 0;
+  padding: 1rem;
+}
+
+.logo-2>i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background-color: #ad0909;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 22px;
+}
+
+.logo-2 #partner {
+  width: 50px;
+  height: 50px;
+  background-color: #ad0909;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 22px;
+}
+
+.lft-elems img {
+  width: 50px;
+  height: 50px;
+}
+
+.lft-elems .sec-3-description {
+  font-size: 12px;
+  font-weight: 400;
+  color: #605f5f;
+}
