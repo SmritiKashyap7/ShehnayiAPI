@@ -2907,7 +2907,7 @@
       var apiregisterbtnend = document.querySelector(".apiregisterbtnend");
       apiregisterbtnend.addEventListener("click", function (e) {
         e.preventDefault();
-        const profileData = document.querySelector(".apiaddpicture");
+        const profileData = document.querySelector(".apiaddpicture").value;
         console.log(profileData);
         const bearerToken = localStorage.getItem("token");
         fetch("http://localhost:2000/api/v2/user/userdetails", {

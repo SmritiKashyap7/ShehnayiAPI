@@ -56,6 +56,7 @@ setTimeout(() => {
         })
         .then((data) => {
           console.log("withdraw your req", data);
+          location.reload();
         })
         .catch((err) => {
           console.log(err);
@@ -126,6 +127,7 @@ setTimeout(() => {
         })
         .then((data) => {
           console.log("accpet req", data);
+          location.reload();
         })
         .catch((err) => {
           console.log(err);
@@ -154,6 +156,7 @@ setTimeout(() => {
         })
         .then((data) => {
           console.log("decline req", data);
+          location.reload();
         })
         .catch((err) => {
           console.log(err);
@@ -224,6 +227,7 @@ setTimeout(() => {
         })
         .then((data) => {
           console.log("remove liked", data);
+          location.reload();
         })
         .catch((err) => {
           console.log(err);
@@ -254,6 +258,8 @@ setTimeout(() => {
             })
             .then((data) => {
               console.log("view profile", data);
+              window.location.href = "./user_page.html";
+              localStorage.setItem("otherUser", JSON.stringify(data));
             })
             .catch((err) => {
               console.log(err);
