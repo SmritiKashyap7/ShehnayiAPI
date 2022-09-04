@@ -771,7 +771,7 @@
 
     <script>
         // const newRecSec = document.querySelector(".new-rec-sec");
-        fetch("http://localhost:2000/api/v2/home", {
+        fetch("https://server.shehnayi.in/api/v2/home", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -787,7 +787,7 @@
             data.newRecommendation.forEach((element, index) => {
                 clutter += `<div class="slick-card">
                     <div class="slick-card-img">
-                        <a href="./user_page.html"><img src="http://localhost:2000/${element.profilePicture}" alt="Profile"></a>
+                        <a href="./user_page.html"><img src="https://server.shehnayi.in/${element.profilePicture}" alt="Profile"></a>
                     </div>
                     <div class="slick-card-dets">
                         <h1>${element.firstname} ${element.lastname}</h1>
@@ -811,7 +811,7 @@
             data.matches.forEach((element, index) => {
                 clutter2 += `<div class="slick-card">
                     <div class="slick-card-img">
-                        <a href="./user_page.html"><img src="http://localhost:2000/${element.profilePicture}" alt="Profile"></a>
+                        <a href="./user_page.html"><img src="https://server.shehnayi.in/${element.profilePicture}" alt="Profile"></a>
                     </div>
                     <div class="slick-card-dets">
                         <h1>${element.firstname} ${element.lastname}</h1>
@@ -835,7 +835,7 @@
             data.explore.forEach((element, index) => {
                 clutter3 += `<div class="slick-card">
                     <div class="slick-card-img">
-                        <a href="./user_page.html"><img src="http://localhost:2000/${element.profilePicture}" alt="Profile"></a>
+                        <a href="./user_page.html"><img src="https://server.shehnayi.in/${element.profilePicture}" alt="Profile"></a>
                     </div>
                     <div class="slick-card-dets">
                         <h1>${element.firstname} ${element.lastname}</h1>
@@ -854,7 +854,7 @@
             data.foundUser.recommendedMatches.forEach((element, index) => {
                 clutter4 += `<div class="slick-card">
                     <div class="slick-card-img">
-                        <a href="./user_page.html"><img src="http://localhost:2000/${element.profilePicture}" alt="Profile"></a>
+                        <a href="./user_page.html"><img src="https://server.shehnayi.in/${element.profilePicture}" alt="Profile"></a>
                     </div>
                     <div class="slick-card-dets">
                         <h1>${element.firstname} ${element.lastname}</h1>

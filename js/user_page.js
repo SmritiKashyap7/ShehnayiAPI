@@ -2,7 +2,10 @@ var otherUser = JSON.parse(localStorage.getItem("otherUser"));
 console.log(otherUser);
 document
   .querySelector("#apiuserpageprofilepicture")
-  .setAttribute("src", `http://localhost:2000/${otherUser.profilePicture}`);
+  .setAttribute(
+    "src",
+    `https://server.shehnayi.in/${otherUser.profilePicture}`
+  );
 
 var usernameuserpage = document.querySelectorAll(".apiuserpagename");
 usernameuserpage.forEach((element) => {
@@ -22,7 +25,7 @@ document.querySelector(
 document.querySelector(".apiuserpageeducation").innerHTML =
   otherUser.heighestQualification;
 
-var picturesApi = `http://localhost:2000/api/v2/getalluploads/${otherUser._id}`;
+var picturesApi = `https://server.shehnayi.in/api/v2/getalluploads/${otherUser._id}`;
 fetch(picturesApi, {
   method: "GET",
   headers: {

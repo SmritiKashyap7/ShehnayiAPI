@@ -1,7 +1,7 @@
 const activitylogOutBtn = document.querySelectorAll("#userlogout");
 activitylogOutBtn.forEach(function (elem) {
   elem.addEventListener("click", () => {
-    fetch("http://localhost:2000/api/v2/user/logout", {
+    fetch("https://server.shehnayi.in/api/v2/user/logout", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

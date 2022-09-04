@@ -1,7 +1,7 @@
 //smriti
 var profilePic = document.querySelector(".profile-pic");
 var fullName = document.querySelector(".full-name");
-fetch("http://localhost:2000/api/v2/home", {
+fetch("https://server.shehnayi.in/api/v2/home", {
   method: "GET",
   headers: {
     "Content-Type": "application/json",
@@ -13,7 +13,7 @@ fetch("http://localhost:2000/api/v2/home", {
   })
   .then((data) => {
     console.log(data);
-    profilePic.innerHTML = `<img id="myImg" src="http://localhost:2000/${data.foundUser.profilePicture}" alt="" />
+    profilePic.innerHTML = `<img id="myImg" src="https://server.shehnayi.in/${data.foundUser.profilePicture}" alt="" />
             <i id="add" class="ri-add-circle-line"></i>`;
 
     fullName.textContent = `${data.foundUser.firstname} ${data.foundUser.lastname}`;

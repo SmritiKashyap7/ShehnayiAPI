@@ -1,4 +1,4 @@
-var dashboardApiUrl = "http://localhost:2000/api/v2/home";
+var dashboardApiUrl = "https://server.shehnayi.in/api/v2/home";
 fetch(dashboardApiUrl, {
   method: "GET",
   headers: {
@@ -24,7 +24,7 @@ fetch(dashboardApiUrl, {
         .querySelector("#apidbuserprofilepic")
         .setAttribute(
           "src",
-          `http://localhost:2000/${data.foundUser.profilePicture}`
+          `https://server.shehnayi.in/${data.foundUser.profilePicture}`
         );
       document.querySelector("#apidbuserid").innerHTML =
         data.foundUser._id.substring(4, 13);
@@ -75,7 +75,7 @@ fetch(dashboardApiUrl, {
       //   } else {
       // document.querySelector("#apidbrecommendedmatchesheading").style.display = "none";
 
-      fetch("http://localhost:2000/api/v2/allUsers", {
+      fetch("https://server.shehnayi.in/api/v2/allUsers", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -94,7 +94,7 @@ fetch(dashboardApiUrl, {
             if (data.loggedinUser.interests.includes(element._id)) {
               clutter2 += `<div class="slick-card">
               <div class="slick-card-img">
-                  <a href="./user_page.html"><img id="userImg" src="http://localhost:2000/${element.profilePicture}" alt="Profile"></a>
+                  <a href="./user_page.html"><img id="userImg" src="https://server.shehnayi.in/${element.profilePicture}" alt="Profile"></a>
               </div>
               <div class="slick-card-dets">
                   <h1>${element.firstname}</h1>
@@ -109,7 +109,7 @@ fetch(dashboardApiUrl, {
             } else if (!data.loggedinUser.interests.includes(element._id)) {
               clutter2 += `<div class="slick-card">
           <div class="slick-card-img">
-              <a href="./user_page.html"><img id="userImg" src="http://localhost:2000/${element.profilePicture}" alt="Profile"></a>
+              <a href="./user_page.html"><img id="userImg" src="https://server.shehnayi.in/${element.profilePicture}" alt="Profile"></a>
           </div>
           <div class="slick-card-dets">
               <h1>${element.firstname}</h1>
@@ -145,7 +145,7 @@ setTimeout(() => {
       console.log(dets.target.id);
       var btnId = dets.target.id;
       console.log(dets.target.dataset.id);
-      fetch(`http://localhost:2000/api/v2/user/interest/${userId}`, {
+      fetch(`https://server.shehnayi.in/api/v2/user/interest/${userId}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
