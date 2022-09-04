@@ -34,7 +34,7 @@ fetch(dashboardApiUrl, {
         data.matches.forEach((element, index) => {
           clutter1 += `<div class="slick-card">
               <div class="slick-card-img">
-                  <a href="./user_page.html"><img id="userImg" src="/${element.profilePicture}" alt="Profile"></a>
+                  <a href="./user_page.html"><img id="userImg" src="http://localhost:200/${element.profilePicture}" alt="Profile"></a>
               </div>
               <div class="slick-card-dets">
                   <h1>${element.firstname}</h1>
@@ -74,6 +74,9 @@ fetch(dashboardApiUrl, {
       //       clutter2;
       //   } else {
       // document.querySelector("#apidbrecommendedmatchesheading").style.display = "none";
+
+
+
       fetch("http://localhost:2000/api/v2/allUsers", {
         method: "GET",
         headers: {
@@ -85,10 +88,13 @@ fetch(dashboardApiUrl, {
           return response.json();
         })
         .then(async (data) => {
+          console.log(data.allUsers.length);
+          console.log(data.loggedinUser.interests.length);
           console.log(data);
           var clutter2 = "";
-          await data.forEach((element, index) => {
-            clutter2 += `<div class="slick-card">
+          data.allUsers.forEach((element, index) => {
+            if (data.loggedinUser.interests.includes(element._id)) {
+              clutter2 += `<div class="slick-card">
               <div class="slick-card-img">
                   <a href="./user_page.html"><img id="userImg" src="http://localhost:2000/${element.profilePicture}" alt="Profile"></a>
               </div>
@@ -99,12 +105,30 @@ fetch(dashboardApiUrl, {
                   <h5>${element.city},${element.state}</h5>
               </div>
               <a  class="slick-card-a">
-                  <button id="btn${index}" class="btnjs" data-id= ${element._id} >Send Interest</button>
+                  <button id="btn${index}" class="btnjs" disabled data-id= ${element._id} >Interest Sent</button>
               </a>
           </div>`;
-          });
+        }
+        else if(!data.loggedinUser.interests.includes(element._id)){
+          clutter2 += `<div class="slick-card">
+          <div class="slick-card-img">
+              <a href="./user_page.html"><img id="userImg" src="http://localhost:2000/${element.profilePicture}" alt="Profile"></a>
+          </div>
+          <div class="slick-card-dets">
+              <h1>${element.firstname}</h1>
+              <h5>Age - ${element.age}</h5>
+              <h5>${element.cast}-${element.subCaste}</h5>
+              <h5>${element.city},${element.state}</h5>
+          </div>
+          <a  class="slick-card-a">
+              <button id="btn${index}" class="btnjs" data-id= ${element._id} >Send Interest</button>
+          </a>
+      </div>`;
+        }
+      
+      })
           document.querySelector("#apidbrecommendedmatches").innerHTML =
-            clutter2;
+            clutter2 ;
         });
     } else {
       window.location.href = "./index.html";
@@ -137,12 +161,23 @@ setTimeout(() => {
         })
         .then((data) => {
           console.log(data);
-          if (data.message == "Interest Sent") {
+          console.log(data.loggedinUser.interests.length);
+          console.log(data.otherUser._id);
+          console.log(data.loggedinUser.interests.forEach((element) => {
+
+            if (element === data.otherUser._id) {
             document.querySelector(`#${btnId}`).textContent = "Interest Sent";
-          } else {
-            // alert("Interest Already Sent");
-            document.querySelector(`#${btnId}`).textContent = "Interest Sent";
-          }
+            }
+            else{
+              document.querySelector(`#${btnId}`).textContent = "Send Interest";
+            }
+          }));
+          // if (data.message == "Interest Sent") {
+          //   document.querySelector(`#${btnId}`).textContent = "Interest Sent";
+          // } else {
+          //   // alert("Interest Already Sent");
+          //   document.querySelector(`#${btnId}`).textContent = "Interest Sent";
+          // }
         })
         .catch((err) => {
           console.log(err);
@@ -197,7 +232,7 @@ setTimeout(function () {
       // }
     ],
   });
-}, 1000);
+}, 1500);
 
 // Mobileview navbar
 document.querySelector("#menu").addEventListener("click", function (event) {
