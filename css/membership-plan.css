@@ -19,18 +19,16 @@
 
 /* membership plans start */
 .membership-flex {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  align-items: end;
-  width: 95%;
-  margin: auto;
+  display: inline-grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 3rem;
+  width: 100%;
 }
 .container {
   position: relative;
-  width: 25%;
-  /* background: #4b9eac; */
-  background-color: #d87373;
+  width: 80%;
+  margin: 0 auto;
+  background-color: #c82525;
   border-radius: 20px;
   padding: 1.25rem 0;
   font-family: "Inter";
@@ -103,13 +101,13 @@
   color: #fff;
   font-weight: bold;
   border: none;
-  padding: 0px 2.75rem;
+  padding: 0.5rem 1.75rem;
   border-radius: 40px;
   display: block;
   margin: 0.625rem auto;
   cursor: pointer;
   font-size: 1em;
-  line-height: 3rem;
+  /* line-height: 2rem; */
   letter-spacing: 0.01em;
 }
 
@@ -119,11 +117,10 @@
 }
 
 .container1 {
-  transform: scale(1.2);
-  margin: 3rem;
-  background-color: #9c0808;
+  background-color: #c82525;
   transition: all ease-out 0.4s;
 }
+
 .container1 .join-button {
   background-color: gold;
 }
@@ -231,39 +228,6 @@
 }
 
 @media (min-width:320px) and (max-width: 550px) {
-  .navbar {
-    width: 100%;
-    height: 50px;
-}
-.navbar .profile #circle{
-    display: none;
-}
-.navbar .nav-links li {
-    display: none;
-}
-.profile .profile-icon {
-    width: 30px;
-    height: 30px;
-    margin-right: 1rem;
-}
-.profile .profile-icon img {
-    height: 20px;
-}
-.navbar #menu {
-    display: initial;
-    color: #fff;
-    margin-left: 15px;
-    font-size: 30px;
-}
-.navbar .logo {
-    margin-left: 1rem;
-    width: 25%;
-}
-.logo img {
-    width: 100%;
-    height: 100%;
-}
-
 
   .profile .profile-icon img {
     height: 20px;
@@ -313,94 +277,9 @@
     transform: none;
     transition: none;
   }
-
-  /* Footer */
-  .logo-img img {
-    width: 100px;
-  }
-  .footer-links {
-    width: 100%;
-    justify-content: space-around;
-  }
-  .foot-links-div {
-    width: 25%;
-  }
-  .links-title {
-    padding: 0;
-    padding-bottom: 0.7rem;
-    font-size: 12px;
-  }
-  .foot-links {
-    padding: 1rem 0;
-  }
-  .foot-links li {
-    padding: 0rem;
-  }
-  .foot-links > li > a {
-    font-size: 10px;
-  }
-  .social-links .social-title {
-    font-size: 12px;
-  }
-  .social-links .social-icons {
-    padding: 0;
-  }
-  .social-icons > img {
-    padding: 1rem 0;
-    width: 50px;
-    height: 50px;
-  }
-  .footer .footer-end {
-    font-size: 10px;
-  }
-  .footer-end .terms-condtns {
-    padding-right: 1rem;
-  }
-  .footer-end .privacy-policy {
-    padding: 0 1rem;
-  }
-  .footer-end .contact-us {
-    padding-left: 1rem;
-  }
 }
 
 @media (min-width: 550px) and (max-width: 768px) {
-  .navbar {
-    width: 100%;
-    height: 50px;
-}
-.navbar .profile #circle{
-    display: none;
-}
-
-.navbar .nav-links li {
-    display: none;
-}
-
-.profile .profile-icon {
-    width: 30px;
-    height: 30px;
-    margin-right: 1rem;
-}
-.profile .profile-icon img {
-    height: 20px;
-}
-
-.navbar #menu {
-    display: initial;
-    color: #fff;
-    margin-left: 15px;
-    font-size: 30px;
-}
-.navbar .logo {
-    width: 20%;
-    margin-left: 1rem;
-}
-
-.logo img {
-    width: 100%;
-    height: 100%;
-}
 
   /* body */
   .membership-flex {
@@ -415,7 +294,7 @@
     font-size: 3em;
   }
   .container {
-    width: 90%;
+    width: 80%;
     background-color: #9c0808;
   }
   .price {
@@ -452,70 +331,17 @@
     margin: auto;
     transition: none;
   }
-
-  /* Footer */
-  .logo-img img {
-    width: 100px;
-  }
-  .footer-links {
-    width: 100%;
-    justify-content: space-around;
-  }
-  .foot-links-div {
-    width: 25%;
-  }
-  .links-title {
-    padding: 0;
-    padding-bottom: 0.7rem;
-    font-size: 14px;
-  }
-  .foot-links {
-    padding: 1rem 0;
-  }
-  .foot-links li {
-    padding: 0rem;
-  }
-  .foot-links > li > a {
-    font-size: 12px;
-  }
-  .social-links .social-title {
-    font-size: 14px;
-  }
-  .social-links .social-icons {
-    padding: 0;
-  }
-  .social-icons > img {
-    padding: 1rem 0;
-    width: 50px;
-    height: 50px;
-  }
-  .footer .footer-end {
-    font-size: 12px;
-    padding: 0.5rem 0;
-  }
-  .footer-end .terms-condtns {
-    padding-right: 1rem;
-  }
-  .footer-end .privacy-policy {
-    padding: 0 1rem;
-  }
-  .footer-end .contact-us {
-    padding-left: 1rem;
-  }
 }
 
 @media (min-width: 769px) and (max-width: 1100px) {
 
   /* body */
-  .membership-flex {
-    gap: .2rem;
-  }
 
   .heading {
     font-size: 3em;
   }
   .container {
-    width: 30%;
+    width: 80%;
   }
   .price {
     font-size: 1.75em;
@@ -562,62 +388,11 @@
   .container1 {
     margin: 2rem;
   }
-
-  /* footer */
-
-  .logo-img img {
-    width: 100px;
-  }
-  .footer-links {
-    width: 100%;
-    justify-content: space-around;
-  }
-  .foot-links-div {
-    width: 15%;
-  }
-  .links-title {
-    padding: 0;
-    padding-bottom: 0.7rem;
-    font-size: 14px;
-  }
-  .foot-links {
-    padding: 1rem 0;
-  }
-  .foot-links li {
-    padding: 0.2rem;
-  }
-  .foot-links > li > a {
-    font-size: 12px;
-  }
-  .social-links .social-title {
-    font-size: 14px;
-  }
-  .social-links .social-icons {
-    padding: 0;
-  }
-  .social-icons > img {
-    padding: 1rem 0;
-    width: 50px;
-    height: 50px;
-  }
-  .footer .footer-end {
-    font-size: 12px;
-    padding: 0.5rem 0;
-  }
-  .footer-end .terms-condtns {
-    padding-right: 1rem;
-  }
-  .footer-end .privacy-policy {
-    padding: 0 1rem;
-  }
-  .footer-end .contact-us {
-    padding-left: 1rem;
-  }
 }
 
 @media (min-width: 1100px) and (max-width: 1450px) {
   .container {
-    width: 50%;
+    width: 85%;
   }
 
   .flex-barati-div {
@@ -625,38 +400,4 @@
     width: 25%;
     overflow: hidden;
   }
-}
-@media (min-width: 769px) and (max-width: 1024px){
-  .navbar {
-    width: 100%;
-    height: 50px;
-}
-.navbar .profile #circle{
-    display: none;
-}
-.navbar .nav-links li {
-    display: none;
-}
-.profile .profile-icon {
-    width: 30px;
-    height: 30px;
-    margin-right: 1rem;
-}
-.profile .profile-icon img {
-    height: 20px;
-}
-.navbar #menu {
-    display: initial;
-    color: #fff;
-    margin-left: 15px;
-    font-size: 30px;
-}
-.navbar .logo {
-    width: 15%;
-    margin-left: 1rem;
-}
-.logo img {
-    width: 100%;
-    height: 100%;
-}
 }
