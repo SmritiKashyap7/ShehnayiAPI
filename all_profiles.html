@@ -324,6 +324,7 @@
                 </div> -->
             </div>
             <h2 class="alone">All Preffered Profiles</h2>
+            <h2 id="nomatchesfound2" >NO MATCH FOUND</h2>
             <div class="slick-js preffered-matches">
                 <!-- <div class="slick-card preffered-matches">
                     <div class="slick-card-img">
@@ -453,6 +454,7 @@
                 </div> -->   
             </div>     
             <h2 class="alone">Recommended By Us</h2>
+            <h2 id="nomatchesfound3">NO MATCHES FOUND</h2>
             <div class="slick-js rec-by-us">
                 <!-- <div class="slick-card">
                     <div class="slick-card-img">
@@ -826,7 +828,8 @@
             })
             
             if(clutter2.length == 0) {
-                document.querySelector(".preffered-matches").innerHTML = `<h1>No Matches Found</h1>`;
+                document.querySelector("#nomatchesfound2").style.display = "block";
+                document.querySelector(".preffered-matches").style.display = "none";
             }else {
                 document.querySelector(".preffered-matches").innerHTML = clutter2;
             }
@@ -869,7 +872,8 @@
             })
             
             if(clutter4.length == 0) {
-                document.querySelector(".rec-by-us").innerHTML = `<h1>No Matches Found</h1>`;
+                document.querySelector("#nomatchesfound3").style.display = "block";
+                document.querySelector(".rec-by-us").style.display = "none";
             } else {
                 document.querySelector(".rec-by-us").innerHTML = clutter4;
             }
