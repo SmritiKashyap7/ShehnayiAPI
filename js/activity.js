@@ -14,8 +14,8 @@ fetch(sentInterestApi, {
     if (data.foundUser.interests.length > 0) {
       data.foundUser.interests.forEach(function (elem, index) {
         clutter += ` <div class="slick-cards">
-                    <div class="top">
-                        <a href="./user_page.html"><img src="https://server.shehnayi.in/${elem.profilePicture}" alt=""></a>
+                    <div class="top" >
+                        <a href="" ><img src="https://server.shehnayi.in/${elem.profilePicture}" id="sentinterestimg${index}" data-id="${elem._id}" class="sentinterestimg" alt=""></a>
                     </div>
                     <div class="bottom">
                         <h3>${elem.firstname}</h3>
@@ -37,6 +37,38 @@ fetch(sentInterestApi, {
   });
 
 setTimeout(() => {
+  document.querySelectorAll(".sentinterestimg").forEach((element) => {
+    element.addEventListener("click", function (dets) {
+      dets.preventDefault();
+      console.log(dets);
+      var userId = dets.target.dataset.id;
+      console.log("userid", userId);
+      var btnId = dets.target.id;
+      console.log("btnid", btnId);
+      fetch(`http://localhost:2000/api/v2/user/viewProfile/${userId}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        },
+      })
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          console.log("view profile", data);
+          window.location.href = "./user_page.html";
+          localStorage.setItem("otherUser", JSON.stringify(data));
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+        .finally(() => {
+          console.log("finally");
+        });
+    });
+  });
+
   document.querySelectorAll(".dbacceptbtn").forEach((element) => {
     element.addEventListener("click", function (dets) {
       dets.preventDefault();
