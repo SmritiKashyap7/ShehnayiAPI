@@ -350,7 +350,7 @@ body {
 }
 
 /* Chat popup */
-/* #msg-popup {
+#msg-popup {
     transition: all cubic-bezier(0.19, 1, 0.22, 1) 1.5s;
     position: fixed;
     right: -130%;
@@ -639,7 +639,7 @@ body {
 #rgt-bottom>i {
     font-size: 22px;
     color: #BE1B1B;
-} */
+}
 
 #msg h3 {
   position: absolute;
