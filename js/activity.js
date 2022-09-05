@@ -29,8 +29,14 @@ fetch(sentInterestApi, {
                 </div>`;
       });
     }
-    // console.log(clutter);
-    document.querySelector(".apiactivitysentinterest").innerHTML = clutter;
+    if (data.foundUser.interests.length > 0) {
+      document.querySelector(".apiactivitysentinterest").innerHTML = clutter;
+    }
+    else{
+      document.querySelector(".apiactivitysentinterest").style.display = "none";
+      document.querySelector("#nomatchfound01").style.display = " block"
+    }
+    
   })
   .catch((err) => {
     console.log(err);
@@ -136,8 +142,13 @@ fetch(pendingRequestApi, {
                 </div>`;
       });
     }
-    document.querySelector(".apiactivitypendingrequests").innerHTML =
-      pendingRequestClutter;
+      if (data.pendingRequests.length > 0) {
+        document.querySelector(".apiactivitypendingrequests").innerHTML = pendingRequestClutter;
+      }
+      else{
+        document.querySelector(".apiactivitypendingrequests").style.display = "none";
+        document.querySelector("#nomatchfound02").style.display = " block"
+      }
   })
   .catch((err) => {
     console.log(err);
@@ -236,9 +247,14 @@ fetch(allLikedProfilesApi, {
                 </div>
             </div>`;
       });
+      document.querySelector(".apiactivityalllikedprofiles").innerHTML =
+        allLikedProfilesClutter;
     }
-    document.querySelector(".apiactivityalllikedprofiles").innerHTML =
-      allLikedProfilesClutter;
+    else{
+      document.querySelector(".apiactivityalllikedprofiles").style.display = "none";
+      document.querySelector("#nomatchfound03").style.display = " block"
+    }
+
   })
   .catch((err) => {
     console.log(err);
@@ -345,6 +361,11 @@ fetch(viewProfiles, {
       document.querySelector(".apiactivityallviewedProfiles").innerHTML =
         viewedProfilesClutter;
     }
+    else{
+      document.querySelector(".apiactivityallviewedProfiles").style.display = "none";
+      document.querySelector("#nomatchfound04").style.display = " block"
+    }
+
   })
   .catch((err) => {
     console.log(err);
@@ -412,9 +433,13 @@ fetch(blockedUsersApi, {
                     </div>
                 </div>`;
       });
+      document.querySelector(".apiactivityblockedUsers").innerHTML =
+        blockedUsersClutter;
     }
-    document.querySelector(".apiactivityblockedUsers").innerHTML =
-      blockedUsersClutter;
+    else{
+      document.querySelector(".apiactivityblockedUsers").style.display = "none";
+      document.querySelector("#nomatchfound05").style.display = " block"
+    }
   });
 
 setTimeout(() => {
@@ -457,7 +482,7 @@ setTimeout(() => {
     slidesToShow: 4,
     slidesToScroll: 1,
     arrow: true,
-    dots: true,
+    dots: false,
     // autoplay: true,
     adaptiveHeight: true,
     autoplaySpeed: 3000,

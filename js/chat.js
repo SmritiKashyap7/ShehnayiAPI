@@ -74,13 +74,13 @@ fetch("http://localhost:2000/api/messages/conversations", {
             btn.addEventListener("click", (e) => {
                 console.log(e.target.dataset.id);
                 var id = e.target.dataset.id
-                fetch(`http://localhost:2000/api/messages/conversations/query?userId=${id}`, {
+                fetch(`http://localhost:2000/api/messages/conversations/query?userId=${id}`,{
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
                         Authorization: "Bearer " + localStorage.getItem("token"),
-                    }
-            })
+                    },
+                })
             .then((response) => {
                 return response.json()
             })
