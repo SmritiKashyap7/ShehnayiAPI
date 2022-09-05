@@ -137,55 +137,46 @@ fetch(dashboardApiUrl, {
     console.log("finally");
   });
 // jeetul
-setTimeout(() => {
-  document.querySelectorAll(".btnjs").forEach((element) => {
-    element.addEventListener("click", function (dets) {
-      dets.preventDefault();
-      var userId = dets.target.dataset.id;
-      console.log(dets.target.id);
-      var btnId = dets.target.id;
-      console.log(dets.target.dataset.id);
-      fetch(`https://server.shehnayi.in/api/v2/user/interest/${userId}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: "Bearer " + localStorage.getItem("token"),
-        },
+
+document.querySelectorAll(".btnjs").forEach((element) => {
+  element.addEventListener("click", function (dets) {
+    dets.preventDefault();
+    var userId = dets.target.dataset.id;
+    console.log(dets.target.id);
+    var btnId = dets.target.id;
+    console.log(dets.target.dataset.id);
+    fetch(`https://server.shehnayi.in/api/v2/user/interest/${userId}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + localStorage.getItem("token"),
+      },
+    })
+      .then((response) => {
+        return response.json();
       })
-        .then((response) => {
-          return response.json();
-        })
-        .then((data) => {
-          console.log(data);
-          console.log(data.loggedinUser.interests.length);
-          console.log(data.otherUser._id);
-          console.log(
-            data.loggedinUser.interests.forEach((element) => {
-              if (element === data.otherUser._id) {
-                document.querySelector(`#${btnId}`).textContent =
-                  "Interest Sent";
-              } else {
-                document.querySelector(`#${btnId}`).textContent =
-                  "Send Interest";
-              }
-            })
-          );
-          // if (data.message == "Interest Sent") {
-          //   document.querySelector(`#${btnId}`).textContent = "Interest Sent";
-          // } else {
-          //   // alert("Interest Already Sent");
-          //   document.querySelector(`#${btnId}`).textContent = "Interest Sent";
-          // }
-        })
-        .catch((err) => {
-          console.log(err);
-        })
-        .finally(() => {
-          console.log("finally");
-        });
-    });
+      .then((data) => {
+        console.log(data);
+        console.log(data.loggedinUser.interests.length);
+        console.log(data.otherUser._id);
+        console.log(
+          data.loggedinUser.interests.forEach((element) => {
+            if (element === data.otherUser._id) {
+              document.querySelector(`#${btnId}`).textContent = "Interest Sent";
+            } else {
+              document.querySelector(`#${btnId}`).textContent = "Send Interest";
+            }
+          })
+        );
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => {
+        console.log("finally");
+      });
   });
-}, 1000);
+});
 
 setTimeout(function () {
   $(".slick-js").slick({

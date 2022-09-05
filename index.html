@@ -2335,22 +2335,22 @@
           var apibannerimg = document
             .querySelector("#apibannerimg")
             .setAttribute("src", bannerImg);
-          let clutter = "";
-          data.foundRituals.forEach((element) => {
-            // console.log(element);
-            clutter += `<div class="elements">
-                <div class="top">
-                    <img src="https://server.shehnayi.in/${element.image}" alt="">
-                </div>
-                <div class="bottom">
-                    <h3 class="slide2-heading">${element.subtitle}</h3>
-                    <p>${element.description}</p>
-                </div>
-            </div>`;
-          });
+          // let clutter = "";
+          // data.foundRituals.forEach((element) => {
+          //   // console.log(element);
+          //   clutter += `<div class="elements">
+          //       <div class="top">
+          //           <img src="https://server.shehnayi.in/${element.image}" alt="">
+          //       </div>
+          //       <div class="bottom">
+          //           <h3 class="slide2-heading">${element.subtitle}</h3>
+          //           <p>${element.description}</p>
+          //       </div>
+          //   </div>`;
+          // });
 
-          var datarituals = (document.querySelector("#sec-6-parent").innerHTML =
-            clutter);
+          //   var datarituals = (document.querySelector("#sec-6-parent").innerHTML =
+          //     clutter);
         })
         .catch((err) => {
           // Do something for an error here
@@ -2432,34 +2432,36 @@
           });
       });
 
-      var loginbtn = document.querySelector(".apihomeloginbtn");
-      loginbtn.addEventListener("click", function (e) {
-        e.preventDefault();
-        fetch("https://server.shehnayi.in/api/v2/user/login", {
-          method: "POST",
-          body: JSON.stringify({
-            username: document.querySelector(".apiloginemail").value,
-            password: document.querySelector(".apiloginpassword").value,
-          }),
-          headers: {
-            "Content-Type": "application/json",
-          },
-        })
-          .then((response) => {
-            return response.json();
+      var loginbtn = document.querySelectorAll(".apihomeloginbtn");
+      loginbtn.forEach(function (elem) {
+        elem.addEventListener("click", function (e) {
+          e.preventDefault();
+          fetch("https://server.shehnayi.in/api/v2/user/login", {
+            method: "POST",
+            body: JSON.stringify({
+              username: document.querySelector(".apiloginemail").value,
+              password: document.querySelector(".apiloginpassword").value,
+            }),
+            headers: {
+              "Content-Type": "application/json",
+            },
           })
-          .then((data) => {
-            console.log(data);
-            if (data.token) {
-              localStorage.setItem("token", data.token);
-              window.location.href = "./dashboard.html";
-            } else if (!data.token) {
-              alert(data);
-            }
-          })
-          .catch((err) => {
-            console.log(err);
-          });
+            .then((response) => {
+              return response.json();
+            })
+            .then((data) => {
+              console.log(data);
+              if (data.token) {
+                localStorage.setItem("token", data.token);
+                window.location.href = "./dashboard.html";
+              } else if (!data.token) {
+                alert(data);
+              }
+            })
+            .catch((err) => {
+              console.log(err);
+            });
+        });
       });
 
       var apidetailsbtn = document.querySelector(".apidetailsbtn");
@@ -2907,14 +2909,26 @@
       var apiregisterbtnend = document.querySelector(".apiregisterbtnend");
       apiregisterbtnend.addEventListener("click", function (e) {
         e.preventDefault();
-        const profileData = document.querySelector(".apiaddpicture").value;
-        console.log(profileData);
+        localStorage.setItem(
+          "profileabout",
+          document.querySelector(".adduserabout").value
+        );
+        localStorage.setItem(
+          "profilePic",
+          document.querySelector(".apiaddpicture").value
+        );
+        console.log([
+          localStorage.getItem("profilePic"),
+          localStorage.getItem("profileabout"),
+        ]);
+        // const profileData = document.querySelector(".apiaddpicture").value;
+        // console.log(profileData);
         const bearerToken = localStorage.getItem("token");
         fetch("https://server.shehnayi.in/api/v2/user/userdetails", {
           method: "PATCH",
           body: JSON.stringify({
-            profileSummary: document.querySelector(".adduserabout").value,
-            profilePicture: profileData,
+            profileSummary: localStorage.getItem("profileabout"),
+            profilePicture: localStorage.getItem("profilePic"),
           }),
           headers: {
             Accept:
