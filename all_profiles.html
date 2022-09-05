@@ -187,7 +187,7 @@
             <a href="./account_settings.html">Settings & privacy</p>
         </div>
         <div class="setting-items logout-text">
-            <a href="#">Logout</a>
+            <a href="./index.html" id="userlogout">Logout</a>
         </div>
     </div>
 
@@ -324,6 +324,7 @@
                 </div> -->
             </div>
             <h2 class="alone">All Preffered Profiles</h2>
+            <h2 id="nomatchesfound2" >NO MATCH FOUND</h2>
             <div class="slick-js preffered-matches">
                 <!-- <div class="slick-card preffered-matches">
                     <div class="slick-card-img">
@@ -453,6 +454,7 @@
                 </div> -->   
             </div>     
             <h2 class="alone">Recommended By Us</h2>
+            <h2 id="nomatchesfound3">NO MATCHES FOUND</h2>
             <div class="slick-js rec-by-us">
                 <!-- <div class="slick-card">
                     <div class="slick-card-img">
@@ -771,7 +773,7 @@
 
     <script>
         // const newRecSec = document.querySelector(".new-rec-sec");
-        fetch("http://localhost:2000/api/v2/home", {
+        fetch("https://server.shehnayi.in/api/v2/home", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -787,7 +789,7 @@
             data.newRecommendation.forEach((element, index) => {
                 clutter += `<div class="slick-card">
                     <div class="slick-card-img">
-                        <a href="./user_page.html"><img src="http://localhost:2000/${element.profilePicture}" alt="Profile"></a>
+                        <a href="./user_page.html"><img src="https://server.shehnayi.in/${element.profilePicture}" alt="Profile"></a>
                     </div>
                     <div class="slick-card-dets">
                         <h1>${element.firstname} ${element.lastname}</h1>
@@ -811,7 +813,7 @@
             data.matches.forEach((element, index) => {
                 clutter2 += `<div class="slick-card">
                     <div class="slick-card-img">
-                        <a href="./user_page.html"><img src="http://localhost:2000/${element.profilePicture}" alt="Profile"></a>
+                        <a href="./user_page.html"><img src="https://server.shehnayi.in/${element.profilePicture}" alt="Profile"></a>
                     </div>
                     <div class="slick-card-dets">
                         <h1>${element.firstname} ${element.lastname}</h1>
@@ -826,7 +828,8 @@
             })
             
             if(clutter2.length == 0) {
-                document.querySelector(".preffered-matches").innerHTML = `<h1>No Matches Found</h1>`;
+                document.querySelector("#nomatchesfound2").style.display = "block";
+                document.querySelector(".preffered-matches").style.display = "none";
             }else {
                 document.querySelector(".preffered-matches").innerHTML = clutter2;
             }
@@ -835,7 +838,7 @@
             data.explore.forEach((element, index) => {
                 clutter3 += `<div class="slick-card">
                     <div class="slick-card-img">
-                        <a href="./user_page.html"><img src="http://localhost:2000/${element.profilePicture}" alt="Profile"></a>
+                        <a href="./user_page.html"><img src="https://server.shehnayi.in/${element.profilePicture}" alt="Profile"></a>
                     </div>
                     <div class="slick-card-dets">
                         <h1>${element.firstname} ${element.lastname}</h1>
@@ -854,7 +857,7 @@
             data.foundUser.recommendedMatches.forEach((element, index) => {
                 clutter4 += `<div class="slick-card">
                     <div class="slick-card-img">
-                        <a href="./user_page.html"><img src="http://localhost:2000/${element.profilePicture}" alt="Profile"></a>
+                        <a href="./user_page.html"><img src="https://server.shehnayi.in/${element.profilePicture}" alt="Profile"></a>
                     </div>
                     <div class="slick-card-dets">
                         <h1>${element.firstname} ${element.lastname}</h1>
@@ -869,7 +872,8 @@
             })
             
             if(clutter4.length == 0) {
-                document.querySelector(".rec-by-us").innerHTML = `<h1>No Matches Found</h1>`;
+                document.querySelector("#nomatchesfound3").style.display = "block";
+                document.querySelector(".rec-by-us").style.display = "none";
             } else {
                 document.querySelector(".rec-by-us").innerHTML = clutter4;
             }
@@ -887,6 +891,6 @@
     
     <script src="./js/all_profiles.js"></script>
     <script src="./js/my_matches.js"></script>
-
+<script src="./js/logout.js"></script>
 </body>
 </html>

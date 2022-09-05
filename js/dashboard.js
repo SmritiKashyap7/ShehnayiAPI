@@ -1,4 +1,4 @@
-var dashboardApiUrl = "http://localhost:2000/api/v2/home";
+var dashboardApiUrl = "https://server.shehnayi.in/api/v2/home";
 fetch(dashboardApiUrl, {
   method: "GET",
   headers: {
@@ -24,7 +24,7 @@ fetch(dashboardApiUrl, {
         .querySelector("#apidbuserprofilepic")
         .setAttribute(
           "src",
-          `http://localhost:2000/${data.foundUser.profilePicture}`
+          `https://server.shehnayi.in/${data.foundUser.profilePicture}`
         );
       document.querySelector("#apidbuserid").innerHTML =
         data.foundUser._id.substring(4, 13);
@@ -75,9 +75,7 @@ fetch(dashboardApiUrl, {
       //   } else {
       // document.querySelector("#apidbrecommendedmatchesheading").style.display = "none";
 
-
-
-      fetch("http://localhost:2000/api/v2/allUsers", {
+      fetch("https://server.shehnayi.in/api/v2/allUsers", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -96,7 +94,7 @@ fetch(dashboardApiUrl, {
             if (data.loggedinUser.interests.includes(element._id)) {
               clutter2 += `<div class="slick-card">
               <div class="slick-card-img">
-                  <a href="./user_page.html"><img id="userImg" src="http://localhost:2000/${element.profilePicture}" alt="Profile"></a>
+                  <a href="./user_page.html"><img id="userImg" src="https://server.shehnayi.in/${element.profilePicture}" alt="Profile"></a>
               </div>
               <div class="slick-card-dets">
                   <h1>${element.firstname}</h1>
@@ -108,11 +106,10 @@ fetch(dashboardApiUrl, {
                   <button id="btn${index}" class="btnjs" disabled data-id= ${element._id} >Interest Sent</button>
               </a>
           </div>`;
-        }
-        else if(!data.loggedinUser.interests.includes(element._id)){
-          clutter2 += `<div class="slick-card">
+            } else if (!data.loggedinUser.interests.includes(element._id)) {
+              clutter2 += `<div class="slick-card">
           <div class="slick-card-img">
-              <a href="./user_page.html"><img id="userImg" src="http://localhost:2000/${element.profilePicture}" alt="Profile"></a>
+              <a href="./user_page.html"><img id="userImg" src="https://server.shehnayi.in/${element.profilePicture}" alt="Profile"></a>
           </div>
           <div class="slick-card-dets">
               <h1>${element.firstname}</h1>
@@ -124,11 +121,10 @@ fetch(dashboardApiUrl, {
               <button id="btn${index}" class="btnjs" data-id= ${element._id} >Send Interest</button>
           </a>
       </div>`;
-        }
-      
-      })
+            }
+          });
           document.querySelector("#apidbrecommendedmatches").innerHTML =
-            clutter2 ;
+            clutter2;
         });
     } else {
       window.location.href = "./index.html";
@@ -149,7 +145,7 @@ setTimeout(() => {
       console.log(dets.target.id);
       var btnId = dets.target.id;
       console.log(dets.target.dataset.id);
-      fetch(`http://localhost:2000/api/v2/user/interest/${userId}`, {
+      fetch(`https://server.shehnayi.in/api/v2/user/interest/${userId}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -163,15 +159,17 @@ setTimeout(() => {
           console.log(data);
           console.log(data.loggedinUser.interests.length);
           console.log(data.otherUser._id);
-          console.log(data.loggedinUser.interests.forEach((element) => {
-
-            if (element === data.otherUser._id) {
-            document.querySelector(`#${btnId}`).textContent = "Interest Sent";
-            }
-            else{
-              document.querySelector(`#${btnId}`).textContent = "Send Interest";
-            }
-          }));
+          console.log(
+            data.loggedinUser.interests.forEach((element) => {
+              if (element === data.otherUser._id) {
+                document.querySelector(`#${btnId}`).textContent =
+                  "Interest Sent";
+              } else {
+                document.querySelector(`#${btnId}`).textContent =
+                  "Send Interest";
+              }
+            })
+          );
           // if (data.message == "Interest Sent") {
           //   document.querySelector(`#${btnId}`).textContent = "Interest Sent";
           // } else {

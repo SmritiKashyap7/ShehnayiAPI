@@ -5,7 +5,7 @@ const birthDay = document.querySelector(".day");
 const birthMonth = document.querySelector(".month");
 const birthYear = document.querySelector(".year");
 
-fetch("http://localhost:2000/api/v2/home", {
+fetch("https://server.shehnayi.in/api/v2/home", {
   method: "GET",
   headers: {
     "Content-Type": "application/json",
@@ -32,7 +32,7 @@ fetch("http://localhost:2000/api/v2/home", {
 const submitBtn = document.querySelector(".submit-details");
 submitBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  fetch("http://localhost:2000/api/v2/user/register/update", {
+  fetch("https://server.shehnayi.in/api/v2/user/register/update", {
     method: "PATCH",
     body: JSON.stringify({
       firstname: firstName.value,
@@ -67,7 +67,7 @@ const retypePass = document.querySelector(".retype-pass");
 
 changePass.addEventListener("click", (e) => {
   e.preventDefault();
-  fetch("http://localhost:2000/api/v2/user/changepass", {
+  fetch("https://server.shehnayi.in/api/v2/user/changepass", {
     method: "PATCH",
     body: JSON.stringify({
       oldpassword: oldPass.value,

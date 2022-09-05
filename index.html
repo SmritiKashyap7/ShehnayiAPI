@@ -2321,7 +2321,7 @@
     <script src="./js/script.js"></script>
 
     <script type="text/javascript">
-      var apiUrl = "http://localhost:2000/api/v2/";
+      var apiUrl = "https://server.shehnayi.in/api/v2/";
       fetch(apiUrl)
         .then((response) => {
           return response.json();
@@ -2331,7 +2331,7 @@
           var description = data.foundlLandingPage.header.description;
           var apidesc = (document.querySelector("#apidescription").innerHTML =
             description);
-          var bannerImg = `http://localhost:2000/${data.foundlLandingPage.header.banner}`;
+          var bannerImg = `https://server.shehnayi.in/${data.foundlLandingPage.header.banner}`;
           var apibannerimg = document
             .querySelector("#apibannerimg")
             .setAttribute("src", bannerImg);
@@ -2340,7 +2340,7 @@
             // console.log(element);
             clutter += `<div class="elements">
                 <div class="top">
-                    <img src="http://localhost:2000/${element.image}" alt="">
+                    <img src="https://server.shehnayi.in/${element.image}" alt="">
                 </div>
                 <div class="bottom">
                     <h3 class="slide2-heading">${element.subtitle}</h3>
@@ -2384,7 +2384,7 @@
         var apireligion = localStorage.getItem("religion");
         var apicommunity = localStorage.getItem("community");
 
-        fetch("http://localhost:2000/api/v2/user/register", {
+        fetch("https://server.shehnayi.in/api/v2/user/register", {
           method: "POST",
           body: JSON.stringify({
             profileFor: apiprofilefor,
@@ -2435,7 +2435,7 @@
       var loginbtn = document.querySelector(".apihomeloginbtn");
       loginbtn.addEventListener("click", function (e) {
         e.preventDefault();
-        fetch("http://localhost:2000/api/v2/user/login", {
+        fetch("https://server.shehnayi.in/api/v2/user/login", {
           method: "POST",
           body: JSON.stringify({
             username: document.querySelector(".apiloginemail").value,
@@ -2577,7 +2577,7 @@
           document.querySelector(".apiunmarriedsister").value
         );
         const bearerToken = localStorage.getItem("token");
-        fetch("http://localhost:2000/api/v2/user/userdetails", {
+        fetch("https://server.shehnayi.in/api/v2/user/userdetails", {
           method: "PATCH",
           body: JSON.stringify({
             homeTown: {
@@ -2802,7 +2802,7 @@
         );
         var userId = localStorage.getItem("userid");
         const bearerToken = localStorage.getItem("token");
-        fetch(`http://localhost:2000/api/v2/user/${userId}/preference`, {
+        fetch(`https://server.shehnayi.in/api/v2/user/${userId}/preference`, {
           method: "POST",
           body: JSON.stringify({
             fromAge: localStorage.getItem("apifromage"),
@@ -2907,10 +2907,10 @@
       var apiregisterbtnend = document.querySelector(".apiregisterbtnend");
       apiregisterbtnend.addEventListener("click", function (e) {
         e.preventDefault();
-        const profileData = document.querySelector(".apiaddpicture");
+        const profileData = document.querySelector(".apiaddpicture").value;
         console.log(profileData);
         const bearerToken = localStorage.getItem("token");
-        fetch("http://localhost:2000/api/v2/user/userdetails", {
+        fetch("https://server.shehnayi.in/api/v2/user/userdetails", {
           method: "PATCH",
           body: JSON.stringify({
             profileSummary: document.querySelector(".adduserabout").value,

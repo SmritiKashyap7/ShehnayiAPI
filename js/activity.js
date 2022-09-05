@@ -1,4 +1,4 @@
-var sentInterestApi = "http://localhost:2000/api/v2/user/interests";
+var sentInterestApi = "https://server.shehnayi.in/api/v2/user/interests";
 fetch(sentInterestApi, {
   method: "GET",
   headers: {
@@ -15,7 +15,7 @@ fetch(sentInterestApi, {
       data.foundUser.interests.forEach(function (elem, index) {
         clutter += ` <div class="slick-cards">
                     <div class="top">
-                        <a href="./user_page.html"><img src="http://localhost:2000/${elem.profilePicture}" alt=""></a>
+                        <a href="./user_page.html"><img src="https://server.shehnayi.in/${elem.profilePicture}" alt=""></a>
                     </div>
                     <div class="bottom">
                         <h3>${elem.firstname}</h3>
@@ -44,18 +44,22 @@ setTimeout(() => {
       console.log("userid", userId);
       var btnId = dets.target.id;
       console.log("btnid", btnId);
-      fetch(`http://localhost:2000/api/v2/user/withdrawInterest/${userId}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: "Bearer " + localStorage.getItem("token"),
-        },
-      })
+      fetch(
+        `https://server.shehnayi.in/api/v2/user/withdrawInterest/${userId}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + localStorage.getItem("token"),
+          },
+        }
+      )
         .then((response) => {
           return response.json();
         })
         .then((data) => {
           console.log("withdraw your req", data);
+          location.reload();
         })
         .catch((err) => {
           console.log(err);
@@ -67,7 +71,8 @@ setTimeout(() => {
   });
 }, 1000);
 
-var pendingRequestApi = "http://localhost:2000/api/v2/user/pendingRequests";
+var pendingRequestApi =
+  "https://server.shehnayi.in/api/v2/user/pendingRequests";
 fetch(pendingRequestApi, {
   method: "GET",
   headers: {
@@ -84,7 +89,7 @@ fetch(pendingRequestApi, {
       data.pendingRequests.forEach(function (elem, index) {
         pendingRequestClutter += ` <div class="slick-cards">
                     <div class="top">
-                        <a href="./user_page.html"><img src="http://localhost:2000/${elem.profilePicture}" alt=""></a>
+                        <a href="./user_page.html"><img src="https://server.shehnayi.in/${elem.profilePicture}" alt=""></a>
                     </div>
                     <div class="bottom">
                         <h3>${elem.firstname}</h3>
@@ -114,7 +119,7 @@ setTimeout(() => {
       console.log("userid", userId);
       var btnId = dets.target.id;
       console.log("btnid", btnId);
-      fetch(`http://localhost:2000/api/v2/connections/${userId}`, {
+      fetch(`https://server.shehnayi.in/api/v2/connections/${userId}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -126,6 +131,36 @@ setTimeout(() => {
         })
         .then((data) => {
           console.log("accpet req", data);
+          location.reload();
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+        .finally(() => {
+          console.log("finally");
+        });
+    });
+  });
+  document.querySelectorAll(".apiapendingreqdeclinetbtn").forEach((element) => {
+    element.addEventListener("click", function (dets) {
+      dets.preventDefault();
+      var userId = dets.target.dataset.id;
+      console.log("userid", userId);
+      var btnId = dets.target.id;
+      console.log("btnid", btnId);
+      fetch(`https://server.shehnayi.in/api/v2/user/declineRequest/${userId}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        },
+      })
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          console.log("decline req", data);
+          location.reload();
         })
         .catch((err) => {
           console.log(err);
@@ -137,7 +172,8 @@ setTimeout(() => {
   });
 }, 1000);
 
-var allLikedProfilesApi = "http://localhost:2000/api/v2/user/likedprofiles";
+var allLikedProfilesApi =
+  "https://server.shehnayi.in/api/v2/user/likedprofiles";
 fetch(allLikedProfilesApi, {
   method: "GET",
   headers: {
@@ -151,10 +187,10 @@ fetch(allLikedProfilesApi, {
     console.log("allLikedProfiles", data);
     console.log(data.likedProfiles);
     if (data.likedProfiles.length > 0) {
-      data.likedProfiles.forEach(function (elem) {
+      data.likedProfiles.forEach(function (elem, index) {
         allLikedProfilesClutter += ` <div class="slick-cards">
                 <div class="top">
-                    <a href="./user_page.html"><img src="http://localhost:2000/${elem.profilePicture}" alt=""></a>
+                    <a href="./user_page.html"><img src="https://server.shehnayi.in/${elem.profilePicture}" alt=""></a>
                 </div>
                 <div class="bottom">
                     <h3>${elem.firstname}</h3>
@@ -162,8 +198,8 @@ fetch(allLikedProfilesApi, {
                     <p>${elem.caste}-${elem.subCaste}</p>
                     <p>${elem.city}, ${elem.state}</p>
                     <div class="btn-flex">
-                        <button class="accpt-btn">Accept</button>
-                        <button class="decline-btn">Decline</button>
+                        <button class="accpt-btn apiactivitylikedviewprofile" id="apiactivitylikedviewprofile${index}" data-id= ${elem._id}>View Profile</button>
+                        <button class="decline-btn apiactivityremoveliked" id="apiactivityremoveliked${index}" data-id= ${elem._id}>Remove</button>
                     </div>
                 </div>
             </div>`;
@@ -176,7 +212,75 @@ fetch(allLikedProfilesApi, {
     console.log(err);
   });
 
-const viewProfiles = "http://localhost:2000/api/v2/user/viewedProfiles";
+setTimeout(() => {
+  document.querySelectorAll(".apiactivityremoveliked").forEach((element) => {
+    element.addEventListener("click", function (dets) {
+      dets.preventDefault();
+      var userId = dets.target.dataset.id;
+      console.log("userid", userId);
+      var btnId = dets.target.id;
+      console.log("btnid", btnId);
+      fetch(`https://server.shehnayi.in/api/v2/user/unlikeprofile/${userId}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        },
+      })
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          console.log("remove liked", data);
+          location.reload();
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+        .finally(() => {
+          console.log("finally");
+        });
+    });
+
+    document
+      .querySelectorAll(".apiactivitylikedviewprofile")
+      .forEach((element) => {
+        element.addEventListener("click", function (dets) {
+          dets.preventDefault();
+          var userId = dets.target.dataset.id;
+          console.log("userid", userId);
+          var btnId = dets.target.id;
+          console.log("btnid", btnId);
+          fetch(
+            `https://server.shehnayi.in/api/v2/user/viewProfile/${userId}`,
+            {
+              method: "GET",
+              headers: {
+                "Content-Type": "application/json",
+                Authorization: "Bearer " + localStorage.getItem("token"),
+              },
+            }
+          )
+            .then((response) => {
+              return response.json();
+            })
+            .then((data) => {
+              console.log("view profile", data);
+              window.location.href = "./user_page.html";
+              localStorage.setItem("otherUser", JSON.stringify(data));
+            })
+            .catch((err) => {
+              console.log(err);
+            })
+            .finally(() => {
+              console.log("finally");
+            });
+        });
+      });
+  });
+}, 1000);
+
+const viewProfiles = "https://server.shehnayi.in/api/v2/user/viewedProfiles";
 fetch(viewProfiles, {
   method: "GET",
   headers: {
@@ -189,10 +293,10 @@ fetch(viewProfiles, {
     console.log("viewProfiles", data.viewedProfiles);
     viewedProfilesClutter = "";
     if (data.viewedProfiles.length > 0) {
-      data.viewedProfiles.forEach(function (elem) {
+      data.viewedProfiles.forEach(function (elem, index) {
         viewedProfilesClutter += `<div class="slick-cards">
                     <div class="top">
-                        <a href="./user_page.html"><img src="http://localhost:2000/${elem.profilePicture}" alt=""></a>
+                        <a href="./user_page.html"><img src="https://server.shehnayi.in/${elem.profilePicture}" alt=""></a>
                     </div>
                     <div class="bottom">
                         <h3>${elem.firstname}</h3>
@@ -200,7 +304,7 @@ fetch(viewProfiles, {
                         <p>${elem.caste}-${elem.subCaste}</p>
                         <p>${elem.city}, ${elem.state}</p>
                         <div class="btn-flex">
-                            <button class="accpt-btn">View Profile</button>
+                            <button class="accpt-btn apiactivityprofile" id="apiactivityprofile${index}" data-id= ${elem._id}>View Profile</button>
                         </div>
                     </div>
                 </div>`;
@@ -214,7 +318,40 @@ fetch(viewProfiles, {
     console.log(err);
   });
 
-const blockedUsersApi = "http://localhost:2000/api/v2/getAllBlockedUsers";
+setTimeout(() => {
+  document.querySelectorAll(".apiactivityprofile").forEach((element) => {
+    element.addEventListener("click", function (dets) {
+      dets.preventDefault();
+      var userId = dets.target.dataset.id;
+      console.log("userid", userId);
+      var btnId = dets.target.id;
+      console.log("btnid", btnId);
+      fetch(`https://server.shehnayi.in/api/v2/user/viewProfile/${userId}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        },
+      })
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          console.log("view profile", data);
+          window.location.href = "./user_page.html";
+          localStorage.setItem("otherUser", JSON.stringify(data));
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+        .finally(() => {
+          console.log("finally");
+        });
+    });
+  });
+}, 1000);
+
+const blockedUsersApi = "https://server.shehnayi.in/api/v2/getAllBlockedUsers";
 fetch(blockedUsersApi, {
   method: "GET",
   headers: {
@@ -227,10 +364,10 @@ fetch(blockedUsersApi, {
     console.log("blockedUsers", data);
     blockedUsersClutter = "";
     if (data.blockedUsers.length > 0) {
-      data.blockedUsers.forEach(function (elem) {
+      data.blockedUsers.forEach(function (elem, index) {
         blockedUsersClutter += `  <div class="slick-cards">
                     <div class="top">
-                        <a href="./user_page.html"><img src="http://localhost:2000/${elem.profilePicture}" alt=""></a>
+                        <a href="./user_page.html"><img src="https://server.shehnayi.in/${elem.profilePicture}" alt=""></a>
                     </div>
                     <div class="bottom">
                         <h3>${elem.firstname}</h3>
@@ -238,7 +375,7 @@ fetch(blockedUsersApi, {
                         <p>${elem.caste}-${elem.subCaste}</p>
                         <p>${elem.city}, ${elem.state}</p>
                         <div class="btn-flex">
-                            <button class="accpt-btn">Unblock User</button>
+                            <button class="accpt-btn apiactivitygetblockedusers" id="apiactivitygetblockedusers${index}" data-id= ${elem._id}>Unblock User</button>
                         </div>
                     </div>
                 </div>`;
@@ -247,6 +384,40 @@ fetch(blockedUsersApi, {
     document.querySelector(".apiactivityblockedUsers").innerHTML =
       blockedUsersClutter;
   });
+
+setTimeout(() => {
+  document
+    .querySelectorAll(".apiactivitygetblockedusers")
+    .forEach((element) => {
+      element.addEventListener("click", function (dets) {
+        dets.preventDefault();
+        var userId = dets.target.dataset.id;
+        console.log("userid", userId);
+        var btnId = dets.target.id;
+        console.log("btnid", btnId);
+        fetch(`https://server.shehnayi.in/api/v2/unBlockUser/${userId}`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + localStorage.getItem("token"),
+          },
+        })
+          .then((response) => {
+            return response.json();
+          })
+          .then((data) => {
+            console.log("view profile", data);
+            location.reload();
+          })
+          .catch((err) => {
+            console.log(err);
+          })
+          .finally(() => {
+            console.log("finally");
+          });
+      });
+    });
+}, 1000);
 
 setTimeout(() => {
   $(".slick-div").slick({

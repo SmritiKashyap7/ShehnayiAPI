@@ -208,7 +208,7 @@
             <a href="./account_settings.html">Settings & privacy</p>
         </div>
         <div class="setting-items logout-text">
-            <a href="#">Logout</a>
+            <a href="./index.html" id="userlogout">Logout</a>
         </div>
     </div>
 
@@ -1785,8 +1785,8 @@
     <script src="./js/all_matches.js"></script>
     <script src="./js/navbar2.js"></script>
 
-    <script>
-      fetch("http://localhost:2000/api/v2/user/matches", {
+    <!-- <script>
+      fetch("https://server.shehnayi.in/api/v2/user/matches", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -1804,7 +1804,7 @@
                     <div class="detail-sec">
                         <div class="profs">
                             <div class="img-div">
-                                <a href="./user_page.html"><img src="http://localhost:2000/${element.profilePicture}" alt="Profile"/></a>
+                                <a href="./user_page.html"><img src="https://server.shehnayi.in/${element.profilePicture}" alt="Profile"/></a>
                             </div>q
                             <div class="txt-div">
                                 <div class="name">
@@ -1987,6 +1987,8 @@
         .catch((err) => {
           console.log(err);
         });
-    </script>
+    </script> -->
+
+    <script src="./js/logout.js"></script>
   </body>
 </html>
