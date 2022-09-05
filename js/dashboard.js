@@ -195,7 +195,8 @@ setTimeout(function () {
     autoplay: true,
     autoplaySpeed: 3000,
     arrows: true,
-    dots: true,
+    dots: false,
+
     responsive: [
       {
         breakpoint: 1024,
@@ -203,7 +204,7 @@ setTimeout(function () {
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: true,
-          dots: true,
+          dots: false,
         },
       },
       {
