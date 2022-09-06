@@ -209,7 +209,7 @@ setTimeout(() =>{
         });
     });
   });
-},2000)
+},2200)
 
 
 setTimeout(function () {
