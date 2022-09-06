@@ -138,8 +138,6 @@ fetch(dashboardApiUrl, {
   });
 
 // jeetul
-
-// jeetul
 // document.querySelectorAll(".btnjs")
 //   .forEach((element) => {
 //     element.addEventListener("click", (e) => {
@@ -189,6 +187,15 @@ setTimeout(() => {
           console.log(data);
           console.log(data.loggedinUser.interests.length);
           console.log(data.otherUser._id);
+
+          data.loggedinUser.interests.forEach((element) => {
+            if (element === data.otherUser._id) {
+              document.querySelector(`#${btnId}`).textContent = "Interest Sent";
+            } else {
+              document.querySelector(`#${btnId}`).textContent = "Send Interest";
+            }
+          });
+
           data.loggedinUser.interests.forEach((element) => {
             if (element === data.otherUser._id) {
               document.querySelector(`#${btnId}`).textContent = "Interest Sent";
