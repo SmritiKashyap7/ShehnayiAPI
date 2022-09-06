@@ -43,7 +43,7 @@ fetch(dashboardApiUrl, {
                   <h5>${element.city}, ${element.state}</h5>
               </div>
               <a class="slick-card-a" >
-                  <button type="submit" id="btn${index}" data-id= ${element._id} >Send Interest</button>
+                  <button type="submit" class="btnjs" id="btn${index}" data-id= ${element._id} >Send Interest</button>
               </a>
           </div>`;
         });
@@ -103,7 +103,7 @@ fetch(dashboardApiUrl, {
                   <h5>${element.city},${element.state}</h5>
               </div>
               <a  class="slick-card-a">
-                  <button id="btn${index}" class="btnjs" disabled data-id= ${element._id} >Interest Sent</button>
+                  <button id="btn${index}" class="sendinterestbtnjs"  data-id= ${element._id} >Interest Sent</button>
               </a>
           </div>`;
             } else if (!data.loggedinUser.interests.includes(element._id)) {
@@ -118,7 +118,7 @@ fetch(dashboardApiUrl, {
               <h5>${element.city},${element.state}</h5>
           </div>
           <a  class="slick-card-a">
-              <button id="btn${index}" class="btnjs" data-id= ${element._id} >Send Interest</button>
+              <button id="btn${index}" class="sendinterestbtnjs" data-id= ${element._id} >Send Interest</button>
           </a>
       </div>`;
             }
@@ -136,47 +136,81 @@ fetch(dashboardApiUrl, {
   .finally(() => {
     console.log("finally");
   });
+
+
+
 // jeetul
 
-document.querySelectorAll(".btnjs").forEach((element) => {
-  element.addEventListener("click", function (dets) {
-    dets.preventDefault();
-    var userId = dets.target.dataset.id;
-    console.log(dets.target.id);
-    var btnId = dets.target.id;
-    console.log(dets.target.dataset.id);
-    fetch(`https://server.shehnayi.in/api/v2/user/interest/${userId}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + localStorage.getItem("token"),
-      },
-    })
-      .then((response) => {
-        return response.json();
+
+
+// jeetul
+// document.querySelectorAll(".btnjs")
+//   .forEach((element) => {
+//     element.addEventListener("click", (e) => {
+//       console.log(e.target.dataset.id);
+//       fetch("https://server.shehnayi.in/api/v2/sendInterest", {
+//         method: "POST",
+//         headers: {
+//           "Content-Type": "application/json",
+//           Authorization: "Bearer " + localStorage.getItem("token"),
+//         },
+//         body: JSON.stringify({
+//           id: e.target.dataset.id,
+//         }),
+//       })
+//         .then((response) => {
+//           return response.json();
+//         })
+//         .then((data) => {
+//           console.log(data);
+//           if (data.status == "success") {
+//             e.target.innerHTML = "Interest Sent";
+//             e.target.disabled = true;
+//           }
+//         });
+//     });
+//   });
+
+setTimeout(() =>{
+  document.querySelectorAll(".sendinterestbtnjs").forEach((element) => {
+    element.addEventListener("click", function (dets) {
+      dets.preventDefault();
+      var userId = dets.target.dataset.id;
+      console.log(dets.target.id);
+      var btnId = dets.target.id;
+      console.log(dets.target.dataset.id);
+      fetch(`https://server.shehnayi.in/api/v2/user/interest/${userId}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        },
       })
-      .then((data) => {
-        console.log(data);
-        console.log(data.loggedinUser.interests.length);
-        console.log(data.otherUser._id);
-        console.log(
-          data.loggedinUser.interests.forEach((element) => {
-            if (element === data.otherUser._id) {
-              document.querySelector(`#${btnId}`).textContent = "Interest Sent";
-            } else {
-              document.querySelector(`#${btnId}`).textContent = "Send Interest";
-            }
-          })
-        );
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-      .finally(() => {
-        console.log("finally");
-      });
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          console.log(data);
+          console.log(data.loggedinUser.interests.length);
+          console.log(data.otherUser._id);
+            data.loggedinUser.interests.forEach(((element) => {
+              if (element === data.otherUser._id) {
+                document.querySelector(`#${btnId}`).textContent = "Interest Sent";
+              } else {
+                document.querySelector(`#${btnId}`).textContent = "Send Interest";
+              }
+            }));
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+        .finally(() => {
+          console.log("finally");
+        });
+    });
   });
-});
+},2000)
+
 
 setTimeout(function () {
   $(".slick-js").slick({
