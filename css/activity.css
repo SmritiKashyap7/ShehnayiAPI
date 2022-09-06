@@ -56,7 +56,7 @@ img {
 #main #option-div {
     width: 100%;
     height: 10vh;
-    box-shadow: rgb(255 255 255 / 10%) 0px 1px 1px 0px inset, rgb(50 50 93 / 25%) 0px 50px 100px -20px, rgb(0 0 0 / 30%) 0px 30px 60px -30px;
+    /* box-shadow: rgb(255 255 255 / 10%) 0px 1px 1px 0px inset, rgb(50 50 93 / 25%) 0px 50px 100px -20px, rgb(0 0 0 / 30%) 0px 30px 60px -30px; */
     padding: 1em 10em;
     font-size: 1vw;
     display: flex;
