@@ -12,126 +12,14 @@ fetch("https://server.shehnayi.in/api/v2/home", {
     return ravi.json();
   })
   .then((data) => {
-    console.log(data.foundUser);
-
-    // Abhishek;
-    // document
-    //   .querySelector(".apifirstname-am")
-    //   .setAttribute("value", data.foundUser.firstname);
-    // document
-    //   .querySelector(".apilastname-am")
-    //   .setAttribute("value", data.foundUser.lastname);
-    // document
-    //   .querySelector(".apidays-am")
-    //   .setAttribute("value", data.foundUser.birthday.day);
-    // document
-    //   .querySelector(".apimonth-am")
-    //   .setAttribute("value", data.foundUser.birthday.month);
-    // document
-    //   .querySelector(".apiyear-am")
-    //   .setAttribute("value", data.foundUser.birthday.year);
-    // document.querySelector(".apiheight-am").value = data.foundUser.height;
-    // document.querySelector(".apimarital-am").value =
-    //   data.foundUser.maritalStatus;
-    // document.querySelector(".apioccupation-am").value =
-    //   data.foundUser.designation;
-    // document
-    //   .querySelector(".apicity-am")
-    //   .setAttribute("value", data.foundUser.city);
-    // document
-    //   .querySelector(".apistate-am")
-    //   .setAttribute("value", data.foundUser.state);
-
-    // document
-    //   .querySelector(".apiemail-am")
-    //   .setAttribute("value", data.foundUser.email);
-    // document
-    //   .querySelector(".apiphone-am")
-    //   .setAttribute("value", data.foundUser.phone);
-
-    // document
-    //   .querySelector(".apireligion-am")
-    //   .setAttribute("value", data.foundUser.religion);
-    // document
-    //   .querySelector(".apisubcaste-am")
-    //   .setAttribute("value", data.foundUser.caste);
-    // document.querySelector(".apimanglik-am").value = data.foundUser.manglik;
-
-    // document.querySelector(".apiqualification-am").value =
-    //   data.foundUser.heighestQualification;
-    // document
-    //   .querySelector(".apicompany-am")
-    //   .setAttribute("value", data.foundUser.company);
-    // document.querySelector(".apiannualincome-am").value =
-    //   data.foundUser.AnnualIncome;
-
-    // document.querySelector(".apieating-am").value = data.foundUser.eating;
-    // document.querySelector(".apidrinking-am").value = data.foundUser.drinking;
-    // document.querySelector(".apismoking-am").value = data.foundUser.smoking;
-
-    // document.querySelector(".apifatherstatus-am").value =
-    //   data.foundUser.fatherStatus;
-    // document.querySelector(".apimotherstatus-am").value =
-    //   data.foundUser.motherStatus;
-    // document
-    //   .querySelector(".apinoofbrothers-am")
-    //   .setAttribute("value", data.foundUser.brothers);
-    // document
-    //   .querySelector(".apinoofsisters-am")
-    //   .setAttribute("value", data.foundUser.sisters);
-
-    // document
-    //   .querySelector(".apifromage-am")
-    //   .setAttribute("value", data.foundUser.userPreference.fromAge);
-    // document
-    //   .querySelector(".apitoage-am")
-    //   .setAttribute("value", data.foundUser.userPreference.toAge);
-    // document
-    //   .querySelector(".apifromheight-am")
-    //   .setAttribute("value", data.foundUser.userPreference.fromHeight);
-    // document
-    //   .querySelector(".apitoheight-am")
-    //   .setAttribute("value", data.foundUser.userPreference.toHeight);
-    // document.querySelector(".apiparmarital-am").value =
-    //   data.foundUser.userPreference.maritalStatus;
-    // document
-    //   .querySelector(".apiparreligion-am")
-    //   .setAttribute("value", data.foundUser.userPreference.religion);
-    // document
-    //   .querySelector(".apiparcommunity-am")
-    //   .setAttribute("value", data.foundUser.userPreference.maritalStatus);
-
-    // document
-    //   .querySelector(".apiparcity-am")
-    //   .setAttribute("value", data.foundUser.userPreference.city);
-    // document
-    //   .querySelector(".apiparstate-am")
-    //   .setAttribute("value", data.foundUser.userPreference.state);
-    // document
-    //   .querySelector(".apiparcountry-am")
-    //   .setAttribute("value", data.foundUser.userPreference.country);
-
-    // document
-    //   .querySelector(".apiparqualification")
-    //   .setAttribute(
-    //     "value",
-    //     data.foundUser.userPreference.heighestQualification
-    //   );
-    // document
-    //   .querySelector(".apiparcompany-am")
-    //   .setAttribute("value", data.foundUser.userPreference.company);
-    // document.querySelector(".apiparannualincome-am").value =
-    //   data.foundUser.userPreference.AnnualIncome;
-
-    // localStorage.setItem("am", document.querySelector(".apiheight-am").value);
-
-    // profilePic.innerHTML = `<img id="myImg" src="https://server.shehnayi.in/${data.foundUser.profilePicture}" alt="" />
-    //         <i id="add" class="ri-add-circle-line"></i>`;
+    console.log(data);
+    profilePic.innerHTML = `<img id="myImg" src="https://server.shehnayi.in/${data.foundUser.profilePicture}" alt="" />
+            <i id="add" class="ri-add-circle-line"></i>`;
 
     fullName.textContent = `${data.foundUser.firstname} ${data.foundUser.lastname}`;
     document.querySelector(
       ".apippage"
-    ).innerHTML = `${data.foundUser.age} yrs,${data.foundUser.height}`;
+    ).innerHTML = `${data.foundUser.age} yrs,${data.foundUser.height},${data.foundUser.city}`;
     document.querySelector(".apippcaste").innerHTML = `${data.foundUser.caste}`;
     document.querySelector(
       ".apippsubcaste"
@@ -164,10 +52,6 @@ fetch("https://server.shehnayi.in/api/v2/home", {
     document.querySelector(
       ".apippp"
     ).innerHTML = `${data.foundUser.city}, ${data.foundUser.state}`;
-    document.querySelector(
-      ".apippemail"
-    ).innerHTML = `${data.foundUser.username}`;
-    document.querySelector(".apipphone").innerHTML = `${data.foundUser.phone}`;
     document.querySelector(".apipprg").innerHTML = `${data.foundUser.religion}`;
     document.querySelector(".apippcs").innerHTML = `${data.foundUser.caste}`;
     document.querySelector(
@@ -178,7 +62,7 @@ fetch("https://server.shehnayi.in/api/v2/home", {
     ).innerHTML = `${data.foundUser.heighestQualification}`;
     document.querySelector(
       ".apippucompany"
-    ).innerHTML = `${data.foundUser.designation}`;
+    ).innerHTML = `${data.foundUser.company}`;
     document.querySelector(
       ".apippuannum"
     ).innerHTML = `${data.foundUser.AnnualIncome}`;
@@ -214,7 +98,9 @@ fetch("https://server.shehnayi.in/api/v2/home", {
     document.querySelector(
       ".apipppcs"
     ).innerHTML = `${data.foundUser.userPreference.caste}`;
-    // document.querySelector(".apipppsc").innerHTML = `${data.foundUser.userPreference.subCaste}`;
+    document.querySelector(
+      ".apipppsc"
+    ).innerHTML = `${data.foundUser.userPreference.subCaste}`;
     document.querySelector(
       ".apipppcity"
     ).innerHTML = `${data.foundUser.userPreference.city}`;
@@ -245,25 +131,25 @@ fetch("https://server.shehnayi.in/api/v2/home", {
 // });
 
 // User Image model
-// var modal = document.getElementById("myModal");
+var modal = document.getElementById("myModal");
 
-// // Get the image and insert it inside the modal - use its "alt" text as a caption
-// var img = document.getElementById("myImg");
-// var modalImg = document.getElementById("img01");
-// var captionText = document.getElementById("caption");
-// // img.onclick = function () {
-// //   modal.style.display = "block";
-// //   modalImg.src = this.src;
-// //   captionText.innerHTML = this.alt;
-// // };
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById("myImg");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function () {
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+};
 
-// // Get the <span> element that closes the modal
-// var span = document.getElementsByClassName("close")[0];
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
 
-// // When the user clicks on <span> (x), close the modal
-// span.onclick = function () {
-//   modal.style.display = "none";
-// };
+// When the user clicks on <span> (x), close the modal
+span.onclick = function () {
+  modal.style.display = "none";
+};
 
 // Edit button form
 var editbtn = document.querySelector(".edit-txt");
@@ -335,8 +221,6 @@ document
   .addEventListener("click", function () {
     popup();
   });
-
-var textinput = document.querySelectorAll(".text-input");
 
 // Form slides
 document

@@ -16,7 +16,9 @@
     <link rel="stylesheet" href="./css/user_page.css">
     <link rel="stylesheet" href="./css/profile_page.css">
     <link rel="stylesheet" href="./css/my_matches2.css">
+    <!-- <link rel="stylesheet" href="./css/image_slider.css"> -->
     <link rel="stylesheet" href="./css/footer.css">
+
 
     <!-- Boxicons cdn -->
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
@@ -209,22 +211,21 @@
                 <div class="block-div">
                     <label class="label-text" for="name">Name</label>
                     <div class="input-flex">
-                        <input class="text-input" type="text" name="firstname" placeholder="First Name">
-                        <input class="text-input" type="text" name="lastname" placeholder="Last Name">
+                        <input class="text-input apifirstname-am" type="text" name="firstname" placeholder="First Name">
+                        <input class="text-input apilastname-am" type="text" name="lastname" placeholder="Last Name">
                     </div>
                 </div>
                 <div class="block-div">
                     <label class="label-text" for="date">Date of Birth</label>
                     <div class="input-flex">
-                        <input class="input-3" type="number" name="date" id="date" placeholder="Date">
-                        <input class="input-3" type="number" name="month" id="date" placeholder="Month">
-                        <input class="input-3" type="number" name="year" id="date" placeholder="Year">
+                        <input class="input-3 apidays-am" type="number" name="date" id="date" placeholder="Date">
+                        <input class="input-3 apimonth-am" type="number" name="month" id="date" placeholder="Month">
+                        <input class="input-3 apiyear-am" type="number" name="year" id="date" placeholder="Year">
                     </div>
                 </div>
                 <div class="block-div">
                     <label class="label-text" for="height">Height</label>
-                    <!-- <input class="text-input" type="text" name="height" placeholder="Height"> -->
-                    <select class="select-input" name="height" id="">
+                    <select class="select-input apiheight-am" name="height" id="">
                         <option selected disabled>Select</option>
                         <!-- value in cm but, option in ft and inches-->
                         <option value="121">4ft</option>
@@ -270,51 +271,56 @@
                 </div>
                 <div class="block-div">
                     <label class="label-text" for="marital-status">Marital Status</label>
-                    <select class="select-input" name="marital-status" id="">
+                    <select class="select-input apimarital-am" name="marital-status" id="">
                         <option selected disabled>Select</option>
                         <option value="single">Single</option>
                         <option value="marrried">Married</option>
-                        <option value="divored">Divorced</option>
+                        <option value="divorced">Divorced</option>
                     </select>
                 </div>
                 <div class="block-div">
                     <label class="label-text" for="occupation">Occupation</label>
-                    <!-- <input class="text-input" type="text" name="occupation" placeholder="Occupation"> -->
-                    <select class="select-input" name="occupation">
+                    <select class="select-input apioccupation-am" name="occupation">
                         <option selected disabled>Select</option>
-                        <option value="">Software Engineer</option>
-                        <option value="">Businessman</option>
-                        <option value="">others</option>
+                        <option value="private">Private</option>
+                        <option value="government">Government</option>
                     </select>
                 </div>
                 <div class="block-div">
                     <label class="label-text" for="address">Location</label>
                     <div class="input-flex">
-                        <input class="text-input" type="text" name="city" placeholder="City">
-                        <input class="text-input" type="text" name="state" placeholder="State">
+                        <input class="text-input apicity-am" type="text" name="city" placeholder="City">
+                        <input class="text-input apistate-am" type="text" name="state" placeholder="State">
                     </div>
                 </div>
                 <div class="flex-div">
-                    <!-- <button class="previ-btn"><i class='bx bx-left-arrow-alt'></i>Previous</button> -->
                     <button class="nexti-btn next-btn-1">Next</button>
                 </div>
             </form>
         </div>
         <div class="inner-form-container" id="inner-form-2">
-            <h2 class=inner-form-heading>Religious Background</h2>
+            <h2 class=inner-form-heading>Contact and Religious details</h2>
             <i id="close-icon-2" class="ri-close-line"></i>
             <form action="" class="form-sections" id="form-2">
                 <div class="block-div">
+                    <label class="label-text" for="email">Email</label>
+                    <input class="text-input apiemail-am" type="email" name="email" placeholder="Email">
+                </div>
+                <div class="block-div">
+                    <label class="label-text" for="phone">Phone</label>
+                    <input class="text-input apiphone-am" type="number" name="phone" placeholder="Phone">
+                </div>
+                <div class="block-div">
                     <label class="label-text" for="religion">Religion</label>
-                    <input class="text-input" type="text" name="religion" placeholder="Religion">
+                    <input class="text-input apireligion-am" type="text" name="religion" placeholder="Religion">
                 </div>
                 <div class="block-div">
                     <label class="label-text" for="sub caste">Community</label>
-                    <input class="text-input" type="text" name="subcaste" placeholder="Sub Caste">
+                    <input class="text-input apisubcaste-am" type="text" name="subcaste" placeholder="Sub Caste">
                 </div>
                 <div class="block-div">
                     <label class="label-text" for="manglik">Manglik</label>
-                    <select class="select-input" name="manglik" id="">
+                    <select class="select-input apimanglik-am" name="manglik" id="">
                         <option selected disabled>Select</option>
                         <option value="yes">Yes</option>
                         <option value="no">No</option>
@@ -332,31 +338,27 @@
             <form action="" class="form-sections" id="form-3">
                 <div class="block-div">
                     <label class="label-text" for="qualification">Qualification</label>
-                    <input class="text-input" type="text" name="qualification" placeholder="Qualification">
-                    <!-- <select class="select-input" name="qualification" id="">
+                    <!-- <input class="text-input" type="text" name="qualification" placeholder="Qualification"> -->
+                    <select class="select-input apiqualification-am" name="qualification" id="">
                         <option selected disabled>Select</option>
                         <option value="10">10th</option>
                         <option value="12">12th</option>
-                        <option value="graduate">Graduate</option>
-                        <option value="post-graduate">Post-graduate</option>
-                    </select> -->
+                        <option value="graduation">Graduate</option>
+                        <!-- <option value="post-graduate">Post-graduate</option> -->
+                    </select>
                 </div>
                 <div class="block-div">
-                    <label class="label-text" for="college">College</label>
-                    <input class="text-input" type="text" name="college" placeholder="College">
-                </div>
-                <div class="block-div">
-                    <label class="label-text" for="college">Company</label>
-                    <input class="text-input" type="text" name="company" placeholder="Company">
+                    <label class="label-text" for="company">Company</label>
+                    <input class="text-input apicompany-am" type="text" name="company" placeholder="Company">
                 </div>
                 <div class="block-div">
                     <label class="label-text" for="annual-income">Annual Income</label>
-                    <select class="select-input" name="annual-income" id="">
+                    <select class="select-input apiannualincome-am" name="annual-income" id="">
                         <option selected disabled>Select</option>
-                        <option value="">Below 10000</option>
-                        <option value="">Below 1lakh</option>
-                        <option value="">Above 1lakh</option>
-                        <option value="">Above 2lakhs</option>
+                        <option value="1lakh">Below 10000</option>
+                        <option value="below 1lakh">Below 1lakh</option>
+                        <option value="between 1lakh and 2lakhs">Between 1lakh to 2lakh</option>
+                        <option value="above 2lakhs">Above 2lakhs</option>
                     </select>
                 </div>
                 <div class="flex-div">
@@ -371,7 +373,7 @@
             <form action="" class="form-sections" id="form-4">
                 <div class="block-div">
                     <label class="label-text" for="eating">Eating</label>
-                    <select class="select-input" name="eating" id="">
+                    <select class="select-input apieating-am" name="eating" id="">
                         <option selected disabled>Select</option>
                         <option value="veg">Vegetarian</option>
                         <option value="nonveg">Non-vegetarian</option>
@@ -380,7 +382,7 @@
                 </div>
                 <div class="block-div">
                     <label class="label-text" for="drinking">Drinking</label>
-                    <select class="select-input" name="drinking" id="">
+                    <select class="select-input apidrinking-am" name="drinking" id="">
                         <option selected disabled>Select</option>
                         <option value="yes">Yes</option>
                         <option value="no">No</option>
@@ -388,7 +390,7 @@
                 </div>
                 <div class="block-div">
                     <label class="label-text" for="smoking">Smoking</label>
-                    <select class="select-input" name="drinking" id="">
+                    <select class="select-input apismoking-am" name="drinking" id="">
                         <option selected disabled>Select</option>
                         <option value="yes">Yes</option>
                         <option value="no">No</option>
@@ -406,29 +408,27 @@
             <form action="" class="form-sections" id="form-5">
                 <div class="block-div">
                     <label class="label-text" for="father-status">Father's status</label>
-                    <select class="select-input" name="father-status" id="">
+                    <select class="select-input apifatherstatus-am" name="father-status" id="">
                         <option selected disabled>Select</option>
-                        <option value="businessman">Businessman</option>
-                        <option value="developer">Developer</option>
-                        <option value="others">Others</option>
+                        <option value="employed">Employed</option>
+                        <option value="unemployed">Unemployed</option>
                     </select>
                 </div>
                 <div class="block-div">
-                    <label class="label-text" for="mother-status">Father's status</label>
-                    <select class="select-input" name=mother-status" id="">
+                    <label class="label-text" for="mother-status">Mother's status</label>
+                    <select class="select-input apimotherstatus-am" name=mother-status" id="">
                         <option selected disabled>Select</option>
-                        <option value="businessman">Businessman</option>
-                        <option value="developer">Developer</option>
-                        <option value="others">Others</option>
+                        <option value="employed">Employed</option>
+                        <option value="housewife">Housewife</option>
                     </select>
                 </div>
                 <div class="block-div">
                     <label class="label-text" for="noofbrothers">No. of Brothers</label>
-                    <input class="number-input" type="number" name="noofbrothers" placeholder="Brothers">
+                    <input class="number-input apinoofbrothers-am" type="number" name="noofbrothers" placeholder="Brothers">
                 </div>
                 <div class="block-div">
                     <label class="label-text" for="noofsisters">No. of Sisters</label>
-                    <input class="number-input" type="number" name="noofsisters" placeholder="Sisters">
+                    <input class="number-input apinoofsisters-am" type="number" name="noofsisters" placeholder="Sisters">
                 </div>
                 <div class="flex-div">
                     <button class="previ-btn"><i class='bx bx-left-arrow-alt'></i>Previous</button>
@@ -443,15 +443,21 @@
             <form action="" class="form-sections" id="form-6">
                 <div class="block-div">
                     <label class="label-text" for="age">Age</label>
-                    <input class="text-input" type="number" name="age" palceholder="Age">
+                    <div class="input-flex">
+                        <input class="text-input apifromage-am" type="text" name="age" placeholder="18">&nbsp; to &nbsp;
+                        <input class="text-input apitoage-am" type="text" name="age" placeholder="40">
+                    </div>
                 </div>
                 <div class="block-div">
                     <label class="label-text" for="height">Height</label>
-                    <input class="number-input" type="number" name="height" placeholder="Height(in cms)">
+                    <div class="input-flex">
+                        <input class="text-input apifromheight-am" type="text" name="height" placeholder="">&nbsp; to &nbsp;
+                        <input class="text-input apitoheight-am" type="text" name="height" placeholder="">
+                    </div>
                 </div>
                 <div class="block-div">
                     <label class="label-text" for="marital-status">Marital Status</label>
-                    <select class="select-input" name="marital-status" id="">
+                    <select class="select-input apiparmarital-am" name="marital-status" id="">
                         <option selected disabled>Select</option>
                         <option value="single">Single</option>
                         <option value="marrried">Married</option>
@@ -460,15 +466,15 @@
                 </div>
                 <div class="block-div">
                     <label class="label-text" for="religion">Religion</label>
-                    <input class="text-input" type="text" name="religion" placeholder="Religion">
+                    <input class="text-input apiparreligion-am" type="text" name="religion" placeholder="Religion">
                 </div> 
                 <div class="block-div">
                     <label class="label-text" for="community">Community</label>
-                    <input class="text-input" type="text" name="community" placeholder="Community">
-                </div>
-                <div class="block-div">
-                    <label class="label-text" for="mother-tongue">Mother-tongue</label>
-                    <input class="text-input" type="text" name="mother-tongue" placeholder="Mother Tongue">
+                    <select class="text-input apiparcommunity-am" type="text" name="community" placeholder="Community">
+                        <option selected disabled>Select</option>
+                        <option value="Sindhi">Sindhi</option>
+                        <option value="Hindhu">Hindu</option>
+                    </select>
                 </div>
                 <div class="flex-div">
                     <button class="previ-btn"><i class='bx bx-left-arrow-alt'></i>Previous</button>
@@ -477,21 +483,20 @@
             </form>
         </div>
         <div class="inner-form-container" id="inner-form-7">
-            <h2 class="partner-preference-haeding">Partner-details</h2>
             <h2 class=inner-form-heading>Location details</h2>
             <i id="close-icon-7" class="ri-close-line"></i>
             <form action="" class="form-sections" id="form-7">
                 <div class="block-div">
                     <label class="label-text" for="city">City</label>
-                    <input class="text-input" type="text" name="city" placeholder="City">
+                    <input class="text-input apiparcity-am" type="text" name="city" placeholder="City">
                 </div>
                 <div class="block-div">
                     <label class="label-text" for="state">State</label>
-                    <input class="text-input" type="text" name="state" placeholder="State">
+                    <input class="text-input apiparstate-am" type="text" name="state" placeholder="State">
                 </div>
                 <div class="block-div">
                     <label class="label-text" for="country">Country</label>
-                    <input class="text-input" type="text" name="country" placeholder="Country">
+                    <input class="text-input apiparcountry" type="text" name="country" placeholder="Country">
                 </div>
                 <div class="flex-div">
                     <button class="previ-btn"><i class='bx bx-left-arrow-alt'></i>Previous</button>
@@ -500,26 +505,25 @@
             </form>
         </div>
         <div class="inner-form-container" id="inner-form-8">
-            <h2 class="partner-preference-haeding">Partner-details</h2>
             <h2 class=inner-form-heading>Education & Career</h2>
             <i id="close-icon-8" class="ri-close-line"></i>
             <form action="" class="form-sections" id="form-8">
                 <div class="block-div">
                     <label class="label-text" for="qualification">Qualification</label>
-                    <input class="text-input" type="text" name="qualification" placeholder="Qualification">
+                    <input class="text-input apiparqualification" type="text" name="qualification" placeholder="Qualification">
                 </div>
                 <div class="block-div">
                     <label class="label-text" for="company">Company</label>
-                    <input class="text-input" type="text" name="company" placeholder="Company">
+                    <input class="text-input apiparcompany-am" type="text" name="company" placeholder="Company">
                 </div>
                 <div class="block-div">
                     <label class="label-text" for="annual-income">Annual Income</label>
-                    <select class="select-input" name="annual-income" id="">
+                    <select class="select-input apiparannualincome-am" name="annual-income" id="">
                         <option selected disabled>Select</option>
-                        <option value="">Below 10000</option>
-                        <option value="">Below 1lakh</option>
-                        <option value="">Above 1lakh</option>
-                        <option value="">Above 2lakhs</option>
+                        <option value="1lakh">Below 10000</option>
+                        <option value="below 1lakh">Below 1lakh</option>
+                        <option value="between 1lakh and 2lakhs">Between 1lakh to 2lakh</option>
+                        <option value="above 2lakhs">Above 2lakhs</option>
                     </select>
                 </div>
                 <div class="flex-div">
@@ -534,29 +538,53 @@
     <div id="main">
         <div id="sec-1">
             <div class="profs">
-                <div class="img-div profile-pic">
-                    <!-- <img id="myImg" src="./Images/about-team2.jpeg" alt="" /> -->
-                    <!-- <i id="add" class="ri-add-circle-line"></i> -->
+                <div class="img-div">
+                    <!-- <div class="image-slideshow-container">
+                        <div class="mySlides fade">
+                          <div class="numbertext">1 / 4</div>
+                          <img src="./Images/about-team2.jpeg" alt="" class="myImg" style="width:100%">
+                        </div>
+                        
+                        <div class="mySlides fade">
+                          <div class="numbertext">2 / 4</div>
+                          <img src="./Images/about-team3.jpg" alt="" class="myImg" style="width:100%">
+                        </div>
+                        
+                        <div class="mySlides fade">
+                          <div class="numbertext">3 / 4</div>
+                          <img src="./Images/about-team4.webp" alt="" class="myImg" style="width:100%">
+                        </div>
+                        
+                        <div class="mySlides fade">
+                          <div class="numbertext">4 / 4</div>
+                          <img src="./Images/about-team5.webp" alt="" class="myImg" style="width:100%">
+                        </div>
+                        
+                        <a class="prev" onclick="plusSlides(-1)">❮</a>
+                        <a class="next" onclick="plusSlides(1)">❯</a>
+                        
+                    </div> -->
+                    <i id="add" class="ri-add-circle-line"></i>
                 </div>
                 <input type="file" name="addimages" id="addimages" class="none">
                 <div class="txt-div">
                     <div class="name">
-                        <h1 class="full-name">Roshan</h1>
+                        <h1 class="full-name">Rohan</h1>
                         <div class="edit-btn">
                             <button class="edit-txt">Edit<i class='bx bxs-edit-alt'></i></button>
                         </div>
                     </div>
                     <div class="details-div">
                         <div class="lft">
-                            <h3 class="left-tag apippage">22 Yrs, 6'0", Bhopal</h3>
-                            <h3 class="left-tag apippcaste">Sindhi</h3>
+                            <h3 class="head-desc apippage">22 Yrs, 6'0"</h3>
+                            <h3 class="head-desc apippcaste">Sindhi</h3>
                             <h3 class="left-tag apippsubcaste">Hindi</h3>
-                            <h3 class="left-tag left-btn"><a href="./user_plan.html" class="imgunlockbtn">Basic member</a></h3>
+                            <h3 class="head-desc left-btn"><a href="./user_plan.html" class="imgunlockbtn">Basic member</a></h3>
                         </div>
                         <div class="rgt">
-                            <h3 class="left-tag apippmaritalstatus">Never Married</h3>
-                            <h3 class="left-tag apippplace">Lives in Bhopal, Madhya Pradesh</h3>
-                            <h3 class="left-tag apippdesignation">Student</h3>
+                            <h3 class="head-desc apippmaritalstatus">Single</h3>
+                            <h3 class="head-desc apippplace">Lives in Bhopal, Madhya Pradesh</h3>
+                            <h3 class="head-desc apippdesignation">Graduate</h3>
                         </div>
                     </div>
                 </div>
@@ -565,45 +593,8 @@
             <div class="full-dets">
                 <div class="full-dets-container">
                     <div class="dets-div">
-                        <div class="dets-imgs-lock-js">
-                            <div class="dets-imgs-js">
-                                <div class="card-img-js">
-                                    <a href="#"><img src="./Images/about-team1.webp" alt=""></a>
-                                    <div class="overlay"></div>
-                                </div>
-                                <div class="card-img-js">
-                                    <a href="#"><img src="./Images/about-team1.webp" alt=""></a>
-                                    <div class="overlay"></div>
-                                </div>
-                                <div class="card-img-js">
-                                    <a href="#"><img src="./Images/about-team1.webp" alt=""></a>
-                                    <div class="overlay"></div>
-                                </div>
-                                <div class="card-img-js">
-                                    <a href="#"><img src="./Images/about-team1.webp" alt=""></a>
-                                    <div class="overlay"></div>
-                                </div>
-                                <div class="card-img-js">
-                                    <a href="#"><img src="./Images/about-team1.webp" alt=""></a>
-                                    <div class="overlay"></div>
-                                </div>
-                                <div class="card-img-js">
-                                    <a href="#"><img src="./Images/about-team1.webp" alt=""></a>
-                                    <div class="overlay"></div>
-                                </div>
-                                <div class="card-img-js">
-                                    <a href="#"><img src="./Images/about-team1.webp" alt=""></a>
-                                    <div class="overlay"></div>
-                                </div>
-                            </div>
-                        </div>
                         <hr class="hr-line">
                         <div class="sections">
-                            <div class="left-section">
-                                <div class="left-sec">Marriage is not just two people marring, its two families coming together.</div>
-                                <div class="left-sec">My religion is very simple, My religion is you.</div>
-                                <div class="left-sec">I want to share the rest of my food with you</div>
-                            </div>
                             <div class="right-section">
                                 <div class="section-1">
                                     <div class="logo" style="margin-top: 1rem;">
@@ -644,6 +635,24 @@
                                 </div>
                                 <div class="section-2">
                                     <div class="logo">
+                                        <i class="fa-solid fa-phone"></i>
+                                        <h2 class="section2-head">Contact details</h2>
+                                    </div>
+                                    <div class="basic-details-div">
+                                        <div class="basic-details">
+                                            <div class="lft">
+                                                <div class="lft-elems">
+                                                    <h3 class="left-tag">Email Id</h3><h3 class="left-txt apippemail">abcd@gmail.com</h3>
+                                                </div>
+                                                <div class="lft-elems">
+                                                    <h3 class="left-tag">Phone number</h3><h3 class="left-txt apipphone">873456XXXX</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="section-2">
+                                    <div class="logo">
                                         <i class="fa-solid fa-om"></i>
                                         <h2 class="section2-head">Religious Background</h2>
                                     </div>
@@ -674,9 +683,6 @@
                                                 <div class="lft-elems">
                                                     <h3 class="left-tag">Qualification</h3><h3 class="left-txt apippuhq">Graduate</h3>
                                                 </div>
-                                                <!-- <div class="lft-elems">
-                                                    <h3 class="left-tag">College</h3><h3 class="left-tx t">XYZ</h3>
-                                                </div> -->
                                                 <div class="lft-elems">
                                                     <h3 class="left-tag">Company</h3><h3 class="left-txt apippucompany">ABC company</h3>
                                                 </div>
@@ -761,9 +767,6 @@
                                                     <div class="lft-elems">
                                                         <h3 class="left-tag">Community</h3><h3 class="left-txt apipppcs">Sindhi</h3>
                                                     </div>
-                                                    <div class="lft-elems">
-                                                        <h3 class="left-tag">Mother Tounge</h3><h3 class="left-txt apipppsc">Hindi, sindhi</h3>
-                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -780,7 +783,7 @@
                                                         <h3 class="left-tag">City</h3><h3 class="left-txt apipppcity">Bhopal</h3>
                                                     </div>
                                                     <div class="lft-elems">
-                                                        <h3 class="left-tag">State</h3><h3 class="left-txt apipppstate">Madhya Pradesh</h3>
+                                                        <h3 class="left-tag">State </h3><h3 class="left-txt apipppstate">Madhya Pradesh</h3>
                                                     </div>
                                                     <div class="lft-elems">
                                                         <h3 class="left-tag">Country</h3><h3 class="left-txt apipppcountry">India</h3>
@@ -801,10 +804,10 @@
                                                         <h3 class="left-tag">Qualification</h3><h3 class="left-txt apippphq">Graduate</h3>    
                                                     </div>
                                                     <div class="lft-elems">
-                                                        <h3 class="left-tag">Company</h3><h3 class="left-txt apipppcompany">XYZ company</h3>
+                                                        <h3 class="left-tag">Company </h3><h3 class="left-txt apipppcompany">XYZ company</h3>
                                                     </div>
                                                     <div class="lft-elems">
-                                                        <h3 class="left-tag">Annual Income</h3><h3 class="left-txt apipppannum">Above 5lakhs</h3>
+                                                        <h3 class="left-tag">Annual Income </h3><h3 class="left-txt apipppannum">Above 5lakhs</h3>
                                                     </div>
                                                 </div>
                                             </div>
@@ -877,6 +880,7 @@
   
     <!-- Script -->
     <script src="./js/my_matches.js"></script>
+    <!-- <script src="./js/image-slider.js"></script> -->
     <script src="./js/profile_page.js"></script>
     <script src="./js/navbar2.js"></script>
 <script src="./js/logout.js"></script>

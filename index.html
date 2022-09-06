@@ -2921,14 +2921,14 @@
           localStorage.getItem("profilePic"),
           localStorage.getItem("profileabout"),
         ]);
-        // const profileData = document.querySelector(".apiaddpicture").value;
-        // console.log(profileData);
+        const aboutuser = localStorage.getItem("profileabout");
+        const userpicture = localStorage.getItem("profilePic");
         const bearerToken = localStorage.getItem("token");
         fetch("https://server.shehnayi.in/api/v2/user/userdetails", {
           method: "PATCH",
           body: JSON.stringify({
-            profileSummary: localStorage.getItem("profileabout"),
-            profilePicture: localStorage.getItem("profilePic"),
+            userAbout: aboutuser,
+            profilePicture: userpicture,
           }),
           headers: {
             Accept:

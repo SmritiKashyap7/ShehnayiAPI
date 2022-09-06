@@ -31,12 +31,10 @@ fetch(sentInterestApi, {
     }
     if (data.foundUser.interests.length > 0) {
       document.querySelector(".apiactivitysentinterest").innerHTML = clutter;
-    }
-    else{
+    } else {
       document.querySelector(".apiactivitysentinterest").style.display = "none";
-      document.querySelector("#nomatchfound01").style.display = " block"
+      document.querySelector("#nomatchfound01").style.display = " block";
     }
-    
   })
   .catch((err) => {
     console.log(err);
@@ -51,7 +49,7 @@ setTimeout(() => {
       console.log("userid", userId);
       var btnId = dets.target.id;
       console.log("btnid", btnId);
-      fetch(`http://localhost:2000/api/v2/user/viewProfile/${userId}`, {
+      fetch(`https://server.shehnayi.in/api/v2/user/viewProfile/${userId}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -142,13 +140,14 @@ fetch(pendingRequestApi, {
                 </div>`;
       });
     }
-      if (data.pendingRequests.length > 0) {
-        document.querySelector(".apiactivitypendingrequests").innerHTML = pendingRequestClutter;
-      }
-      else{
-        document.querySelector(".apiactivitypendingrequests").style.display = "none";
-        document.querySelector("#nomatchfound02").style.display = " block"
-      }
+    if (data.pendingRequests.length > 0) {
+      document.querySelector(".apiactivitypendingrequests").innerHTML =
+        pendingRequestClutter;
+    } else {
+      document.querySelector(".apiactivitypendingrequests").style.display =
+        "none";
+      document.querySelector("#nomatchfound02").style.display = " block";
+    }
   })
   .catch((err) => {
     console.log(err);
@@ -249,12 +248,11 @@ fetch(allLikedProfilesApi, {
       });
       document.querySelector(".apiactivityalllikedprofiles").innerHTML =
         allLikedProfilesClutter;
+    } else {
+      document.querySelector(".apiactivityalllikedprofiles").style.display =
+        "none";
+      document.querySelector("#nomatchfound03").style.display = " block";
     }
-    else{
-      document.querySelector(".apiactivityalllikedprofiles").style.display = "none";
-      document.querySelector("#nomatchfound03").style.display = " block"
-    }
-
   })
   .catch((err) => {
     console.log(err);
@@ -360,12 +358,11 @@ fetch(viewProfiles, {
 
       document.querySelector(".apiactivityallviewedProfiles").innerHTML =
         viewedProfilesClutter;
+    } else {
+      document.querySelector(".apiactivityallviewedProfiles").style.display =
+        "none";
+      document.querySelector("#nomatchfound04").style.display = " block";
     }
-    else{
-      document.querySelector(".apiactivityallviewedProfiles").style.display = "none";
-      document.querySelector("#nomatchfound04").style.display = " block"
-    }
-
   })
   .catch((err) => {
     console.log(err);
@@ -435,10 +432,9 @@ fetch(blockedUsersApi, {
       });
       document.querySelector(".apiactivityblockedUsers").innerHTML =
         blockedUsersClutter;
-    }
-    else{
+    } else {
       document.querySelector(".apiactivityblockedUsers").style.display = "none";
-      document.querySelector("#nomatchfound05").style.display = " block"
+      document.querySelector("#nomatchfound05").style.display = " block";
     }
   });
 
