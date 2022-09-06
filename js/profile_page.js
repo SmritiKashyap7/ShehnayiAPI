@@ -134,48 +134,48 @@ fetch("https://server.shehnayi.in/api/v2/home", {
     ).innerHTML = `${data.foundUser.age} yrs,${data.foundUser.height}`;
 
     // Abhishek
-    document
-      .querySelector(".apifirstname-am")
-      .setAttribute("value", data.foundUser.firstname);
-    document
-      .querySelector(".apilastname-am")
-      .setAttribute("value", data.foundUser.lastname);
-    document
-      .querySelector(".apidays-am")
-      .setAttribute("value", data.foundUser.birthday.day);
-    document
-      .querySelector(".apimonth-am")
-      .setAttribute("value", data.foundUser.birthday.month);
-    document
-      .querySelector(".apiyear-am")
-      .setAttribute("value", data.foundUser.birthday.year);
-    document.querySelector(".apiheight-am").value = data.foundUser.height;
-    document.querySelector(".apimarital-am").value =
-      data.foundUser.maritalStatus;
-    document.querySelector(".apioccupation-am").value =
-      data.foundUser.designation;
-    document
-      .querySelector(".apicity-am")
-      .setAttribute("value", data.foundUser.city);
-    document
-      .querySelector(".apistate-am")
-      .setAttribute("value", data.foundUser.state);
+    // document
+    //   .querySelector(".apifirstname-am")
+    //   .setAttribute("value", data.foundUser.firstname);
+    // document
+    //   .querySelector(".apilastname-am")
+    //   .setAttribute("value", data.foundUser.lastname);
+    // document
+    //   .querySelector(".apidays-am")
+    //   .setAttribute("value", data.foundUser.birthday.day);
+    // document
+    //   .querySelector(".apimonth-am")
+    //   .setAttribute("value", data.foundUser.birthday.month);
+    // document
+    //   .querySelector(".apiyear-am")
+    //   .setAttribute("value", data.foundUser.birthday.year);
+    // document.querySelector(".apiheight-am").value = data.foundUser.height;
+    // document.querySelector(".apimarital-am").value =
+    //   data.foundUser.maritalStatus;
+    // document.querySelector(".apioccupation-am").value =
+    //   data.foundUser.designation;
+    // document
+    //   .querySelector(".apicity-am")
+    //   .setAttribute("value", data.foundUser.city);
+    // document
+    //   .querySelector(".apistate-am")
+    //   .setAttribute("value", data.foundUser.state);
 
-    document
-      .querySelector(".apireligion-am")
-      .setAttribute("value", data.foundUser.religion);
-    document
-      .querySelector(".apisubcaste-am")
-      .setAttribute("value", data.foundUser.caste);
-    document.querySelector(".apimanglik-am").value = data.foundUser.manglik;
+    // document
+    //   .querySelector(".apireligion-am")
+    //   .setAttribute("value", data.foundUser.religion);
+    // document
+    //   .querySelector(".apisubcaste-am")
+    //   .setAttribute("value", data.foundUser.caste);
+    // document.querySelector(".apimanglik-am").value = data.foundUser.manglik;
 
-    document.querySelector(".apiqualification-am").value =
-      data.foundUser.heighestQualification;
-    document
-      .querySelector(".apicompany-am")
-      .setAttribute("value", data.foundUser.company);
-    document.querySelector(".apiannualincome-am").value =
-      data.foundUser.AnnualIncome;
+    // document.querySelector(".apiqualification-am").value =
+    //   data.foundUser.heighestQualification;
+    // document
+    //   .querySelector(".apicompany-am")
+    //   .setAttribute("value", data.foundUser.company);
+    // document.querySelector(".apiannualincome-am").value =
+    //   data.foundUser.AnnualIncome;
 
     // document.querySelector(".apieating-am").value = data.foundUser.eating;
     // document.querySelector(".apidrinking-am").value = data.foundUser.drinking;
@@ -384,11 +384,11 @@ fetch("https://server.shehnayi.in/api/v2/home", {
     console.log(err);
   });
 
-// const add = document.querySelector("#add");
-// const addimages = document.querySelector("#addimages");
-// add.addEventListener("click", function (e) {
-//   addimages.click();
-// });
+const add = document.querySelector("#add");
+const addimages = document.querySelector("#addimages");
+add.addEventListener("click", function (e) {
+  addimages.click();
+});
 
 // User Image model
 // var modal = document.getElementById("myModal");
