@@ -77,17 +77,3 @@ document.addEventListener("mouseup", function (e) {
   }
 });
 
-// Slide btn
-
-// for(let i=0; i<fullDetail.length; i++){
-//     slideBtn.addEventListener("click", function(){
-
-//         if(slides[i].style.display = "none") {
-//             fullDetail[i].style.display = "none";
-//             knowbtn[i].textContent = 'Know more..';
-//         }
-//         else {
-//             knowbtn[i].textContent = 'Hide details.';
-//         }
-//     });
-// }

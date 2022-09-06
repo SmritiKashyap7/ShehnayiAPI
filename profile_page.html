@@ -16,7 +16,9 @@
     <link rel="stylesheet" href="./css/user_page.css">
     <link rel="stylesheet" href="./css/profile_page.css">
     <link rel="stylesheet" href="./css/my_matches2.css">
+    <link rel="stylesheet" href="./css/image_slider.css">
     <link rel="stylesheet" href="./css/footer.css">
+
 
     <!-- Boxicons cdn -->
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
@@ -223,7 +225,6 @@
                 </div>
                 <div class="block-div">
                     <label class="label-text" for="height">Height</label>
-                    <!-- <input class="text-input" type="text" name="height" placeholder="Height"> -->
                     <select class="select-input apiheight-am" name="height" id="">
                         <option selected disabled>Select</option>
                         <!-- value in cm but, option in ft and inches-->
@@ -279,12 +280,10 @@
                 </div>
                 <div class="block-div">
                     <label class="label-text" for="occupation">Occupation</label>
-                    <!-- <input class="text-input" type="text" name="occupation" placeholder="Occupation"> -->
                     <select class="select-input apioccupation-am" name="occupation">
                         <option selected disabled>Select</option>
                         <option value="private">Private</option>
                         <option value="government">Government</option>
-                        <!-- <option value="">others</option> -->
                     </select>
                 </div>
                 <div class="block-div">
@@ -300,9 +299,17 @@
             </form>
         </div>
         <div class="inner-form-container" id="inner-form-2">
-            <h2 class=inner-form-heading>Religious Background</h2>
+            <h2 class=inner-form-heading>Contact and Religious details</h2>
             <i id="close-icon-2" class="ri-close-line"></i>
             <form action="" class="form-sections" id="form-2">
+                <div class="block-div">
+                    <label class="label-text" for="email">Email</label>
+                    <input class="text-input apiemail-am" type="email" name="email" placeholder="Email">
+                </div>
+                <div class="block-div">
+                    <label class="label-text" for="phone">Phone</label>
+                    <input class="text-input apiphone-am" type="number" name="phone" placeholder="Phone">
+                </div>
                 <div class="block-div">
                     <label class="label-text" for="religion">Religion</label>
                     <input class="text-input apireligion-am" type="text" name="religion" placeholder="Religion">
@@ -403,18 +410,16 @@
                     <label class="label-text" for="father-status">Father's status</label>
                     <select class="select-input apifatherstatus-am" name="father-status" id="">
                         <option selected disabled>Select</option>
-                        <option value="businessman">Businessman</option>
-                        <option value="developer">Developer</option>
-                        <option value="others">Others</option>
+                        <option value="employed">Employed</option>
+                        <option value="unemployed">Unemployed</option>
                     </select>
                 </div>
                 <div class="block-div">
                     <label class="label-text" for="mother-status">Mother's status</label>
                     <select class="select-input apimotherstatus-am" name=mother-status" id="">
                         <option selected disabled>Select</option>
-                        <option value="businessman">Businessman</option>
-                        <option value="developer">Developer</option>
-                        <option value="others">Others</option>
+                        <option value="employed">Employed</option>
+                        <option value="housewife">Housewife</option>
                     </select>
                 </div>
                 <div class="block-div">
@@ -442,7 +447,6 @@
                         <input class="text-input apifromage-am" type="text" name="age" placeholder="18">&nbsp; to &nbsp;
                         <input class="text-input apitoage-am" type="text" name="age" placeholder="40">
                     </div>
-                    <!-- <input class="text-input" type="number" name="age" palceholder="Age"> -->
                 </div>
                 <div class="block-div">
                     <label class="label-text" for="height">Height</label>
@@ -450,7 +454,6 @@
                         <input class="text-input apifromheight-am" type="text" name="height" placeholder="">&nbsp; to &nbsp;
                         <input class="text-input apitoheight-am" type="text" name="height" placeholder="">
                     </div>
-                    <!-- <input class="number-input api" type="number" name="height" placeholder="Height(in cms)"> -->
                 </div>
                 <div class="block-div">
                     <label class="label-text" for="marital-status">Marital Status</label>
@@ -467,7 +470,11 @@
                 </div> 
                 <div class="block-div">
                     <label class="label-text" for="community">Community</label>
-                    <input class="text-input apiparcommunity-am" type="text" name="community" placeholder="Community">
+                    <select class="text-input apiparcommunity-am" type="text" name="community" placeholder="Community">
+                        <option selected disabled>Select</option>
+                        <option value="Sindhi">Sindhi</option>
+                        <option value="Hindhu">Hindu</option>
+                    </select>
                 </div>
                 <div class="flex-div">
                     <button class="previ-btn"><i class='bx bx-left-arrow-alt'></i>Previous</button>
@@ -476,7 +483,6 @@
             </form>
         </div>
         <div class="inner-form-container" id="inner-form-7">
-            <!-- <h2 class="partner-preference-haeding">Partner-details</h2> -->
             <h2 class=inner-form-heading>Location details</h2>
             <i id="close-icon-7" class="ri-close-line"></i>
             <form action="" class="form-sections" id="form-7">
@@ -499,7 +505,6 @@
             </form>
         </div>
         <div class="inner-form-container" id="inner-form-8">
-            <!-- <h2 class="partner-preference-haeding">Partner-details</h2> -->
             <h2 class=inner-form-heading>Education & Career</h2>
             <i id="close-icon-8" class="ri-close-line"></i>
             <form action="" class="form-sections" id="form-8">
@@ -515,10 +520,10 @@
                     <label class="label-text" for="annual-income">Annual Income</label>
                     <select class="select-input apiparannualincome-am" name="annual-income" id="">
                         <option selected disabled>Select</option>
-                        <option value="">Below 10000</option>
-                        <option value="">Below 1lakh</option>
-                        <option value="">Above 1lakh</option>
-                        <option value="">Above 2lakhs</option>
+                        <option value="1lakh">Below 10000</option>
+                        <option value="below 1lakh">Below 1lakh</option>
+                        <option value="between 1lakh and 2lakhs">Between 1lakh to 2lakh</option>
+                        <option value="above 2lakhs">Above 2lakhs</option>
                     </select>
                 </div>
                 <div class="flex-div">
@@ -533,29 +538,52 @@
     <div id="main">
         <div id="sec-1">
             <div class="profs">
-                <div class="img-div profile-pic">
-                    <!-- <img id="myImg" src="./Images/about-team2.jpeg" alt="" /> -->
-                    <!-- <i id="add" class="ri-add-circle-line"></i> -->
+                <div class="img-div">
+                    <div class="image-slideshow-container">
+                        <div class="mySlides fade">
+                          <div class="numbertext">1 / 4</div>
+                          <img src="./Images/about-team2.jpeg" alt="" class="myImg" style="width:100%">
+                        </div>
+                        
+                        <div class="mySlides fade">
+                          <div class="numbertext">2 / 4</div>
+                          <img src="./Images/about-team3.jpg" alt="" class="myImg" style="width:100%">
+                        </div>
+                        
+                        <div class="mySlides fade">
+                          <div class="numbertext">3 / 4</div>
+                          <img src="./Images/about-team4.webp" alt="" class="myImg" style="width:100%">
+                        </div>
+                        
+                        <div class="mySlides fade">
+                          <div class="numbertext">4 / 4</div>
+                          <img src="./Images/about-team5.webp" alt="" class="myImg" style="width:100%">
+                        </div>
+                        
+                        <a class="prev" onclick="plusSlides(-1)">❮</a>
+                        <a class="next" onclick="plusSlides(1)">❯</a>
+                        
+                    </div>
+                    <i id="add" class="ri-add-circle-line"></i>
                 </div>
                 <input type="file" name="addimages" id="addimages" class="none">
                 <div class="txt-div">
                     <div class="name">
-                        <h1 class="full-name">Roshan</h1>
+                        <h1 class="apippusername full-name">Rohan</h1>
                         <div class="edit-btn">
                             <button class="edit-txt">Edit<i class='bx bxs-edit-alt'></i></button>
                         </div>
                     </div>
                     <div class="details-div">
                         <div class="lft">
-                            <h3 class="left-tag apippage">22 Yrs, 6'0"</h3>
-                            <h3 class="left-tag apippcaste">Sindhi</h3>
-                            <h3 class="left-tag apippsubcaste">Hindi</h3>
-                            <h3 class="left-tag left-btn"><a href="./user_plan.html" class="imgunlockbtn">Basic member</a></h3>
+                            <h3 class="head-desc apippage">22 Yrs, 6'0"</h3>
+                            <h3 class="head-desc apipprg">Sindhi</h3>
+                            <h3 class="head-desc left-btn"><a href="./user_plan.html" class="imgunlockbtn">Basic member</a></h3>
                         </div>
                         <div class="rgt">
-                            <h3 class="left-tag apippmaritalstatus">Never Married</h3>
-                            <h3 class="left-tag apippplace">Lives in Bhopal, Madhya Pradesh</h3>
-                            <h3 class="left-tag apippdesignation">Student</h3>
+                            <h3 class="head-desc apippmaritalstatus">Single</h3>
+                            <h3 class="head-desc apippplace">Lives in Bhopal, Madhya Pradesh</h3>
+                            <h3 class="head-desc apippdesignation">Graduate</h3>
                         </div>
                     </div>
                 </div>
@@ -564,45 +592,8 @@
             <div class="full-dets">
                 <div class="full-dets-container">
                     <div class="dets-div">
-                        <div class="dets-imgs-lock-js">
-                            <div class="dets-imgs-js">
-                                <div class="card-img-js">
-                                    <a href="#"><img src="./Images/about-team1.webp" alt=""></a>
-                                    <div class="overlay"></div>
-                                </div>
-                                <div class="card-img-js">
-                                    <a href="#"><img src="./Images/about-team1.webp" alt=""></a>
-                                    <div class="overlay"></div>
-                                </div>
-                                <div class="card-img-js">
-                                    <a href="#"><img src="./Images/about-team1.webp" alt=""></a>
-                                    <div class="overlay"></div>
-                                </div>
-                                <div class="card-img-js">
-                                    <a href="#"><img src="./Images/about-team1.webp" alt=""></a>
-                                    <div class="overlay"></div>
-                                </div>
-                                <div class="card-img-js">
-                                    <a href="#"><img src="./Images/about-team1.webp" alt=""></a>
-                                    <div class="overlay"></div>
-                                </div>
-                                <div class="card-img-js">
-                                    <a href="#"><img src="./Images/about-team1.webp" alt=""></a>
-                                    <div class="overlay"></div>
-                                </div>
-                                <div class="card-img-js">
-                                    <a href="#"><img src="./Images/about-team1.webp" alt=""></a>
-                                    <div class="overlay"></div>
-                                </div>
-                            </div>
-                        </div>
                         <hr class="hr-line">
                         <div class="sections">
-                            <div class="left-section">
-                                <div class="left-sec">Marriage is not just two people marring, its two families coming together.</div>
-                                <div class="left-sec">My religion is very simple, My religion is you.</div>
-                                <div class="left-sec">I want to share the rest of my food with you</div>
-                            </div>
                             <div class="right-section">
                                 <div class="section-1">
                                     <div class="logo" style="margin-top: 1rem;">
@@ -643,6 +634,24 @@
                                 </div>
                                 <div class="section-2">
                                     <div class="logo">
+                                        <i class="fa-solid fa-phone"></i>
+                                        <h2 class="section2-head">Contact details</h2>
+                                    </div>
+                                    <div class="basic-details-div">
+                                        <div class="basic-details">
+                                            <div class="lft">
+                                                <div class="lft-elems">
+                                                    <h3 class="left-tag">Email Id</h3><h3 class="left-txt apippemail">abcd@gmail.com</h3>
+                                                </div>
+                                                <div class="lft-elems">
+                                                    <h3 class="left-tag">Phone number</h3><h3 class="left-txt apipphone">873456XXXX</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="section-2">
+                                    <div class="logo">
                                         <i class="fa-solid fa-om"></i>
                                         <h2 class="section2-head">Religious Background</h2>
                                     </div>
@@ -673,9 +682,6 @@
                                                 <div class="lft-elems">
                                                     <h3 class="left-tag">Qualification</h3><h3 class="left-txt apippuhq">Graduate</h3>
                                                 </div>
-                                                <!-- <div class="lft-elems">
-                                                    <h3 class="left-tag">College</h3><h3 class="left-tx t">XYZ</h3>
-                                                </div> -->
                                                 <div class="lft-elems">
                                                     <h3 class="left-tag">Company</h3><h3 class="left-txt apippucompany">ABC company</h3>
                                                 </div>
@@ -755,13 +761,10 @@
                                                         <h3 class="left-tag">Marital Status</h3><h3 class="left-txt apipppms">Single</h3>
                                                     </div>
                                                     <div class="lft-elems">
-                                                        <h3 class="left-tag">Religion</h3><h3 class="left-txt apippprg">Hindu</h3>
+                                                        <h3 class="left-tag">Religion</h3><h3 class="left-txt apipppms">Hindu</h3>
                                                     </div>
                                                     <div class="lft-elems">
                                                         <h3 class="left-tag">Community</h3><h3 class="left-txt apipppcs">Sindhi</h3>
-                                                    </div>
-                                                    <div class="lft-elems">
-                                                        <h3 class="left-tag">Mother Tounge</h3><h3 class="left-txt apipppsc">Hindi, sindhi</h3>
                                                     </div>
                                                 </div>
                                             </div>
@@ -779,7 +782,7 @@
                                                         <h3 class="left-tag">City</h3><h3 class="left-txt apipppcity">Bhopal</h3>
                                                     </div>
                                                     <div class="lft-elems">
-                                                        <h3 class="left-tag">State</h3><h3 class="left-txt apipppstate">Madhya Pradesh</h3>
+                                                        <h3 class="left-tag">State </h3><h3 class="left-txt apipppstate">Madhya Pradesh</h3>
                                                     </div>
                                                     <div class="lft-elems">
                                                         <h3 class="left-tag">Country</h3><h3 class="left-txt apipppcountry">India</h3>
@@ -800,10 +803,10 @@
                                                         <h3 class="left-tag">Qualification</h3><h3 class="left-txt apippphq">Graduate</h3>    
                                                     </div>
                                                     <div class="lft-elems">
-                                                        <h3 class="left-tag">Company</h3><h3 class="left-txt apipppcompany">XYZ company</h3>
+                                                        <h3 class="left-tag">Company </h3><h3 class="left-txt apipppcompany">XYZ company</h3>
                                                     </div>
                                                     <div class="lft-elems">
-                                                        <h3 class="left-tag">Annual Income</h3><h3 class="left-txt apipppannum">Above 5lakhs</h3>
+                                                        <h3 class="left-tag">Annual Income </h3><h3 class="left-txt apipppannum">Above 5lakhs</h3>
                                                     </div>
                                                 </div>
                                             </div>
@@ -876,6 +879,7 @@
   
     <!-- Script -->
     <script src="./js/my_matches.js"></script>
+    <!-- <script src="./js/image-slider.js"></script> -->
     <script src="./js/profile_page.js"></script>
     <script src="./js/navbar2.js"></script>
 <script src="./js/logout.js"></script>

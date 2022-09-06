@@ -18,24 +18,27 @@ fetch("https://server.shehnayi.in/api/v2/home", {
   .then((data) => {
     console.log(data.foundUser);
     // Abhishek
-document.querySelector(".apifirstname-am").setAttribute('value', data.foundUser.firstname);
-document.querySelector(".apilastname-am").setAttribute('value', data.foundUser.lastname);
-document.querySelector(".apidays-am").setAttribute('value', data.foundUser.birthday.day);
-document.querySelector(".apimonth-am").setAttribute('value', data.foundUser.birthday.month);
-document.querySelector(".apiyear-am").setAttribute('value', data.foundUser.birthday.year);
-document.querySelector(".apiheight-am").value = data.foundUser.height;
-document.querySelector(".apimarital-am").value = data.foundUser.maritalStatus;
-document.querySelector(".apioccupation-am").value = data.foundUser.designation;
-document.querySelector(".apicity-am").setAttribute('value', data.foundUser.city);
-document.querySelector(".apistate-am").setAttribute('value', data.foundUser.state);
+// document.querySelector(".apifirstname-am").setAttribute('value', data.foundUser.firstname);
+// document.querySelector(".apilastname-am").setAttribute('value', data.foundUser.lastname);
+// document.querySelector(".apidays-am").setAttribute('value', data.foundUser.birthday.day);
+// document.querySelector(".apimonth-am").setAttribute('value', data.foundUser.birthday.month);
+// document.querySelector(".apiyear-am").setAttribute('value', data.foundUser.birthday.year);
+// document.querySelector(".apiheight-am").value = data.foundUser.height;
+// document.querySelector(".apimarital-am").value = data.foundUser.maritalStatus;
+// document.querySelector(".apioccupation-am").value = data.foundUser.designation;
+// document.querySelector(".apicity-am").setAttribute('value', data.foundUser.city);
+// document.querySelector(".apistate-am").setAttribute('value', data.foundUser.state);
 
-document.querySelector(".apireligion-am").setAttribute('value', data.foundUser.religion);
-document.querySelector(".apisubcaste-am").setAttribute('value', data.foundUser.caste);
-document.querySelector(".apimanglik-am").value = data.foundUser.manglik;
+// document.querySelector(".apiemail-am").setAttribute('value', data.foundUser.email);
+// document.querySelector(".apiphone-am").setAttribute('value', data.foundUser.phone);
 
-document.querySelector(".apiqualification-am").value = data.foundUser.heighestQualification;
-document.querySelector(".apicompany-am").setAttribute('value', data.foundUser.company);
-document.querySelector(".apiannualincome-am").value = data.foundUser.AnnualIncome;
+// document.querySelector(".apireligion-am").setAttribute('value', data.foundUser.religion);
+// document.querySelector(".apisubcaste-am").setAttribute('value', data.foundUser.caste);
+// document.querySelector(".apimanglik-am").value = data.foundUser.manglik;
+
+// document.querySelector(".apiqualification-am").value = data.foundUser.heighestQualification;
+// document.querySelector(".apicompany-am").setAttribute('value', data.foundUser.company);
+// document.querySelector(".apiannualincome-am").value = data.foundUser.AnnualIncome;
 
 // document.querySelector(".apieating-am").value = data.foundUser.eating;
 // document.querySelector(".apidrinking-am").value = data.foundUser.drinking;
@@ -82,6 +85,8 @@ document.querySelector(".apiannualincome-am").value = data.foundUser.AnnualIncom
     document.querySelector(".apippms").innerHTML = `${data.foundUser.maritalStatus}`;
     document.querySelector(".apippdsg").innerHTML = `${data.foundUser.designation}`;
     document.querySelector(".apippp").innerHTML = `${data.foundUser.city}, ${data.foundUser.state}`;
+    document.querySelector(".apippemail").innerHTML = `${data.foundUser.email}`;
+    document.querySelector(".apipphone").innerHTML = `${data.foundUser.phone}`;
     document.querySelector(".apipprg").innerHTML = `${data.foundUser.religion}`;
     document.querySelector(".apippcs").innerHTML = `${data.foundUser.caste}`;
     document.querySelector(".apippmangliks").innerHTML = `${data.foundUser.manglik}`;
@@ -100,7 +105,7 @@ document.querySelector(".apiannualincome-am").value = data.foundUser.AnnualIncom
     document.querySelector(".apipppms").innerHTML = `${data.foundUser.userPreference.maritalStatus}`;
     document.querySelector(".apippprg").innerHTML = `${data.foundUser.userPreference.religion}`;
     document.querySelector(".apipppcs").innerHTML = `${data.foundUser.userPreference.caste}`;
-    document.querySelector(".apipppsc").innerHTML = `${data.foundUser.userPreference.subCaste}`;
+    // document.querySelector(".apipppsc").innerHTML = `${data.foundUser.userPreference.subCaste}`;
     document.querySelector(".apipppcity").innerHTML = `${data.foundUser.userPreference.city}`;
     document.querySelector(".apipppstate").innerHTML = `${data.foundUser.userPreference.state}`;
     document.querySelector(".apipppcountry").innerHTML = `${data.foundUser.userPreference.country}`;

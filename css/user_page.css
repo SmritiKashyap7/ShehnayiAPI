@@ -49,7 +49,7 @@ html body {
   object-fit: cover;
   width: 100%;
   height: 100%;
-  object-position: top;
+  object-position: center;
 }
 
 .img-div>img:hover {
@@ -206,10 +206,10 @@ html body {
   text-align: center;
   color: #fff;
 }
-.details-div h3 {
+/* .details-div h3 {
   margin-top: 1em;
   font-weight: 400;
-}
+} */
 
 .basic-details-div .lft {
   width: 100%;
@@ -232,6 +232,10 @@ html body {
   font-size: 16px;
 }
 
+.lft-elems .left-tag {
+  font-weight: 500;
+}
+
 .lft-elems .left-txt {
   font-weight: 400;
 }
@@ -246,7 +250,7 @@ html body {
   position: relative;
 }
 
-.hr-line {
+.hr-line, .hr {
   margin: 1rem 0;
   width: 100%;
   height: 0.2em;
@@ -309,10 +313,12 @@ html body {
 
 .section-1 .logo {
   width: 100%;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   height: 60px;
   margin-top: 2em;
   display: flex;
+  /* justify-content: center; */
+  border-bottom: 1px solid rgb(91, 91, 91);
   align-items: center;
   gap: 1.5rem;
 }
@@ -335,6 +341,12 @@ html body {
   width:90%;
 }
 
+.details-div .head-desc {
+  margin-top: 1rem;
+  font-weight: 400;
+  width: 100%;
+}
+
 .section-1 .about-div {
   display: flex;
   justify-content: space-between;
@@ -353,8 +365,9 @@ html body {
     margin-top: 2em;
     display: flex;
     align-items: center;
+    /* justify-content: center; */
     gap: 1.5rem;
-    /* padding: 0 17.5rem; */
+    border-bottom: 1px solid rgb(91, 91, 91);
 }
 
 .full-dets .icon-div {
@@ -399,14 +412,17 @@ html body {
 
 .dets-div {
   width: 100%;
-  margin-top: 4em;
+  margin-top: 2em;
 }
 .dets-imgs-js{
-  width: 100%;
-  padding: 0 20px;
-  overflow-x: auto;
-  overflow-y: hidden;
-  white-space: nowrap;
+    margin-top: -300px;
+    width: 100%;
+    padding: 0 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
 }
 
 .dets-imgs-js::-webkit-scrollbar {
@@ -414,11 +430,11 @@ html body {
 }
 
 .card-img-js {
-  display:inline-block;
-  height: 300px;
-  width: 23%;
-  position: relative;
-  margin: 0 5px;
+  display: inline-block;
+    height: 100px;
+    width: 40%;
+    position: relative;
+    margin: 0 5px;
 }
 
 .overlay {
@@ -531,8 +547,7 @@ html body {
 }
 
 .sections .right-section {
-  width: 75%;
-  float: right;
+  width: 100%;
 }
 
 .partner-details .logo-2 {
