@@ -81,31 +81,43 @@ document
   });
 
 document
-  .querySelector("#forgot-pass-form #close-popup")
+  .querySelector("#sendOTP-form #close-popup")
   .addEventListener("click", function () {
     popup.style.display = "none";
   });
 
 document
-  .querySelector(".login-pop-up #close-popup")
+  .querySelector("#receivedOTP-form #close-popup")
   .addEventListener("click", function () {
-    document.querySelector(".login-pop-up").style.display = "none";
+    popup.style.display = "none";
   });
 
 document
-  .querySelector(".forgot-pop-up #close-popup")
+  .querySelector("#forgot-pass-form #close-popup")
   .addEventListener("click", function () {
-    document.querySelector(".forgot-pop-up").style.display = "none";
+    popup.style.display = "none";
   });
+
+// document
+//   .querySelector(".login-pop-up #close-popup")
+//   .addEventListener("click", function () {
+//     document.querySelector(".login-pop-up").style.display = "none";
+//   });
+
+// document
+//   .querySelector(".forgot-pop-up #close-popup")
+//   .addEventListener("click", function () {
+//     document.querySelector(".forgot-pop-up").style.display = "none";
+//   });
 
 // Form Slides
-document
-  .querySelector("#form-1 #submit-btn")
-  .addEventListener("click", function (event) {
-    document.querySelector("#form-1").style.display = "none";
-    document.querySelector("#form-2").style.display = "initial";
-    event.preventDefault();
-  });
+// document
+//   .querySelector("#form-1 #submit-btn")
+//   .addEventListener("click", function (event) {
+//     document.querySelector("#form-1").style.display = "none";
+//     document.querySelector("#form-2").style.display = "initial";
+//     event.preventDefault();
+//   });
 
 document.querySelector("#form-2-prev").addEventListener("click", function () {
   document.querySelector("#form-2").style.display = "none";
@@ -387,13 +399,13 @@ document
     event.preventDefault();
   });
 
-document
-  .querySelector("#login_form #reg")
-  .addEventListener("click", function (event) {
-    document.querySelector(".login-pop-up").style.display = "none";
-    document.querySelector(".pop-up").style.display = "initial";
-    event.preventDefault();
-  });
+// document
+//   .querySelector("#login_form #reg")
+//   .addEventListener("click", function (event) {
+//     document.querySelector(".login-pop-up").style.display = "none";
+//     document.querySelector(".pop-up").style.display = "initial";
+//     event.preventDefault();
+//   });
 
 document
   .querySelector(".input-form #begin-btn")
@@ -411,30 +423,47 @@ document
   });
 
 document.querySelector(".navbar #user").addEventListener("click", function () {
-  document.querySelector(".login-pop-up").style.display = "initial";
+  popup.style.display = "initial";
 });
 
-document
-  .querySelector("#login-form #reg")
-  .addEventListener("click", function () {
+document.querySelector("#login-form #reg").addEventListener("click", function () {
     document.querySelector("#login-form").style.display = "none";
     document.querySelector("#form-1").style.display = "initial";
   });
 
-document
-  .querySelector("#login-form #forgot")
-  .addEventListener("click", function () {
+document.querySelector("#login-form #forgot").addEventListener("click", function () {
     document.querySelector("#login-form").style.display = "none";
-    document.querySelector("#forgot-pass-form").style.display = "initial";
+    document.querySelector("#sendOTP-form").style.display = "initial";
   });
 
-document
-  .querySelector("#login_form #forgot")
-  .addEventListener("click", function (event) {
-    document.querySelector(".login-pop-up").style.display = "none";
-    document.querySelector(".forgot-pop-up").style.display = "initial";
-    event.preventDefault();
-  });
+document.querySelector("#sendOTP-form #next-btn").addEventListener('click', function(){
+  document.querySelector("#sendOTP-form").style.display = "none";
+  document.querySelector("#receivedOTP-form").style.display = "initial";
+});
+
+document.querySelector("#sendOTP-form #reg").addEventListener("click", function () {
+  document.querySelector("#sendOTP-form").style.display = "none";
+  document.querySelector("#form-1").style.display = "initial";
+});
+
+document.querySelector("#receivedOTP-form #next-btn").addEventListener('click', function(){
+  document.querySelector("#receivedOTP-form").style.display = "none";
+  document.querySelector("#forgot-pass-form").style.display = "initial";
+});
+
+document.querySelector("#receivedOTP-form #reg").addEventListener("click", function () {
+  document.querySelector("#receivedOTP-form").style.display = "none";
+  document.querySelector("#form-1").style.display = "initial";
+});
+
+
+
+
+// document.querySelector("#login_form #forgot").addEventListener("click", function (event) {
+//     document.querySelector(".login-pop-up").style.display = "none";
+//     document.querySelector(".forgot-pop-up").style.display = "initial";
+//     event.preventDefault();
+//   });
 
 // const login_popup = document.querySelector(".login-pop-up");
 // document.querySelector ("#mobileview #mobile-login").addEventListener ("click", function() {
@@ -454,3 +483,14 @@ document
 //         document.querySelector ("#mobileview").style.left = "-100%";
 //     };
 // })
+
+
+// Send email from send OTP form to received OTP form
+// function update() {
+//   let updateValue = document.querySelector("#email").value;
+//   document.querySelector("#receivedOTP-form .reset-email").textContent = updateValue;
+// } 
+
+
+
+

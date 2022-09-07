@@ -6,6 +6,32 @@
     box-sizing: border-box;
 }
 
+
+#loader {
+    border: 12px solid #fa8e8e;
+    border-radius: 50%;
+    border-top: 12px solid #8e0101;
+    width: 100px;
+    height: 100px;
+    animation: spin 1s linear infinite;
+}
+  
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+  
+.center {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+
 /* Navbar section */
 #mobileview {
     width: 100%;
@@ -177,6 +203,25 @@ li>a {
     text-align: left;
     margin-top: 1.875em;
 }
+
+.form-div #reg {
+    text-decoration: none;
+    color: rgb(0, 0, 120);
+    margin-left: 0.3rem;
+    cursor: pointer;
+}
+
+.form-div #forgot {
+    text-decoration: none;
+    color: rgb(0, 0, 134);
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.form-div #reg:hover, #forgot:hover {
+    color:#ad0909;
+}
+
 .form-div h6 {
     font-weight: 400;
     font-size: 14px;
@@ -242,13 +287,16 @@ li>a {
     outline: none;
     border: 1px solid #ccc;
     background: #f7f7f7;
+    padding: 0.3em 0.6em;
+    border-radius: 3px;
+    margin-bottom: 1em;
 }
 #form-2 button {
     margin-left: 2em;
 }
-#form-3 button {
+/* #form-3 button {
     margin-left: 2em;
-}
+} */
 #form-4 button {
     margin-left: 2em;
 }
@@ -258,9 +306,9 @@ li>a {
 #form-6 button {
     margin-left: 2em;
 }
-#form-7 button {
+/* #form-7 button {
     margin-left: 2em;
-}
+} */
 #form-8 button {
     margin-left: 2em;
 }
@@ -308,6 +356,7 @@ li>a {
 , #form-5-prev, #form-6-prev, #form-7-prev
 , #form-8-prev, #form-9-prev, #form-10-prev , #form-11-prev{
     font-size: 14px;
+    cursor: pointer;
 }
   
 button a {
@@ -326,6 +375,7 @@ button a {
     text-decoration: none;
     color: blue;
     margin-left: .3rem;
+    cursor: pointer;
 }
 .form-div a {
     text-decoration: none;
@@ -334,10 +384,6 @@ button a {
 #form-1 .file-upload {
     background-color: #5B5555;
 }
-
-/* #form-1 {
-    transition: ease-in-out 2s;
-} */
 
 #form-2 {
     display: none;
@@ -374,11 +420,13 @@ button a {
 #form-10 .about-btn {
     margin-top: 1.5rem;
 }
-#login-form, #forgot-pass-form {
+#login-form, #forgot-pass-form, #sendOTP-form, 
+#receivedOTP-form {
     display: none;
 }
-#login-form h4, #forgot-pass-form h4 , #login_form h4, #forgot_password_form h4{
-    font-size: 25px;
+#login-form h4, #forgot-pass-form h4 , #login_form h4, 
+#forgot_password_form h4, #sendOTP-form h4, #receivedOTP-form h4 {
+    font-size: 22px;
     line-height: 1rem;
 }
 textarea {
@@ -479,6 +527,40 @@ input[type=number] {
 .custom-file-input:active {
     outline: 0;
 }
+
+/* Send OTP form */
+#sendOTP-form>h4, #receivedOTP-form>h4 {
+    line-height: 1.5em;
+}
+#sendOTP-form-inner, #receivedOTP-form-inner {
+    padding: 1rem 0; 
+}
+#reset-email {
+    color: #36353f;
+    font-size: 12px;
+}
+
+
+/* Received OTP form */
+#receivedOTP-form-inner .digit-div {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: .2rem;
+    width: 100%;
+}
+
+.digit-div #digit {
+    text-align: center;
+    font-size: 18px;
+    padding: 1rem .5rem;
+}
+
+#digit::placeholder {
+    font-size: 18px;
+}
+
+
 
 
 
@@ -590,3 +672,6 @@ input[type=number] {
         height: 100%;
     }
 }
+
+
+

@@ -59,849 +59,760 @@
     </div>
 
     <div class="navbar">
-      <a id="menu"><i class="bx bx-menu"></i></a>
-      <div class="logo">
-        <a href="index.html"
-          ><img
-            src="./Images/shehnayioriginallogo.svg"
-            alt="Shehnayi"
-            title="Shehnayi"
-        /></a>
-      </div>
-      <div class="nav-links">
-        <ul>
-          <li class="home"><a href="index.html">Home</a></li>
-          <li><a href="about.html">About us</a></li>
-          <li><a href="membership-plan.html">Membership</a></li>
-          <li><p id="reg" class="register-popup">Register</p></li>
-          <li><a href="contact.html">Contact us</a></li>
+        <a id="menu"><i class="bx bx-menu"></i></a>
+        <div class="logo">
+            <a href="index.html"
+            ><img
+                src="./Images/shehnayioriginallogo.svg"
+                alt="Shehnayi"
+                title="Shehnayi"
+            /></a>
+        </div>
+        <div class="nav-links">
+            <ul>
+            <li class="home"><a href="index.html">Home</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="membership-plan.html">Membership</a></li>
+            <li><p id="reg" class="register-popup">Register</p></li>
+            <li><a href="contact.html">Contact us</a></li>
 
-          <div class="profile">
-            <div class="profile-icon">
-              <a id="user" href="#"
-                ><img src="./Icons/profile-icon.svg" alt=""
-              /></a>
+            <div class="profile">
+                <div class="profile-icon">
+                    <a id="user"><img src="./Icons/profile-icon.svg" alt=""/></a>
+                </div>
             </div>
-          </div>
-        </ul>
-      </div>
+            </ul>
+        </div>
     </div>
 
     <!-- Pop Up-1 Register -->
     <div class="pop-up">
-      <div class="form-div" id="form-1">
-        <i id="close-popup" class="ri-close-line"></i>
-        <h4>Let's set up your Account, while we find Matches for you!</h4>
-        <form id="account-form" action="">
-          <h6>Profile for</h6>
-          <select class="profile apiprofilefor" name="profil-for">
-            <option selected disabled>Select</option>
-            <option value="myself">Myself</option>
-            <option value="son">Son</option>
-            <option value="daughter">Daughter</option>
-            <option value="mother">Mother</option>
-            <option value="father">Father</option>
-          </select>
-          <h6>Name</h6>
-          <div id="flex-div">
-            <input
-              class="name apifirstname"
-              type="text"
-              placeholder="First Name"
-            />
-            <input
-              class="name apilastname"
-              type="text"
-              placeholder="Last Name"
-            />
-          </div>
-          <h6>Religion</h6>
-          <select class="profile apireligion" name="religion">
-            <option selected disabled>Select</option>
-            <option value="Sindhi">Sindhi</option>
-            <option value="Hindu">Hindu</option>
-            <option value="Muslim">Muslim</option>
-          </select>
-          <h6>Community</h6>
-          <select class="profile apicommunity" name="community">
-            <option selected disabled>Select</option>
-            <option value="Sindhi">Sindhi</option>
-            <option value="Hindhu">Hindu</option>
-          </select>
-          <div id="btn">
-            <button id="submit-btn" class="registerbtnone">Next</button>
-          </div>
-          <h5>Already a Member?<a id="login" href="#">Login</a></h5>
-        </form>
-      </div>
-      <div class="form-div" id="form-2">
-        <i id="close-popup" class="ri-close-line"></i>
-        <h4>
-          Great! Now some basic <br />
-          details about you
-        </h4>
-        <form id="account-form" action="">
-          <h6>Email ID</h6>
-          <input
-            class="name apiusername"
-            id="email"
-            type="email"
-            placeholder="Email Address"
-          />
-          <h6>Phone No.</h6>
-          <input
-            class="name apiphonenumber"
-            type="number"
-            placeholder="Phone"
-          />
-          <h6>Date of Birth</h6>
-          <div class="dob-div">
-            <input
-              class="dob apibirthday"
-              id="a"
-              type="number"
-              placeholder="Date"
-              min="1"
-              max="31"
-            />
-            <input
-              class="dob apibirthmonth"
-              id="a"
-              type="text"
-              placeholder="Month"
-            />
-            <input
-              class="dob apibirthyear"
-              id="a"
-              type="number"
-              placeholder="Year"
-            />
-          </div>
-          <h6>Gender</h6>
-          <select class="profile apiprofilegender" name="profil-for">
-            <option selected disabled>Select</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-          </select>
-          <h6>Password</h6>
-          <input
-            class="name apipassword"
-            type="password"
-            name="password"
-            placeholder="Password"
-            required
-          />
-          <h6>Living in (Currently)</h6>
-          <div id="flex-div">
-            <select name="city" class="town apicity">
-              <option selected disabled>City</option>
-              <option value="Bhopal">Bhopal</option>
-              <option value="Indore">Indore</option>
-              <option value="Nagpur">Nagpur</option>
-              <option value="Jaipur">Jaipur</option>
-              <option value="Surat">Surat</option>
+        <div class="form-div" id="form-1">
+            <i id="close-popup" class="ri-close-line"></i>
+            <h4>Let's set up your Account, while we find Matches for you!</h4>
+            <form id="account-form" action="">
+            <h6>Profile for</h6>
+            <select class="profile apiprofilefor" id="profilefor" name="profil-for">
+                <option value="">Select</option>
+                <option value="myself">Myself</option>
+                <option value="son">Son</option>
+                <option value="daughter">Daughter</option>
+                <option value="mother">Mother</option>
+                <option value="father">Father</option>
             </select>
-            <select name="state" class="state apistate">
-              <option selected disabled>State</option>
-              <option value="Madhya Pradesh">Madhya Pradesh</option>
-              <option value="Maharashtra">Maharashtra</option>
-              <option value="Gujarat">Gujarat</option>
-              <option value="Rajasthan">Rajasthan</option>
+            <h6>Name</h6>
+            <div id="flex-div">
+                <input class="name apifirstname" id="firstname" type="text" placeholder="First Name" />
+                <input class="name apilastname" id="lastname" type="text" placeholder="Last Name" />
+            </div>
+            <h6>Religion</h6>
+            <select class="profile apireligion" id="religion" name="religion">
+                <option value="">Select</option>
+                <!-- <option value="Sindhi">Sindhi</option> -->
+                <option value="Hindu">Hindu</option>
+                <!-- <option value="Muslim">Muslim</option> -->
             </select>
-            <select name="country" class="country apicountry">
-              <option selected disabled>Country</option>
-              <option value="India">India</option>
-              <option value="Pakistan">Pakistan</option>
-              <option value="Afghanistan">Afghanistan</option>
-              <option value="Nepal">Nepal</option>
+            <h6>Community</h6>
+            <select class="profile apicommunity" id="community" name="community">
+                <option value="">Select</option>
+                <option value="Sindhi">Sindhi</option>
+                <!-- <option value="Hindhu">Hindu</option> -->
             </select>
-          </div>
-          <div id="btn-flex">
-            <div id="form-2-prev">
-              <i class="ri-arrow-left-line"></i>Previous
+            <div id="btn">
+                <button id="submit-btn" class="registerbtnone" onclick="return validateform1()">Next</button>
             </div>
-            <button id="next-btn" class="apiregisterbtn">Register</button>
-          </div>
-        </form>
-      </div>
-      <div class="form-div" id="form-3">
-        <i id="close-popup" class="ri-close-line"></i>
-        <h4>
-          Thanks for Registering! <br />
-          Now let's build your profile
-        </h4>
-        <form id="account-form" action="">
-          <h6>Home Town</h6>
-          <div id="flex-div">
-            <select name="city" class="town apihometowncity">
-              <option selected disabled>City</option>
-              <option value="Bhopal">Bhopal</option>
-              <option value="Indore">Indore</option>
-              <option value="Nagpur">Nagpur</option>
-              <option value="Jaipur">Jaipur</option>
-              <option value="Surat">Surat</option>
+            <h5>Already a Member?<a id="login" href="#">Login</a></h5>
+            </form>
+        </div>
+        <div class="form-div" id="form-2">
+            <i id="close-popup" class="ri-close-line"></i>
+            <h4>Great! Now some basic details about you</h4>
+            <form id="account-form" action="">
+                <h6>Email ID</h6>
+                <input class="name apiusername" id="email" type="email" placeholder="Email Address"/>
+                <h6>Phone No.</h6>
+                <input class="name apiphonenumber" id="phonenumber" type="number" placeholder="Phone"/>
+                <h6>Date of Birth</h6>
+                <div class="dob-div">
+                    <input class="dob apibirthday" id="dob-date" type="number" placeholder="Date" min="1" max="31"/>
+                    <input class="dob apibirthmonth" id="dob-month" type="text" placeholder="Month" />
+                    <input class="dob apibirthyear" id="dob-year" type="number" placeholder="Year" />
+                </div>
+                <h6>Gender</h6>
+                <select class="profile apiprofilegender" id="gender" name="profil-for">
+                    <option value="">Select</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+                <h6>Password</h6>
+                <input class="name apipassword" id="password" type="password" name="password" placeholder="Password" required />
+                <h6>Living in (Currently)</h6>
+                <div id="flex-div">
+                    <select name="city" id="city" class="town apicity">
+                        <option value="">City</option>
+                        <option value="Bhopal">Bhopal</option>
+                        <option value="Indore">Indore</option>
+                        <option value="Nagpur">Nagpur</option>
+                        <option value="Jaipur">Jaipur</option>
+                        <option value="Surat">Surat</option>
+                    </select>
+                    <select name="state" id="state" class="state apistate">
+                        <option value="">State</option>
+                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Gujarat">Gujarat</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                    </select>
+                    <select name="country" id="country" class="country apicountry">
+                        <option value="">Country</option>
+                        <option value="India">India</option>
+                        <!-- <option value="Pakistan">Pakistan</option>
+                        <option value="Afghanistan">Afghanistan</option>
+                        <option value="Nepal">Nepal</option> -->
+                    </select>
+                </div>
+                <div id="btn-flex">
+                    <div id="form-2-prev">
+                    <i class="ri-arrow-left-line"></i>Previous
+                    </div>
+                    <button id="next-btn" class="apiregisterbtn" onclick="return validateform2()">Register</button>
+                </div>
+            </form>
+        </div>
+        <div class="form-div" id="form-3">
+            <i id="close-popup" class="ri-close-line"></i>
+            <h4>
+            Thanks for Registering! <br />
+            Now let's build your profile
+            </h4>
+            <form id="account-form" action="">
+            <h6>Home Town</h6>
+            <div id="flex-div">
+                <select name="city" id="user-city" class="town apihometowncity">
+                    <option value="">City</option>
+                    <option value="Bhopal">Bhopal</option>
+                    <option value="Indore">Indore</option>
+                    <option value="Nagpur">Nagpur</option>
+                    <option value="Jaipur">Jaipur</option>
+                    <option value="Surat">Surat</option>
+                </select>
+                <select name="state" id="user-state" class="state apihometownstate">
+                    <option value="">State</option>
+                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                </select>
+                <select name="country" id="user-country" class="country apihometowncountry">
+                    <option value="">Country</option>
+                    <option value="India">India</option>
+                </select>
+            </div>
+            <h6>Sub Community</h6>
+            <select name="subcommunity" id="subcommunity" name="subcommunity" class="profile apisubcommunity">
+                <option value="">Select</option>
+                <option value="Mohana">Mohana</option>
             </select>
-            <select name="state" class="state apihometownstate">
-              <option selected disabled>State</option>
-              <option value="Madhya Pradesh">Madhya Pradesh</option>
-              <option value="Maharashtra">Maharashtra</option>
-              <option value="Gujarat">Gujarat</option>
-              <option value="Rajasthan">Rajasthan</option>
+            <h6>Marital Status</h6>
+            <select class="profile apimaritalstatus" id="maritalstatus" name="profil-for">
+                <option value="">Select</option>
+                <option value="married">Married</option>
+                <option value="single">Single</option>
+                <option value="divorced">Divorced</option>
+                <option value="widow">Widow</option>
             </select>
-            <select name="country" class="country apihometowncountry">
-              <option selected disabled>Country</option>
-              <option value="India">India</option>
-              <option value="Pakistan">Pakistan</option>
-              <option value="Afghanistan">Afghanistan</option>
-              <option value="Nepal">Nepal</option>
+            <h6>Manglik</h6>
+            <select class="profile apimanglik" id="manglik" name="profil-for">
+                <option value="">Select</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
             </select>
-          </div>
-          <h6>Sub Community</h6>
-          <select name="subcommunity" name="subcommunity" class="profile apisubcommunity">
-            <option selected disabled>Select</option>
-            <option value="Mohana">Mohana</option>
-          </select>
-          <h6>Marital Status</h6>
-          <select class="profile apimaritalstatus" name="profil-for">
-            <option selected disabled>Select</option>
-            <option value="married">Married</option>
-            <option value="single">Single</option>
-            <option value="divorced">Divorced</option>
-            <option value="widow">Widow</option>
-          </select>
-          <h6>Manglik</h6>
-          <select class="profile apimanglik" name="profil-for">
-            <option selected disabled>Select</option>
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-          </select>
-          <h6>Height</h6>
-          <select name="height" id="height" class="profile apiheight">
-            <option selected disabled>Select</option>
-            <!-- value in cm but, option in ft and inches-->
-            <option value="121">4ft</option>
-            <option value="123.54">4ft 1In.</option>
-            <option value="126.08">4ft 2In.</option>
-            <option value="128.62">4ft 3In.</option>
-            <option value="131.16">4ft 4In.</option>
-            <option value="133.70">4ft 5In.</option>
-            <option value="136.24">4ft 6In.</option>
-            <option value="138.78">4ft 7In.</option>
-            <option value="141.32">4ft 8In.</option>
-            <option value="143.86">4ft 9In.</option>
-            <option value="146.4">4ft 10In.</option>
-            <option value="152.4">5ft</option>
-            <option value="156.94">5ft 1In.</option>
-            <option value="159.48">5ft 2In.</option>
-            <option value="162.02">5ft 3In.</option>
-            <option value="164.56">5ft 4In.</option>
-            <option value="167.1">5ft 5In.</option>
-            <option value="169.64">5ft 6In.</option>
-            <option value="172.18">5ft 7In.</option>
-            <option value="174.72">5ft 8In.</option>
-            <option value="177.26">5ft 9In.</option>
-            <option value="179.8">5ft 10In.</option>
-            <option value="182.88">6ft</option>
-            <option value="185.42">6ft 1In.</option>
-            <option value="187.96">6ft 2In.</option>
-            <option value="190.5">6ft 3In.</option>
-            <option value="193.0">6ft 4In.</option>
-            <option value="195.58">6ft 5In.</option>
-            <option value="198.12">6ft 6In.</option>
-            <option value="200.66">6ft 7In.</option>
-            <option value="203.2">6ft 8In.</option>
-            <option value="205.74">6ft 9In.</option>
-            <option value="208.28">6ft 10In.</option>
-            <option value="213.36">7ft</option>
-            <option value="215.9">7ft 1In.</option>
-            <option value="218.44">7ft 2In.</option>
-            <option value="220.98">7ft 3In.</option>
-            <option value="223.52">7ft 4In.</option>
-            <option value="226.06">7ft 5In.</option>
-          </select>
-          <h6>Weight</h6>
-          <select name="" class="profile apiweight">
-            <!-- Weight in kg -->
-            <option selected disabled>Select</option>
-            <option value="35">35</option>
-            <option value="36">36</option>
-            <option value="37">37</option>
-            <option value="38">38</option>
-            <option value="39">39</option>
-            <option value="40">40</option>
-            <option value="41">41</option>
-            <option value="42">42</option>
-            <option value="43">43</option>
-            <option value="44">44</option>
-            <option value="45">45</option>
-            <option value="46">46</option>
-            <option value="47">47</option>
-            <option value="48">48</option>
-            <option value="49">49</option>
-            <option value="50">50</option>
-            <option value="51">51</option>
-            <option value="52">52</option>
-            <option value="53">53</option>
-            <option value="54">54</option>
-            <option value="55">55</option>
-            <option value="56">56</option>
-            <option value="57">57</option>
-            <option value="58">58</option>
-            <option value="59">59</option>
-            <option value="61">61</option>
-            <option value="62">62</option>
-            <option value="63">63</option>
-            <option value="64">64</option>
-            <option value="65">65</option>
-            <option value="66">66</option>
-            <option value="67">67</option>
-            <option value="68">68</option>
-            <option value="69">69</option>
-            <option value="70">70</option>
-          </select>
-          <h6>Skin Tone</h6>
-          <select class="profile apiskintone" name="profil-for">
-            <option selected disabled>Select</option>
-            <option value="light">Light</option>
-            <option value="fair">Fair</option>
-            <option value="medium">Medium</option>
-            <option value="dark">Dark</option>
-          </select>
-          <div id="btn-flex">
-            <button id="next-btn-2" class="apidetailsbtn">Next</button>
-          </div>
-        </form>
-      </div>
-      <div class="form-div" id="form-4">
-        <i id="close-popup" class="ri-close-line"></i>
-        <h4>
-          Please add Education & <br />
-          Career details
-        </h4>
-        <form id="account-form" action="">
-          <h6>Qualification</h6>
-          <select class="profile apiqualification" name="profil-for">
-            <option selected disabled>Select</option>
-            <option value="10">10th</option>
-            <option value="12">12th</option>
-            <option value="graduation">Graduation</option>
-          </select>
-          <h6>Currently work at</h6>
-          <select name="workat" class="profile apiworksector">
-            <option selected disabled>Select</option>
-            <option value="private">Private</option>
-            <option value="government">Government</option>
-          </select>
-          <h6>Company</h6>
-          <select name="" class="profile apicompany">
-            <option selected disabled>Select</option>
-            <option value="umpteen innovation">Umpteen Innovation</option>
-          </select>
-          <h6>Designation</h6>
-          <select name="designation" class="profile apidesignation">
-            <option selected disabled>Select</option>
-            <option value="businessman">Businessman</option>
-            <option value="private">Software developer</option>
-            <option value="government">Android developer</option>
-          </select>
-          <h6>Annual Income</h6>
-          <select name="annualincome" class="profile apisalary">
-            <option selected disabled>Select</option>
-            <option value="1lakh">Below 10000</option>
-            <option value="below 1lakh">Below 1lakh</option>
-            <option value="between 1lakh and 2lakhs">Between 1lakh to 2lakh</option>
-            <option value="above 2lakhs">Above 2lakhs</option>
-        </select>
-          <div id="btn-flex">
-            <div id="form-4-prev">
-              <i class="ri-arrow-left-line"></i>Previous
+            <h6>Height</h6>
+            <select name="height" id="height" class="profile apiheight">
+                <option value="">Select</option>
+                <!-- value in cm but, option in ft and inches-->
+                <option value="121">4ft</option>
+                <option value="123.54">4ft 1In.</option>
+                <option value="126.08">4ft 2In.</option>
+                <option value="128.62">4ft 3In.</option>
+                <option value="131.16">4ft 4In.</option>
+                <option value="133.70">4ft 5In.</option>
+                <option value="136.24">4ft 6In.</option>
+                <option value="138.78">4ft 7In.</option>
+                <option value="141.32">4ft 8In.</option>
+                <option value="143.86">4ft 9In.</option>
+                <option value="146.4">4ft 10In.</option>
+                <option value="152.4">5ft</option>
+                <option value="156.94">5ft 1In.</option>
+                <option value="159.48">5ft 2In.</option>
+                <option value="162.02">5ft 3In.</option>
+                <option value="164.56">5ft 4In.</option>
+                <option value="167.1">5ft 5In.</option>
+                <option value="169.64">5ft 6In.</option>
+                <option value="172.18">5ft 7In.</option>
+                <option value="174.72">5ft 8In.</option>
+                <option value="177.26">5ft 9In.</option>
+                <option value="179.8">5ft 10In.</option>
+                <option value="182.88">6ft</option>
+                <option value="185.42">6ft 1In.</option>
+                <option value="187.96">6ft 2In.</option>
+                <option value="190.5">6ft 3In.</option>
+                <option value="193.0">6ft 4In.</option>
+                <option value="195.58">6ft 5In.</option>
+                <option value="198.12">6ft 6In.</option>
+                <option value="200.66">6ft 7In.</option>
+                <option value="203.2">6ft 8In.</option>
+                <option value="205.74">6ft 9In.</option>
+                <option value="208.28">6ft 10In.</option>
+                <option value="213.36">7ft</option>
+                <option value="215.9">7ft 1In.</option>
+                <option value="218.44">7ft 2In.</option>
+                <option value="220.98">7ft 3In.</option>
+                <option value="223.52">7ft 4In.</option>
+                <option value="226.06">7ft 5In.</option>
+            </select>
+            <h6>Weight</h6>
+            <select name="" class="profile apiweight">
+                <!-- Weight in kg -->
+                <option value="">Select</option>
+                <option value="35">35</option>
+                <option value="36">36</option>
+                <option value="37">37</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+                <option value="44">44</option>
+                <option value="45">45</option>
+                <option value="46">46</option>
+                <option value="47">47</option>
+                <option value="48">48</option>
+                <option value="49">49</option>
+                <option value="50">50</option>
+                <option value="51">51</option>
+                <option value="52">52</option>
+                <option value="53">53</option>
+                <option value="54">54</option>
+                <option value="55">55</option>
+                <option value="56">56</option>
+                <option value="57">57</option>
+                <option value="58">58</option>
+                <option value="59">59</option>
+                <option value="61">61</option>
+                <option value="62">62</option>
+                <option value="63">63</option>
+                <option value="64">64</option>
+                <option value="65">65</option>
+                <option value="66">66</option>
+                <option value="67">67</option>
+                <option value="68">68</option>
+                <option value="69">69</option>
+                <option value="70">70</option>
+            </select>
+            <h6>Skin Tone</h6>
+            <select class="profile apiskintone" name="profil-for">
+                <option value="">Select</option>
+                <option value="light">Light</option>
+                <option value="fair">Fair</option>
+                <option value="medium">Medium</option>
+                <option value="dark">Dark</option>
+            </select>
+            <div id="btn-flex">
+                <button id="next-btn-2" class="apidetailsbtn" onclick="return validateform3">Next</button>
             </div>
-            <button id="next-btn-3" class="apidetailsbtntwo">Next</button>
-          </div>
-        </form>
-      </div>
-      <div class="form-div" id="form-5">
-        <i id="close-popup" class="ri-close-line"></i>
-        <h4>Food & Lifestyle</h4>
-        <form id="account-form" action="">
-          <h6>Eating Habit</h6>
-          <select class="profile apieatinghabits" name="eating-habit">
-            <option selected disabled>Select</option>
-            <option value="vegetarian">Vegetarian</option>
-            <option value="non-vegetarian">Non-vegetarian</option>
-          </select>
-          <h6>Drinking Habit</h6>
-          <select class="profile apidrinkinghabits" name="drinking-habit">
-            <option selected disabled>Select</option>
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-          </select>
-          <h6>Smoking Habit</h6>
-          <select class="profile apismokinghabits" name="smoking-habit">
-            <option selected disabled>Select</option>
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-          </select>
-          <div id="btn-flex">
-            <div id="form-5-prev">
-              <i class="ri-arrow-left-line"></i>Previous
+            </form>
+        </div>
+        <div class="form-div" id="form-4">
+            <i id="close-popup" class="ri-close-line"></i>
+            <h4>
+            Please add Education & Career details
+            </h4>
+            <form id="account-form" action="">
+            <h6>Qualification</h6>
+            <select class="profile apiqualification" name="profil-for">
+                <option selected disabled>Select</option>
+                <option value="10">10th</option>
+                <option value="12">12th</option>
+                <option value="graduation">Graduation</option>
+            </select>
+            <h6>Currently work at</h6>
+            <select name="workat" class="profile apiworksector">
+                <option selected disabled>Select</option>
+                <option value="private">Private</option>
+                <option value="government">Government</option>
+            </select>
+            <h6>Company</h6>
+            <select name="" class="profile apicompany">
+                <option selected disabled>Select</option>
+                <option value="umpteen innovation">Umpteen Innovation</option>
+            </select>
+            <h6>Designation</h6>
+            <select name="designation" class="profile apidesignation">
+                <option selected disabled>Select</option>
+                <option value="businessman">Businessman</option>
+                <option value="private">Software developer</option>
+                <option value="government">Android developer</option>
+            </select>
+            <h6>Annual Income</h6>
+            <select name="annualincome" class="profile apisalary">
+                <option selected disabled>Select</option>
+                <option value="1lakh">Below 10000</option>
+                <option value="below 1lakh">Below 1lakh</option>
+                <option value="between 1lakh and 2lakhs">Between 1lakh to 2lakh</option>
+                <option value="above 2lakhs">Above 2lakhs</option>
+            </select>
+            <div id="btn-flex">
+                <div id="form-4-prev">
+                <i class="ri-arrow-left-line"></i>Previous
+                </div>
+                <button id="next-btn-3" class="apidetailsbtntwo">Next</button>
             </div>
-            <button id="next-btn-4" class="apidetailsbtnthree">Next</button>
-          </div>
-        </form>
-      </div>
-      <div class="form-div" id="form-6">
-        <i id="close-popup" class="ri-close-line"></i>
-        <h4>
-          Some details about the <br />
-          family
-        </h4>
-        <form id="account-form" action="">
-          <h6>Father's Status</h6>
-          <select name="father-status" class="profile apifather">
-            <option selected disabled>Select</option>
-            <option value="employed">Employed</option>
-            <option value="unemployed">Unemployed</option>
-          </select>
-          <h6>Mother's Status</h6>
-          <select name="mother-status" class="profile apimother">
-            <option selected disabled>Select</option>
-            <option value="employed">Employed</option>
-            <option value="housewife">Housewife</option>
-          </select>
-          <h6>No. of Brothers:</h6>
-          <input type="number" class="name apibrother" placeholder="Brothers" />
-          <div id="flex-div">
-            <div id="top">
-              <h6>Married</h6>
-              <input
-                class="name apimarriedbrother"
-                type="number"
-                placeholder="Married"
-              />
-            </div>
-            <div id="bottom">
-              <h6>Unmarried</h6>
-              <input
-                class="name apiunmarriedbrother"
-                type="number"
-                placeholder="Unmarried"
-              />
-            </div>
-          </div>
-          <h6>No. of Sisters:</h6>
-          <input type="number" class="name apisister" placeholder="Sisters" />
-          <div id="flex-div">
-            <div id="top">
-              <h6>Married</h6>
-              <input
-                class="name apimarriedsister"
-                type="number"
-                placeholder="Married"
-              />
-            </div>
-            <div id="bottom">
-              <h6>Unmarried</h6>
-              <input
-                class="name apiunmarriedsister"
-                type="number"
-                placeholder="Unmarried"
-              />
-            </div>
-          </div>
-          <div id="btn-flex">
-            <div id="form-6-prev">
-              <i class="ri-arrow-left-line"></i>Previous
-            </div>
-            <button id="next-btn-5" class="apidetailsbtnfour">Next</button>
-          </div>
-        </form>
-      </div>
-      <div class="form-div" id="form-7">
-        <i id="close-popup" class="ri-close-line"></i>
-        <h4>
-          Partner's Basic <br />
-          Information
-        </h4>
-        <form id="account-form" action="">
-          <h6>Age</h6>
-          <div id="flex-div">
-            <input
-              type="number"
-              class="profile apifromage"
-              placeholder="age"
-              min="18"
-            />
-            <h6 class="to">to</h6>
-            <input
-              type="number"
-              class="profile apitoage"
-              placeholder="age"
-              min="18"
-            />
-          </div>
-          <h6>Marital Status</h6>
-          <select class="profile apimaritalstatuspartner" name="profil-for">
-            <option selected disabled>Select</option>
-            <option value="married">Married</option>
-            <option value="single">Single</option>
-            <option value="divorced">Divorced</option>
-            <option value="widow">Widow</option>
-          </select>
-          <h6>Diet</h6>
-          <div id="flex-div" class="partner-diet">
-            <div class="eating-diet">
-              <h6>Eating</h6>
-              <select
-                class="profile apipartnerdiet"
-                id="eating-habit"
-                name="eating-habit"
-              >
+            </form>
+        </div>
+        <div class="form-div" id="form-5">
+            <i id="close-popup" class="ri-close-line"></i>
+            <h4>Food & Lifestyle</h4>
+            <form id="account-form" action="">
+            <h6>Eating Habit</h6>
+            <select class="profile apieatinghabits" name="eating-habit">
                 <option selected disabled>Select</option>
                 <option value="vegetarian">Vegetarian</option>
                 <option value="non-vegetarian">Non-vegetarian</option>
-              </select>
-            </div>
-            <div class="eating-diet">
-              <h6>Drinking</h6>
-              <select
-                class="profile apipartnerdrinking"
-                id="eating-habit"
-                name="drinking-habit"
-              >
+            </select>
+            <h6>Drinking Habit</h6>
+            <select class="profile apidrinkinghabits" name="drinking-habit">
                 <option selected disabled>Select</option>
                 <option value="yes">Yes</option>
                 <option value="no">No</option>
-              </select>
-            </div>
-            <div class="eating-diet">
-              <h6>Smoking</h6>
-              <select
-                class="profile apipartnersmoking"
-                id="eating-habit"
-                name="smoking-habit"
-              >
+            </select>
+            <h6>Smoking Habit</h6>
+            <select class="profile apismokinghabits" name="smoking-habit">
                 <option selected disabled>Select</option>
                 <option value="yes">Yes</option>
                 <option value="no">No</option>
-              </select>
-            </div>
-          </div>
-          <h6>Height</h6>
-          <div id="flex-div">
-            <select
-              name="height"
-              id="height"
-              class="profile apipartnerheightfrom"
-            >
-              <option selected disabled>Select</option>
-              <!-- value in cm but, option in ft and In.-->
-              <option value="121">4Ft.</option>
-              <option value="123.54">4Ft. 1In.</option>
-              <option value="126.08">4Ft. 2In.</option>
-              <option value="128.62">4Ft. 3In.</option>
-              <option value="131.16">4Ft. 4In.</option>
-              <option value="133.70">4Ft. 5In.</option>
-              <option value="136.24">4Ft. 6In.</option>
-              <option value="138.78">4Ft. 7In.</option>
-              <option value="141.32">4Ft. 8In.</option>
-              <option value="143.86">4Ft. 9In.</option>
-              <option value="146.4">4Ft. 10In.</option>
-              <option value="152.4">5Ft.</option>
-              <option value="156.94">5Ft. 1In.</option>
-              <option value="159.48">5Ft. 2In.</option>
-              <option value="162.02">5Ft. 3In.</option>
-              <option value="164.56">5Ft. 4In.</option>
-              <option value="167.1">5Ft. 5In.</option>
-              <option value="169.64">5Ft. 6In.</option>
-              <option value="172.18">5Ft. 7In.</option>
-              <option value="174.72">5Ft. 8In.</option>
-              <option value="177.26">5Ft. 9In.</option>
-              <option value="179.8">5Ft. 10In.</option>
-              <option value="182.88">6Ft.</option>
-              <option value="185.42">6Ft. 1In.</option>
-              <option value="187.96">6Ft. 2In.</option>
-              <option value="190.5">6Ft. 3In.</option>
-              <option value="193.0">6Ft. 4In.</option>
-              <option value="195.58">6Ft. 5In.</option>
-              <option value="198.12">6Ft. 6In.</option>
-              <option value="200.66">6Ft. 7In.</option>
-              <option value="203.2">6Ft. 8In.</option>
-              <option value="205.74">6Ft. 9In.</option>
-              <option value="208.28">6Ft. 10In.</option>
-              <option value="213.36">7Ft.</option>
-              <option value="215.9">7Ft. 1In.</option>
-              <option value="218.44">7Ft. 2In.</option>
-              <option value="220.98">7Ft. 3In.</option>
-              <option value="223.52">7Ft. 4In.</option>
-              <option value="226.06">7Ft. 5In.</option>
             </select>
-            <h6 class="to">to</h6>
-            <select
-              name="height"
-              id="height"
-              class="profile apipartnerheightto"
-            >
-              <option selected disabled>Select</option>
-              <!-- value in cm but, option in Ft. and In.-->
-              <option value="121">4Ft.</option>
-              <option value="123.54">4Ft. 1In.</option>
-              <option value="126.08">4Ft. 2In.</option>
-              <option value="128.62">4Ft. 3In.</option>
-              <option value="131.16">4Ft. 4In.</option>
-              <option value="133.70">4Ft. 5In.</option>
-              <option value="136.24">4Ft. 6In.</option>
-              <option value="138.78">4Ft. 7In.</option>
-              <option value="141.32">4Ft. 8In.</option>
-              <option value="143.86">4Ft. 9In.</option>
-              <option value="146.4">4Ft. 10In.</option>
-              <option value="152.4">5Ft.</option>
-              <option value="156.94">5Ft. 1In.</option>
-              <option value="159.48">5Ft. 2In.</option>
-              <option value="162.02">5Ft. 3In.</option>
-              <option value="164.56">5Ft. 4In.</option>
-              <option value="167.1">5Ft. 5In.</option>
-              <option value="169.64">5Ft. 6In.</option>
-              <option value="172.18">5Ft. 7In.</option>
-              <option value="174.72">5Ft. 8In.</option>
-              <option value="177.26">5Ft. 9In.</option>
-              <option value="179.8">5Ft. 10In.</option>
-              <option value="182.88">6Ft.</option>
-              <option value="185.42">6Ft. 1In.</option>
-              <option value="187.96">6Ft. 2In.</option>
-              <option value="190.5">6Ft. 3In.</option>
-              <option value="193.0">6Ft. 4In.</option>
-              <option value="195.58">6Ft. 5In.</option>
-              <option value="198.12">6Ft. 6In.</option>
-              <option value="200.66">6Ft. 7In.</option>
-              <option value="203.2">6Ft. 8In.</option>
-              <option value="205.74">6Ft. 9In.</option>
-              <option value="208.28">6Ft. 10In.</option>
-              <option value="213.36">7Ft.</option>
-              <option value="215.9">7Ft. 1In.</option>
-              <option value="218.44">7Ft. 2In.</option>
-              <option value="220.98">7Ft. 3In.</option>
-              <option value="223.52">7Ft. 4In.</option>
-              <option value="226.06">7Ft. 5In.</option>
+            <div id="btn-flex">
+                <div id="form-5-prev">
+                <i class="ri-arrow-left-line"></i>Previous
+                </div>
+                <button id="next-btn-4" class="apidetailsbtnthree">Next</button>
+            </div>
+            </form>
+        </div>
+        <div class="form-div" id="form-6">
+            <i id="close-popup" class="ri-close-line"></i>
+            <h4>Some details about the family</h4>
+            <form id="account-form" action="">
+            <h6>Father's Status</h6>
+            <select name="father-status" class="profile apifather">
+                <option selected disabled>Select</option>
+                <option value="employed">Employed</option>
+                <option value="unemployed">Unemployed</option>
             </select>
-          </div>
-          <h6>Community</h6>
-          <select class="profile apipartnercommunity" name="community">
-            <option selected disabled>Select</option>
-            <option value="Sindhi">Sindhi</option>
-            <option value="Hindhu">Hindu</option>
-          </select>
-          <h6>Manglik</h6>
-          <select class="profile apipartnermanglik" name="profil-for">
-            <option selected disabled>Select</option>
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-          </select>
-          <div id="btn-flex">
-            <button id="next-btn-6" class="apipreferencebtna">Next</button>
-          </div>
-        </form>
-      </div>
-      <div class="form-div" id="form-8">
-        <i id="close-popup" class="ri-close-line"></i>
-        <h4>Location Priority</h4>
-        <form id="account-form" action="">
-          <h6>City</h6>
-          <select name="city" class="town1 apilocncity">
-            <option selected disabled>City</option>
-            <option value="Bhopal">Bhopal</option>
-            <option value="Indore">Indore</option>
-            <option value="Nagpur">Nagpur</option>
-            <option value="Jaipur">Jaipur</option>
-            <option value="Surat">Surat</option>
-          </select>
-          <h6>State</h6>
-          <select name="state" class="state1 apilocnstate">
-            <option selected disabled>State</option>
-            <option value="Madhya Pradesh">Madhya Pradesh</option>
-            <option value="Maharashtra">Maharashtra</option>
-            <option value="Gujarat">Gujarat</option>
-            <option value="Rajasthan">Rajasthan</option>
-          </select>
-          <h6>Country</h6>
-          <select name="country" class="country1 apilocncountry">
-            <option selected disabled>Country</option>
-            <option value="India">India</option>
-            <option value="Pakistan">Pakistan</option>
-            <option value="Afghanistan">Afghanistan</option>
-            <option value="Nepal">Nepal</option>
-          </select>
-          <div id="btn-flex">
-            <div id="form-8-prev">
-              <i class="ri-arrow-left-line"></i>Previous
+            <h6>Mother's Status</h6>
+            <select name="mother-status" class="profile apimother">
+                <option selected disabled>Select</option>
+                <option value="employed">Employed</option>
+                <option value="housewife">Housewife</option>
+            </select>
+            <h6>No. of Brothers:</h6>
+            <input type="number" class="name apibrother" placeholder="Brothers" />
+            <div id="flex-div">
+                <div id="top">
+                <h6>Married</h6>
+                <input class="name apimarriedbrother" type="number" placeholder="Married" />
+                </div>
+                <div id="bottom">
+                <h6>Unmarried</h6>
+                <input class="name apiunmarriedbrother" type="number" placeholder="Unmarried" />
+                </div>
             </div>
-            <button id="next-btn-7" class="apipreferencebtnb">Next</button>
-          </div>
-        </form>
-      </div>
-      <div class="form-div" id="form-9">
-        <i id="close-popup" class="ri-close-line"></i>
-        <h4>Location Education & Career</h4>
-        <form id="account-form" action="">
-          <h6>Qualification</h6>
-          <select class="profile apipqualification" name="profil-for">
-            <option selected disabled>Select</option>
-            <option value="10">10th</option>
-            <option value="12">12th</option>
-            <option value="graduation">Graduation</option>
-          </select>
-          <h6>Currently work at</h6>
-          <select name="workat" class="profile apipsector">
-            <option selected disabled>Select</option>
-            <option value="private">Private</option>
-            <option value="government">Government</option>
-          </select>
-          <h6>Annual Income</h6>
-          <select name="" class="profile apipsalary">
-            <option selected disabled>Select</option>
-            <option value="less than 10000">Less than 10000</option>
-            <option value="between 10000 to 50000">
-              Between 10000 to 50000
-            </option>
-            <option value="between 50000 to 1lakh">
-              Between 50000 to 1lakh
-            </option>
-            <option value="between 1lakh to 2lakhs">
-              Between 1lakh to 2lakhs
-            </option>
-            <option value="more than 2lakhs">More than 2lakhs</option>
-          </select>
-          <div id="btn-flex">
-            <div id="form-9-prev">
-              <i class="ri-arrow-left-line"></i>Previous
+            <h6>No. of Sisters:</h6>
+            <input type="number" class="name apisister" placeholder="Sisters" />
+            <div id="flex-div">
+                <div id="top">
+                <h6>Married</h6>
+                <input class="name apimarriedsister" type="number" placeholder="Married" />
+                </div>
+                <div id="bottom">
+                <h6>Unmarried</h6>
+                <input
+                    class="name apiunmarriedsister"
+                    type="number"
+                    placeholder="Unmarried"
+                />
+                </div>
             </div>
-            <button id="next-btn-8" class="apipreferencebtnc">Next</button>
-          </div>
-        </form>
-      </div>
-      <div class="form-div" id="form-10">
-        <i id="close-popup" class="ri-close-line"></i>
-        <h4>About Yourself</h4>
-        <form id="account-form" class="about-form">
-          <h6 class="about-form-heading">Write about yourself</h6>
-          <textarea
-            id="w3review"
-            class="adduserabout"
-            name="w3review"
-            rows="4"
-            cols="30"
-            placeholder="write something..."
-          ></textarea>
-          <input
-            type="file"
-            class="custom-file-input apiaddpicture"
-            name="profilePicture"
-          />
-          <div id="btn-flex" class="about-btn">
-            <button id="next-btn-9" class="apiregisterbtnend">
-              <a href="./dashboard.html">Submit</a>
-            </button>
-          </div>
-        </form>
-      </div>
-      <div class="form-div" id="login-form">
-        <i id="close-popup" class="ri-close-line"></i>
-        <h4>Login</h4>
-        <form id="login-form-inner" action="">
-          <h6>Email ID</h6>
-          <input
-            class="name apiloginemail"
-            id="email"
-            type="email"
-            placeholder="Email Address"
-            minlength="8"
-            required
-          />
-          <h6>Password</h6>
-          <input
-            class="name apiloginpassword"
-            type="password"
-            placeholder="Password"
-            minlenrequired
-          />
-          <h6 class="forgot-password"><a id="forgot">Forgot Password?</a></h6>
-          <button id="next-btn" class="apihomeloginbtn"><a>Submit</a></button>
-        </form>
-        <h5>New Member?<a id="reg">Register</a></h5>
-      </div>
-      <div class="form-div" id="forgot-pass-form">
-        <i id="close-popup" class="ri-close-line"></i>
-        <h4>Reset Password</h4>
-        <form id="reset-form-inner" action="">
-          <h6>Email ID</h6>
-          <input
-            class="name"
-            id="email"
-            type="email"
-            placeholder="Email Address"
-            required
-          />
-          <h6>New Password</h6>
-          <input class="name" type="password" placeholder="Password" required />
-          <h6>Confirm Password</h6>
-          <input class="name" type="password" placeholder="Password" required />
-          <button id="next-btn" type="reset"><a>Reset</a></button>
-        </form>
-      </div>
+            <div id="btn-flex">
+                <div id="form-6-prev">
+                <i class="ri-arrow-left-line"></i>Previous
+                </div>
+                <button id="next-btn-5" class="apidetailsbtnfour">Next</button>
+            </div>
+            </form>
+        </div>
+        <div class="form-div" id="form-7">
+            <i id="close-popup" class="ri-close-line"></i>
+            <h4>
+            Partner's Basic Information
+            </h4>
+            <form id="account-form" action="">
+            <h6>Age</h6>
+            <div id="flex-div">
+                <input type="number" class="profile apifromage" placeholder="age" min="18" />
+                <h6 class="to">to</h6>
+                <input type="number" class="profile apitoage" placeholder="age" min="18" />
+            </div>
+            <h6>Marital Status</h6>
+            <select class="profile apimaritalstatuspartner" name="profil-for">
+                <option selected disabled>Select</option>
+                <option value="married">Married</option>
+                <option value="single">Single</option>
+                <option value="divorced">Divorced</option>
+                <option value="widow">Widow</option>
+            </select>
+            <h6>Diet</h6>
+            <div id="flex-div" class="partner-diet">
+                <div class="eating-diet">
+                <h6>Eating</h6>
+                <select class="profile apipartnerdiet" id="eating-habit" name="eating-habit" >
+                    <option selected disabled>Select</option>
+                    <option value="vegetarian">Vegetarian</option>
+                    <option value="non-vegetarian">Non-vegetarian</option>
+                </select>
+                </div>
+                <div class="eating-diet">
+                <h6>Drinking</h6>
+                <select
+                    class="profile apipartnerdrinking"
+                    id="eating-habit"
+                    name="drinking-habit"
+                >
+                    <option selected disabled>Select</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+                </div>
+                <div class="eating-diet">
+                <h6>Smoking</h6>
+                <select class="profile apipartnersmoking" id="eating-habit" name="smoking-habit" >
+                    <option selected disabled>Select</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+                </div>
+            </div>
+            <h6>Height</h6>
+            <div id="flex-div">
+                <select name="height" id="height" class="profile apipartnerheightfrom" >
+                <option selected disabled>Select</option>
+                <!-- value in cm but, option in ft and In.-->
+                <option value="121">4Ft.</option>
+                <option value="123.54">4Ft. 1In.</option>
+                <option value="126.08">4Ft. 2In.</option>
+                <option value="128.62">4Ft. 3In.</option>
+                <option value="131.16">4Ft. 4In.</option>
+                <option value="133.70">4Ft. 5In.</option>
+                <option value="136.24">4Ft. 6In.</option>
+                <option value="138.78">4Ft. 7In.</option>
+                <option value="141.32">4Ft. 8In.</option>
+                <option value="143.86">4Ft. 9In.</option>
+                <option value="146.4">4Ft. 10In.</option>
+                <option value="152.4">5Ft.</option>
+                <option value="156.94">5Ft. 1In.</option>
+                <option value="159.48">5Ft. 2In.</option>
+                <option value="162.02">5Ft. 3In.</option>
+                <option value="164.56">5Ft. 4In.</option>
+                <option value="167.1">5Ft. 5In.</option>
+                <option value="169.64">5Ft. 6In.</option>
+                <option value="172.18">5Ft. 7In.</option>
+                <option value="174.72">5Ft. 8In.</option>
+                <option value="177.26">5Ft. 9In.</option>
+                <option value="179.8">5Ft. 10In.</option>
+                <option value="182.88">6Ft.</option>
+                <option value="185.42">6Ft. 1In.</option>
+                <option value="187.96">6Ft. 2In.</option>
+                <option value="190.5">6Ft. 3In.</option>
+                <option value="193.0">6Ft. 4In.</option>
+                <option value="195.58">6Ft. 5In.</option>
+                <option value="198.12">6Ft. 6In.</option>
+                <option value="200.66">6Ft. 7In.</option>
+                <option value="203.2">6Ft. 8In.</option>
+                <option value="205.74">6Ft. 9In.</option>
+                <option value="208.28">6Ft. 10In.</option>
+                <option value="213.36">7Ft.</option>
+                <option value="215.9">7Ft. 1In.</option>
+                <option value="218.44">7Ft. 2In.</option>
+                <option value="220.98">7Ft. 3In.</option>
+                <option value="223.52">7Ft. 4In.</option>
+                <option value="226.06">7Ft. 5In.</option>
+                </select>
+                <h6 class="to">to</h6>
+                <select name="height" id="height" class="profile apipartnerheightto" >
+                <option selected disabled>Select</option>
+                <!-- value in cm but, option in Ft. and In.-->
+                <option value="121">4Ft.</option>
+                <option value="123.54">4Ft. 1In.</option>
+                <option value="126.08">4Ft. 2In.</option>
+                <option value="128.62">4Ft. 3In.</option>
+                <option value="131.16">4Ft. 4In.</option>
+                <option value="133.70">4Ft. 5In.</option>
+                <option value="136.24">4Ft. 6In.</option>
+                <option value="138.78">4Ft. 7In.</option>
+                <option value="141.32">4Ft. 8In.</option>
+                <option value="143.86">4Ft. 9In.</option>
+                <option value="146.4">4Ft. 10In.</option>
+                <option value="152.4">5Ft.</option>
+                <option value="156.94">5Ft. 1In.</option>
+                <option value="159.48">5Ft. 2In.</option>
+                <option value="162.02">5Ft. 3In.</option>
+                <option value="164.56">5Ft. 4In.</option>
+                <option value="167.1">5Ft. 5In.</option>
+                <option value="169.64">5Ft. 6In.</option>
+                <option value="172.18">5Ft. 7In.</option>
+                <option value="174.72">5Ft. 8In.</option>
+                <option value="177.26">5Ft. 9In.</option>
+                <option value="179.8">5Ft. 10In.</option>
+                <option value="182.88">6Ft.</option>
+                <option value="185.42">6Ft. 1In.</option>
+                <option value="187.96">6Ft. 2In.</option>
+                <option value="190.5">6Ft. 3In.</option>
+                <option value="193.0">6Ft. 4In.</option>
+                <option value="195.58">6Ft. 5In.</option>
+                <option value="198.12">6Ft. 6In.</option>
+                <option value="200.66">6Ft. 7In.</option>
+                <option value="203.2">6Ft. 8In.</option>
+                <option value="205.74">6Ft. 9In.</option>
+                <option value="208.28">6Ft. 10In.</option>
+                <option value="213.36">7Ft.</option>
+                <option value="215.9">7Ft. 1In.</option>
+                <option value="218.44">7Ft. 2In.</option>
+                <option value="220.98">7Ft. 3In.</option>
+                <option value="223.52">7Ft. 4In.</option>
+                <option value="226.06">7Ft. 5In.</option>
+                </select>
+            </div>
+            <h6>Community</h6>
+            <select class="profile apipartnercommunity" name="community">
+                <option selected disabled>Select</option>
+                <option value="Sindhi">Sindhi</option>
+                <option value="Hindhu">Hindu</option>
+            </select>
+            <h6>Manglik</h6>
+            <select class="profile apipartnermanglik" name="profil-for">
+                <option selected disabled>Select</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+            <div id="btn-flex">
+                <button id="next-btn-6" class="apipreferencebtna">Next</button>
+            </div>
+            </form>
+        </div>
+        <div class="form-div" id="form-8">
+            <i id="close-popup" class="ri-close-line"></i>
+            <h4>Location Priority</h4>
+            <form id="account-form" action="">
+            <h6>City</h6>
+            <select name="city" class="town1 apilocncity">
+                <option selected disabled>City</option>
+                <option value="Bhopal">Bhopal</option>
+                <option value="Indore">Indore</option>
+                <option value="Nagpur">Nagpur</option>
+                <option value="Jaipur">Jaipur</option>
+                <option value="Surat">Surat</option>
+            </select>
+            <h6>State</h6>
+            <select name="state" class="state1 apilocnstate">
+                <option selected disabled>State</option>
+                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Gujarat">Gujarat</option>
+                <option value="Rajasthan">Rajasthan</option>
+            </select>
+            <h6>Country</h6>
+            <select name="country" class="country1 apilocncountry">
+                <option selected disabled>Country</option>
+                <option value="India">India</option>
+                <option value="Pakistan">Pakistan</option>
+                <option value="Afghanistan">Afghanistan</option>
+                <option value="Nepal">Nepal</option>
+            </select>
+            <div id="btn-flex">
+                <div id="form-8-prev">
+                <i class="ri-arrow-left-line"></i>Previous
+                </div>
+                <button id="next-btn-7" class="apipreferencebtnb">Next</button>
+            </div>
+            </form>
+        </div>
+        <div class="form-div" id="form-9">
+            <i id="close-popup" class="ri-close-line"></i>
+            <h4>Location Education & Career</h4>
+            <form id="account-form" action="">
+            <h6>Qualification</h6>
+            <select class="profile apipqualification" name="profil-for">
+                <option selected disabled>Select</option>
+                <option value="10">10th</option>
+                <option value="12">12th</option>
+                <option value="graduation">Graduation</option>
+            </select>
+            <h6>Currently work at</h6>
+            <select name="workat" class="profile apipsector">
+                <option selected disabled>Select</option>
+                <option value="private">Private</option>
+                <option value="government">Government</option>
+            </select>
+            <h6>Annual Income</h6>
+            <select name="" class="profile apipsalary">
+                <option selected disabled>Select</option>
+                <option value="less than 10000">Less than 10000</option>
+                <option value="between 10000 to 50000">
+                Between 10000 to 50000
+                </option>
+                <option value="between 50000 to 1lakh">
+                Between 50000 to 1lakh
+                </option>
+                <option value="between 1lakh to 2lakhs">
+                Between 1lakh to 2lakhs
+                </option>
+                <option value="more than 2lakhs">More than 2lakhs</option>
+            </select>
+            <div id="btn-flex">
+                <div id="form-9-prev">
+                <i class="ri-arrow-left-line"></i>Previous
+                </div>
+                <button id="next-btn-8" class="apipreferencebtnc">Next</button>
+            </div>
+            </form>
+        </div>
+        <div class="form-div" id="form-10">
+            <i id="close-popup" class="ri-close-line"></i>
+            <h4>About Yourself</h4>
+            <form id="account-form" class="about-form">
+            <h6 class="about-form-heading">Write about yourself</h6>
+            <textarea
+                id="w3review"
+                class="adduserabout"
+                name="w3review"
+                rows="4"
+                cols="30"
+                placeholder="write something..."
+            ></textarea>
+            <input
+                type="file"
+                class="custom-file-input apiaddpicture"
+                name="profilePicture"
+            />
+            <div id="btn-flex" class="about-btn">
+                <button id="next-btn-9" class="apiregisterbtnend">
+                <a href="./dashboard.html">Submit</a>
+                </button>
+            </div>
+            </form>
+        </div>
+
+        <!-- Login form -->
+        <div class="form-div" id="login-form">
+            <i id="close-popup" class="ri-close-line"></i>
+            <h4>Login</h4>
+            <form id="login-form-inner" action="">
+                <h6>Email ID</h6>
+                <input class="name apiloginemail" id="email" type="email" placeholder="Email Address" required />
+                <h6>Password</h6>
+                <input class="name apiloginpassword" type="password" placeholder="Password" required />
+                <h6 class="forgot-password"><a id="forgot">Forgot Password?</a></h6>
+                <button id="next-btn" class="apihomeloginbtn"><a>Submit</a></button>
+            </form>
+            <h5>New Member?<a id="reg">Register</a></h5>
+        </div>
+
+        <!-- Send OTP form -->
+        <div class="form-div" id="sendOTP-form">
+            <i id="close-popup" class="ri-close-line"></i>
+            <h4>Enter Email to reset password</h4>
+            <form id="sendOTP-form-inner" action="" method="POST">
+                <h6>Email ID</h6>
+                <input class="name" id="email" type="email" placeholder="Email Address" minlength="8" required />
+                <button id="next-btn" class="">Send OTP</button>
+            </form>
+            <h5>New Member?<a id="reg">Register</a></h5>
+        </div>
+
+
+        <!-- Recieved OTP form -->
+        <div class="form-div" id="receivedOTP-form">
+            <i id="close-popup" class="ri-close-line"></i>
+            <h4>Enter OTP received on <p class="reset-email">xxxx@gmail.com</p></h4>
+            <form id="receivedOTP-form-inner" action="" method="POST">
+                <div class="digit-div">
+                    <input class="name" id="digit" type="text" placeholder="-" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" required />
+                    <input class="name" id="digit" type="text" placeholder="-" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" required />
+                    <input class="name" id="digit" type="text" placeholder="-" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" required />
+                    <input class="name" id="digit" type="text" placeholder="-" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" required />
+                    <input class="name" id="digit" type="text" placeholder="-" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" required />
+                    <input class="name" id="digit" type="text" placeholder="-" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" required />
+                </div>
+                <button id="next-btn" class=""><a>Done</a></button>
+            </form>
+            <!-- <h5>New Member?<a id="reg">Register</a></h5> -->
+        </div>
+
+        <!-- Reset password form -->
+        <div class="form-div" id="forgot-pass-form">
+            <i id="close-popup" class="ri-close-line"></i>
+            <h4>Reset Password</h4>
+            <form id="reset-form-inner" action="">
+                <h6>New Password</h6>
+                <input class="name" type="password" placeholder="Password" required />
+                <h6>Confirm Password</h6>
+                <input class="name" type="password" placeholder="Password" required />
+                <button id="next-btn" type="reset"><a>Reset</a></button>
+            </form>
+        </div>
     </div>
 
     <!-- Login-pop-up -->
-    <div class="login-pop-up">
-      <div class="form-div" id="login_form">
-        <i id="close-popup" class="ri-close-line"></i>
-        <h4>Login</h4>
-        <form class="login-form-outer" id="login-form-inner" action="">
-          <h6>Email ID</h6>
-          <input
-            class="name apiloginemail"
-            id="email"
-            type="email"
-            placeholder="Email Address"
-            required
-          />
-          <h6>Password</h6>
-          <input
-            class="name apiloginpassword"
-            type="password"
-            placeholder="Password"
-            required
-          />
-          <h6 class="forgot-password-btn">
-            <a id="forgot">Forgot Password?</a>
-          </h6>
-          <button id="next-btn" class="apihomeloginbtn">Submit</button>
-        </form>
-        <h5>New Member?<a id="reg">Register</a></h5>
-      </div>
-    </div>
+    <!-- <div class="login-pop-up">
+        <div class="form-div" id="login_form">
+            <i id="close-popup" class="ri-close-line"></i>
+            <h4>Login</h4>
+            <form class="login-form-outer" id="login-form-inner" action="">
+                <h6>Email ID</h6>
+                <input class="name apiloginemail" id="email" type="email" placeholder="Email Address" required />
+                <h6>Password</h6>
+                <input class="name apiloginpassword" type="password" placeholder="Password" required />
+                <h6 class="forgot-password-btn">
+                    <a id="forgot">Forgot Password?</a>
+                </h6>
+                <button id="next-btn" class="apihomeloginbtn">Submit</button>
+                </form>
+                <h5>New Member?<a id="reg">Register</a></h5>
+        </div>
+    </div> -->
 
     <!-- Forgot-password-popup -->
-    <div class="forgot-pop-up">
-      <div class="form-div" id="forgot_password_form">
-        <i id="close-popup" class="ri-close-line"></i>
-        <h4>Reset Password</h4>
-        <form id="reset-form-inner" action="">
-          <h6>Email ID</h6>
-          <input
-            class="name"
-            id="email"
-            type="email"
-            placeholder="Email Address"
-            required
-          />
-          <h6>Password</h6>
-          <input class="name" type="password" placeholder="Password" required />
-          <h6>Confirm Password</h6>
-          <input class="name" type="password" placeholder="Password" required />
-          <button id="next-btn" type="reset"><a href="#">Reset</a></button>
-        </form>
-      </div>
-    </div>
+    <!-- <div class="forgot-pop-up">
+        <div class="form-div" id="forgot_password_form">
+            <i id="close-popup" class="ri-close-line"></i>
+            <h4>Reset Password</h4>
+            <form id="reset-form-inner" action="">
+                <h6>Email ID</h6>
+                <input class="name" id="email" type="email" placeholder="Email Address" required />
+                <h6>Password</h6>
+                <input class="name" type="password" placeholder="Password" required />
+                <h6>Confirm Password</h6>
+                <input class="name" type="password" placeholder="Password" required />
+                <button id="next-btn" type="reset"><a href="#">Reset</a></button>
+            </form>
+        </div>
+    </div> -->
+
+
+    <!-- Loader -->
+    <div id="loader" class="center"></div>
 
     <!-- Section-1 -->
     <div class="head-content">
@@ -914,7 +825,7 @@
       </div>
       <h1 class="heading">
         <span class="heading-span" id="apidescription"
-          >Exclusively for<br />Sindhi Community</span
+          >Exclusively for Sindhi Community</span
         >
       </h1>
       <div class="input-form">
@@ -2300,6 +2211,8 @@
     </div>
 
     <!-- Script file -->
+    <script src="./js/window_loader.js"></script>
+    <script src="./js//validate_form.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.0/ScrollTrigger.min.js"></script>
 
