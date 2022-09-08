@@ -372,6 +372,12 @@ document.querySelector("#form-9-prev").addEventListener("click", function () {
   );
 });
 
+document.querySelector("#form-10-prev").addEventListener("click", function () {
+  document.querySelector("#form-10").style.display = "none";
+  document.querySelector("#form-9").style.display = "initial";
+});
+
+
 document
   .querySelector("#form-9 #next-btn-8")
   .addEventListener("click", function (event) {
