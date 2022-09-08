@@ -452,6 +452,8 @@
             <option value="yes">Yes</option>
             <option value="no">No</option>
           </select>
+          <h6 class="about-form-heading">Write about yourself</h6>
+          <textarea id="about-text" class="adduserabout" name="about-text" rows="4" cols="30" placeholder="write something..." required></textarea>
           <div id="btn-flex">
             <div id="form-5-prev">
               <i class="ri-arrow-left-line"></i>Previous
@@ -785,32 +787,19 @@
       </div>
       <div class="form-div" id="form-10">
         <i id="close-popup" class="ri-close-line"></i>
-        <h4>About Yourself</h4>
+        <h4>Upload your profile photo</h4>
         <form id="account-form" class="about-form">
-          <h6 class="about-form-heading">Write about yourself</h6>
-          <textarea
-            id="w3review"
-            class="adduserabout"
-            name="w3review"
-            rows="4"
-            cols="30"
-            placeholder="write something..."
-            required
-          ></textarea>
-          <input
-            type="file"
-            class="custom-file-input apiaddpicture"
-            name="profilePicture"
-            required
-          />
-          <div id="btn-flex" class="about-btn">
-            <div id="form-10-prev">
-              <i class="ri-arrow-left-line"></i>Previous
+            <div class="uploaded_picture"></div>
+            <input type="file" id="input-image" class="custom-file-input apiaddpicture" name="profilePicture" accept="image/jpeg, image/png, image/jpg" required />
+            
+            <div id="btn-flex" class="about-btn">
+                <div id="form-10-prev">
+                    <i class="ri-arrow-left-line"></i>Previous
+                </div>
+                <button id="next-btn-9" class="apiregisterbtnend">
+                <a href="./dashboard.html">Submit</a>
+                </button>
             </div>
-            <button id="next-btn-9" class="apiregisterbtnend">
-              <a href="./dashboard.html">Submit</a>
-            </button>
-          </div>
         </form>
       </div>
 
@@ -925,7 +914,7 @@
           </div>
           <button id="next-btn" class=""><a>Done</a></button>
         </form>
-        <!-- <h5>New Member?<a id="reg">Register</a></h5> -->
+        <h5>New Member?<a id="reg">Register</a></h5>
       </div>
 
       <!-- Reset password form -->
@@ -3161,5 +3150,6 @@
           });
       });
     </script>
+
   </body>
 </html>

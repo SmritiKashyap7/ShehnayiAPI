@@ -452,17 +452,6 @@ document.querySelector("#sendOTP-form #reg").addEventListener("click", function 
   document.querySelector("#form-1").style.display = "initial";
 });
 
-document.querySelector("#receivedOTP-form #next-btn").addEventListener('click', function(){
-  document.querySelector("#receivedOTP-form").style.display = "none";
-  document.querySelector("#forgot-pass-form").style.display = "initial";
-});
-
-document.querySelector("#receivedOTP-form #reg").addEventListener("click", function () {
-  document.querySelector("#receivedOTP-form").style.display = "none";
-  document.querySelector("#form-1").style.display = "initial";
-});
-
-
 
 
 // document.querySelector("#login_form #forgot").addEventListener("click", function (event) {
@@ -498,5 +487,29 @@ document
 // } 
 
 
+const image_input = document.querySelector("#input-image");
+var uploaded_image = "";
+
+image_input.addEventListener("change", function() {
+
+  // console.log(image_input.value);
+
+  const reader = new FileReader();
+  reader.addEventListener("load", () => {
+    const uploaded_image = reader.result;
+    document.querySelector(".uploaded_picture").style.backgroundImage = `url(${uploaded_image})`;
+  });
+  reader.readAsDataURL(this.files[0]);
+});
+
+document.querySelector("#receivedOTP-form #next-btn").addEventListener('click', function(){
+  document.querySelector("#receivedOTP-form").style.display = "none";
+  document.querySelector("#forgot-pass-form").style.display = "initial";
+});
+
+document.querySelector("#receivedOTP-form #reg").addEventListener("click", function () {
+  document.querySelector("#receivedOTP-form").style.display = "none";
+  document.querySelector("#form-1").style.display = "initial";
+});
 
 
