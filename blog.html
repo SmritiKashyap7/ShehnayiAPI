@@ -721,9 +721,9 @@
         <div id="sec1-container">
             <div class="sec1-blog-div">
             <div class="sec1-img-div">
-                <img src="img/blog1-img.jpg" alt="" />
+                <img id="apiimage" src="img/blog1-img.jpg" alt="" />
             </div>
-            <p>
+            <p id="apitext" >
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
                 repellat, quis saepe fugiat molestiae quaerat iste hic nesciunt
                 dolor, fuga officiis dolorum nam corporis magni exercitationem
@@ -753,7 +753,7 @@
 
     <section id="sec2">
         <h2>About Author</h2>
-        <p>
+        <p id="apiaboutauthor">
             We Wanted to run with the New Year's vibe in terms of the look and
             experience of the wedding, but we also wanted to embrace the cold,
             winter date of the wedding (it was well below freezing and lightly
@@ -821,6 +821,30 @@
 
     <!-- Script -->
     <script src="./js/about.js"></script>
+    <script>
+        var blogid = sessionStorage.getItem("blogid");
+        console.log(blogid);
+        var blogurl = "https://server.shehnayi.in//api/v2/blogs/" + blogid;
+        // var blogurl = 'http://localhost:2000/api/v2/blogs/' + blogid;
+
+        fetch(blogurl, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data.story);
+                document.querySelector("#apitext").innerText = data.story
+                document.querySelector("#apiaboutauthor").innerHTML = data.aboutAuthor
+                document.querySelector("#apiimage").src = data.banner
+            })
+            .catch(err => {
+                console.log(err);
+            }
+            );
+    </script>
 
 </body>
 </html>
