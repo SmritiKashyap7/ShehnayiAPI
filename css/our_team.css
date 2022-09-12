@@ -54,7 +54,7 @@
     font-size: 1.1vw;
     letter-spacing: 0.01em;
     text-align: center;
-    color: #800303;
+    color: #383838;
     padding: 1rem;
 }
 .sec5-img {
@@ -64,7 +64,7 @@
 }
 .sec5-element1-img {
     border-radius: 30px;
-    background-image: url('./Images/about-team3.jpg');
+    background-image: url('../Images/about-team3.jpg');
     height: 300px;
     width: 35%;
     background-size: cover;
@@ -74,7 +74,7 @@
 }
 .sec5-element2-img {
     border-radius: 30px;
-    background-image: url('./Images/about-team1.webp');
+    background-image: url('../Images/about-team1.webp');
     height: 300px;
     width: 35%;
     background-size: cover;
@@ -84,7 +84,7 @@
 }
 .sec5-element3-img {
     border-radius: 30px;
-    background-image: url('./Images/about-team6.jpg');
+    background-image: url('../Images/about-team6.jpg');
     height: 300px;
     width: 35%;
     background-size: cover;
@@ -94,7 +94,7 @@
 }
 .sec5-element4-img {
     border-radius: 30px;
-    background-image: url('./Images/about-team5.webp');
+    background-image: url('../Images/about-team5.webp');
     height: 300px;
     width: 35%;
     background-size: cover;
@@ -107,4 +107,105 @@
     justify-content: center;
     margin-top: 2rem;
     margin-bottom: 1.5rem;
+}
+
+
+@media (min-width: 320px) and (max-width: 550px) {
+    .sec5-head {
+        font-size: 1.5em;
+    }
+    .sec5-inner-element {
+        flex-direction: column-reverse;
+        gap: 0rem;
+    }
+    .sec5-text {
+        margin: 0 auto;
+        width: 70%;
+        border-radius: 10px;
+        height: 100%;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-top: none;
+    }
+    .sec5-element1-img, .sec5-element2-img, .sec5-element3-img, .sec5-element4-img {
+        width: 70%;
+        height: 190px;
+        margin: 0 auto;
+        border-radius: 15px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    .sec5-text>p {
+        font-size: 3vw;
+    }
+    .sec5-inner2 {
+        flex-direction: column;
+    }
+    .sec5-text h2 {
+        font-size: 4vw;
+    }
+}
+@media (min-width: 550px) and (max-width: 768px) {
+    .sec5-head {
+        font-size: 2em;
+    }
+    .sec5-inner-element {
+        flex-direction: column-reverse;
+        gap: 0rem;
+    }
+    .sec5-text {
+        margin: 0 auto;
+        width: 370px;
+        border-radius: 10px;
+        height: 100%;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-top: none;
+    }
+    .sec5-element1-img, .sec5-element2-img, .sec5-element3-img, .sec5-element4-img {
+        width: 370px;
+        height: 200px;
+        margin: 0 auto;
+        border-radius: 15px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    .sec5-text>p {
+        font-size: 2.25vw;
+    }
+    .sec5-inner2 {
+        flex-direction: column;
+    }
+    .sec5-text h2 {
+        font-size: 3.5vw;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .sec5-inner-element {
+        gap: 3rem;
+    }
+    .sec5-text>p {
+        font-size: 15px;
+    }
+    .sec5-text h2 {
+        font-size: 2.25vw;
+    }
+}
+@media (min-width: 1025px) and (max-width: 1200px) {
+    .sec5-text>p {
+        font-size: 1.4vw;
+    }
+    .sec5-text h2 {
+        font-size: 2.5vw;
+    }
+}
+
+@media (min-width: 1201px) {
+    .sec5-text>p {
+        font-size: 1.2vw;
+    }
+    .sec5-text h2 {
+        font-size: 2.25vw;
+    }
 }

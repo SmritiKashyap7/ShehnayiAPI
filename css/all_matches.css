@@ -67,11 +67,12 @@ img {
   width: 100%;
   height: 100%;
   object-position: top;
+  cursor: pointer;
 }
 
-.img-div:hover {
+/* .img-div:hover {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
-}
+} */
 
 .profs .txt-div {
   width: 75%;
@@ -144,8 +145,8 @@ img {
 .txt-div .drop-list {
   position: absolute;
   width: 120px;
-  height: 100px;
-  top: 16%;
+  /* height: 100px; */
+  top: 20%;
   right: 10%;
   background-color: #fff;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
@@ -217,7 +218,12 @@ img {
   font-size: 16px;
 }
 
-.details-div .know-more-btn {
+/* .upgrade-btn {
+    background-color: #b00707;
+    color: #fff;
+} */
+
+/* .details-div .know-more-btn {
   font-size: 14px;
   text-decoration: none;
   color: #b00707;
@@ -230,7 +236,7 @@ img {
   text-decoration: underline;
   color: #1f64ca;
   transition: all ease .2s;
-}
+} */
 
 .detail-sec .full-dets {
   width: 100%;
@@ -239,7 +245,7 @@ img {
   display: flex;
   flex-direction: column;
   gap: 3em;
-  display: none;
+  /* display: none; */
   position: relative;
 }
 
@@ -285,6 +291,7 @@ img {
   display: flex;
   align-items: center;
   gap: 2.5em;
+  border-bottom: 1px solid rgb(91, 91, 91);
 }
 
 .logo i {
@@ -336,16 +343,10 @@ img {
   text-decoration: underline;
 }
 
-.imgunlockbtn{
+/* .imgunlockbtn{
   position: absolute;
-  /* transform: translate(-50%,-50%); */
-  top: 9%;
-  left: 30%;
-  background-color: #ad0909;
-  border: none;
-  padding:12px 36px;
-  cursor: pointer;
 }
+
 .imgunlockbtn:hover{
   background-color: #741414; ;
   color: #fff;
@@ -353,14 +354,16 @@ img {
 .imgunlockbtn>a {
   color: #fff;
   text-decoration: none;
-}
+} */
 
 /* Additional css */
 .full-dets-container {
   display: flex;
   align-items: flex-start;
-  margin-top: 5em;
+  /* margin-top: 1em; */
 }
+
+
 
 .dets-img-div {
   width: 90%;
@@ -492,4 +495,103 @@ img {
   width: 30%;
   font-weight: 500;
   font-size: 15px;
+}
+
+/* .left-btn {
+  margin-top: 1.5rem;
+} */
+
+.btns {
+  width: 80%;
+  display: flex;
+  justify-content: flex-start;
+  gap: 3rem;
+  margin: 2rem auto;
+}
+
+.upgradebtn, .msg-btn{
+  background-color: #ad0909cc;
+  border-radius: 5px;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+  transition: all ease-in-out 0.2s;
+  font-style: italic;
+  font-weight: 100;
+  font-size: 15px;
+  width: 30%;
+  text-align: center;
+}
+
+.upgradebtn:hover, .msg-btn:hover{
+  background-color: #dc3a3a; ;
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Image slider */
+.image-slide-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin: auto;
+}
+
+.image-slider {
+    display: none;
+    height: 100%;
+}
+
+.img-1 {
+  display: block;
+}
+
+.previmg-btn, .nextimg-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+/* Position the "next button" to the right */
+.nextimg-btn {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.previmg-btn {
+  /* right: 10px; */
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.previmg-btn:hover, .nextimg-btn:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.number-slide {
+    color: #121212;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+.under-text {
+  font-size: 12px;
+  color: #5b5b5b;
 }

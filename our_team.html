@@ -33,7 +33,7 @@
             <a href="index.html">HOME</a>
             <a href="about.html">ABOUT US</a> 
             <a href="membership-plan.html">MEMBERSHIP</a> 
-            <a id="mobile-register" href="#">REGISTER</a>
+            <a id="mobile-register">REGISTER</a>
             <a href="contact.html">CONTACT US</a>
         </div>
     </div>
@@ -53,7 +53,7 @@
                     
                 <div class="profile">
                     <div class="profile-icon">
-                        <a id="user" href="#"><img src="./Icons/profile-icon.svg" alt=""></a>
+                        <a id="user"><img src="./Icons/profile-icon.svg" alt=""></a>
                     </div>
                 </div> 
             </ul>
@@ -96,7 +96,7 @@
                 <div id="btn">
                     <button id="submit-btn">Next</button>
                 </div>
-                <h5>Already a Member?<a id="login" href="#">Login</a></h5>
+                <h5>Already a Member?<a id="login">Login</a></h5>
             </form>
         </div>
         <div class="form-div" id="form-2" >
@@ -113,6 +113,12 @@
                     <input class="dob" id="a" type="text" placeholder="Month">
                     <input class="dob" id="a" type="number" placeholder="Year">
                 </div>
+                <h6>Gender</h6>
+                <select class="profile" name="profil-for">
+                    <option selected disabled>Select</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
                 <h6>Password</h6>
                 <input class="name" type="password" name="password" placeholder="Password" required>
                 <h6>Living in (Currently)</h6>
@@ -141,7 +147,7 @@
                     </select>
                 </div>
                 <div id="btn-flex">
-                  <a id="form-2-prev" href="#"><i class="ri-arrow-left-line"></i>Previous</a>
+                  <a id="form-2-prev"><i class="ri-arrow-left-line"></i>Previous</a>
                   <button id="next-btn">Register</button>
                 </div>
             </form>
@@ -287,7 +293,7 @@
                     <option value="dark">Dark</option>
                 </select>
                 <div id="btn-flex">
-                    <a id="form-3-prev" href="#"><i class="ri-arrow-left-line"></i>Previous</a>
+                    <a id="form-3-prev"><i class="ri-arrow-left-line"></i>Previous</a>
                     <button id="next-btn-2">Next</button>
                 </div>
             </form>
@@ -331,7 +337,7 @@
                     <option value="more than 2lakhs">More than 2lakhs</option>
                 </select>
                 <div id="btn-flex">
-                    <a id="form-4-prev" href="#"><i class="ri-arrow-left-line"></i>Previous</a>
+                    <a id="form-4-prev"><i class="ri-arrow-left-line"></i>Previous</a>
                     <button id="next-btn-3">Next</button>
                 </div>
             </form>
@@ -359,7 +365,7 @@
                     <option value="no">No</option>
                 </select>
                 <div id="btn-flex">
-                    <a id="form-5-prev" href="#"><i class="ri-arrow-left-line"></i>Previous</a>
+                    <a id="form-5-prev"><i class="ri-arrow-left-line"></i>Previous</a>
                     <button id="next-btn-4">Next</button>
                 </div>
             </form>
@@ -405,7 +411,7 @@
                     </div>
                 </div>
                 <div id="btn-flex">
-                    <a id="form-6-prev" href="#"><i class="ri-arrow-left-line"></i>Previous</a>
+                    <a id="form-6-prev"><i class="ri-arrow-left-line"></i>Previous</a>
                     <button id="next-btn-5">Next</button>
                 </div>
             </form>
@@ -558,7 +564,7 @@
                     <option value="">No</option>
                 </select>
                 <div id="btn-flex">
-                    <a id="form-7-prev" href="#"><i class="ri-arrow-left-line"></i>Previous</a>
+                    <a id="form-7-prev"><i class="ri-arrow-left-line"></i>Previous</a>
                     <button id="next-btn-6">Next</button>
                 </div>
             </form>
@@ -593,7 +599,7 @@
                     <option value="Nepal">Nepal</option>
                 </select>
                 <div id="btn-flex">
-                    <a id="form-8-prev" href="#"><i class="ri-arrow-left-line"></i>Previous</a>
+                    <a id="form-8-prev"><i class="ri-arrow-left-line"></i>Previous</a>
                     <button id="next-btn-7">Next</button>
                 </div>
             </form>
@@ -625,7 +631,7 @@
                     <option value="more than 2lakhs">More than 2lakhs</option>
                 </select>
                 <div id="btn-flex">
-                    <a id="form-9-prev" href="#"><i class="ri-arrow-left-line"></i>Previous</a>
+                    <a id="form-9-prev"><i class="ri-arrow-left-line"></i>Previous</a>
                     <button id="next-btn-8">Next</button>
                 </div>
             </form>
@@ -638,7 +644,7 @@
                 <textarea id="w3review" name="w3review" rows="4" cols="30" placeholder="write something..."></textarea>
                 <input type="file" class="custom-file-input">
                 <div id="btn-flex" class="about-btn">
-                    <a id="form-10-prev" href="#"><i class="ri-arrow-left-line"></i>Previous</a>
+                    <a id="form-10-prev"><i class="ri-arrow-left-line"></i>Previous</a>
                     <button id="next-btn-9"><a href="./dashboard.html">Submit</a></button>
                 </div>
             </form>
@@ -651,10 +657,10 @@
                 <input class="name" id="email" type="email" placeholder="Email Address" minlength="8" required>
                 <h6>Password</h6>
                 <input class="name" type="password" placeholder="Password" minlenrequired>
-                <h6 class="forgot-password"><a href="#" id="forgot">Forgot Password?</a></h6>
-                <button id="next-btn"><a href="#">Submit</a></button>
+                <h6 class="forgot-password"><a id="forgot">Forgot Password?</a></h6>
+                <button id="next-btn"><a>Submit</a></button>
             </form>
-            <h5>New Member?<a id="reg" href="#">Register</a></h5>
+            <h5>New Member?<a id="reg">Register</a></h5>
         </div>
         <div class="form-div" id="forgot-pass-form" >
             <i id="close-popup" class="ri-close-line"></i>
@@ -666,7 +672,7 @@
                 <input class="name" type="password" placeholder="Password" required>
                 <h6>Confirm Password</h6>
                 <input class="name" type="password" placeholder="Password" required>
-                <button id="next-btn" type="reset"><a href="#">Reset</a></button>
+                <button id="next-btn" type="reset"><a>Reset</a></button>
             </form>
         </div>
     </div>
@@ -681,10 +687,10 @@
                 <input class="name" id="email" type="email" placeholder="Email Address" required>
                 <h6>Password</h6>
                 <input class="name" type="password" placeholder="Password" required>
-                <h6 class="forgot-password-btn"><a href="#" id="forgot">Forgot Password?</a></h6>
-                <button id="next-btn"><a href="#">Submit</a></button>
+                <h6 class="forgot-password-btn"><a id="forgot">Forgot Password?</a></h6>
+                <button id="next-btn"><a>Submit</a></button>
             </form>
-            <h5>New Member?<a id="reg" href="#">Register</a></h5>
+            <h5>New Member?<a id="reg">Register</a></h5>
         </div>
     </div>
 
@@ -700,7 +706,7 @@
                 <input class="name" type="password" placeholder="Password" required>
                 <h6>Confirm Password</h6>
                 <input class="name" type="password" placeholder="Password" required>
-                <button id="next-btn" type="reset"><a href="#">Reset</a></button>
+                <button id="next-btn" type="reset"><a>Reset</a></button>
             </form>
         </div>
     </div>
@@ -722,7 +728,7 @@
                     </div>
                     <div class="sec5-element1-img" class="sec5-img"></div>
                 </div>
-                <div class="sec5-inner-element" id="sec5-inner2">
+                <div class="sec5-inner-element sec5-inner2" id="sec5-inner2">
                     <div class="sec5-element2-img"></div>
                     <div class="sec5-text">
                         <h2>
@@ -753,7 +759,7 @@
                     <div class="sec5-element3-img">
                     </div>
                 </div>
-                <div class="sec5-inner-element" id="sec5-inner2">
+                <div class="sec5-inner-element sec5-inner2 id="sec5-inner2">
                     <div class="sec5-element4-img"></div>
                     <div class="sec5-text">
                         <h2>
@@ -787,12 +793,12 @@
             <div class="foot-links-div">
                 <h4 class="links-title">Need Help?</h4>
                 <ul class="foot-links">
-                    <li><a href="#">Member Login</a></li>
-                    <li><a href="#">Sign Up</a></li>
-                    <li><a href="#">Partner Search</a></li>
+                    <li><a>Member Login</a></li>
+                    <li><a>Sign Up</a></li>
+                    <li><a>Partner Search</a></li>
                     <li><a href="faq.html">How to use</a></li>
                     <li><a href="membership-plan.html">Premium membership</a></li>
-                    <li><a href="#">Customer Support</a></li>
+                    <li><a>Customer Support</a></li>
                 </ul>
             </div>
             <div class="foot-links-div">
@@ -800,18 +806,18 @@
                 <ul class="foot-links">
                     <li><a href="aboutUs.html">About US</a></li>
                     <li><a href="blogs.html">Shaadi Blogs</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Awards</a></li>
+                    <li><a>Careers</a></li>
+                    <li><a>Awards</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
             <div class="foot-links-div">
                 <h4 class="links-title">Privacy & You</h4>
                 <ul class="foot-links">
-                    <li><a href="#">Terms of Use</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Be Safe Online</a></li>
-                    <li><a href="#">Reports Misuse</a></li>
+                    <li><a>Terms of Use</a></li>
+                    <li><a>Privacy Policy</a></li>
+                    <li><a>Be Safe Online</a></li>
+                    <li><a>Reports Misuse</a></li>
                 </ul>
             </div>
         </div>
@@ -820,10 +826,10 @@
                 Follow Us
             </h4>
             <div class="social-icons">
-                <a href="#" class="social-icons-link"><img src="./Icons/footer-fb-icon.svg" alt=""></a>
-                <a href="#" class="social-icons-link"><img src="./Icons/footer-twitter-icon.svg" alt=""></a>
-                <a href="#" class="social-icons-link"><img src="./Icons/footer-insta-icon.svg" alt=""></a>
-                <a href="#" class="social-icons-link"><img src="./Icons/footer-linkedin-icon.svg" alt=""></a>
+                <a class="social-icons-link"><img src="./Icons/footer-fb-icon.svg" alt=""></a>
+                <a class="social-icons-link"><img src="./Icons/footer-twitter-icon.svg" alt=""></a>
+                <a class="social-icons-link"><img src="./Icons/footer-insta-icon.svg" alt=""></a>
+                <a class="social-icons-link"><img src="./Icons/footer-linkedin-icon.svg" alt=""></a>
             </div>
         </div>
         <div class="footer-end">
