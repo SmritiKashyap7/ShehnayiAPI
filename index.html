@@ -228,46 +228,24 @@
         <form id="account-form" action="">
           <h6>Home Town</h6>
           <div id="flex-div">
-            <select name="city" id="user-city" class="town apihometowncity">
-              <option value="">City</option>
-              <option value="Bhopal">Bhopal</option>
-              <option value="Indore">Indore</option>
-              <option value="Nagpur">Nagpur</option>
-              <option value="Jaipur">Jaipur</option>
-              <option value="Surat">Surat</option>
-            </select>
-            <select name="state" id="user-state" class="state apihometownstate">
-              <option value="">State</option>
-              <option value="Madhya Pradesh">Madhya Pradesh</option>
-              <option value="Maharashtra">Maharashtra</option>
-              <option value="Gujarat">Gujarat</option>
-              <option value="Rajasthan">Rajasthan</option>
-            </select>
-            <select
-              name="country"
-              id="user-country"
-              class="country apihometowncountry"
-            >
+            <select name="country" id="user-country" class="country apihometowncoun"  >
               <option value="">Country</option>
               <option value="India">India</option>
             </select>
+            <select name="state" id="user-state" class="state apihometownstate">
+                <option value="">State</option>
+            </select>
+            <select name="city" id="user-city" class="town apihometowncity">
+                <option value="">City</option>
+            </select>
           </div>
           <h6>Sub Community</h6>
-          <select
-            name="subcommunity"
-            id="subcommunity"
-            name="subcommunity"
-            class="profile apisubcommunity"
-          >
+          <select name="subcommunity" id="subcommunity" name="subcommunity" class="profile apisubcommunity">
             <option value="">Select</option>
             <option value="Mohana">Mohana</option>
           </select>
           <h6>Marital Status</h6>
-          <select
-            class="profile apimaritalstatus"
-            id="maritalstatus"
-            name="profil-for"
-          >
+          <select class="profile apimaritalstatus" id="maritalstatus" name="profil-for" >
             <option value="">Select</option>
             <option value="married">Married</option>
             <option value="single">Single</option>
@@ -2579,531 +2557,620 @@
         var apicommunity = localStorage.getItem("community");
 
         fetch("https://server.shehnayi.in/api/v2/user/register", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            profileFor: apiprofilefor,
-            firstname: apifirstname,
-            lastname: apilastname,
-            religion: apireligion,
-            caste: apicommunity,
-            username: document.querySelector(".apiusername").value,
-            phone: document.querySelector(".apiphonenumber").value,
-            birthday: {
-              day: document.querySelector(".apibirthday").value,
-              month: document.querySelector(".apibirthmonth").value,
-              year: document.querySelector(".apibirthyear").value,
-            },
-            gender: document.querySelector(".apiprofilegender").value,
-            password: document.querySelector(".apipassword").value,
-            city: document.querySelector(".apicity").value,
-            state: document.querySelector(".apistate").value,
-            country: document.querySelector(".apicountry").value,
-          }),
-        })
-          .then((response) => {
-            return response.json();
-          })
-          .then((data) => {
-            console.log(data);
-            if (data.token) {
-              document.querySelector("#form-2").style.display = "none";
-              document.querySelector("#form-3").style.display = "initial";
-              localStorage.removeItem("profilefor");
-              localStorage.removeItem("firstname");
-              localStorage.removeItem("lastname");
-              localStorage.removeItem("religion");
-              localStorage.removeItem("community");
-              localStorage.setItem("userid", data.addedUser._id);
-              localStorage.setItem("token", data.token);
-            } else if (!data.token) {
-              alert(data);
-            }
-          })
-          .catch((err) => {
-            console.log(err);
-          });
-      });
-      // <-------- Second-Form End -------->
-
-      var loginbtn = document.querySelectorAll(".apihomeloginbtn");
-      loginbtn.forEach(function (elem) {
-        elem.addEventListener("click", function (e) {
-          e.preventDefault();
-          fetch("https://server.shehnayi.in/api/v2/user/login", {
             method: "POST",
-            body: JSON.stringify({
-              username: document.querySelector(".apiloginemail").value,
-              password: document.querySelector(".apiloginpassword").value,
-            }),
             headers: {
-              "Content-Type": "application/json",
+                "Content-Type": "application/json",
             },
-          })
+            body: JSON.stringify({
+                profileFor: apiprofilefor,
+                firstname: apifirstname,
+                lastname: apilastname,
+                religion: apireligion,
+                caste: apicommunity,
+                username: document.querySelector(".apiusername").value,
+                phone: document.querySelector(".apiphonenumber").value,
+                birthday: {
+                day: document.querySelector(".apibirthday").value,
+                month: document.querySelector(".apibirthmonth").value,
+                year: document.querySelector(".apibirthyear").value,
+                },
+                gender: document.querySelector(".apiprofilegender").value,
+                password: document.querySelector(".apipassword").value,
+                city: document.querySelector(".apicity").value,
+                state: document.querySelector(".apistate").value,
+                country: document.querySelector(".apicountry").value,
+            }),
+        })
             .then((response) => {
-              return response.json();
+                return response.json();
             })
             .then((data) => {
-              console.log(data);
-              if (data.token) {
+                console.log(data);
+                if (data.token) {
+                document.querySelector("#form-2").style.display = "none";
+                document.querySelector("#form-3").style.display = "initial";
+                localStorage.removeItem("profilefor");
+                localStorage.removeItem("firstname");
+                localStorage.removeItem("lastname");
+                localStorage.removeItem("religion");
+                localStorage.removeItem("community");
+                localStorage.setItem("userid", data.addedUser._id);
                 localStorage.setItem("token", data.token);
-                window.location.href = "./dashboard.html";
-              } else if (!data.token) {
+                } else if (!data.token) {
                 alert(data);
-              }
+                }
             })
             .catch((err) => {
-              console.log(err);
+                console.log(err);
             });
         });
-      });
+        // <-------- Second-Form End -------->
 
-      var apidetailsbtn = document.querySelector(".apidetailsbtn");
-      apidetailsbtn.addEventListener("click", function () {
-        localStorage.setItem(
-          "hometowncity",
-          document.querySelector(".apihometowncity").value
-        );
-        localStorage.setItem(
-          "hometownstate",
-          document.querySelector(".apihometownstate").value
-        );
-        localStorage.setItem(
-          "hometowncountry",
-          document.querySelector(".apihometowncountry").value
-        );
-        localStorage.setItem(
-          "subcommunity",
-          document.querySelector(".apisubcommunity").value
-        );
-        localStorage.setItem(
-          "apimaritalstatus",
-          document.querySelector(".apimaritalstatus").value
-        );
-        localStorage.setItem(
-          "apimanglik",
-          document.querySelector(".apimanglik").value
-        );
-        localStorage.setItem(
-          "apiheight",
-          document.querySelector(".apiheight").value
-        );
-        localStorage.setItem(
-          "apiweight",
-          document.querySelector(".apiweight").value
-        );
-        localStorage.setItem(
-          "apiskintone",
-          document.querySelector(".apiskintone").value
-        );
-      });
 
-      var detailsbtntwo = document.querySelector(".apidetailsbtntwo");
-      detailsbtntwo.addEventListener("click", function () {
-        localStorage.setItem(
-          "apiqualification",
-          document.querySelector(".apiqualification").value
-        );
-        localStorage.setItem(
-          "apiworksector",
-          document.querySelector(".apiworksector").value
-        );
-        localStorage.setItem(
-          "apicompany",
-          document.querySelector(".apicompany").value
-        );
-        localStorage.setItem(
-          "apidesignation",
-          document.querySelector(".apidesignation").value
-        );
-        localStorage.setItem(
-          "apisalary",
-          document.querySelector(".apisalary").value
-        );
-      });
+        // <----------Third form start ------->
+        // State API 
+    //     var form3 = document.querySelector("#form-3");
+    //     if ((form3.style.display = "initial")) {
+    //         fetch("https://api.countrystatecity.in/v1/countries/IN/states", {
+    //         method: "GET",
+    //         headers: {
+    //             "X-CSCAPI-KEY":
+    //             "M1NUNkJuRnZqZjB6N0NpWnE0TDV4R2dPNTEwNDhTOXRYQVZFdm5xcQ==",
+    //         },
+    //         })
+    //         .then((response) => {
+    //             return response.json();
+    //         })
+    //         .then((data) => {
+    //             return data.map((state) => {
+    //             var option = document.createElement("OPTION");
+    //             option.setAttribute("value", state.iso2);
+    //             option.innerHTML = state.name;
+    //             return document.querySelector("#state").append(option);
+    //             });
+    //         })
+    //         .catch((err) => console.log(err));
+    //     }
+        
+    //     // City API  
+    //     document.querySelector("#user-state").addEventListener("change", (event) => {
+    //     var value = event.target.value;
 
-      var apidetailsbtnthree = document.querySelector(".apidetailsbtnthree");
-      apidetailsbtnthree.addEventListener("click", function () {
-        localStorage.setItem(
-          "apieatinghabits",
-          document.querySelector(".apieatinghabits").value
-        );
-        localStorage.setItem(
-          "apidrinkinghabits",
-          document.querySelector(".apidrinkinghabits").value
-        );
-        localStorage.setItem(
-          "apismokinghabits",
-          document.querySelector(".apismokinghabits").value
-        );
-      });
+    //     document.querySelector("#user-city").innerHTML = "";
 
-      var apidetailsbtnfour = document.querySelector(".apidetailsbtnfour");
-      apidetailsbtnfour.addEventListener("click", function () {
-        localStorage.setItem(
-          "apifather",
-          document.querySelector(".apifather").value
-        );
-        localStorage.setItem(
-          "apimother",
-          document.querySelector(".apimother").value
-        );
-        localStorage.setItem(
-          "apibrother",
-          document.querySelector(".apibrother").value
-        );
-        localStorage.setItem(
-          "apimarriedbrother",
-          document.querySelector(".apimarriedbrother").value
-        );
-        localStorage.setItem(
-          "apiunmarriedbrother",
-          document.querySelector(".apiunmarriedbrother").value
-        );
-        localStorage.setItem(
-          "apisister",
-          document.querySelector(".apisister").value
-        );
-        localStorage.setItem(
-          "apimarriedsister",
-          document.querySelector(".apimarriedsister").value
-        );
-        localStorage.setItem(
-          "apiunmarriedsister",
-          document.querySelector(".apiunmarriedsister").value
-        );
-        const bearerToken = localStorage.getItem("token");
-        fetch("https://server.shehnayi.in/api/v2/user/userdetails", {
-          method: "PATCH",
-          body: JSON.stringify({
-            homeTown: {
-              country: localStorage.getItem("hometowncountry"),
-              state: localStorage.getItem("hometownstate"),
-              city: localStorage.getItem("hometowncity"),
+    //     fetch(
+    //       `https://api.countrystatecity.in/v1/countries/IN/states/${value}/cities`,
+    //       {
+    //         method: "GET",
+    //         headers: {
+    //           "X-CSCAPI-KEY":
+    //             "M1NUNkJuRnZqZjB6N0NpWnE0TDV4R2dPNTEwNDhTOXRYQVZFdm5xcQ==",
+    //         },
+    //       }
+    //     )
+    //       .then((response) => {
+    //         return response.json();
+    //       })
+    //       .then((data) => {
+    //         return data.map((city) => {
+    //           var option = document.createElement("OPTION");
+    //           option.setAttribute("value", city.name);
+    //           option.innerHTML = city.name;
+
+    //           return document.querySelector("#user-city").append(option);
+    //         });
+    //       })
+    //       .catch((err) => console.log(err));
+    //   });
+
+      // <-------- State Api End -------->
+
+      // <---------- City Api Start----------->
+    //   document.querySelector("#user-state").addEventListener("change", (event) => {
+    //     var value = event.target.value;
+
+    //     document.querySelector("#user-city").innerHTML = "";
+
+    //     fetch(
+    //         `https://api.countrystatecity.in/v1/countries/IN/states/${value}/cities`,
+    //         {
+    //             method: "GET",
+    //             headers: {
+    //             "X-CSCAPI-KEY":
+    //                 "M1NUNkJuRnZqZjB6N0NpWnE0TDV4R2dPNTEwNDhTOXRYQVZFdm5xcQ==",
+    //             },
+    //         }
+    //         )
+    //         .then((response) => {
+    //             return response.json();
+    //         })
+    //         .then((data) => {
+    //             return data.map((city) => {
+    //             var option = document.createElement("OPTION");
+    //             option.setAttribute("value", city.name);
+    //             option.innerHTML = city.name;
+    //             return document.querySelector("#city").append(option);
+    //             });
+    //         })
+    //         .catch((err) => console.log(err));
+    //     });    
+
+        var loginbtn = document.querySelectorAll(".apihomeloginbtn");
+        loginbtn.forEach(function (elem) {
+            elem.addEventListener("click", function (e) {
+            e.preventDefault();
+            fetch("https://server.shehnayi.in/api/v2/user/login", {
+                method: "POST",
+                body: JSON.stringify({
+                username: document.querySelector(".apiloginemail").value,
+                password: document.querySelector(".apiloginpassword").value,
+                }),
+                headers: {
+                "Content-Type": "application/json",
+                },
+            })
+                .then((response) => {
+                return response.json();
+                })
+                .then((data) => {
+                console.log(data);
+                if (data.token) {
+                    localStorage.setItem("token", data.token);
+                    window.location.href = "./dashboard.html";
+                } else if (!data.token) {
+                    alert(data);
+                }
+                })
+                .catch((err) => {
+                console.log(err);
+                });
+            });
+        });
+
+        var apidetailsbtn = document.querySelector(".apidetailsbtn");
+        apidetailsbtn.addEventListener("click", function () {
+            localStorage.setItem(
+            "hometowncity",
+            document.querySelector(".apihometowncity").value
+            );
+            localStorage.setItem(
+            "hometownstate",
+            document.querySelector(".apihometownstate").value
+            );
+            localStorage.setItem(
+            "hometowncountry",
+            document.querySelector(".apihometowncountry").value
+            );
+            localStorage.setItem(
+            "subcommunity",
+            document.querySelector(".apisubcommunity").value
+            );
+            localStorage.setItem(
+            "apimaritalstatus",
+            document.querySelector(".apimaritalstatus").value
+            );
+            localStorage.setItem(
+            "apimanglik",
+            document.querySelector(".apimanglik").value
+            );
+            localStorage.setItem(
+            "apiheight",
+            document.querySelector(".apiheight").value
+            );
+            localStorage.setItem(
+            "apiweight",
+            document.querySelector(".apiweight").value
+            );
+            localStorage.setItem(
+            "apiskintone",
+            document.querySelector(".apiskintone").value
+            );
+        });
+
+        var detailsbtntwo = document.querySelector(".apidetailsbtntwo");
+        detailsbtntwo.addEventListener("click", function () {
+            localStorage.setItem(
+            "apiqualification",
+            document.querySelector(".apiqualification").value
+            );
+            localStorage.setItem(
+            "apiworksector",
+            document.querySelector(".apiworksector").value
+            );
+            localStorage.setItem(
+            "apicompany",
+            document.querySelector(".apicompany").value
+            );
+            localStorage.setItem(
+            "apidesignation",
+            document.querySelector(".apidesignation").value
+            );
+            localStorage.setItem(
+            "apisalary",
+            document.querySelector(".apisalary").value
+            );
+        });
+
+        var apidetailsbtnthree = document.querySelector(".apidetailsbtnthree");
+        apidetailsbtnthree.addEventListener("click", function () {
+            localStorage.setItem(
+            "apieatinghabits",
+            document.querySelector(".apieatinghabits").value
+            );
+            localStorage.setItem(
+            "apidrinkinghabits",
+            document.querySelector(".apidrinkinghabits").value
+            );
+            localStorage.setItem(
+            "apismokinghabits",
+            document.querySelector(".apismokinghabits").value
+            );
+        });
+
+        var apidetailsbtnfour = document.querySelector(".apidetailsbtnfour");
+        apidetailsbtnfour.addEventListener("click", function () {
+            localStorage.setItem(
+            "apifather",
+            document.querySelector(".apifather").value
+            );
+            localStorage.setItem(
+            "apimother",
+            document.querySelector(".apimother").value
+            );
+            localStorage.setItem(
+            "apibrother",
+            document.querySelector(".apibrother").value
+            );
+            localStorage.setItem(
+            "apimarriedbrother",
+            document.querySelector(".apimarriedbrother").value
+            );
+            localStorage.setItem(
+            "apiunmarriedbrother",
+            document.querySelector(".apiunmarriedbrother").value
+            );
+            localStorage.setItem(
+            "apisister",
+            document.querySelector(".apisister").value
+            );
+            localStorage.setItem(
+            "apimarriedsister",
+            document.querySelector(".apimarriedsister").value
+            );
+            localStorage.setItem(
+            "apiunmarriedsister",
+            document.querySelector(".apiunmarriedsister").value
+            );
+            const bearerToken = localStorage.getItem("token");
+            fetch("https://server.shehnayi.in/api/v2/user/userdetails", {
+            method: "PATCH",
+            body: JSON.stringify({
+                homeTown: {
+                country: localStorage.getItem("hometowncountry"),
+                state: localStorage.getItem("hometownstate"),
+                city: localStorage.getItem("hometowncity"),
+                },
+                subCaste: localStorage.getItem("subcommunity"),
+                maritalStatus: localStorage.getItem("apimaritalstatus"),
+                manglik: localStorage.getItem("apimanglik"),
+                height: localStorage.getItem("apiheight"),
+                weight: localStorage.getItem("apiweight"),
+                skinType: localStorage.getItem("apiskintone"),
+                heighestQualification: localStorage.getItem("apiqualification"),
+                workingSector: localStorage.getItem("apiworksector"),
+                workingIn: localStorage.getItem("apicompany"),
+                AnnualIncome: localStorage.getItem("apisalary"),
+                designation: localStorage.getItem("apidesignation"),
+                eating: localStorage.getItem("apieatinghabits"),
+                smoking: localStorage.getItem("apismokinghabits"),
+                drinking: localStorage.getItem("apidrinkinghabits"),
+                fatherStatus: localStorage.getItem("apifather"),
+                motherStatus: localStorage.getItem("apimother"),
+                brothers: localStorage.getItem("apibrother"),
+                brotherMarried: localStorage.getItem("apimarriedbrother"),
+                brotherunMarried: localStorage.getItem("apiunmarriedbrother"),
+                sisters: localStorage.getItem("apisister"),
+                sisterMarried: localStorage.getItem("apimarriedsister"),
+                sisterunMarried: localStorage.getItem("apiunmarriedsister"),
+            }),
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${bearerToken}`,
             },
-            subCaste: localStorage.getItem("subcommunity"),
-            maritalStatus: localStorage.getItem("apimaritalstatus"),
-            manglik: localStorage.getItem("apimanglik"),
-            height: localStorage.getItem("apiheight"),
-            weight: localStorage.getItem("apiweight"),
-            skinType: localStorage.getItem("apiskintone"),
-            heighestQualification: localStorage.getItem("apiqualification"),
-            workingSector: localStorage.getItem("apiworksector"),
-            workingIn: localStorage.getItem("apicompany"),
-            AnnualIncome: localStorage.getItem("apisalary"),
-            designation: localStorage.getItem("apidesignation"),
-            eating: localStorage.getItem("apieatinghabits"),
-            smoking: localStorage.getItem("apismokinghabits"),
-            drinking: localStorage.getItem("apidrinkinghabits"),
-            fatherStatus: localStorage.getItem("apifather"),
-            motherStatus: localStorage.getItem("apimother"),
-            brothers: localStorage.getItem("apibrother"),
-            brotherMarried: localStorage.getItem("apimarriedbrother"),
-            brotherunMarried: localStorage.getItem("apiunmarriedbrother"),
-            sisters: localStorage.getItem("apisister"),
-            sisterMarried: localStorage.getItem("apimarriedsister"),
-            sisterunMarried: localStorage.getItem("apiunmarriedsister"),
-          }),
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${bearerToken}`,
-          },
-        })
-          .then((response) => {
-            return response.json();
-          })
-          .then((data) => {
-            console.log(data);
-            localStorage.removeItem(
-              "hometowncity",
-              document.querySelector(".apihometowncity").value
-            );
-            localStorage.removeItem(
-              "hometownstate",
-              document.querySelector(".apihometownstate").value
-            );
-            localStorage.removeItem(
-              "hometowncountry",
-              document.querySelector(".apihometowncountry").value
-            );
-            localStorage.removeItem(
-              "subcommunity",
-              document.querySelector(".apisubcommunity").value
-            );
-            localStorage.removeItem(
-              "apimaritalstatus",
-              document.querySelector(".apimaritalstatus").value
-            );
-            localStorage.removeItem(
-              "apimanglik",
-              document.querySelector(".apimanglik").value
-            );
-            localStorage.removeItem(
-              "apiheight",
-              document.querySelector(".apiheight").value
-            );
-            localStorage.removeItem(
-              "apiweight",
-              document.querySelector(".apiweight").value
-            );
-            localStorage.removeItem(
-              "apiskintone",
-              document.querySelector(".apiskintone").value
-            );
-            localStorage.removeItem(
-              "apiqualification",
-              document.querySelector(".apiqualification").value
-            );
-            localStorage.removeItem(
-              "apiworksector",
-              document.querySelector(".apiworksector").value
-            );
-            localStorage.removeItem(
-              "apicompany",
-              document.querySelector(".apicompany").value
-            );
-            localStorage.removeItem(
-              "apidesignation",
-              document.querySelector(".apidesignation").value
-            );
-            localStorage.removeItem(
-              "apisalary",
-              document.querySelector(".apisalary").value
-            );
-            localStorage.removeItem(
-              "apieatinghabits",
-              document.querySelector(".apieatinghabits").value
-            );
-            localStorage.removeItem(
-              "apidrinkinghabits",
-              document.querySelector(".apidrinkinghabits").value
-            );
-            localStorage.removeItem(
-              "apismokinghabits",
-              document.querySelector(".apismokinghabits").value
-            );
-            localStorage.removeItem(
-              "apifather",
-              document.querySelector(".apifather").value
-            );
-            localStorage.removeItem(
-              "apimother",
-              document.querySelector(".apimother").value
-            );
-            localStorage.removeItem(
-              "apibrother",
-              document.querySelector(".apibrother").value
-            );
-            localStorage.removeItem(
-              "apimarriedbrother",
-              document.querySelector(".apimarriedbrother").value
-            );
-            localStorage.removeItem(
-              "apiunmarriedbrother",
-              document.querySelector(".apiunmarriedbrother").value
-            );
-            localStorage.removeItem(
-              "apisister",
-              document.querySelector(".apisister").value
-            );
-            localStorage.removeItem(
-              "apimarriedsister",
-              document.querySelector(".apimarriedsister").value
-            );
-            localStorage.removeItem(
-              "apiunmarriedsister",
-              document.querySelector(".apiunmarriedsister").value
-            );
-            return data;
-          })
-          .catch((err) => {
-            console.log(err);
-            return err;
-          });
-      });
+            })
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                console.log(data);
+                localStorage.removeItem(
+                "hometowncity",
+                document.querySelector(".apihometowncity").value
+                );
+                localStorage.removeItem(
+                "hometownstate",
+                document.querySelector(".apihometownstate").value
+                );
+                localStorage.removeItem(
+                "hometowncountry",
+                document.querySelector(".apihometowncountry").value
+                );
+                localStorage.removeItem(
+                "subcommunity",
+                document.querySelector(".apisubcommunity").value
+                );
+                localStorage.removeItem(
+                "apimaritalstatus",
+                document.querySelector(".apimaritalstatus").value
+                );
+                localStorage.removeItem(
+                "apimanglik",
+                document.querySelector(".apimanglik").value
+                );
+                localStorage.removeItem(
+                "apiheight",
+                document.querySelector(".apiheight").value
+                );
+                localStorage.removeItem(
+                "apiweight",
+                document.querySelector(".apiweight").value
+                );
+                localStorage.removeItem(
+                "apiskintone",
+                document.querySelector(".apiskintone").value
+                );
+                localStorage.removeItem(
+                "apiqualification",
+                document.querySelector(".apiqualification").value
+                );
+                localStorage.removeItem(
+                "apiworksector",
+                document.querySelector(".apiworksector").value
+                );
+                localStorage.removeItem(
+                "apicompany",
+                document.querySelector(".apicompany").value
+                );
+                localStorage.removeItem(
+                "apidesignation",
+                document.querySelector(".apidesignation").value
+                );
+                localStorage.removeItem(
+                "apisalary",
+                document.querySelector(".apisalary").value
+                );
+                localStorage.removeItem(
+                "apieatinghabits",
+                document.querySelector(".apieatinghabits").value
+                );
+                localStorage.removeItem(
+                "apidrinkinghabits",
+                document.querySelector(".apidrinkinghabits").value
+                );
+                localStorage.removeItem(
+                "apismokinghabits",
+                document.querySelector(".apismokinghabits").value
+                );
+                localStorage.removeItem(
+                "apifather",
+                document.querySelector(".apifather").value
+                );
+                localStorage.removeItem(
+                "apimother",
+                document.querySelector(".apimother").value
+                );
+                localStorage.removeItem(
+                "apibrother",
+                document.querySelector(".apibrother").value
+                );
+                localStorage.removeItem(
+                "apimarriedbrother",
+                document.querySelector(".apimarriedbrother").value
+                );
+                localStorage.removeItem(
+                "apiunmarriedbrother",
+                document.querySelector(".apiunmarriedbrother").value
+                );
+                localStorage.removeItem(
+                "apisister",
+                document.querySelector(".apisister").value
+                );
+                localStorage.removeItem(
+                "apimarriedsister",
+                document.querySelector(".apimarriedsister").value
+                );
+                localStorage.removeItem(
+                "apiunmarriedsister",
+                document.querySelector(".apiunmarriedsister").value
+                );
+                return data;
+            })
+            .catch((err) => {
+                console.log(err);
+                return err;
+            });
+        });
 
-      var apipreferencebtna = document.querySelector(".apipreferencebtna");
-      apipreferencebtna.addEventListener("click", function () {
-        localStorage.setItem(
-          "apifromage",
-          document.querySelector(".apifromage").value
-        );
-        localStorage.setItem(
-          "apitoage",
-          document.querySelector(".apitoage").value
-        );
-        localStorage.setItem(
-          "apimaritalstatuspartner",
-          document.querySelector(".apimaritalstatuspartner").value
-        );
-        localStorage.setItem(
-          "apipartnerdiet",
-          document.querySelector(".apipartnerdiet").value
-        );
-        localStorage.setItem(
-          "apipartnersmoking",
-          document.querySelector(".apipartnersmoking").value
-        );
-        localStorage.setItem(
-          "apipartnerdrinking",
-          document.querySelector(".apipartnerdrinking").value
-        );
-        localStorage.setItem(
-          "apipartnerheightfrom",
-          document.querySelector(".apipartnerheightfrom").value
-        );
-        localStorage.setItem(
-          "apipartnerheightto",
-          document.querySelector(".apipartnerheightto").value
-        );
-        localStorage.setItem(
-          "apipartnercommunity",
-          document.querySelector(".apipartnercommunity").value
-        );
-        localStorage.setItem(
-          "apipartnermanglik",
-          document.querySelector(".apipartnermanglik").value
-        );
-      });
+        var apipreferencebtna = document.querySelector(".apipreferencebtna");
+        apipreferencebtna.addEventListener("click", function () {
+            localStorage.setItem(
+            "apifromage",
+            document.querySelector(".apifromage").value
+            );
+            localStorage.setItem(
+            "apitoage",
+            document.querySelector(".apitoage").value
+            );
+            localStorage.setItem(
+            "apimaritalstatuspartner",
+            document.querySelector(".apimaritalstatuspartner").value
+            );
+            localStorage.setItem(
+            "apipartnerdiet",
+            document.querySelector(".apipartnerdiet").value
+            );
+            localStorage.setItem(
+            "apipartnersmoking",
+            document.querySelector(".apipartnersmoking").value
+            );
+            localStorage.setItem(
+            "apipartnerdrinking",
+            document.querySelector(".apipartnerdrinking").value
+            );
+            localStorage.setItem(
+            "apipartnerheightfrom",
+            document.querySelector(".apipartnerheightfrom").value
+            );
+            localStorage.setItem(
+            "apipartnerheightto",
+            document.querySelector(".apipartnerheightto").value
+            );
+            localStorage.setItem(
+            "apipartnercommunity",
+            document.querySelector(".apipartnercommunity").value
+            );
+            localStorage.setItem(
+            "apipartnermanglik",
+            document.querySelector(".apipartnermanglik").value
+            );
+        });
 
-      var apipreferncebtnb = document.querySelector(".apipreferencebtnb");
-      apipreferncebtnb.addEventListener("click", function () {
-        localStorage.setItem(
-          "apilocncity",
-          document.querySelector(".apilocncity").value
-        );
-        localStorage.setItem(
-          "apilocnstate",
-          document.querySelector(".apilocnstate").value
-        );
-        localStorage.setItem(
-          "apilocncountry",
-          document.querySelector(".apilocncountry").value
-        );
-      });
+        var apipreferncebtnb = document.querySelector(".apipreferencebtnb");
+        apipreferncebtnb.addEventListener("click", function () {
+            localStorage.setItem(
+            "apilocncity",
+            document.querySelector(".apilocncity").value
+            );
+            localStorage.setItem(
+            "apilocnstate",
+            document.querySelector(".apilocnstate").value
+            );
+            localStorage.setItem(
+            "apilocncountry",
+            document.querySelector(".apilocncountry").value
+            );
+        });
 
-      var apipreferencebtnc = document.querySelector(".apipreferencebtnc");
-      apipreferencebtnc.addEventListener("click", function () {
-        localStorage.setItem(
-          "apipqualification",
-          document.querySelector(".apipqualification").value
-        );
-        localStorage.setItem(
-          "apipsector",
-          document.querySelector(".apipsector").value
-        );
-        localStorage.setItem(
-          "apipsalary",
-          document.querySelector(".apipsalary").value
-        );
-        var userId = localStorage.getItem("userid");
-        const bearerToken = localStorage.getItem("token");
-        fetch(`https://server.shehnayi.in/api/v2/user/${userId}/preference`, {
-          method: "POST",
-          body: JSON.stringify({
-            fromAge: localStorage.getItem("apifromage"),
-            toAge: localStorage.getItem("apitoage"),
-            maritalStatus: localStorage.getItem("apimaritalstatuspartner"),
-            eating: localStorage.getItem("apipartnerdiet"),
-            smoking: localStorage.getItem("apipartnersmoking"),
-            drinking: localStorage.getItem("apipartnerdrinking"),
-            fromHeight: localStorage.getItem("apipartnerheightfrom"),
-            toHeight: localStorage.getItem("apipartnerheightto"),
-            caste: localStorage.getItem("apipartnercommunity"),
-            manglik: localStorage.getItem("apipartnermanglik"),
-            country: localStorage.getItem("apilocncountry"),
-            state: localStorage.getItem("apilocnstate"),
-            city: localStorage.getItem("apilocncity"),
-            heighestQualification: localStorage.getItem("apipqualification"),
-            workingSector: localStorage.getItem("apipsector"),
-            AnnualIncome: localStorage.getItem("apipsalary"),
-          }),
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${bearerToken}`,
-          },
-        })
-          .then((response) => {
-            return response.json();
-          })
-          .then((data) => {
-            console.log(data);
-            localStorage.removeItem(
-              "apifromage",
-              document.querySelector(".apifromage").value
+        var apipreferencebtnc = document.querySelector(".apipreferencebtnc");
+        apipreferencebtnc.addEventListener("click", function () {
+            localStorage.setItem(
+            "apipqualification",
+            document.querySelector(".apipqualification").value
             );
-            localStorage.removeItem(
-              "apitoage",
-              document.querySelector(".apitoage").value
+            localStorage.setItem(
+            "apipsector",
+            document.querySelector(".apipsector").value
             );
-            localStorage.removeItem(
-              "apimaritalstatuspartner",
-              document.querySelector(".apimaritalstatuspartner").value
+            localStorage.setItem(
+            "apipsalary",
+            document.querySelector(".apipsalary").value
             );
-            localStorage.removeItem(
-              "apipartnerdiet",
-              document.querySelector(".apipartnerdiet").value
-            );
-            localStorage.removeItem(
-              "apipartnersmoking",
-              document.querySelector(".apipartnersmoking").value
-            );
-            localStorage.removeItem(
-              "apipartnerdrinking",
-              document.querySelector(".apipartnerdrinking").value
-            );
-            localStorage.removeItem(
-              "apipartnerheightfrom",
-              document.querySelector(".apipartnerheightfrom").value
-            );
-            localStorage.removeItem(
-              "apipartnerheightto",
-              document.querySelector(".apipartnerheightto").value
-            );
-            localStorage.removeItem(
-              "apipartnercommunity",
-              document.querySelector(".apipartnercommunity").value
-            );
-            localStorage.removeItem(
-              "apipartnermanglik",
-              document.querySelector(".apipartnermanglik").value
-            );
-            localStorage.removeItem(
-              "apilocncity",
-              document.querySelector(".apilocncity").value
-            );
-            localStorage.removeItem(
-              "apilocnstate",
-              document.querySelector(".apilocnstate").value
-            );
-            localStorage.removeItem(
-              "apilocncountry",
-              document.querySelector(".apilocncountry").value
-            );
-            localStorage.removeItem(
-              "apipqualification",
-              document.querySelector(".apipqualification").value
-            );
-            localStorage.removeItem(
-              "apipsector",
-              document.querySelector(".apipsector").value
-            );
-            localStorage.removeItem(
-              "apipsalary",
-              document.querySelector(".apipsalary").value
-            );
-            return data;
-          })
-          .catch((err) => {
-            console.log(err);
-            return err;
-          });
-      });
+            var userId = localStorage.getItem("userid");
+            const bearerToken = localStorage.getItem("token");
+            fetch(`https://server.shehnayi.in/api/v2/user/${userId}/preference`, {
+            method: "POST",
+            body: JSON.stringify({
+                fromAge: localStorage.getItem("apifromage"),
+                toAge: localStorage.getItem("apitoage"),
+                maritalStatus: localStorage.getItem("apimaritalstatuspartner"),
+                eating: localStorage.getItem("apipartnerdiet"),
+                smoking: localStorage.getItem("apipartnersmoking"),
+                drinking: localStorage.getItem("apipartnerdrinking"),
+                fromHeight: localStorage.getItem("apipartnerheightfrom"),
+                toHeight: localStorage.getItem("apipartnerheightto"),
+                caste: localStorage.getItem("apipartnercommunity"),
+                manglik: localStorage.getItem("apipartnermanglik"),
+                country: localStorage.getItem("apilocncountry"),
+                state: localStorage.getItem("apilocnstate"),
+                city: localStorage.getItem("apilocncity"),
+                heighestQualification: localStorage.getItem("apipqualification"),
+                workingSector: localStorage.getItem("apipsector"),
+                AnnualIncome: localStorage.getItem("apipsalary"),
+            }),
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${bearerToken}`,
+            },
+            })
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                console.log(data);
+                localStorage.removeItem(
+                "apifromage",
+                document.querySelector(".apifromage").value
+                );
+                localStorage.removeItem(
+                "apitoage",
+                document.querySelector(".apitoage").value
+                );
+                localStorage.removeItem(
+                "apimaritalstatuspartner",
+                document.querySelector(".apimaritalstatuspartner").value
+                );
+                localStorage.removeItem(
+                "apipartnerdiet",
+                document.querySelector(".apipartnerdiet").value
+                );
+                localStorage.removeItem(
+                "apipartnersmoking",
+                document.querySelector(".apipartnersmoking").value
+                );
+                localStorage.removeItem(
+                "apipartnerdrinking",
+                document.querySelector(".apipartnerdrinking").value
+                );
+                localStorage.removeItem(
+                "apipartnerheightfrom",
+                document.querySelector(".apipartnerheightfrom").value
+                );
+                localStorage.removeItem(
+                "apipartnerheightto",
+                document.querySelector(".apipartnerheightto").value
+                );
+                localStorage.removeItem(
+                "apipartnercommunity",
+                document.querySelector(".apipartnercommunity").value
+                );
+                localStorage.removeItem(
+                "apipartnermanglik",
+                document.querySelector(".apipartnermanglik").value
+                );
+                localStorage.removeItem(
+                "apilocncity",
+                document.querySelector(".apilocncity").value
+                );
+                localStorage.removeItem(
+                "apilocnstate",
+                document.querySelector(".apilocnstate").value
+                );
+                localStorage.removeItem(
+                "apilocncountry",
+                document.querySelector(".apilocncountry").value
+                );
+                localStorage.removeItem(
+                "apipqualification",
+                document.querySelector(".apipqualification").value
+                );
+                localStorage.removeItem(
+                "apipsector",
+                document.querySelector(".apipsector").value
+                );
+                localStorage.removeItem(
+                "apipsalary",
+                document.querySelector(".apipsalary").value
+                );
+                return data;
+            })
+            .catch((err) => {
+                console.log(err);
+                return err;
+            });
+        });
 
-      var apiregisterbtnend = document.querySelector(".apiregisterbtnend");
-      apiregisterbtnend.addEventListener("click", function (e) {
+        var apiregisterbtnend = document.querySelector(".apiregisterbtnend");
+        apiregisterbtnend.addEventListener("click", function (e) {
         e.preventDefault();
         // localStorage.setItem(
         //   "profileabout",
